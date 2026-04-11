@@ -13,7 +13,7 @@ const ContentSection = ({ section, isFirst }) => {
         {/* Section Heading - only on first section */}
         {section.sectionHeading && (
           <div className="mb-14 text-center">
-            <h2 className="renderman-logo-text text-[32px] md:text-[40px] lg:text-[46px] font-black tracking-[0.02em] text-black leading-snug uppercase">
+            <h2 className="text-[36px] md:text-[48px] lg:text-[56px] text-black leading-snug font-bold" style={{ fontFamily: "'Magic English', 'Fredoka', cursive" }}>
               {section.sectionHeading}
             </h2>
             <div className="w-24 h-[3px] mx-auto mt-5" style={{ backgroundColor: '#F5C518' }} />
