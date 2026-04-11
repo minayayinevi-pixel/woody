@@ -55,7 +55,14 @@ const PreschoolPage = () => {
             <ChevronLeft size={20} />
             <span className="text-[13px] tracking-[0.1em] font-medium">GERİ</span>
           </button>
-          <span className="logo-text text-[22px] tracking-[0.15em] text-black">PIXAR</span>
+          <span className="flex items-center">
+            <img
+              src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/nkf2o7ln_Ads%C4%B1z%20%28Facebook%20Kapak%20Fotog%CC%86raf%C4%B1%29%20%286%29.png"
+              alt="Woody and Friends"
+              className="h-[40px] md:h-[48px] object-contain"
+              style={{ mixBlendMode: 'multiply' }}
+            />
+          </span>
           <div className="w-[80px]" />
         </div>
       </header>
