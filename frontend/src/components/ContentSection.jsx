@@ -1,7 +1,16 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 
 const ContentSection = ({ section, isFirst }) => {
+  const navigate = useNavigate();
   const isImageLeft = section.imagePosition === 'left';
+
+  const handleSectionClick = () => {
+    if (section.id === 'preschool-series') {
+      navigate('/preschool');
+    }
+  };
 
   return (
     <section
@@ -23,12 +32,13 @@ const ContentSection = ({ section, isFirst }) => {
         <div
           className={`flex flex-col ${
             isImageLeft ? 'lg:flex-row' : 'lg:flex-row-reverse'
-          } items-center gap-10 lg:gap-16`}
+          } items-center gap-10 lg:gap-16 ${section.id === 'preschool-series' ? 'cursor-pointer group/section' : ''}`}
+          onClick={section.id === 'preschool-series' ? handleSectionClick : undefined}
         >
           {/* Image with colored accent border */}
           <div className="w-full lg:w-1/2">
             <div
-              className="overflow-hidden rounded-[20px] shadow-xl relative"
+              className={`overflow-hidden rounded-[20px] shadow-xl relative transition-all duration-500 ${section.id === 'preschool-series' ? 'group-hover/section:shadow-2xl group-hover/section:scale-[1.02]' : ''}`}
               style={{
                 borderLeft: isImageLeft ? `6px solid ${section.accentColor}` : 'none',
                 borderRight: !isImageLeft ? `6px solid ${section.accentColor}` : 'none',
@@ -75,7 +85,19 @@ const ContentSection = ({ section, isFirst }) => {
               {section.description}
             </p>
 
-            {/* Button */}
+            {/* Click to explore button for preschool */}
+            {section.id === 'preschool-series' && (
+              <button
+                onClick={handleSectionClick}
+                className="inline-flex items-center gap-2 px-6 py-3 text-[13px] tracking-[0.1em] font-semibold text-white rounded-lg transition-all duration-300 hover:gap-3 border-none cursor-pointer"
+                style={{ backgroundColor: section.accentColor }}
+              >
+                İncele
+                <ArrowRight size={16} />
+              </button>
+            )}
+
+            {/* Button for other sections */}
             {section.buttonText && (
               <a
                 href={section.buttonUrl}
