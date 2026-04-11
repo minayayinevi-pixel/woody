@@ -19,7 +19,7 @@ export const siteData = {
     {
       id: "preschool-series",
       imagePosition: "left",
-      sectionHeading: "Size ve öğrenci sayınıza uygun woody setini seçin.",
+      sectionHeading: "Size uygun Woody setini seçin",
       title: "Preschool Series",
       description: "Büyük sınıflar, okullar ve kreşler için geliştirilmiştir. Kalabalık gruplara uygun olarak içerikler ve oyunlar sınıf yönetimine göre yapılandırılmıştır. Tüm sınıfın aynı anda aktif katılım gösterebildiği bir uygulama modeli sunar.",
       accentColor: "#F5C518",

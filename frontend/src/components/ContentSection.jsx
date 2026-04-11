@@ -13,10 +13,10 @@ const ContentSection = ({ section, isFirst }) => {
         {/* Section Heading - only on first section */}
         {section.sectionHeading && (
           <div className="mb-14 text-center">
-            <h2 className="text-[26px] md:text-[32px] lg:text-[36px] font-bold text-gray-900 leading-snug">
+            <h2 className="renderman-logo-text text-[32px] md:text-[40px] lg:text-[46px] font-black tracking-[0.02em] text-black leading-snug uppercase">
               {section.sectionHeading}
             </h2>
-            <div className="w-24 h-[3px] mx-auto mt-4" style={{ backgroundColor: '#F5C518' }} />
+            <div className="w-24 h-[3px] mx-auto mt-5" style={{ backgroundColor: '#F5C518' }} />
           </div>
         )}
 
