@@ -16,21 +16,21 @@ const PreschoolPage = () => {
     {
       name: "Basic Level",
       color: "#2196F3",
-      bgGradient: "linear-gradient(135deg, #2196F3 0%, #1976D2 100%)",
+      image: "https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/3jgyyil9_1.png",
       description: "Temel seviye İngilizce öğrenme seti",
       tag: "Başlangıç",
     },
     {
       name: "Junior Level",
       color: "#F5C518",
-      bgGradient: "linear-gradient(135deg, #F5C518 0%, #E6B000 100%)",
+      image: "https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/h5x59v59_3.png",
       description: "Orta-alt seviye İngilizce öğrenme seti",
       tag: "Gelişim",
     },
     {
       name: "Senior Level",
       color: "#E91E90",
-      bgGradient: "linear-gradient(135deg, #E91E90 0%, #C2185B 100%)",
+      image: "https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/m4z26p5k_2.png",
       description: "Orta-üst seviye İngilizce öğrenme seti",
       tag: "İleri",
     },
@@ -217,32 +217,38 @@ const PreschoolPage = () => {
               >
                 {/* Card Image Area */}
                 <div
-                  className="relative rounded-2xl overflow-hidden shadow-lg aspect-[3/4] flex flex-col items-center justify-center transition-all duration-500 group-hover:shadow-2xl group-hover:scale-[1.03]"
-                  style={{ background: level.bgGradient }}
+                  className="relative rounded-2xl overflow-hidden shadow-lg aspect-[3/4] transition-all duration-500 group-hover:shadow-2xl group-hover:scale-[1.03]"
+                  style={{ background: level.image ? '#f5f5f5' : level.bgGradient }}
                 >
-                  {/* Level Tag */}
-                  <div className="absolute top-4 left-4">
-                    <span className="bg-white/20 backdrop-blur-sm text-white text-[12px] font-semibold px-3 py-1 rounded-full tracking-wider">
-                      {level.tag}
-                    </span>
-                  </div>
-
-                  {/* Decorative circles */}
-                  <div className="absolute top-[-30px] right-[-30px] w-[120px] h-[120px] rounded-full opacity-10 bg-white" />
-                  <div className="absolute bottom-[-20px] left-[-20px] w-[80px] h-[80px] rounded-full opacity-10 bg-white" />
-
-                  {/* Woody silhouette / icon area */}
-                  <div className="relative z-10 text-center px-6">
-                    <div className="text-white/30 text-[80px] md:text-[100px] font-black leading-none mb-2" style={{ fontFamily: "'Magic English', 'Fredoka', cursive" }}>
-                      {idx + 1}
-                    </div>
-                    <h3 className="text-white text-[22px] md:text-[26px] font-bold tracking-wide" style={{ fontFamily: "'Magic English', 'Fredoka', cursive", textShadow: '0 2px 10px rgba(0,0,0,0.3)' }}>
-                      {level.name}
-                    </h3>
-                  </div>
-
-                  {/* Bottom gradient overlay */}
-                  <div className="absolute bottom-0 left-0 right-0 h-[60px] bg-gradient-to-t from-black/20 to-transparent" />
+                  {level.image ? (
+                    <img
+                      src={level.image}
+                      alt={level.name}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <>
+                      {/* Level Tag */}
+                      <div className="absolute top-4 left-4 z-10">
+                        <span className="bg-white/20 backdrop-blur-sm text-white text-[12px] font-semibold px-3 py-1 rounded-full tracking-wider">
+                          {level.tag}
+                        </span>
+                      </div>
+                      {/* Decorative circles */}
+                      <div className="absolute top-[-30px] right-[-30px] w-[120px] h-[120px] rounded-full opacity-10 bg-white" />
+                      <div className="absolute bottom-[-20px] left-[-20px] w-[80px] h-[80px] rounded-full opacity-10 bg-white" />
+                      {/* Fallback content */}
+                      <div className="absolute inset-0 flex flex-col items-center justify-center px-6">
+                        <div className="text-white/30 text-[80px] md:text-[100px] font-black leading-none mb-2" style={{ fontFamily: "'Magic English', 'Fredoka', cursive" }}>
+                          {idx + 1}
+                        </div>
+                        <h3 className="text-white text-[22px] md:text-[26px] font-bold tracking-wide" style={{ fontFamily: "'Magic English', 'Fredoka', cursive", textShadow: '0 2px 10px rgba(0,0,0,0.3)' }}>
+                          {level.name}
+                        </h3>
+                      </div>
+                      <div className="absolute bottom-0 left-0 right-0 h-[60px] bg-gradient-to-t from-black/20 to-transparent" />
+                    </>
+                  )}
                 </div>
 
                 {/* Card Label */}
