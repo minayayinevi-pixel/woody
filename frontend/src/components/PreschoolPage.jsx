@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Play, X, ArrowLeft, ArrowRight, ChevronLeft } from 'lucide-react';
+import Footer from './Footer';
+import { siteData } from '../data/mock';
 
 const PreschoolPage = () => {
   const navigate = useNavigate();
@@ -324,12 +326,7 @@ const PreschoolPage = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="w-full bg-white py-8 border-t border-gray-100">
-        <div className="max-w-[1200px] mx-auto px-6 md:px-12 text-center">
-          <p className="text-[11px] text-gray-500">© 1986-2026 Disney-Pixar</p>
-        </div>
-      </footer>
+      <Footer data={siteData.footer} />
 
       {/* Video Modal */}
       {showVideo && (

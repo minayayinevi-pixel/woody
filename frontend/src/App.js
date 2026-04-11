@@ -6,6 +6,7 @@ import HeroSection from "./components/HeroSection";
 import ContentSection from "./components/ContentSection";
 import Footer from "./components/Footer";
 import PreschoolPage from "./components/PreschoolPage";
+import FloatingContact from "./components/FloatingContact";
 import { siteData } from "./data/mock";
 
 const HomePage = () => {
@@ -25,6 +26,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <FloatingContact />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/preschool" element={<PreschoolPage />} />
