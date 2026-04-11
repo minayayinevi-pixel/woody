@@ -263,89 +263,56 @@ const PreschoolPage = () => {
       {/* Three Feature Boxes Section */}
       <section className="w-full py-16 md:py-20 bg-gray-50">
         <div className="max-w-[1200px] mx-auto px-6 md:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
             {/* Box 1 - Woody Level Finder */}
-            <div className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden cursor-pointer hover:-translate-y-1">
-              <div className="aspect-square flex flex-col justify-between p-8 relative overflow-hidden">
-                {/* Decorative Background */}
-                <div className="absolute top-0 right-0 w-[150px] h-[150px] rounded-full bg-yellow-400/10 -translate-y-1/3 translate-x-1/3" />
-                <div className="absolute bottom-0 left-0 w-[100px] h-[100px] rounded-full bg-yellow-400/5 translate-y-1/3 -translate-x-1/3" />
-
-                <div className="relative z-10">
-                  {/* Icon */}
-                  <div className="w-14 h-14 rounded-xl bg-yellow-400/15 flex items-center justify-center mb-5">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F5C518" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" /><path d="M11 8v6" /><path d="M8 11h6" />
-                    </svg>
-                  </div>
-
-                  {/* Title */}
-                  <h3 className="text-[22px] md:text-[24px] font-bold text-gray-900 mb-4 leading-tight" style={{ fontFamily: "'Magic English', 'Fredoka', cursive" }}>
-                    Woody Level Finder
-                  </h3>
-                </div>
-
-                {/* Description */}
-                <p className="text-[14px] text-gray-600 leading-[1.7] relative z-10">
-                  Öğrencinin yaşını, İngilizce seviyesini ve öğrenme durumunu belirleyerek en uygun Woody seviyesini hızlı ve doğru şekilde tespit etmenizi sağlar. Birkaç kısa soruya verilen cevaplara göre öğrencinin hangi seviyeden başlaması gerektiğini net olarak önerir.
-                </p>
+            <div className="group cursor-pointer text-center">
+              <div className="rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                <img
+                  src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/onplu2u5_Seviye%20Bulucu%20sembolu%CC%88.png"
+                  alt="Woody Level Finder"
+                  className="w-full aspect-square object-cover"
+                />
               </div>
+              <h3 className="text-[20px] md:text-[24px] font-bold text-gray-900 mt-5 mb-3" style={{ fontFamily: "'Magic English', 'Fredoka', cursive" }}>
+                Woody Level Finder
+              </h3>
+              <p className="text-[14px] text-gray-600 leading-[1.7] px-2">
+                Öğrencinin yaşını, İngilizce seviyesini ve öğrenme durumunu belirleyerek en uygun Woody seviyesini hızlı ve doğru şekilde tespit etmenizi sağlar. Birkaç kısa soruya verilen cevaplara göre öğrencinin hangi seviyeden başlaması gerektiğini net olarak önerir.
+              </p>
             </div>
 
             {/* Box 2 - Woody Library */}
-            <div className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden cursor-pointer hover:-translate-y-1">
-              <div className="aspect-square flex flex-col justify-between p-8 relative overflow-hidden">
-                {/* Decorative Background */}
-                <div className="absolute top-0 right-0 w-[150px] h-[150px] rounded-full bg-blue-400/10 -translate-y-1/3 translate-x-1/3" />
-                <div className="absolute bottom-0 left-0 w-[100px] h-[100px] rounded-full bg-blue-400/5 translate-y-1/3 -translate-x-1/3" />
-
-                <div className="relative z-10">
-                  {/* Icon */}
-                  <div className="w-14 h-14 rounded-xl bg-blue-400/15 flex items-center justify-center mb-5">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2196F3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" /><path d="M8 7h6" /><path d="M8 11h8" />
-                    </svg>
-                  </div>
-
-                  {/* Title */}
-                  <h3 className="text-[22px] md:text-[24px] font-bold text-gray-900 mb-4 leading-tight" style={{ fontFamily: "'Magic English', 'Fredoka', cursive" }}>
-                    Woody Library
-                  </h3>
-                </div>
-
-                {/* Description */}
-                <p className="text-[14px] text-gray-600 leading-[1.7] relative z-10">
-                  Woody kitaplarını dijital ortamda inceleyebileceğiniz kütüphanedir. Tüm setleri detaylı şekilde görüntüleyebilir, içerikleri önceden inceleyerek sistem hakkında net fikir edinebilirsiniz.
-                </p>
+            <div className="group cursor-pointer text-center">
+              <div className="rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                <img
+                  src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/5dxwajw5_Ads%C4%B1z%20tasar%C4%B1m%20%2844%29.png"
+                  alt="Woody Library"
+                  className="w-full aspect-square object-cover"
+                />
               </div>
+              <h3 className="text-[20px] md:text-[24px] font-bold text-gray-900 mt-5 mb-3" style={{ fontFamily: "'Magic English', 'Fredoka', cursive" }}>
+                Woody Library
+              </h3>
+              <p className="text-[14px] text-gray-600 leading-[1.7] px-2">
+                Woody kitaplarını dijital ortamda inceleyebileceğiniz kütüphanedir. Tüm setleri detaylı şekilde görüntüleyebilir, içerikleri önceden inceleyerek sistem hakkında net fikir edinebilirsiniz.
+              </p>
             </div>
 
             {/* Box 3 - Woody Store */}
-            <div className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden cursor-pointer hover:-translate-y-1">
-              <div className="aspect-square flex flex-col justify-between p-8 relative overflow-hidden">
-                {/* Decorative Background */}
-                <div className="absolute top-0 right-0 w-[150px] h-[150px] rounded-full bg-green-400/10 -translate-y-1/3 translate-x-1/3" />
-                <div className="absolute bottom-0 left-0 w-[100px] h-[100px] rounded-full bg-green-400/5 translate-y-1/3 -translate-x-1/3" />
-
-                <div className="relative z-10">
-                  {/* Icon */}
-                  <div className="w-14 h-14 rounded-xl bg-green-400/15 flex items-center justify-center mb-5">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2ECC71" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <circle cx="8" cy="21" r="1" /><circle cx="19" cy="21" r="1" /><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
-                    </svg>
-                  </div>
-
-                  {/* Title */}
-                  <h3 className="text-[22px] md:text-[24px] font-bold text-gray-900 mb-4 leading-tight" style={{ fontFamily: "'Magic English', 'Fredoka', cursive" }}>
-                    Woody Store
-                  </h3>
-                </div>
-
-                {/* Description */}
-                <p className="text-[14px] text-gray-600 leading-[1.7] relative z-10">
-                  Woody setlerinin güncel fiyatlarını inceleyebileceğiniz ve online sipariş verebileceğiniz alandır.
-                </p>
+            <div className="group cursor-pointer text-center">
+              <div className="rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                <img
+                  src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/myf0t3nv_Gemini_Generated_Image_ip9cg9ip9cg9ip9c.png"
+                  alt="Woody Store"
+                  className="w-full aspect-square object-cover"
+                />
               </div>
+              <h3 className="text-[20px] md:text-[24px] font-bold text-gray-900 mt-5 mb-3" style={{ fontFamily: "'Magic English', 'Fredoka', cursive" }}>
+                Woody Store
+              </h3>
+              <p className="text-[14px] text-gray-600 leading-[1.7] px-2">
+                Woody setlerinin güncel fiyatlarını inceleyebileceğiniz ve online sipariş verebileceğiniz alandır.
+              </p>
             </div>
           </div>
         </div>
