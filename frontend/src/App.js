@@ -12,7 +12,7 @@ function App() {
       <Header data={siteData.header} />
       <HeroSection data={siteData.hero} />
       {siteData.sections.map((section, index) => (
-        <ContentSection key={section.id} section={section} />
+        <ContentSection key={section.id} section={section} isFirst={index === 0} />
       ))}
       <Footer data={siteData.footer} />
     </div>

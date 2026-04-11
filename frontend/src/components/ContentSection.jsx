@@ -1,7 +1,6 @@
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
 
-const ContentSection = ({ section }) => {
+const ContentSection = ({ section, isFirst }) => {
   const isImageLeft = section.imagePosition === 'left';
 
   return (
@@ -11,20 +10,36 @@ const ContentSection = ({ section }) => {
       style={{ backgroundColor: section.bgColor || '#ffffff' }}
     >
       <div className="max-w-[1200px] mx-auto px-6 md:px-12">
+        {/* Section Heading - only on first section */}
+        {section.sectionHeading && (
+          <div className="mb-14 text-center">
+            <h2 className="text-[26px] md:text-[32px] lg:text-[36px] font-bold text-gray-900 leading-snug">
+              {section.sectionHeading}
+            </h2>
+            <div className="w-24 h-[3px] mx-auto mt-4" style={{ backgroundColor: '#F5C518' }} />
+          </div>
+        )}
+
         <div
           className={`flex flex-col ${
             isImageLeft ? 'lg:flex-row' : 'lg:flex-row-reverse'
-          } ${section.features ? 'items-start' : 'items-center'} gap-10 lg:gap-16`}
+          } items-center gap-10 lg:gap-16`}
         >
-          {/* Image */}
+          {/* Image with colored accent border */}
           <div className="w-full lg:w-1/2">
-            <div className="overflow-hidden rounded-[25px] shadow-lg">
+            <div
+              className="overflow-hidden rounded-[20px] shadow-xl relative"
+              style={{
+                borderLeft: isImageLeft ? `6px solid ${section.accentColor}` : 'none',
+                borderRight: !isImageLeft ? `6px solid ${section.accentColor}` : 'none',
+              }}
+            >
               <img
                 src={section.image}
                 alt={section.title}
-                className="w-full h-auto object-cover transition-transform duration-700 hover:scale-[1.02]"
+                className="w-full h-auto object-cover transition-transform duration-700 hover:scale-[1.03]"
                 style={{
-                  maxHeight: section.id === 'cutting-edge' ? '700px' : '450px',
+                  maxHeight: '500px',
                   objectFit: 'cover',
                 }}
                 loading="lazy"
@@ -34,41 +49,31 @@ const ContentSection = ({ section }) => {
 
           {/* Text Content */}
           <div className="w-full lg:w-1/2">
-            {/* Logo (optional - only for first section) */}
-            {section.logo && (
-              <>
-                <h2 className="renderman-logo-text text-[28px] md:text-[32px] font-black tracking-[0.02em] text-black mb-4">
-                  {section.logo}
-                </h2>
-                <div className="w-full h-[1px] bg-gray-300 mb-8" />
-              </>
-            )}
+            {/* Accent colored tag */}
+            <div
+              className="inline-block px-4 py-1.5 rounded-full text-[13px] font-semibold text-white mb-5"
+              style={{ backgroundColor: section.accentColor }}
+            >
+              {section.id === 'preschool-series' && 'Sınıflar İçin'}
+              {section.id === 'workshop' && 'Küçük Gruplar İçin'}
+              {section.id === 'home-tutor' && 'Bireysel Kullanım'}
+            </div>
 
             {/* Title */}
-            <h3 className="section-title text-[32px] md:text-[40px] lg:text-[44px] font-light text-black leading-tight mb-6">
+            <h3 className="text-[30px] md:text-[36px] lg:text-[40px] font-light text-black leading-tight mb-5">
               {section.title}
             </h3>
 
+            {/* Colored underline */}
+            <div
+              className="w-16 h-[3px] mb-6"
+              style={{ backgroundColor: section.accentColor }}
+            />
+
             {/* Description */}
-            <p className="text-[15px] md:text-[16px] text-gray-600 leading-relaxed mb-6">
+            <p className="text-[15px] md:text-[16px] text-gray-600 leading-[1.8] mb-6">
               {section.description}
             </p>
-
-            {/* Features (for Cutting Edge section) */}
-            {section.features && (
-              <div className="space-y-5 mb-8">
-                {section.features.map((feature, idx) => (
-                  <div key={idx}>
-                    <h4 className="text-[15px] font-bold text-black mb-1.5">
-                      {feature.title}
-                    </h4>
-                    <p className="text-[14px] text-gray-600 leading-relaxed">
-                      {feature.text}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            )}
 
             {/* Button */}
             {section.buttonText && (
