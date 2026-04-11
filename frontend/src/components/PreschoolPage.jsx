@@ -175,6 +175,22 @@ const PreschoolPage = () => {
               </p>
             </div>
           </div>
+
+          {/* Warning Notice */}
+          <div className="mt-12 bg-red-50 border border-red-200 rounded-2xl p-6 md:p-8">
+            <div className="flex items-start gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-red-500 flex items-center justify-center mt-0.5">
+                <span className="text-white text-[22px] font-bold leading-none">!</span>
+              </div>
+              <div>
+                <p className="text-[15px] md:text-[16px] text-gray-800 leading-[1.8]">
+                  Woody Preschool sisteminin uygulanabilmesi için kurum mevcudunun en az <strong>30 öğrenci</strong> olması gerekmektedir.<br />
+                  Öğretmen seti ayrıca ücretli olarak satılmaz.<br />
+                  Anlaşma sağlanan kurumlara, öğrenci setleri ile birlikte <strong>ücretsiz</strong> olarak sunulur ve her sene yenilenir.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
