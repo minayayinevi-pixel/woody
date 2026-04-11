@@ -23,13 +23,15 @@ const Header = ({ data }) => {
     >
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 flex items-center justify-between h-[72px]">
         {/* Logo */}
-        <a href="#" className="no-underline flex items-center">
-          <img
-            src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/nkf2o7ln_Ads%C4%B1z%20%28Facebook%20Kapak%20Fotog%CC%86raf%C4%B1%29%20%286%29.png"
-            alt="Woody and Friends"
-            className="h-[40px] md:h-[48px] object-contain"
-            style={{ mixBlendMode: 'multiply' }}
-          />
+        <a href="/" className="no-underline flex items-center">
+          <div className="h-[38px] md:h-[44px] overflow-hidden">
+            <img
+              src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/nkf2o7ln_Ads%C4%B1z%20%28Facebook%20Kapak%20Fotog%CC%86raf%C4%B1%29%20%286%29.png"
+              alt="Woody and Friends"
+              className="logo-img h-[56px] md:h-[66px] object-cover object-center -mt-[9px] md:-mt-[11px]"
+              style={{ background: 'transparent', mixBlendMode: 'multiply' }}
+            />
+          </div>
         </a>
 
         {/* Desktop Nav */}

@@ -56,12 +56,14 @@ const PreschoolPage = () => {
             <span className="text-[13px] tracking-[0.1em] font-medium">GERİ</span>
           </button>
           <span className="flex items-center">
-            <img
-              src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/nkf2o7ln_Ads%C4%B1z%20%28Facebook%20Kapak%20Fotog%CC%86raf%C4%B1%29%20%286%29.png"
-              alt="Woody and Friends"
-              className="h-[40px] md:h-[48px] object-contain"
-              style={{ mixBlendMode: 'multiply' }}
-            />
+            <div className="h-[38px] md:h-[44px] overflow-hidden">
+              <img
+                src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/nkf2o7ln_Ads%C4%B1z%20%28Facebook%20Kapak%20Fotog%CC%86raf%C4%B1%29%20%286%29.png"
+                alt="Woody and Friends"
+                className="logo-img h-[56px] md:h-[66px] object-cover object-center -mt-[9px] md:-mt-[11px]"
+                style={{ background: 'transparent', mixBlendMode: 'multiply' }}
+              />
+            </div>
           </span>
           <div className="w-[80px]" />
         </div>
