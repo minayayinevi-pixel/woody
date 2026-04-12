@@ -16,7 +16,7 @@ const LibraryPage = () => {
       name: 'Woody Digital Library – Basic Level',
       description: 'Basic Level Digital Library, başlangıç seviyesindeki öğretmen ve öğrenci kitaplarının incelenebileceği dijital kütüphane alanıdır. Kurumlar, içerik yapısını ve kazanımları önceden görerek sistemi net şekilde değerlendirebilir.',
       color: '#2196F3',
-      image: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/5k1ulsw4_Ads%C4%B1z%20tasar%C4%B1m%20%2845%29.png',
+      image: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/x7apff07_kling_20260412_%E4%BD%9C%E5%93%81_Ultra_deta_5707_2.png',
       imagePosition: 'left',
       teacherLink: '#',
       studentLink: '#'
@@ -26,7 +26,7 @@ const LibraryPage = () => {
       name: 'Woody Digital Library – Junior Level',
       description: 'Junior Level Digital Library, öğrencilerin cümle kurma ve temel iletişim becerilerini geliştirdiği içeriklerin incelenebileceği dijital kütüphane alanıdır. Kurumlar, bu seviyede yer alan öğretmen ve öğrenci kitaplarını inceleyerek sistemin ilerleyen yapısını net şekilde görebilir.',
       color: '#F5C518',
-      image: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/5k1ulsw4_Ads%C4%B1z%20tasar%C4%B1m%20%2845%29.png',
+      image: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/x7apff07_kling_20260412_%E4%BD%9C%E5%93%81_Ultra_deta_5707_2.png',
       imagePosition: 'right',
       teacherLink: '#',
       studentLink: '#'
@@ -36,7 +36,7 @@ const LibraryPage = () => {
       name: 'Woody Digital Library – Senior Level',
       description: 'Senior Level Digital Library, öğrencilerin akıcı iletişim kurduğu ve yapıları birleştirerek kullandığı ileri seviye içeriklerin incelenebileceği dijital kütüphane alanıdır. Kurumlar, öğretmen ve öğrenci kitaplarını inceleyerek programın üst düzey kazanımlarını ve iletişim odaklı yapısını değerlendirebilir.',
       color: '#E91E90',
-      image: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/5k1ulsw4_Ads%C4%B1z%20tasar%C4%B1m%20%2845%29.png',
+      image: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/x7apff07_kling_20260412_%E4%BD%9C%E5%93%81_Ultra_deta_5707_2.png',
       imagePosition: 'left',
       teacherLink: '#',
       studentLink: '#'
@@ -66,66 +66,139 @@ const LibraryPage = () => {
         </div>
       </section>
 
-      {/* Sections - No Boxes, Text Only */}
-      <section className="w-full">
-        {levels.map((level, index) => {
+      {/* Magazine Spread Layout - NO FRAMES */}
+      <section 
+        style={{ 
+          width: '100vw',
+          margin: 0,
+          padding: 0
+        }}
+      >
+        {levels.map((level) => {
           const isLeft = level.imagePosition === 'left';
           
           return (
             <div 
-              key={level.id} 
-              className="w-full flex flex-col lg:flex-row min-h-[500px]"
-              style={{ 
+              key={level.id}
+              style={{
                 width: '100vw',
+                display: 'flex',
+                flexDirection: isLeft ? 'row' : 'row-reverse',
+                minHeight: '100vh',
                 margin: 0,
-                padding: 0
+                padding: 0,
+                border: 'none',
+                borderRadius: 0,
+                boxShadow: 'none'
               }}
             >
-              {/* Empty White Space (where image was) */}
-              <div 
-                className={`w-full lg:w-1/2 bg-white ${isLeft ? 'order-1' : 'order-2'}`}
-                style={{ 
-                  minHeight: '500px'
+              {/* Image Side - RAW, NO CONTAINER */}
+              <div
+                style={{
+                  width: '50vw',
+                  height: '100vh',
+                  margin: 0,
+                  padding: 0,
+                  border: 'none',
+                  background: 'transparent'
                 }}
               >
-                {/* Beyaz boş alan */}
+                <img 
+                  src={level.image}
+                  alt={level.name}
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    display: 'block',
+                    margin: 0,
+                    padding: 0,
+                    border: 'none',
+                    borderRadius: 0,
+                    boxShadow: 'none'
+                  }}
+                />
               </div>
 
-              {/* Text Side */}
-              <div 
-                className={`w-full lg:w-1/2 flex items-center bg-white ${isLeft ? 'order-2' : 'order-1'}`}
-                style={{ 
-                  minHeight: '500px',
-                  padding: '80px 60px'
+              {/* Text Side - RAW, NO CONTAINER */}
+              <div
+                style={{
+                  width: '50vw',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  padding: '80px',
+                  margin: 0,
+                  border: 'none',
+                  background: '#ffffff'
                 }}
               >
-                <div className="max-w-[600px]">
+                <div style={{ maxWidth: '600px' }}>
                   <div 
-                    className="inline-block px-5 py-2 rounded-full text-[14px] font-bold text-white mb-6"
-                    style={{ backgroundColor: level.color }}
+                    style={{
+                      display: 'inline-block',
+                      padding: '10px 20px',
+                      borderRadius: '25px',
+                      fontSize: '14px',
+                      fontWeight: 'bold',
+                      color: '#ffffff',
+                      backgroundColor: level.color,
+                      marginBottom: '24px'
+                    }}
                   >
                     {level.id.charAt(0).toUpperCase() + level.id.slice(1)} Level
                   </div>
-                  <h4 className="text-[32px] md:text-[38px] font-light text-gray-900 mb-5 leading-tight">
+                  
+                  <h4 
+                    style={{
+                      fontSize: '38px',
+                      fontWeight: '300',
+                      color: '#111827',
+                      marginBottom: '20px',
+                      lineHeight: '1.2'
+                    }}
+                  >
                     {level.name}
                   </h4>
-                  <p className="text-[16px] md:text-[17px] text-gray-600 leading-[1.9] mb-8">
+                  
+                  <p 
+                    style={{
+                      fontSize: '17px',
+                      color: '#4B5563',
+                      lineHeight: '1.9',
+                      marginBottom: '32px'
+                    }}
+                  >
                     {level.description}
                   </p>
                   
                   {/* Links */}
-                  <div className="space-y-4">
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                     <a 
                       href={level.teacherLink}
-                      className="block text-[16px] text-gray-700 hover:text-gray-900 font-medium underline decoration-2 underline-offset-4 transition-colors"
-                      style={{ textDecorationColor: level.color }}
+                      style={{
+                        fontSize: '16px',
+                        color: '#374151',
+                        fontWeight: '500',
+                        textDecoration: 'underline',
+                        textDecorationColor: level.color,
+                        textDecorationThickness: '2px',
+                        textUnderlineOffset: '4px'
+                      }}
                     >
                       {level.id.charAt(0).toUpperCase() + level.id.slice(1)} öğretmen kitaplarını görmek için tıklayın
                     </a>
                     <a 
                       href={level.studentLink}
-                      className="block text-[16px] text-gray-700 hover:text-gray-900 font-medium underline decoration-2 underline-offset-4 transition-colors"
-                      style={{ textDecorationColor: level.color }}
+                      style={{
+                        fontSize: '16px',
+                        color: '#374151',
+                        fontWeight: '500',
+                        textDecoration: 'underline',
+                        textDecorationColor: level.color,
+                        textDecorationThickness: '2px',
+                        textUnderlineOffset: '4px'
+                      }}
                     >
                       {level.id.charAt(0).toUpperCase() + level.id.slice(1)} öğrenci kitaplarını görmek için tıklayın
                     </a>
