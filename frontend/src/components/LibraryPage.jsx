@@ -66,53 +66,74 @@ const LibraryPage = () => {
         </div>
       </section>
 
-      {/* Alternating Sections (Zigzag) */}
-      <section className="w-full py-12 md:py-16 bg-white">
-        <div className="max-w-[1200px] mx-auto px-6 md:px-12 space-y-20">
-          {levels.map((level, index) => {
-            const isLeft = level.imagePosition === 'left';
-            
-            return (
-              <div key={level.id} className={`flex flex-col ${isLeft ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-10 lg:gap-16`}>
-                {/* Image */}
-                <div className="w-full lg:w-1/2 flex items-center justify-center">
-                  <img 
-                    src={level.image} 
-                    alt={level.name} 
-                    className="w-full max-w-[450px] h-auto"
-                    style={{ 
-                      filter: 'drop-shadow(0 30px 60px rgba(0, 0, 0, 0.35)) drop-shadow(0 15px 25px rgba(0, 0, 0, 0.2))'
-                    }}
-                  />
-                </div>
+      {/* Full-Width Sections (Edge-to-Edge) */}
+      <section className="w-full">
+        {levels.map((level, index) => {
+          const isLeft = level.imagePosition === 'left';
+          
+          return (
+            <div 
+              key={level.id} 
+              className="w-full flex flex-col lg:flex-row min-h-[600px]"
+              style={{ 
+                width: '100vw',
+                margin: 0,
+                padding: 0
+              }}
+            >
+              {/* Image Side - Full Bleed */}
+              <div 
+                className={`w-full lg:w-1/2 flex items-center justify-center bg-gradient-to-br from-gray-50 to-white ${isLeft ? 'order-1' : 'order-2'}`}
+                style={{ 
+                  minHeight: '600px',
+                  padding: '60px 40px'
+                }}
+              >
+                <img 
+                  src={level.image} 
+                  alt={level.name} 
+                  className="w-full max-w-[500px] h-auto"
+                  style={{ 
+                    filter: 'drop-shadow(0 30px 60px rgba(0, 0, 0, 0.35)) drop-shadow(0 15px 25px rgba(0, 0, 0, 0.2))',
+                    display: 'block'
+                  }}
+                />
+              </div>
 
-                {/* Content */}
-                <div className="w-full lg:w-1/2 text-center lg:text-left">
+              {/* Text Side */}
+              <div 
+                className={`w-full lg:w-1/2 flex items-center ${isLeft ? 'order-2' : 'order-1'}`}
+                style={{ 
+                  minHeight: '600px',
+                  padding: '80px 60px'
+                }}
+              >
+                <div className="max-w-[600px]">
                   <div 
-                    className="inline-block px-4 py-1.5 rounded-full text-[13px] font-bold text-white mb-5"
+                    className="inline-block px-5 py-2 rounded-full text-[14px] font-bold text-white mb-6"
                     style={{ backgroundColor: level.color }}
                   >
                     {level.id.charAt(0).toUpperCase() + level.id.slice(1)} Level
                   </div>
-                  <h4 className="text-[28px] md:text-[32px] font-light text-gray-900 mb-4">
+                  <h4 className="text-[32px] md:text-[38px] font-light text-gray-900 mb-5 leading-tight">
                     {level.name}
                   </h4>
-                  <p className="text-[15px] md:text-[16px] text-gray-600 leading-[1.8] mb-6">
+                  <p className="text-[16px] md:text-[17px] text-gray-600 leading-[1.9] mb-8">
                     {level.description}
                   </p>
                   
                   {/* Links */}
-                  <div className="space-y-3">
+                  <div className="space-y-4">
                     <a 
                       href={level.teacherLink}
-                      className="block text-[15px] text-gray-700 hover:text-gray-900 underline decoration-2 underline-offset-4 transition-colors"
+                      className="block text-[16px] text-gray-700 hover:text-gray-900 font-medium underline decoration-2 underline-offset-4 transition-colors"
                       style={{ textDecorationColor: level.color }}
                     >
                       {level.id.charAt(0).toUpperCase() + level.id.slice(1)} öğretmen kitaplarını görmek için tıklayın
                     </a>
                     <a 
                       href={level.studentLink}
-                      className="block text-[15px] text-gray-700 hover:text-gray-900 underline decoration-2 underline-offset-4 transition-colors"
+                      className="block text-[16px] text-gray-700 hover:text-gray-900 font-medium underline decoration-2 underline-offset-4 transition-colors"
                       style={{ textDecorationColor: level.color }}
                     >
                       {level.id.charAt(0).toUpperCase() + level.id.slice(1)} öğrenci kitaplarını görmek için tıklayın
@@ -120,9 +141,9 @@ const LibraryPage = () => {
                   </div>
                 </div>
               </div>
-            );
-          })}
-        </div>
+            </div>
+          );
+        })}
       </section>
 
       <Footer data={siteData.footer} />
