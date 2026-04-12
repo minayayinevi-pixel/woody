@@ -39,22 +39,10 @@ const ContentSection = ({ section, isFirst }) => {
         <div
           className={`flex flex-col ${isImageLeft ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-10 lg:gap-16`}
         >
-          {/* Clickable Image Block */}
-          <a
-            href={section.id === 'preschool-series' ? '/preschool' : '#'}
-            className="w-full lg:w-1/2 block transition-all duration-300 hover:scale-[1.02] hover:brightness-95"
-            style={{ textDecoration: 'none' }}
-          >
-            <div style={{ height: '450px', overflow: 'hidden' }}>
-              <img 
-                src={section.image} 
-                alt={sectionT?.title || section.title} 
-                className="w-full h-full object-cover" 
-                style={{ objectPosition: '50% 60%' }}
-                loading="lazy" 
-              />
-            </div>
-          </a>
+          {/* Empty white space (no image, no frame) */}
+          <div className="w-full lg:w-1/2 bg-white" style={{ height: '450px' }}>
+            {/* Beyaz boş alan */}
+          </div>
 
           {/* Text Content */}
           <div className="w-full lg:w-1/2">
