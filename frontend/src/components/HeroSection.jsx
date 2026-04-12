@@ -61,13 +61,14 @@ const HeroSection = ({ data }) => {
         </p>
       </div>
 
-      {/* Curved Divider */}
+      {/* Curved Divider with Gray Border */}
       <div className="absolute bottom-0 left-0 right-0 z-20">
         <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full block" preserveAspectRatio="none">
+          {/* Gray curved stroke following the white path */}
+          <path d="M0 60L0 30C360 0 720 0 1080 30C1260 45 1350 52.5 1440 60" stroke="#d1d5db" strokeWidth="3" fill="none" />
+          {/* White fill */}
           <path d="M0 60L0 30C360 0 720 0 1080 30C1260 45 1350 52.5 1440 60L1440 60L0 60Z" fill="#ffffff" />
         </svg>
-        {/* Gray bottom border strip */}
-        <div className="absolute bottom-0 left-0 right-0 h-2" style={{ backgroundColor: '#d1d5db' }} />
       </div>
 
       {/* Video Modal */}
