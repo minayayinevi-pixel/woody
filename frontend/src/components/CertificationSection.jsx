@@ -15,14 +15,14 @@ const CertificationSection = () => {
 
           {/* Paragraph - Centered */}
           <p 
-            className="text-[14px] md:text-[15px] leading-[1.7] mb-4 max-w-[750px]"
+            className="text-[14px] md:text-[15px] leading-[1.7] mb-3 max-w-[750px]"
             style={{ color: '#0B1B2B', fontWeight: 300 }}
           >
             In partnership with British Side, providing internationally recognized certification.
           </p>
 
           {/* Logos - HUGE, Very Close to Text, Centered */}
-          <div className="flex items-center justify-center gap-16 md:gap-24 flex-wrap mt-2">
+          <div className="flex items-center justify-center gap-16 md:gap-24 flex-wrap">
             <img 
               src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/0ljulhkj_8.png"
               alt="Cambridge English"
