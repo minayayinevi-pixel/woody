@@ -1,5 +1,5 @@
 import React from 'react';
-import { Play, X } from 'lucide-react';
+import { Play, X, ImageIcon } from 'lucide-react';
 import Header from './Header';
 import Footer from './Footer';
 import { siteData } from '../data/mock';
@@ -7,64 +7,66 @@ import { useLanguage } from '../context/LanguageContext';
 
 const blogEntries = [
   {
-    year: "2006",
-    title: "Cars",
-    text: "Cars is released in theaters on June 9, accompanied by the short film \"One Man Band.\" The late story artist Joe Ranft is named a Disney Legend. The Walt Disney Company announces that it has agreed to purchase Pixar Animation Studios. Pixar celebrates its 20th anniversary.",
-    image: "https://images.squarespace-cdn.com/content/v1/60241cb68df65b530cd84d95/63b0140b-da87-40e8-a8cb-018b728272e2/mater.jpg"
+    id: 1,
+    title: "Cambridge Okul Öncesi İngilizce Sistemi ile Başlayın",
+    text: "Woody Preschool sistemi, çocukları 4 seviyeden oluşan yapısıyla Cambridge sınavlarına hazırlayan bütüncül bir İngilizce eğitim modelidir. Bu yapı; okul, öğretmen ve öğrenci için birlikte kurgulanmış bir sertifika sistemi sunar. Kurumlar uluslararası standartta eğitim verirken, öğrenciler süreç sonunda Cambridge okul öncesi İngilizce değerlendirme sürecine dahil olur. Tüm süreç, akademik altyapı ve öğretmen desteğiyle birlikte British Side iş birliğiyle yürütülür.",
+    image: null
   },
   {
-    year: "2007",
-    title: "Ratatouille",
-    text: "Ratatouille is released in theaters on June 29, accompanied by the short film \"Lifted.\" \"Finding Nemo Submarine Voyage\" opens in Tomorrowland at Disneyland Park in California.",
-    image: "https://images.squarespace-cdn.com/content/v1/60241cb68df65b530cd84d95/335fb9f1-3e33-4696-adf0-71889e7687db/rat1.jpeg"
+    id: 2,
+    title: "Okul Öncesi İngilizce Eğitiminde Öğretmen Süreci Nasıl Yönetir?",
+    text: "Okul öncesi İngilizce eğitiminde en büyük problem şudur: Öğretmen neyi, nasıl ve hangi sırayla öğreteceğini net göremez.\n\nPlansız ilerleyen bir sistemde:\n• Dersler kopuk olur\n• Tekrar yapılamaz\n• Öğrenme kalıcı olmaz\n\nBu nedenle güçlü bir okul öncesi İngilizce eğitim seti, aynı zamanda Cambridge okul öncesi İngilizce seti mantığında yapılandırılmalıdır. Öğretmeni yönlendirir.",
+    image: null
   },
   {
-    year: "2008",
-    title: "WALL·E",
-    text: "WALL·E is released in theaters on June 27, accompanied by the short film \"Presto.\" \"Toy Story Midway Mania!\" opens at Disney parks in California and Florida.",
-    image: "https://images.squarespace-cdn.com/content/v1/60241cb68df65b530cd84d95/01895ff3-2c15-43a6-9ff9-fb57399e4ada/WAL_Stars_Pub_v2.1n.pub8.jpg"
+    id: 3,
+    title: "Tüm Süreç Önceden Planlanmıştır",
+    text: "Profesyonel bir kreş İngilizce programı, öğretmenin tüm süreci net şekilde görmesini sağlar.\n\n• Günlük ders akışı hazırdır\n• Haftalık plan net şekilde belirlenmiştir\n• Aylık süreç bütüncül olarak sunulur\n\nÖğretmen ne öğreteceğini, nasıl öğreteceğini, hangi materyali kullanacağını düşünmez. Doğrudan uygular.",
+    image: null
   },
   {
-    year: "2009",
-    title: "Up",
-    text: "Up becomes the first animated feature film to open the Cannes Film Festival. It opens in wide release on May 29 with the short film \"Partly Cloudy.\" \"Monsters, Inc. Ride & Go Seek\" opens at Tokyo Disneyland.",
-    image: "https://images.squarespace-cdn.com/content/v1/60241cb68df65b530cd84d95/57e86c98-0003-484b-ac11-5a6ff2e413de/u315b_1cpubAComp.pub8n.119.jpg"
+    id: 4,
+    title: "Ders Akışı Sistemlidir",
+    text: "Etkili bir anaokulu İngilizce programı, her dersi aynı sistemle ilerletir:\n\n• Isınma (warm up)\n• Oyun temelli öğretim\n• Etkinlik ve tekrar\n• Pekiştirme\n\nBu yapı, Cambridge okul öncesi İngilizce yaklaşımı ile uyumlu şekilde ilerler ve öğrenme rastgele değil, kontrollü olur.",
+    image: null
   },
   {
-    year: "2010",
-    title: "Toy Story 3",
-    text: "Toy Story 3 is released in theaters on June 18, accompanied by the short film \"Day and Night.\" \"Toy Story Playland,\" a themed land based on the Toy Story films, opens at Walt Disney Studios Park at Disneyland Paris.",
-    image: "https://images.squarespace-cdn.com/content/v1/60241cb68df65b530cd84d95/c62384f9-fecc-433b-9dd9-8a873f085797/tt300_50qpub.pub_vert16.296.jpg"
+    id: 5,
+    title: "Fiziksel Materyaller ile Öğrenme Somutlaşır",
+    text: "Güçlü bir anaokulu İngilizce materyalleri altyapısı, öğrenmeyi somutlaştırır.\n\n• 30 farklı fiziksel oyuncak\n• Worksheet çalışmaları\n• Stickerlar\n• Craft materyalleri\n\nÇocuk sadece dinlemez. Dokunur, hareket eder ve öğrenir. Bu yapı, Cambridge okul öncesi İngilizce seti yaklaşımına uygun olarak deneyim temelli öğrenmeyi destekler.",
+    image: null
   },
   {
-    year: "2011",
-    title: "Cars 2",
-    text: "Cars 2 is released in theaters on June 24, accompanied by the first Toy Story Toon, \"Hawaiian Vacation.\" Pixar celebrates its 25th anniversary. \"Toy Story Land\" opens at Hong Kong Disneyland.",
-    image: "https://images.squarespace-cdn.com/content/v1/60241cb68df65b530cd84d95/605ac322-8dab-4b39-afbd-1147eb0f2371/cs008_194eTpub.pub16.122.jpg"
+    id: 6,
+    title: "Dijital İçerikler ile Süreç Güçlenir",
+    text: "Modern bir preschool English program, öğrenmeyi dijital içeriklerle destekler:\n\n• Okul öncesi İngilizce videolar\n• Okul öncesi İngilizce şarkılar\n• Okul öncesi İngilizce hikâyeler\n\nBu içerikler sayesinde çocuklar İngilizceyi doğal süreçte duyar, tekrar eder ve kalıcı şekilde öğrenir.",
+    image: null
   },
   {
-    year: "2012",
-    title: "Brave",
-    text: "Brave is released in theaters on June 22, accompanied by the short film \"La Luna.\" \"Cars Land\" opens at Disney California Adventure Park. Pixar, in partnership with the San Francisco Symphony, launches \"Pixar in Concert\".",
-    image: "https://images.squarespace-cdn.com/content/v1/60241cb68df65b530cd84d95/fb360642-2aec-42a0-be35-3f0752139446/merida.jpg"
+    id: 7,
+    title: "Karakterler ve İnteraktif Oyunlar",
+    text: "Etkili bir okul öncesi İngilizce programı, karakter temelli ilerler.\n\n• 8 İngilizce konuşan karakter\n• İnteraktif oyunlar\n• İngilizce yönlendirmeler\n\nBu sayede çocuk, dili doğal süreçte edinir ve Cambridge okul öncesi İngilizce kazanımlarına uygun gelişim gösterir.",
+    image: null
   },
   {
-    year: "2013-14",
-    title: "Monsters University",
-    text: "Monsters University is released in theaters on June 21, accompanied by the short film \"The Blue Umbrella.\" The TV special \"Toy Story Of TERROR!\" airs on ABC. \"Ratatouille: The Adventure\" opens in Walt Disney Studios Park at Disneyland Paris.",
-    image: "https://images.squarespace-cdn.com/content/v1/60241cb68df65b530cd84d95/9dc4765e-7c4d-43b0-8d0e-fa3ba8f17f6b/s045a_9bpub.pub16.169.jpg"
+    id: 8,
+    title: "Sonuç",
+    text: "Doğru yapılandırılmış bir okul öncesi İngilizce eğitim seti, aynı zamanda Cambridge okul öncesi İngilizce seti standartlarına uygun olduğunda:\n\n• Öğretmeni yormaz\n• Süreci netleştirir\n• Öğrenmeyi standartlaştırır\n\nVe en önemlisi: Çocukları Cambridge sınavlarına hazırlayan sürdürülebilir ve uluslararası bir eğitim sistemi sunar.",
+    image: null
   },
   {
-    year: "2015",
-    title: "Inside Out",
-    text: "After premiering at the 68th Cannes Film Festival in May, Inside Out is released on June 19, accompanied by the short film \"LAVA.\" The Good Dinosaur, accompanied by the short film \"Sanjay's Super Team,\" is released in theatres on November 25.",
-    image: "https://images.squarespace-cdn.com/content/v1/60241cb68df65b530cd84d95/050f2afa-e590-4bf7-b671-913db712dd26/bing.jpg"
+    id: 9,
+    title: "Yakında...",
+    text: "Bu bölümün içeriği yakında eklenecektir.",
+    image: null,
+    empty: true
   },
   {
-    year: "2016",
-    title: "Finding Dory",
-    text: "Finding Dory, accompanied by the short film \"Piper,\" is released in theatres on June 17. \"The Toy Story Hotel\" and \"Buzz Lightyear Planet Rescue\" attraction debut with the opening of Shanghai Disney Resort.",
-    image: "https://images.squarespace-cdn.com/content/v1/60241cb68df65b530cd84d95/2569fb8f-8e4e-4928-ba88-f57bda3ed269/k225_1aj_pub.pub16.245.jpg"
+    id: 10,
+    title: "Yakında...",
+    text: "Bu bölümün içeriği yakında eklenecektir.",
+    image: null,
+    empty: true
   }
 ];
 
@@ -73,7 +75,7 @@ const BlogPage = () => {
   const [showVideo, setShowVideo] = React.useState(false);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#FDFBF7]">
       <Header data={siteData.header} />
 
       {/* Hero Video Section */}
@@ -92,71 +94,84 @@ const BlogPage = () => {
         </div>
         <div className="absolute bottom-0 left-0 right-0 z-20">
           <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full block" preserveAspectRatio="none">
-            <path d="M0 60L0 30C360 0 720 0 1080 30C1260 45 1350 52.5 1440 60L1440 60L0 60Z" fill="#ffffff" />
+            <path d="M0 60L0 30C360 0 720 0 1080 30C1260 45 1350 52.5 1440 60L1440 60L0 60Z" fill="#FDFBF7" />
           </svg>
         </div>
       </section>
 
-      {/* Timeline Section */}
-      <section className="w-full py-16 md:py-20 bg-white">
-        <div className="max-w-[1000px] mx-auto px-6 md:px-12">
-          {/* Timeline line */}
-          <div className="relative">
-            {/* Vertical center line */}
-            <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-[2px] bg-gray-200 -translate-x-1/2" />
+      {/* Blog Entries */}
+      <section className="w-full py-12 md:py-16">
+        <div className="max-w-[1100px] mx-auto px-6 md:px-12">
+          {blogEntries.map((entry, idx) => {
+            const isImageLeft = idx % 2 === 0;
+            const textLines = entry.text.split('\n').filter(l => l.trim());
 
-            {blogEntries.map((entry, idx) => {
-              const isLeft = idx % 2 === 0;
-              return (
-                <div key={idx} className="relative mb-16 md:mb-20">
-                  {/* Year dot on timeline */}
-                  <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 top-0 z-10">
-                    <div className="w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center shadow-lg">
-                      <span className="text-[11px] font-bold text-white">{entry.year}</span>
-                    </div>
-                  </div>
+            return (
+              <div
+                key={entry.id}
+                className={`mb-20 md:mb-28 ${entry.empty ? 'opacity-40' : ''}`}
+              >
+                {/* Thin separator */}
+                {idx > 0 && (
+                  <div className="w-full h-[1px] bg-gray-200 mb-16 md:mb-20" />
+                )}
 
-                  {/* Mobile year badge */}
-                  <div className="md:hidden mb-4">
-                    <span className="inline-block bg-yellow-400 text-white text-[14px] font-bold px-4 py-1.5 rounded-full">{entry.year}</span>
-                  </div>
-
-                  {/* Content card */}
-                  <div className={`md:flex md:gap-12 ${isLeft ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
-                    {/* Spacer for timeline alignment */}
-                    <div className="hidden md:block md:w-1/2" />
-
-                    {/* Card */}
-                    <div className="md:w-1/2">
-                      <div className={`bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-500 hover:-translate-y-1 ${isLeft ? 'md:ml-10' : 'md:mr-10'}`}>
-                        {/* Image */}
-                        <div className="relative overflow-hidden aspect-[16/10]">
-                          <img
-                            src={entry.image}
-                            alt={entry.title}
-                            className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                            loading="lazy"
-                          />
-                          <div className="absolute top-3 left-3">
-                            <span className="hidden md:inline-block bg-black/60 backdrop-blur-sm text-white text-[11px] font-semibold px-3 py-1 rounded-full">{entry.year}</span>
-                          </div>
-                        </div>
-                        {/* Text */}
-                        <div className="p-5 md:p-6">
-                          <h3 className="text-[22px] md:text-[26px] font-bold text-gray-900 mb-3" style={{ fontFamily: "'Magic English', 'Fredoka', cursive" }}>
-                            {entry.title}
-                          </h3>
-                          <p className="text-[14px] text-gray-600 leading-[1.75]">
-                            {entry.text}
-                          </p>
+                <div className={`flex flex-col ${isImageLeft ? 'md:flex-row' : 'md:flex-row-reverse'} gap-10 md:gap-16 items-start`}>
+                  {/* Image Side */}
+                  <div className="w-full md:w-[45%] flex-shrink-0">
+                    {entry.image ? (
+                      <img
+                        src={entry.image}
+                        alt={entry.title}
+                        className="w-full rounded-2xl object-cover"
+                        style={{ maxHeight: '380px' }}
+                        loading="lazy"
+                      />
+                    ) : (
+                      <div className="w-full aspect-[4/3] rounded-2xl bg-[#F0EDE6] flex items-center justify-center">
+                        <div className="text-center text-gray-400">
+                          <ImageIcon size={48} strokeWidth={1} className="mx-auto mb-3 text-gray-300" />
+                          <p className="text-[13px]">Görsel eklenecek</p>
                         </div>
                       </div>
+                    )}
+                  </div>
+
+                  {/* Text Side */}
+                  <div className="w-full md:w-[55%]">
+                    {/* Entry number */}
+                    <span className="text-[13px] font-semibold tracking-[0.2em] text-yellow-500 uppercase mb-3 block">
+                      {entry.empty ? '—' : `0${entry.id}`}
+                    </span>
+
+                    {/* Title */}
+                    <h2 className="text-[26px] md:text-[32px] lg:text-[36px] font-bold text-gray-900 leading-tight mb-6" style={{ fontFamily: "'Inter', sans-serif" }}>
+                      {entry.title}
+                    </h2>
+
+                    {/* Text content */}
+                    <div className="space-y-4">
+                      {textLines.map((line, i) => {
+                        if (line.startsWith('•')) {
+                          return (
+                            <div key={i} className="flex items-start gap-3 ml-1">
+                              <span className="w-1.5 h-1.5 rounded-full bg-yellow-400 mt-2.5 flex-shrink-0" />
+                              <span className="text-[15px] md:text-[16px] text-gray-600 leading-[1.7]">{line.replace('• ', '')}</span>
+                            </div>
+                          );
+                        }
+                        return (
+                          <p key={i} className="text-[15px] md:text-[16px] text-gray-600 leading-[1.8]">
+                            {line}
+                          </p>
+                        );
+                      })}
                     </div>
                   </div>
                 </div>
-              );
-            })}
-          </div>
+              </div>
+            );
+          })}
         </div>
       </section>
 
