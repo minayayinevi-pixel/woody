@@ -5,6 +5,7 @@ import { LanguageProvider } from "./context/LanguageContext";
 import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
 import CertificationSection from "./components/CertificationSection";
+import WhyWoodySection from "./components/WhyWoodySection";
 import ContentSection from "./components/ContentSection";
 import Footer from "./components/Footer";
 import PreschoolPage from "./components/PreschoolPage";
@@ -22,6 +23,7 @@ const HomePage = () => {
       <Header data={siteData.header} />
       <HeroSection data={siteData.hero} />
       <CertificationSection />
+      <WhyWoodySection />
       {siteData.sections.map((section, index) => (
         <ContentSection key={section.id} section={section} isFirst={index === 0} />
       ))}
