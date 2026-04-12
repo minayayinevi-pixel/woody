@@ -132,29 +132,22 @@ const WorkshopPage = () => {
         </div>
       </section>
 
-      {/* Three Feature Boxes Section */}
+      {/* Two Feature Boxes Section (NO Level Finder for Workshop) */}
       <section className="w-full py-16 md:py-20 bg-gray-50">
-        <div className="max-w-[1200px] mx-auto px-6 md:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
-            <div className="group cursor-pointer text-center" onClick={() => navigate('/level-finder')}>
-              <div className="rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-                <img src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/onplu2u5_Seviye%20Bulucu%20sembolu%CC%88.png" alt={p.finder.title} className="w-full aspect-square object-cover" />
-              </div>
-              <h3 className="text-[20px] md:text-[24px] font-bold text-gray-900 mt-5 mb-3" style={{ fontFamily: "'Magic English', 'Fredoka', cursive" }}>{p.finder.title}</h3>
-              <p className="text-[14px] text-gray-600 leading-[1.7] px-2">{p.finder.desc}</p>
-            </div>
+        <div className="max-w-[900px] mx-auto px-6 md:px-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
             <div className="group cursor-pointer text-center" onClick={() => navigate('/library')}>
               <div className="rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-                <img src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/5dxwajw5_Ads%C4%B1z%20tasar%C4%B1m%20%2844%29.png" alt={p.library.title} className="w-full aspect-square object-cover" />
+                <img src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/5dxwajw5_Ads%C4%B1z%20tasar%C4%B1m%20%2844%29.png" alt="Woody Digital Library" className="w-full aspect-square object-cover" />
               </div>
-              <h3 className="text-[20px] md:text-[24px] font-bold text-gray-900 mt-5 mb-3" style={{ fontFamily: "'Magic English', 'Fredoka', cursive" }}>{p.library.title}</h3>
+              <h3 className="text-[20px] md:text-[24px] font-bold text-gray-900 mt-5 mb-3" style={{ fontFamily: "'Magic English', 'Fredoka', cursive" }}>Woody Digital Library</h3>
               <p className="text-[14px] text-gray-600 leading-[1.7] px-2">{p.library.desc}</p>
             </div>
             <div className="group cursor-pointer text-center">
               <div className="rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-                <img src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/myf0t3nv_Gemini_Generated_Image_ip9cg9ip9cg9ip9c.png" alt={p.store.title} className="w-full aspect-square object-cover" />
+                <img src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/myf0t3nv_Gemini_Generated_Image_ip9cg9ip9cg9ip9c.png" alt="Woody Store" className="w-full aspect-square object-cover" />
               </div>
-              <h3 className="text-[20px] md:text-[24px] font-bold text-gray-900 mt-5 mb-3" style={{ fontFamily: "'Magic English', 'Fredoka', cursive" }}>{p.store.title}</h3>
+              <h3 className="text-[20px] md:text-[24px] font-bold text-gray-900 mt-5 mb-3" style={{ fontFamily: "'Magic English', 'Fredoka', cursive" }}>Woody Store</h3>
               <p className="text-[14px] text-gray-600 leading-[1.7] px-2">{p.store.desc}</p>
             </div>
           </div>
