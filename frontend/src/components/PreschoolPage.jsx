@@ -91,7 +91,7 @@ const PreschoolPage = () => {
       <section className="w-full bg-white py-6">
         <div className="max-w-[1000px] mx-auto px-6 text-center">
           <p className="text-[16px] md:text-[18px] text-gray-700 font-medium">
-            Okul Serisi, iki ayrı setten oluşur.
+            Okul Serisi iki ayrı setten oluşur. İçerikleri video anlatımlarıyla keşfedin.
           </p>
         </div>
       </section>
@@ -130,7 +130,10 @@ const PreschoolPage = () => {
 
           {/* Warning Notice */}
           <div className="mt-8 bg-white border border-gray-200 rounded-xl px-5 py-4">
-            <p className="text-[13px] md:text-[14px] text-gray-700 leading-[1.7]" dangerouslySetInnerHTML={{ __html: `<span class="text-red-500 font-bold text-[18px] mr-1.5">!</span> ${p.warning}` }} />
+            <p className="text-[13px] md:text-[14px] text-gray-700 leading-[1.7]">
+              <span className="text-red-500 font-bold text-[18px] mr-1.5">!</span>
+              Woody Preschool sisteminin uygulanabilmesi için kurum mevcudunun en az 30 öğrenci olması gerekmektedir. Öğretmen seti ayrıca ücretli olarak satılmaz. Anlaşma sağlanan kurumlara, öğrenci setleri ile birlikte ücretsiz olarak sunulur ve her sene yenilenir.
+            </p>
           </div>
         </div>
       </section>

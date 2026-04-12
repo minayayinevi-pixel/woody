@@ -91,7 +91,7 @@ const WorkshopPage = () => {
       <section className="w-full bg-white py-6">
         <div className="max-w-[1000px] mx-auto px-6 text-center">
           <p className="text-[16px] md:text-[18px] text-gray-700 font-medium">
-            Workshop Serisi, iki setten oluşur.
+            Atölye Serisi iki ayrı setten oluşur. İçerikleri video anlatımlarıyla keşfedin.
           </p>
         </div>
       </section>
@@ -126,11 +126,6 @@ const WorkshopPage = () => {
               </div>
               <p className="text-center mt-4 text-[18px] md:text-[22px] font-bold text-gray-800 tracking-wide">{p.studentSet}</p>
             </div>
-          </div>
-
-          {/* Warning Notice */}
-          <div className="mt-8 bg-white border border-gray-200 rounded-xl px-5 py-4">
-            <p className="text-[13px] md:text-[14px] text-gray-700 leading-[1.7]" dangerouslySetInnerHTML={{ __html: `<span class="text-red-500 font-bold text-[18px] mr-1.5">!</span> ${p.warning}` }} />
           </div>
         </div>
       </section>
