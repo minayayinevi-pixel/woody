@@ -60,40 +60,40 @@ const PreschoolPage = () => {
         </div>
       </section>
 
-      {/* Curved Arrow SVGs - pointing to videos */}
-      <div className="flex w-full justify-center items-center gap-[200px] lg:gap-[300px] bg-white py-2">
-        {/* Left arrow - curved down to left video */}
-        <svg width="120" height="100" viewBox="0 0 120 100" fill="none" className="w-[100px] h-[80px] md:w-[120px] md:h-[100px]">
+      {/* Y-shaped Arrows - from banner to both videos */}
+      <div className="flex w-full justify-center items-start bg-white relative" style={{ height: '140px' }}>
+        <svg width="600" height="140" viewBox="0 0 600 140" fill="none" className="w-full max-w-[900px]">
+          {/* Common starting point */}
+          <circle cx="300" cy="5" r="4" fill="#F5C518" />
+          
+          {/* Left arrow - starts from center, goes to left video */}
           <path 
-            d="M60 10 Q50 30, 45 50 Q42 65, 35 75" 
+            d="M300 5 L300 35 Q280 60, 240 85 Q220 100, 200 115" 
             stroke="#1a1a1a" 
             strokeWidth="3.5" 
             fill="none" 
             strokeLinecap="round"
           />
-          {/* Arrow head */}
-          <path d="M35 75 L28 68 M35 75 L42 69" stroke="#1a1a1a" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
-          {/* Decorative dots */}
-          <circle cx="58" cy="15" r="3" fill="#F5C518" />
-          <circle cx="48" cy="35" r="2.5" fill="#F5C518" />
-          <circle cx="40" cy="60" r="3" fill="#F5C518" />
-        </svg>
-
-        {/* Right arrow - curved down to right video */}
-        <svg width="120" height="100" viewBox="0 0 120 100" fill="none" className="w-[100px] h-[80px] md:w-[120px] md:h-[100px]">
+          {/* Left arrow head */}
+          <path d="M200 115 L193 107 M200 115 L207 108" stroke="#1a1a1a" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
+          
+          {/* Right arrow - starts from center, goes to right video */}
           <path 
-            d="M60 10 Q70 30, 75 50 Q78 65, 85 75" 
+            d="M300 5 L300 35 Q320 60, 360 85 Q380 100, 400 115" 
             stroke="#1a1a1a" 
             strokeWidth="3.5" 
             fill="none" 
             strokeLinecap="round"
           />
-          {/* Arrow head */}
-          <path d="M85 75 L92 68 M85 75 L78 69" stroke="#1a1a1a" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
-          {/* Decorative dots */}
-          <circle cx="62" cy="15" r="3" fill="#F5C518" />
-          <circle cx="72" cy="35" r="2.5" fill="#F5C518" />
-          <circle cx="80" cy="60" r="3" fill="#F5C518" />
+          {/* Right arrow head */}
+          <path d="M400 115 L407 107 M400 115 L393 108" stroke="#1a1a1a" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
+          
+          {/* Decorative dots along paths */}
+          <circle cx="300" cy="20" r="2.5" fill="#F5C518" />
+          <circle cx="260" cy="70" r="2.5" fill="#F5C518" />
+          <circle cx="340" cy="70" r="2.5" fill="#F5C518" />
+          <circle cx="220" cy="100" r="3" fill="#F5C518" />
+          <circle cx="380" cy="100" r="3" fill="#F5C518" />
         </svg>
       </div>
 
