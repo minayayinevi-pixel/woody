@@ -23,7 +23,7 @@ const ContentSection = ({ section, isFirst }) => {
   return (
     <section
       id={section.id}
-      className="w-full py-16 md:py-20 lg:py-24"
+      className="w-full py-14 md:py-16 lg:py-20"
       style={{ backgroundColor: section.bgColor || '#ffffff' }}
     >
       <div className="max-w-[1200px] mx-auto px-6 md:px-12">
@@ -48,7 +48,7 @@ const ContentSection = ({ section, isFirst }) => {
                 borderRight: !isImageLeft ? `6px solid ${section.accentColor}` : 'none',
               }}
             >
-              <img src={section.image} alt={sectionT?.title || section.title} className="w-full h-auto object-cover transition-transform duration-700 hover:scale-[1.03]" style={{ maxHeight: '500px', objectFit: 'cover' }} loading="lazy" />
+              <img src={section.image} alt={sectionT?.title || section.title} className="w-full h-auto object-cover object-top transition-transform duration-700 hover:scale-[1.03]" style={{ maxHeight: '420px', objectFit: 'cover' }} loading="lazy" />
             </div>
           </div>
 
