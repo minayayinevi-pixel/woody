@@ -29,7 +29,7 @@ const ContentSection = ({ section, isFirst }) => {
       <div className="max-w-[1200px] mx-auto px-6 md:px-12">
         {isFirst && (
           <div className="mb-14 text-center">
-            <h2 className="text-[36px] md:text-[48px] lg:text-[56px] text-black leading-snug font-bold" style={{ fontFamily: "'Magic English', 'Fredoka', cursive" }}>
+            <h2 className="text-[28px] md:text-[36px] lg:text-[42px] text-black leading-snug font-semibold" style={{ fontFamily: "'Fredoka', 'Inter', sans-serif" }}>
               {t.sections.heading}
             </h2>
             <div className="w-24 h-[3px] mx-auto mt-5" style={{ backgroundColor: '#F5C518' }} />
@@ -63,12 +63,6 @@ const ContentSection = ({ section, isFirst }) => {
             <p className="text-[15px] md:text-[16px] text-gray-600 leading-[1.8] mb-6">
               {sectionT?.desc || section.description}
             </p>
-            {section.id === 'preschool-series' && (
-              <button onClick={handleSectionClick} className="inline-flex items-center gap-2 px-6 py-3 text-[13px] tracking-[0.1em] font-semibold text-white rounded-lg transition-all duration-300 hover:gap-3 border-none cursor-pointer" style={{ backgroundColor: section.accentColor }}>
-                {sectionT?.btn || 'İncele'}
-                <ArrowRight size={16} />
-              </button>
-            )}
           </div>
         </div>
       </div>

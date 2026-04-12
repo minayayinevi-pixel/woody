@@ -15,7 +15,7 @@ const translations = {
       watchText: 'İzle'
     },
     sections: {
-      heading: "Size Uygun Woody Setini Seçin",
+      heading: "Hangi Woody Set Sizin için?",
       preschool: {
         tag: "Sınıflar İçin",
         title: "Preschool Series",
@@ -101,7 +101,7 @@ const translations = {
       watchText: 'Watch'
     },
     sections: {
-      heading: "Choose the Right Woody Set for You",
+      heading: "Hangi Woody Set Sizin için?",
       preschool: {
         tag: "For Classrooms",
         title: "Preschool Series",
@@ -187,7 +187,7 @@ const translations = {
       watchText: 'Смотреть'
     },
     sections: {
-      heading: "Выберите подходящий набор Woody",
+      heading: "Какой набор Woody для вас?",
       preschool: {
         tag: "Для классов",
         title: "Дошкольная серия",
@@ -239,7 +239,7 @@ const translations = {
       watchText: 'Ansehen'
     },
     sections: {
-      heading: "Wählen Sie das passende Woody-Set",
+      heading: "Welches Woody-Set ist für Sie?",
       preschool: {
         tag: "Für Klassen",
         title: "Vorschulserie",
