@@ -85,7 +85,7 @@ const HeroSection = ({ data }) => {
           <path 
             d="M0 60L0 30C360 0 720 0 1080 30C1260 45 1350 52.5 1440 60" 
             stroke="url(#metalGradient)" 
-            strokeWidth="6" 
+            strokeWidth="12" 
             fill="none" 
             filter="url(#glow)"
             style={{ opacity: 0.95 }}
