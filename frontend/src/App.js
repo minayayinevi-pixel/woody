@@ -7,6 +7,8 @@ import HeroSection from "./components/HeroSection";
 import ContentSection from "./components/ContentSection";
 import Footer from "./components/Footer";
 import PreschoolPage from "./components/PreschoolPage";
+import WorkshopPage from "./components/WorkshopPage";
+import HomeTutorPage from "./components/HomeTutorPage";
 import BlogPage from "./components/BlogPage";
 import LevelFinderPage from "./components/LevelFinderPage";
 import LibraryPage from "./components/LibraryPage";
@@ -35,6 +37,8 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/preschool" element={<PreschoolPage />} />
+            <Route path="/workshop" element={<WorkshopPage />} />
+            <Route path="/home-tutor" element={<HomeTutorPage />} />
             <Route path="/level-finder" element={<LevelFinderPage />} />
             <Route path="/library" element={<LibraryPage />} />
             <Route path="/blog" element={<BlogPage />} />

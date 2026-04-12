@@ -1,6 +1,5 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 const ContentSection = ({ section, isFirst }) => {
@@ -18,6 +17,8 @@ const ContentSection = ({ section, isFirst }) => {
 
   const handleSectionClick = () => {
     if (section.id === 'preschool-series') navigate('/preschool');
+    if (section.id === 'workshop') navigate('/workshop');
+    if (section.id === 'home-tutor') navigate('/home-tutor');
   };
 
   return (
@@ -36,17 +37,38 @@ const ContentSection = ({ section, isFirst }) => {
           </div>
         )}
 
-        <div
-          className={`flex flex-col ${isImageLeft ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-10 lg:gap-16`}
+        {/* Entire section wrapped in anchor tag - fully clickable */}
+        <a
+          href="#"
+          onClick={(e) => {
+            e.preventDefault();
+            handleSectionClick();
+          }}
+          className={`flex flex-col ${
+            isImageLeft ? 'lg:flex-row' : 'lg:flex-row-reverse'
+          } items-center gap-10 lg:gap-16 cursor-pointer no-underline`}
+          style={{ textDecoration: 'none' }}
         >
-          {/* Empty white space (no image, no frame) */}
-          <div className="w-full lg:w-1/2 bg-white" style={{ height: '450px' }}>
-            {/* Beyaz boş alan */}
+          {/* Image - no border, no shadow, no frame */}
+          <div className="w-full lg:w-1/2">
+            <img
+              src={section.image}
+              alt={sectionT?.title || section.title}
+              className="w-full h-auto"
+              style={{
+                display: 'block',
+                maxWidth: '100%',
+                height: 'auto'
+              }}
+            />
           </div>
 
           {/* Text Content */}
           <div className="w-full lg:w-1/2">
-            <div className="inline-block px-4 py-1.5 rounded-full text-[13px] font-semibold text-white mb-5" style={{ backgroundColor: section.accentColor }}>
+            <div
+              className="inline-block px-4 py-1.5 rounded-full text-[13px] font-semibold text-white mb-5"
+              style={{ backgroundColor: section.accentColor }}
+            >
               {sectionT?.tag}
             </div>
             <h3 className="text-[30px] md:text-[36px] lg:text-[40px] font-light text-black leading-tight mb-5">
@@ -57,7 +79,7 @@ const ContentSection = ({ section, isFirst }) => {
               {sectionT?.desc || section.description}
             </p>
           </div>
-        </div>
+        </a>
       </div>
     </section>
   );
