@@ -22,7 +22,7 @@ const PreschoolPage = () => {
     { name: p.levelNames.basic, color: "#2196F3", image: "https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/3jgyyil9_1.png", description: p.levelDescs.basic, tag: p.levelTags.basic },
     { name: p.levelNames.junior, color: "#F5C518", image: "https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/h5x59v59_3.png", description: p.levelDescs.junior, tag: p.levelTags.junior },
     { name: p.levelNames.senior, color: "#E91E90", image: "https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/m4z26p5k_2.png", description: p.levelDescs.senior, tag: p.levelTags.senior },
-    { name: p.levelNames.pro, color: "#D32F2F", bgGradient: "linear-gradient(135deg, #D32F2F 0%, #B71C1C 100%)", description: p.levelDescs.pro, tag: p.levelTags.pro },
+    { name: "PRO - Level 4", color: "#D32F2F", image: "https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/6qg348xf_Preschool%20Basic%20%28297%20x%20210%20mm%29%20%28Instagram%20Go%CC%88nderisi%20%2845%29%29.png", description: "Sadece Woody Academy içinde eğitim içindir. Okuma yazma bilgisi gerektirir. 1. sınıftan sonra.", tag: "NEW" },
   ];
 
   return (
