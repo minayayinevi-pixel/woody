@@ -42,7 +42,7 @@ const ContentSection = ({ section, isFirst }) => {
         >
           <div className="w-full lg:w-1/2">
             <div
-              className={`overflow-hidden rounded-[20px] shadow-xl relative transition-all duration-500 bg-white ${section.id === 'preschool-series' ? 'group-hover/section:shadow-2xl group-hover/section:scale-[1.02]' : ''}`}
+              className={`overflow-hidden rounded-[20px] shadow-xl relative transition-all duration-500 flex items-center justify-center bg-white ${section.id === 'preschool-series' ? 'group-hover/section:shadow-2xl group-hover/section:scale-[1.02]' : ''}`}
               style={{
                 borderLeft: isImageLeft ? `6px solid ${section.accentColor}` : 'none',
                 borderRight: !isImageLeft ? `6px solid ${section.accentColor}` : 'none',
@@ -52,8 +52,7 @@ const ContentSection = ({ section, isFirst }) => {
               <img 
                 src={section.image} 
                 alt={sectionT?.title || section.title} 
-                className="w-full h-full object-cover transition-transform duration-700 hover:scale-[1.03]" 
-                style={{ objectPosition: '50% 45%' }}
+                className="max-w-full max-h-full object-contain transition-transform duration-700 hover:scale-[1.03]" 
                 loading="lazy" 
               />
             </div>
