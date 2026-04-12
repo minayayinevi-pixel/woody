@@ -60,19 +60,21 @@ const PreschoolPage = () => {
         </div>
       </section>
 
-      {/* Arrow images from banner */}
-      <div className="flex w-full justify-center items-center gap-[250px] lg:gap-[350px] bg-gray-50 py-3">
-        {/* Left arrow */}
+      {/* Arrow images from banner - pointing at each other */}
+      <div className="flex w-full justify-center items-center gap-[200px] lg:gap-[300px] bg-gray-50 py-1">
+        {/* Left arrow - pointing RIGHT */}
         <img 
           src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/zkjztg73_Ads%C4%B1z%20tasar%C4%B1m%20%2846%29.png" 
           alt="Arrow" 
-          className="w-[60px] h-[60px] md:w-[80px] md:h-[80px] object-contain"
+          className="w-[100px] h-[100px] md:w-[130px] md:h-[130px] object-contain transform rotate-90"
+          style={{ mixBlendMode: 'multiply' }}
         />
-        {/* Right arrow */}
+        {/* Right arrow - pointing LEFT */}
         <img 
           src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/zkjztg73_Ads%C4%B1z%20tasar%C4%B1m%20%2846%29.png" 
           alt="Arrow" 
-          className="w-[60px] h-[60px] md:w-[80px] md:h-[80px] object-contain transform scale-x-[-1]"
+          className="w-[100px] h-[100px] md:w-[130px] md:h-[130px] object-contain transform -rotate-90"
+          style={{ mixBlendMode: 'multiply' }}
         />
       </div>
 

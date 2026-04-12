@@ -10,6 +10,11 @@ const LibraryPage = () => {
   const navigate = useNavigate();
   const { t } = useLanguage();
 
+  // Scroll to top when component mounts
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const levels = [
     {
       id: 'basic',
