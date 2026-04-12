@@ -3,24 +3,32 @@ import React from 'react';
 const WhyWoodySection = () => {
   const features = [
     {
-      title: "Cambridge Tabanlı Sistem",
-      description: "Uluslararası geçerliliğe sahip sertifikalı eğitim."
+      title: "Cambridge Tabanlı Sertifikalı Sistem",
+      description: "Öğrenciler uluslararası geçerliliğe sahip sertifikalara ulaşır."
     },
     {
-      title: "Oyun Temelli Öğrenme",
-      description: "Ezber yok; oyun ve deneyimle doğal öğrenme."
+      title: "Oyun Temelli Eğitim",
+      description: "Çocuklar dili ezberlemez; oyun, hareket ve etkileşimle doğal şekilde öğrenir."
+    },
+    {
+      title: "İngilizce Konuşan Karakterler",
+      description: "Her ünitede çocuklar karakterlerle etkileşime girer, dili gerçek bağlam içinde edinir."
     },
     {
       title: "Hikâye, Film ve Müzik",
-      description: "Her ünite senaryo, video ve müzikle ilerler."
+      description: "Her ünite kendi senaryosu, filmi ve müziğiyle ilerler."
     },
     {
-      title: "Hazır ve Tam Sistem",
-      description: "Tüm içerikler tek yerde, ek hazırlık gerekmez."
+      title: "Yıl Boyu Hazır Ders Planı",
+      description: "Tüm ders saatleri planlı ve hazırdır. Öğretmen ekstra hazırlık yapmaz."
+    },
+    {
+      title: "Tek Platform, Tüm İçerik",
+      description: "Tüm materyaller ve dijital içerikler tek sistemde sunulur."
     },
     {
       title: "30+ Eğitim Oyuncağı",
-      description: "Yaşa ve beceriye uygun öğrenme materyalleri."
+      description: "Yaşa ve beceriye uygun materyallerle öğrenme desteklenir."
     }
   ];
 
