@@ -7,13 +7,13 @@ import { siteData } from '../data/mock';
 import { useLanguage } from '../context/LanguageContext';
 
 const questions = [
-  // BLOCK A - Basic/Junior Entry (1-6)
-  { id: 1, block: 'A', text: 'Sınıf komutlarını anlar ve uygular mı?', examples: 'Stand up, Sit down, Come here, Go there, Raise your hand' },
-  { id: 2, block: 'A', text: 'Günlük aksiyonları ve basit cümleleri kullanabilir mi?', examples: 'I draw, I run, I go to school' },
-  { id: 3, block: 'A', text: 'Nesneleri, hayvanları, meyve ve sebzeleri tanıyıp isimlendirebilir mi?', examples: 'book, dog, apple, carrot' },
-  { id: 4, block: 'A', text: 'Renk, sayı ve sıfatları birlikte doğru kullanabilir mi?', examples: 'red apple, two big balls' },
-  { id: 5, block: 'A', text: 'Tercih ve basit sorulara uygun cevap verebilir mi?', examples: 'I like…, What is this?, My name is…' },
-  { id: 6, block: 'A', text: 'Günlük yaşam, vücut bakımı ve çevre ifadelerini anlayıp uygulayabilir mi?', examples: 'Wash your hands, It is winter, Go straight' },
+  // BLOCK A - Basic Level (1-6)
+  { id: 1, block: 'A', text: 'Sınıf komutlarını anlar ve uygular mı?', examples: 'Stand up, Sit down, Raise your hand, Come here, Go there' },
+  { id: 2, block: 'A', text: 'Nesneleri, hayvanları ve meyve-sebzeleri tanıyıp isimlendirebilir mi?', examples: 'book, dog, apple, carrot vb.' },
+  { id: 3, block: 'A', text: 'Renkleri ve sayıları doğru tanıyıp eşleştirebilir mi?', examples: 'red, blue / one, two vb.' },
+  { id: 4, block: 'A', text: 'Araçları ve kıyafetleri tanıyıp doğru seçebilir mi?', examples: 'car, bus / t-shirt, shoes vb.' },
+  { id: 5, block: 'A', text: '"What is this?" sorusuna doğru cevap verebilir mi?', examples: 'It is a …' },
+  { id: 6, block: 'A', text: 'Vücut bölümlerini tanıyıp gösterebilir mi?', examples: 'head, eyes, nose, arm vb.' },
   // BLOCK B - Junior Level (7-12)
   { id: 7, block: 'B', text: 'Günlük aksiyonları ifade edebilir mi?', examples: 'I draw, I run, I go to school, I eat' },
   { id: 8, block: 'B', text: 'Oda, oyuncak ve nesneleri tanıyıp cümle kurabilir mi?', examples: 'This is a…, These are…' },
