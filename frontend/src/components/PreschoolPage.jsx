@@ -155,7 +155,7 @@ const PreschoolPage = () => {
       <section className="w-full py-16 md:py-20 bg-gray-50">
         <div className="max-w-[1200px] mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
-            <div className="group cursor-pointer text-center">
+            <div className="group cursor-pointer text-center" onClick={() => navigate('/level-finder')}>
               <div className="rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
                 <img src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/onplu2u5_Seviye%20Bulucu%20sembolu%CC%88.png" alt={p.finder.title} className="w-full aspect-square object-cover" />
               </div>
