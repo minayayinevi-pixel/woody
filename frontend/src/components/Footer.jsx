@@ -33,7 +33,7 @@ const Footer = ({ data }) => {
                 className="flex items-center gap-3 text-[14px] text-gray-400 hover:text-white no-underline transition-colors duration-300"
               >
                 <Phone size={16} className="flex-shrink-0" />
-                0533 157 03 73 (Cep)
+                0533 157 03 73
               </a>
               <a
                 href="https://wa.me/905331570373"

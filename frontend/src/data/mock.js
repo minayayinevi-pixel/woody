@@ -3,10 +3,10 @@ export const siteData = {
     logo: "PIXAR",
     navItems: [
       { label: "HOME", href: "/" },
-      { label: "WOODY PRESCHOOL", href: "/preschool", active: true },
-      { label: "HOME WORKSHOP", href: "#" },
-      { label: "WOODY ACADEMY", href: "#" },
-      { label: "CAREER", href: "#" }
+      { label: "PRESCHOOL", href: "/preschool", active: true },
+      { label: "WORKSHOP", href: "#" },
+      { label: "HOME & TUTOR", href: "#" },
+      { label: "WOODY ACADEMY", href: "#" }
     ]
   },
   hero: {
