@@ -63,7 +63,12 @@ const HeroSection = ({ data }) => {
             <X size={36} />
           </button>
           <div className="w-full max-w-[1100px] aspect-video">
-            <iframe src={data.videoUrl} width="100%" height="100%" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen title="RenderMan Show Reel" className="rounded-lg" />
+            <video
+              autoPlay
+              controls
+              className="w-full h-full rounded-lg"
+              src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/ct6m2ted_woody%20and%20robo%20%283%29.mp4"
+            />
           </div>
         </div>
       )}
