@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { LanguageProvider } from "./context/LanguageContext";
 import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
 import ContentSection from "./components/ContentSection";
@@ -25,13 +26,15 @@ const HomePage = () => {
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-        <FloatingContact />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/preschool" element={<PreschoolPage />} />
-        </Routes>
-      </BrowserRouter>
+      <LanguageProvider>
+        <BrowserRouter>
+          <FloatingContact />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/preschool" element={<PreschoolPage />} />
+          </Routes>
+        </BrowserRouter>
+      </LanguageProvider>
     </div>
   );
 }

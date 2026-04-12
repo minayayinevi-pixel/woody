@@ -1,25 +1,19 @@
 import React from 'react';
-import { Phone, Mail, MapPin } from 'lucide-react';
+import { Phone, Mail } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 const Footer = ({ data }) => {
+  const { t } = useLanguage();
   return (
     <footer className="w-full bg-gray-900 text-white pt-14 pb-8">
       <div className="max-w-[1200px] mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
-
-          {/* Logo & Description */}
           <div>
-            <h3 className="text-[22px] font-bold mb-4" style={{ fontFamily: "'Magic English', 'Fredoka', cursive" }}>
-              Woody and Friends
-            </h3>
-            <p className="text-[14px] text-gray-400 leading-relaxed">
-              Çocuklar için eğlenceli ve etkili İngilizce öğrenme programı.
-            </p>
+            <h3 className="text-[22px] font-bold mb-4" style={{ fontFamily: "'Magic English', 'Fredoka', cursive" }}>Woody and Friends</h3>
+            <p className="text-[14px] text-gray-400 leading-relaxed">{t.footer.desc}</p>
           </div>
-
-          {/* Contact Info */}
           <div>
-            <h4 className="text-[16px] font-semibold mb-4 tracking-wide">İletişim</h4>
+            <h4 className="text-[16px] font-semibold mb-4 tracking-wide">{t.footer.contact}</h4>
             <div className="space-y-3">
               <a
                 href="tel:+903243580373"
@@ -56,9 +50,8 @@ const Footer = ({ data }) => {
             </div>
           </div>
 
-          {/* Social Media */}
           <div>
-            <h4 className="text-[16px] font-semibold mb-4 tracking-wide">Bizi Takip Edin</h4>
+            <h4 className="text-[16px] font-semibold mb-4 tracking-wide">{t.footer.follow}</h4>
             <div className="flex items-center gap-4">
               {/* Facebook */}
               <a
@@ -102,7 +95,7 @@ const Footer = ({ data }) => {
 
         {/* Bottom Row */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-3">
-          <p className="text-[12px] text-gray-500">© 2026 Woody and Friends. Tüm hakları saklıdır.</p>
+          <p className="text-[12px] text-gray-500">{t.footer.rights}</p>
           <div className="flex items-center gap-4">
             {data?.links?.map((link, i) => (
               <a
