@@ -42,13 +42,14 @@ const ContentSection = ({ section, isFirst }) => {
         >
           <div className="w-full lg:w-1/2">
             <div
-              className={`overflow-hidden rounded-[20px] shadow-xl relative transition-all duration-500 ${section.id === 'preschool-series' ? 'group-hover/section:shadow-2xl group-hover/section:scale-[1.02]' : ''}`}
+              className={`overflow-hidden rounded-[20px] shadow-xl relative transition-all duration-500 flex items-center justify-center bg-gray-50 ${section.id === 'preschool-series' ? 'group-hover/section:shadow-2xl group-hover/section:scale-[1.02]' : ''}`}
               style={{
                 borderLeft: isImageLeft ? `6px solid ${section.accentColor}` : 'none',
                 borderRight: !isImageLeft ? `6px solid ${section.accentColor}` : 'none',
+                height: '380px',
               }}
             >
-              <img src={section.image} alt={sectionT?.title || section.title} className="w-full h-auto object-cover object-center transition-transform duration-700 hover:scale-[1.03]" style={{ maxHeight: '450px', objectFit: 'cover', objectPosition: 'center 35%' }} loading="lazy" />
+              <img src={section.image} alt={sectionT?.title || section.title} className="max-w-full max-h-full object-contain transition-transform duration-700 hover:scale-[1.03] p-4" loading="lazy" />
             </div>
           </div>
 
