@@ -45,7 +45,7 @@ const HeroSection = ({ data }) => {
 
         {/* Subtitle */}
         <p className="text-[14px] md:text-[16px] text-white/90 tracking-wide" style={{ animation: 'fadeInUp 1.4s ease-out' }}>
-          Watch &ldquo;<strong>{data.subtitleBold}</strong>&rdquo;
+          Storyland videosunu izleyerek sistemi yakından keşfedin.
         </p>
       </div>
 
