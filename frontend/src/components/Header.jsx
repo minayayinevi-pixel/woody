@@ -28,8 +28,8 @@ const Header = ({ data }) => {
   const navItems = [
     { label: t.nav.home, href: "/" },
     { label: t.nav.preschool, href: "/preschool" },
-    { label: t.nav.workshop, href: "#" },
-    { label: t.nav.homeTutor, href: "#" },
+    { label: t.nav.workshop, href: "/workshop" },
+    { label: t.nav.homeTutor, href: "/home-tutor" },
     { label: t.nav.academy, href: "#" },
     { label: "BLOG", href: "/blog" }
   ];
