@@ -37,28 +37,26 @@ const ContentSection = ({ section, isFirst }) => {
         )}
 
         <div
-          className={`flex flex-col ${isImageLeft ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-10 lg:gap-16 ${section.id === 'preschool-series' ? 'cursor-pointer group/section' : ''}`}
-          onClick={section.id === 'preschool-series' ? handleSectionClick : undefined}
+          className={`flex flex-col ${isImageLeft ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-10 lg:gap-16`}
         >
-          <div className="w-full lg:w-1/2">
-            <div
-              className={`overflow-hidden rounded-[20px] shadow-xl relative transition-all duration-500 bg-white ${section.id === 'preschool-series' ? 'group-hover/section:shadow-2xl group-hover/section:scale-[1.02]' : ''}`}
-              style={{
-                borderLeft: isImageLeft ? `6px solid ${section.accentColor}` : 'none',
-                borderRight: !isImageLeft ? `6px solid ${section.accentColor}` : 'none',
-                height: '450px',
-              }}
-            >
+          {/* Clickable Image Block */}
+          <a
+            href={section.id === 'preschool-series' ? '/preschool' : '#'}
+            className="w-full lg:w-1/2 block transition-all duration-300 hover:scale-[1.02] hover:brightness-95"
+            style={{ textDecoration: 'none' }}
+          >
+            <div style={{ height: '450px', overflow: 'hidden' }}>
               <img 
                 src={section.image} 
                 alt={sectionT?.title || section.title} 
-                className="w-full h-full object-cover transition-transform duration-700 hover:scale-[1.03]" 
+                className="w-full h-full object-cover" 
                 style={{ objectPosition: '50% 60%' }}
                 loading="lazy" 
               />
             </div>
-          </div>
+          </a>
 
+          {/* Text Content */}
           <div className="w-full lg:w-1/2">
             <div className="inline-block px-4 py-1.5 rounded-full text-[13px] font-semibold text-white mb-5" style={{ backgroundColor: section.accentColor }}>
               {sectionT?.tag}

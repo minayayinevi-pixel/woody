@@ -22,7 +22,7 @@ const HeroSection = ({ data }) => {
   }, [showVideo]);
 
   return (
-    <section className="relative w-full h-screen min-h-[600px] overflow-hidden">
+    <section className="relative w-full h-[85vh] md:h-[90vh] flex items-center justify-center overflow-hidden">
       {/* Background Video */}
       <div className="absolute inset-0">
         <video
@@ -39,31 +39,25 @@ const HeroSection = ({ data }) => {
         <div className="absolute inset-0 bg-black/35" />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-white">
-        <h1
-          className="text-[36px] md:text-[56px] lg:text-[72px] font-bold tracking-[0.2em] md:tracking-[0.3em] text-center mb-8"
-          style={{
-            fontFamily: "'Magic English', 'Fredoka', cursive",
-            animation: 'fadeInUp 1s ease-out',
-            textShadow: '0 4px 30px rgba(0,0,0,0.5)',
-          }}
-        >
-          WOODY DIGITAL WORLD
+      {/* Hero Content */}
+      <div className="relative z-10 text-center px-6">
+        {/* Title */}
+        <h1 className="text-[48px] md:text-[64px] lg:text-[80px] text-white leading-[1.1] tracking-wide mb-6" style={{ textShadow: '2px 4px 12px rgba(0,0,0,0.4)', fontFamily: "'Fredoka', 'Inter', sans-serif", fontWeight: '700', animation: 'fadeInUp 1s ease-out' }}>
+          Play-Based English Learning System
         </h1>
 
         {/* Play Button */}
         <button
           onClick={() => setShowVideo(true)}
           className="group relative w-[70px] h-[70px] md:w-[90px] md:h-[90px] rounded-full border-2 border-white/70 flex items-center justify-center mb-4 transition-all duration-300 hover:border-white hover:scale-110 bg-transparent cursor-pointer"
-          style={{ animation: 'fadeInUp 1.2s ease-out' }}
+          style={{ animation: 'fadeInUp 1.2s ease-out', margin: '0 auto' }}
         >
           <Play size={28} className="text-white/80 group-hover:text-white ml-1 transition-colors duration-300" fill="white" fillOpacity={0.8} />
         </button>
 
         {/* Subtitle */}
-        <p className="text-[14px] md:text-[16px] text-white/90 tracking-wide" style={{ animation: 'fadeInUp 1.4s ease-out' }}>
-          Storyland videosunu izleyerek sistemi yakından keşfedin.
+        <p className="text-[14px] md:text-[16px] text-white/90 tracking-wide max-w-[700px] mx-auto" style={{ animation: 'fadeInUp 1.4s ease-out' }}>
+          The Woody Preschool system builds language skills through structured play, engaging activities, and rich digital content.
         </p>
       </div>
 
