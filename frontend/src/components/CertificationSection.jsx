@@ -14,11 +14,33 @@ const CertificationSection = () => {
 
         {/* Paragraph - Light Font */}
         <p 
-          className="text-[14px] md:text-[15px] leading-[1.7] max-w-[750px] mx-auto"
+          className="text-[14px] md:text-[15px] leading-[1.7] mb-8 max-w-[750px] mx-auto"
           style={{ color: '#0B1B2B', fontWeight: 300 }}
         >
           In partnership with British Side, providing internationally recognized certification.
         </p>
+
+        {/* Logos - Same Height, Horizontal Row */}
+        <div className="flex items-center justify-center gap-8 md:gap-12">
+          <img 
+            src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/0ljulhkj_8.png"
+            alt="Cambridge English"
+            className="h-[45px] md:h-[50px] w-auto"
+            style={{ objectFit: 'contain' }}
+          />
+          <img 
+            src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/1lah28n2_7.png"
+            alt="British Side"
+            className="h-[45px] md:h-[50px] w-auto"
+            style={{ objectFit: 'contain' }}
+          />
+          <img 
+            src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/22mg24ku_9.png"
+            alt="Woody Academy"
+            className="h-[45px] md:h-[50px] w-auto"
+            style={{ objectFit: 'contain' }}
+          />
+        </div>
       </div>
     </section>
   );
