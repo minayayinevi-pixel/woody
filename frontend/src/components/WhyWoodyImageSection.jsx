@@ -27,8 +27,8 @@ const WhyWoodyImageSection = () => {
               style={{ minHeight: '500px' }}
             />
             
-            {/* MOBILE ONLY: Overlay text box - VERY SMALL, premium, right above characters' heads */}
-            <div className="absolute bottom-[45%] left-4 right-4 md:hidden">
+            {/* MOBILE ONLY: Overlay text box - VERY SMALL, premium, at the TOP (ceiling/flags area) */}
+            <div className="absolute top-4 left-4 right-4 md:hidden">
               <div 
                 className="bg-white/92 backdrop-blur-sm rounded-xl px-4 py-3"
                 style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.08)', border: 'none' }}
