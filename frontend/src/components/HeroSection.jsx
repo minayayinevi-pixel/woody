@@ -15,8 +15,9 @@ const HeroSection = ({ data }) => {
           playsInline
           className="w-full h-full object-cover"
           poster={data.backgroundImage}
+          onLoadedMetadata={(e) => { e.target.currentTime = 16; }}
         >
-          <source src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/ct6m2ted_woody%20and%20robo%20%283%29.mp4" type="video/mp4" />
+          <source src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/ct6m2ted_woody%20and%20robo%20%283%29.mp4#t=16" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-black/35" />
       </div>
@@ -77,3 +78,4 @@ const HeroSection = ({ data }) => {
 };
 
 export default HeroSection;
+on;

@@ -60,42 +60,7 @@ const PreschoolPage = () => {
         </div>
       </section>
 
-      {/* Y-shaped Arrows - from banner to both videos */}
-      <div className="flex w-full justify-center items-start bg-white relative" style={{ height: '140px' }}>
-        <svg width="600" height="140" viewBox="0 0 600 140" fill="none" className="w-full max-w-[900px]">
-          {/* Common starting point */}
-          <circle cx="300" cy="5" r="4" fill="#F5C518" />
-          
-          {/* Left arrow - starts from center, goes to left video */}
-          <path 
-            d="M300 5 L300 35 Q280 60, 240 85 Q220 100, 200 115" 
-            stroke="#1a1a1a" 
-            strokeWidth="3.5" 
-            fill="none" 
-            strokeLinecap="round"
-          />
-          {/* Left arrow head */}
-          <path d="M200 115 L193 107 M200 115 L207 108" stroke="#1a1a1a" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
-          
-          {/* Right arrow - starts from center, goes to right video */}
-          <path 
-            d="M300 5 L300 35 Q320 60, 360 85 Q380 100, 400 115" 
-            stroke="#1a1a1a" 
-            strokeWidth="3.5" 
-            fill="none" 
-            strokeLinecap="round"
-          />
-          {/* Right arrow head */}
-          <path d="M400 115 L407 107 M400 115 L393 108" stroke="#1a1a1a" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
-          
-          {/* Decorative dots along paths */}
-          <circle cx="300" cy="20" r="2.5" fill="#F5C518" />
-          <circle cx="260" cy="70" r="2.5" fill="#F5C518" />
-          <circle cx="340" cy="70" r="2.5" fill="#F5C518" />
-          <circle cx="220" cy="100" r="3" fill="#F5C518" />
-          <circle cx="380" cy="100" r="3" fill="#F5C518" />
-        </svg>
-      </div>
+      {/* Arrows removed */}
 
       {/* Two Video Boxes Section */}
       <section className="w-full py-10 md:py-14 bg-gray-50">
