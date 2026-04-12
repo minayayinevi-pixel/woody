@@ -38,8 +38,8 @@ const WhyWoodySection = () => {
         className="relative w-full h-[950px] md:h-[600px] lg:h-[700px] overflow-hidden"
         style={{
           backgroundImage: 'url(https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/x4uz9f3o_freepik_prompt-reference-lock-ver_2769629842.png)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'top center',
+          backgroundSize: 'contain',
+          backgroundPosition: 'center top',
           backgroundRepeat: 'no-repeat'
         }}
       >

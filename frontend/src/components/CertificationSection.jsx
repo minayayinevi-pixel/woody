@@ -21,24 +21,24 @@ const CertificationSection = () => {
             In partnership with British Side, providing internationally recognized certification.
           </p>
 
-          {/* Logos - HUGE, Very Close to Text, Centered */}
-          <div className="flex items-center justify-center gap-16 md:gap-24 flex-wrap">
+          {/* Logos - HUGE, Very Close to Text, Centered - Fixed mobile layout */}
+          <div className="flex items-center justify-center gap-8 md:gap-16 lg:gap-24 flex-wrap">
             <img 
               src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/0ljulhkj_8.png"
               alt="Cambridge English"
-              className="h-[120px] md:h-[150px] lg:h-[180px] w-auto"
+              className="h-[80px] md:h-[150px] lg:h-[180px] w-auto"
               style={{ objectFit: 'contain' }}
             />
             <img 
               src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/1lah28n2_7.png"
               alt="British Side"
-              className="h-[120px] md:h-[150px] lg:h-[180px] w-auto"
+              className="h-[80px] md:h-[150px] lg:h-[180px] w-auto"
               style={{ objectFit: 'contain' }}
             />
             <img 
               src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/22mg24ku_9.png"
               alt="Woody Academy"
-              className="h-[120px] md:h-[150px] lg:h-[180px] w-auto"
+              className="h-[80px] md:h-[150px] lg:h-[180px] w-auto"
               style={{ objectFit: 'contain' }}
             />
           </div>
