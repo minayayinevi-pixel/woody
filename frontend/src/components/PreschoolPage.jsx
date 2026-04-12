@@ -60,25 +60,20 @@ const PreschoolPage = () => {
         </div>
       </section>
 
-      {/* Curvy Fun Arrows from banner */}
-      <div className="hidden md:flex w-full justify-center gap-[300px] lg:gap-[400px] bg-gray-50 pt-2">
-        {/* Left curvy arrow */}
-        <svg width="80" height="70" viewBox="0 0 80 70" fill="none">
-          <path d="M40 0 C30 15, 15 25, 10 45 C8 52, 12 58, 18 55 C22 53, 25 48, 20 42" stroke="#1a1a1a" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-          <path d="M10 45 L4 38 M10 45 L18 40" stroke="#1a1a1a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-          {/* Fun dots */}
-          <circle cx="35" cy="8" r="2" fill="#F5C518" />
-          <circle cx="22" cy="22" r="1.5" fill="#F5C518" />
-          <circle cx="12" cy="38" r="2" fill="#F5C518" />
-        </svg>
-        {/* Right curvy arrow */}
-        <svg width="80" height="70" viewBox="0 0 80 70" fill="none">
-          <path d="M40 0 C50 15, 65 25, 70 45 C72 52, 68 58, 62 55 C58 53, 55 48, 60 42" stroke="#1a1a1a" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-          <path d="M70 45 L76 38 M70 45 L62 40" stroke="#1a1a1a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-          <circle cx="45" cy="8" r="2" fill="#F5C518" />
-          <circle cx="58" cy="22" r="1.5" fill="#F5C518" />
-          <circle cx="68" cy="38" r="2" fill="#F5C518" />
-        </svg>
+      {/* Arrow images from banner */}
+      <div className="flex w-full justify-center items-center gap-[250px] lg:gap-[350px] bg-gray-50 py-3">
+        {/* Left arrow */}
+        <img 
+          src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/zkjztg73_Ads%C4%B1z%20tasar%C4%B1m%20%2846%29.png" 
+          alt="Arrow" 
+          className="w-[60px] h-[60px] md:w-[80px] md:h-[80px] object-contain"
+        />
+        {/* Right arrow */}
+        <img 
+          src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/zkjztg73_Ads%C4%B1z%20tasar%C4%B1m%20%2846%29.png" 
+          alt="Arrow" 
+          className="w-[60px] h-[60px] md:w-[80px] md:h-[80px] object-contain transform scale-x-[-1]"
+        />
       </div>
 
       {/* Two Video Boxes Section */}
