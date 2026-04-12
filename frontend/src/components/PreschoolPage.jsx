@@ -102,7 +102,7 @@ const PreschoolPage = () => {
       {/* Level Cards Section */}
       <section className="w-full py-16 md:py-20 bg-white">
         <div className="max-w-[1200px] mx-auto px-6 md:px-12">
-          <h2 className="text-center text-[28px] md:text-[36px] font-light text-gray-900 mb-12 tracking-wide">{p.levels}</h2>
+          <h2 className="text-center text-[28px] md:text-[36px] font-light text-gray-900 mb-12 tracking-wide">Serilerin İçeriklerini Video Anlatımlarıyla Keşfedin</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {levels.map((level, idx) => (
               <div key={idx} className="group cursor-pointer">
