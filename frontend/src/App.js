@@ -7,6 +7,7 @@ import HeroSection from "./components/HeroSection";
 import ContentSection from "./components/ContentSection";
 import Footer from "./components/Footer";
 import PreschoolPage from "./components/PreschoolPage";
+import BlogPage from "./components/BlogPage";
 import FloatingContact from "./components/FloatingContact";
 import { siteData } from "./data/mock";
 
@@ -32,6 +33,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/preschool" element={<PreschoolPage />} />
+            <Route path="/blog" element={<BlogPage />} />
           </Routes>
         </BrowserRouter>
       </LanguageProvider>

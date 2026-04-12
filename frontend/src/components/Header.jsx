@@ -30,7 +30,8 @@ const Header = ({ data }) => {
     { label: t.nav.preschool, href: "/preschool" },
     { label: t.nav.workshop, href: "#" },
     { label: t.nav.homeTutor, href: "#" },
-    { label: t.nav.academy, href: "#" }
+    { label: t.nav.academy, href: "#" },
+    { label: "BLOG", href: "/blog" }
   ];
 
   const currentFlag = languages.find(l => l.code === lang);
