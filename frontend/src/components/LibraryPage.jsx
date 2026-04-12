@@ -66,13 +66,75 @@ const LibraryPage = () => {
         </div>
       </section>
 
-      {/* Empty - Ready for new content */}
-      <section className="w-full py-12 bg-white">
-        <div className="max-w-[1200px] mx-auto px-6 md:px-12">
-          <p className="text-center text-gray-400 text-[18px]">
-            İçerik hazırlanıyor...
-          </p>
-        </div>
+      {/* Sections - No Boxes, Text Only */}
+      <section className="w-full">
+        {levels.map((level, index) => {
+          const isLeft = level.imagePosition === 'left';
+          
+          return (
+            <div 
+              key={level.id} 
+              className="w-full flex flex-col lg:flex-row min-h-[500px]"
+              style={{ 
+                width: '100vw',
+                margin: 0,
+                padding: 0
+              }}
+            >
+              {/* Empty White Space (where image was) */}
+              <div 
+                className={`w-full lg:w-1/2 bg-white ${isLeft ? 'order-1' : 'order-2'}`}
+                style={{ 
+                  minHeight: '500px'
+                }}
+              >
+                {/* Beyaz boş alan */}
+              </div>
+
+              {/* Text Side */}
+              <div 
+                className={`w-full lg:w-1/2 flex items-center bg-white ${isLeft ? 'order-2' : 'order-1'}`}
+                style={{ 
+                  minHeight: '500px',
+                  padding: '80px 60px'
+                }}
+              >
+                <div className="max-w-[600px]">
+                  <div 
+                    className="inline-block px-5 py-2 rounded-full text-[14px] font-bold text-white mb-6"
+                    style={{ backgroundColor: level.color }}
+                  >
+                    {level.id.charAt(0).toUpperCase() + level.id.slice(1)} Level
+                  </div>
+                  <h4 className="text-[32px] md:text-[38px] font-light text-gray-900 mb-5 leading-tight">
+                    {level.name}
+                  </h4>
+                  <p className="text-[16px] md:text-[17px] text-gray-600 leading-[1.9] mb-8">
+                    {level.description}
+                  </p>
+                  
+                  {/* Links */}
+                  <div className="space-y-4">
+                    <a 
+                      href={level.teacherLink}
+                      className="block text-[16px] text-gray-700 hover:text-gray-900 font-medium underline decoration-2 underline-offset-4 transition-colors"
+                      style={{ textDecorationColor: level.color }}
+                    >
+                      {level.id.charAt(0).toUpperCase() + level.id.slice(1)} öğretmen kitaplarını görmek için tıklayın
+                    </a>
+                    <a 
+                      href={level.studentLink}
+                      className="block text-[16px] text-gray-700 hover:text-gray-900 font-medium underline decoration-2 underline-offset-4 transition-colors"
+                      style={{ textDecorationColor: level.color }}
+                    >
+                      {level.id.charAt(0).toUpperCase() + level.id.slice(1)} öğrenci kitaplarını görmek için tıklayın
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        })}
       </section>
 
       <Footer data={siteData.footer} />
