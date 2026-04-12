@@ -24,12 +24,12 @@ const ContentSection = ({ section, isFirst }) => {
   return (
     <section
       id={section.id}
-      className="w-full py-14 md:py-16 lg:py-20"
+      className="w-full py-8 md:py-10 lg:py-12"
       style={{ backgroundColor: section.bgColor || '#ffffff' }}
     >
       <div className="max-w-[1200px] mx-auto px-6 md:px-12">
         {isFirst && (
-          <div className="mb-14 text-center">
+          <div className="mb-10 text-center">
             <h2 className="text-[28px] md:text-[36px] lg:text-[42px] text-black leading-snug font-semibold" style={{ fontFamily: "'Fredoka', 'Inter', sans-serif" }}>
               {t.sections.heading}
             </h2>
