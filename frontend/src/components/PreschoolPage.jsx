@@ -167,7 +167,13 @@ const PreschoolPage = () => {
                 <img src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/5dxwajw5_Ads%C4%B1z%20tasar%C4%B1m%20%2844%29.png" alt={p.library.title} className="w-full aspect-square object-cover" />
               </div>
               <h3 className="text-[20px] md:text-[24px] font-bold text-gray-900 mt-5 mb-3" style={{ fontFamily: "'Magic English', 'Fredoka', cursive" }}>{p.library.title}</h3>
-              <p className="text-[14px] text-gray-600 leading-[1.7] px-2">{p.library.desc}</p>
+              <p className="text-[14px] text-gray-600 leading-[1.7] px-2 mb-4">{p.library.desc}</p>
+              <button
+                onClick={() => navigate('/library')}
+                className="inline-block px-6 py-2.5 bg-blue-500 text-white text-[14px] font-semibold rounded-lg hover:bg-blue-600 transition-colors"
+              >
+                Kütüphaneye Git
+              </button>
             </div>
             <div className="group cursor-pointer text-center">
               <div className="rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">

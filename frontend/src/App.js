@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import PreschoolPage from "./components/PreschoolPage";
 import BlogPage from "./components/BlogPage";
 import LevelFinderPage from "./components/LevelFinderPage";
+import LibraryPage from "./components/LibraryPage";
 import FloatingContact from "./components/FloatingContact";
 import { siteData } from "./data/mock";
 
@@ -35,6 +36,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/preschool" element={<PreschoolPage />} />
             <Route path="/level-finder" element={<LevelFinderPage />} />
+            <Route path="/library" element={<LibraryPage />} />
             <Route path="/blog" element={<BlogPage />} />
           </Routes>
         </BrowserRouter>
