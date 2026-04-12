@@ -30,7 +30,7 @@ const WhyWoodyImageSection = () => {
             {/* MOBILE ONLY: Overlay text box - VERY SMALL, premium, at the TOP (ceiling/flags area) */}
             <div className="absolute top-4 left-4 right-4 md:hidden">
               <div 
-                className="bg-white/92 backdrop-blur-sm rounded-xl px-4 py-3"
+                className="bg-white/75 backdrop-blur-md rounded-xl px-4 py-3"
                 style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.08)', border: 'none' }}
               >
                 <h2 className="text-[16px] font-bold text-gray-900 mb-2 leading-tight">
@@ -40,9 +40,9 @@ const WhyWoodyImageSection = () => {
                   {features.map((feature, index) => (
                     <li 
                       key={index}
-                      className="text-[10px] text-gray-800 leading-tight flex items-start"
+                      className="text-[10px] font-medium text-gray-900 leading-tight flex items-start"
                     >
-                      <span className="mr-1.5 text-yellow-500 text-[10px]">•</span>
+                      <span className="mr-1.5 text-yellow-600 text-[10px] font-bold">•</span>
                       <span>{feature}</span>
                     </li>
                   ))}
