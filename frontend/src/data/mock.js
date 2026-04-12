@@ -45,8 +45,8 @@ export const siteData = {
       description: "1–2 kişilik bireysel kullanım için uygundur. İçerikler ve oyunlar tamamen birebir öğrenmeye göre uyarlanmıştır. Çocuğa özel ilerleme ve maksimum dikkat sağlar.",
       accentColor: "#9B59B6",
       image: "https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/exdjhy2v_8.png",
-      bgColor: "#f7f7f5",
-      theme: "light"
+      bgColor: "#ffffff",
+      theme: "white"
     }
   ],
   footer: {

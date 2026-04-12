@@ -2,7 +2,7 @@ import React from 'react';
 
 const CertificationSection = () => {
   return (
-    <section className="w-full py-[40px]" style={{ backgroundColor: '#FFFFFF' }}>
+    <section className="w-full py-[24px]" style={{ backgroundColor: '#FFFFFF' }}>
       <div className="max-w-[1400px] mx-auto px-6 md:px-12">
         <div className="flex flex-col items-center justify-center text-center">
           {/* Headline - Centered */}
