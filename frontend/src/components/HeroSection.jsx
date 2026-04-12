@@ -1,23 +1,40 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Play, X } from 'lucide-react';
 
 const HeroSection = ({ data }) => {
   const [showVideo, setShowVideo] = useState(false);
+  const bgVideoRef = useRef(null);
+  const modalVideoRef = useRef(null);
+
+  // Set video start time when loaded
+  useEffect(() => {
+    if (bgVideoRef.current) {
+      bgVideoRef.current.addEventListener('loadedmetadata', () => {
+        bgVideoRef.current.currentTime = 16;
+      });
+    }
+  }, []);
+
+  useEffect(() => {
+    if (modalVideoRef.current && showVideo) {
+      modalVideoRef.current.currentTime = 16;
+    }
+  }, [showVideo]);
 
   return (
     <section className="relative w-full h-screen min-h-[600px] overflow-hidden">
       {/* Background Video */}
       <div className="absolute inset-0">
         <video
+          ref={bgVideoRef}
           autoPlay
           loop
           muted
           playsInline
           className="w-full h-full object-cover"
           poster={data.backgroundImage}
-          onLoadedMetadata={(e) => { e.target.currentTime = 16; }}
         >
-          <source src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/ct6m2ted_woody%20and%20robo%20%283%29.mp4#t=16" type="video/mp4" />
+          <source src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/ct6m2ted_woody%20and%20robo%20%283%29.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-black/35" />
       </div>
@@ -65,6 +82,7 @@ const HeroSection = ({ data }) => {
           </button>
           <div className="w-full max-w-[1100px] aspect-video">
             <video
+              ref={modalVideoRef}
               autoPlay
               controls
               className="w-full h-full rounded-lg"
