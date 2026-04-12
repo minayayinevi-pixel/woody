@@ -52,7 +52,8 @@ const ContentSection = ({ section, isFirst }) => {
               <img 
                 src={section.image} 
                 alt={sectionT?.title || section.title} 
-                className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-[1.03]" 
+                className="w-full h-full object-cover transition-transform duration-700 hover:scale-[1.03]" 
+                style={{ objectPosition: '50% 60%' }}
                 loading="lazy" 
               />
             </div>
