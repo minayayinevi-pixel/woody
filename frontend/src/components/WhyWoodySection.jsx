@@ -43,25 +43,25 @@ const WhyWoodySection = () => {
           backgroundRepeat: 'no-repeat'
         }}
       >
-        {/* Right-aligned translucent white box - very compact on mobile, positioned at bottom */}
+        {/* Right-aligned translucent white box - VERY COMPACT on mobile for better character visibility */}
         <div className="absolute bottom-0 left-0 right-0 md:right-8 md:left-auto lg:right-20 md:top-1/2 md:transform md:-translate-y-1/2 md:bottom-auto w-full md:max-w-[420px] lg:max-w-[480px]">
           <div 
-            className="bg-white/95 md:bg-white/90 backdrop-blur-sm rounded-t-3xl md:rounded-2xl px-4 py-4 md:px-10 md:py-10"
+            className="bg-white/95 md:bg-white/90 backdrop-blur-sm rounded-t-3xl md:rounded-2xl px-3 py-3 md:px-10 md:py-10"
             style={{ boxShadow: 'none', border: 'none' }}
           >
             {/* Title */}
-            <h2 className="text-[20px] md:text-[32px] lg:text-[40px] font-bold text-gray-900 mb-3 md:mb-8 leading-tight">
+            <h2 className="text-[18px] md:text-[32px] lg:text-[40px] font-bold text-gray-900 mb-2 md:mb-8 leading-tight">
               Neden Woody?
             </h2>
 
-            {/* Feature List */}
-            <div className="space-y-2.5 md:space-y-6">
+            {/* Feature List - Very compact on mobile */}
+            <div className="space-y-1.5 md:space-y-6">
               {features.map((feature, index) => (
                 <div key={index}>
-                  <h3 className="text-[12px] md:text-[16px] lg:text-[18px] font-semibold text-gray-900 mb-0.5 md:mb-1.5 leading-snug">
+                  <h3 className="text-[11px] md:text-[16px] lg:text-[18px] font-semibold text-gray-900 mb-0 md:mb-1.5 leading-tight">
                     {feature.title}
                   </h3>
-                  <p className="text-[10px] md:text-[13px] lg:text-[14px] text-gray-600 leading-relaxed">
+                  <p className="text-[9px] md:text-[13px] lg:text-[14px] text-gray-600 leading-snug md:leading-relaxed">
                     {feature.description}
                   </p>
                 </div>
