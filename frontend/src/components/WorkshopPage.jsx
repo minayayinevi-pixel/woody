@@ -6,7 +6,7 @@ import Header from './Header';
 import { siteData } from '../data/mock';
 import { useLanguage } from '../context/LanguageContext';
 
-const WorkshopPage = () => {
+const PreschoolPage = () => {
   const navigate = useNavigate();
   const { t } = useLanguage();
   const [showVideo, setShowVideo] = useState(false);
@@ -33,12 +33,12 @@ const WorkshopPage = () => {
       {/* Hero Video Section */}
       <section className="relative w-full h-[50vh] min-h-[400px] overflow-hidden mt-[72px]">
         <div className="absolute inset-0">
-          <img src="https://images.squarespace-cdn.com/content/v1/60241cb68df65b530cd84d95/22305642-e101-4a60-a871-45a6a6d12d44/ember_stills_sdr_0154933.tiff-0.jpg" alt="Woody Workshop" className="w-full h-full object-cover" />
+          <img src="https://images.squarespace-cdn.com/content/v1/60241cb68df65b530cd84d95/22305642-e101-4a60-a871-45a6a6d12d44/ember_stills_sdr_0154933.tiff-0.jpg" alt="Woody Preschool" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/50" />
         </div>
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-white">
           <h1 className="text-[36px] md:text-[56px] lg:text-[72px] font-bold tracking-[0.3em] text-center mb-6" style={{ fontFamily: "'Magic English', 'Fredoka', cursive", textShadow: '0 3px 20px rgba(0,0,0,0.4)' }}>
-            WORKSHOP
+            {p.heroTitle}
           </h1>
           <button onClick={() => { setActiveVideo('hero'); setShowVideo(true); }} className="group w-[70px] h-[70px] rounded-full border-2 border-white/70 flex items-center justify-center transition-all duration-300 hover:border-white hover:scale-110 bg-transparent cursor-pointer">
             <Play size={26} className="text-white/80 group-hover:text-white ml-1" fill="white" fillOpacity={0.8} />
@@ -52,13 +52,15 @@ const WorkshopPage = () => {
       </section>
 
       {/* Banner Strip */}
-      <section className="w-full bg-gradient-to-r from-green-400 via-green-500 to-teal-400 py-4 shadow-md">
+      <section className="w-full bg-gradient-to-r from-yellow-400 via-yellow-500 to-orange-400 py-4 shadow-md">
         <div className="max-w-[1400px] mx-auto px-6">
           <h2 className="text-center text-white text-[24px] md:text-[32px] tracking-[0.15em] font-bold" style={{ fontFamily: "'Magic English', 'Fredoka', cursive", textShadow: '0 2px 8px rgba(0,0,0,0.2)' }}>
-            WORKSHOP SERIES
+            {p.banner}
           </h2>
         </div>
       </section>
+
+      {/* Arrows removed */}
 
       {/* Two Video Boxes Section */}
       <section className="w-full py-10 md:py-14 bg-gray-50">
@@ -97,46 +99,32 @@ const WorkshopPage = () => {
         </div>
       </section>
 
-      {/* Levels Section */}
-      <section className="w-full bg-white py-12 md:py-16">
+      {/* Level Cards Section */}
+      <section className="w-full py-16 md:py-20 bg-white">
         <div className="max-w-[1200px] mx-auto px-6 md:px-12">
-          <h2 className="text-[28px] md:text-[36px] lg:text-[42px] text-black leading-snug font-semibold text-center mb-4" style={{ fontFamily: "'Fredoka', 'Inter', sans-serif" }}>
-            {p.levelsHeading}
-          </h2>
-          <div className="w-24 h-[3px] mx-auto mb-12" style={{ backgroundColor: '#2ECC71' }} />
-
-          <div className="space-y-12 md:space-y-16">
+          <h2 className="text-center text-[28px] md:text-[36px] font-light text-gray-900 mb-12 tracking-wide">{p.levels}</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {levels.map((level, idx) => (
-              <div key={idx} className={`flex flex-col ${
-                idx % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
-              } items-center gap-10 lg:gap-16`}>
-                <div className="w-full lg:w-1/2">
-                  <img
-                    src={level.image}
-                    alt={level.name}
-                    className="w-full h-auto"
-                    style={{
-                      display: 'block',
-                      maxWidth: '100%',
-                      height: 'auto',
-                      filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.15))'
-                    }}
-                  />
+              <div key={idx} className="group cursor-pointer">
+                <div className="relative rounded-2xl overflow-hidden shadow-lg aspect-[3/4] transition-all duration-500 group-hover:shadow-2xl group-hover:scale-[1.03]" style={{ background: level.image ? '#f5f5f5' : level.bgGradient }}>
+                  {level.image ? (
+                    <img src={level.image} alt={level.name} className="w-full h-full object-cover" />
+                  ) : (
+                    <>
+                      <div className="absolute top-4 left-4 z-10"><span className="bg-white/20 backdrop-blur-sm text-white text-[12px] font-semibold px-3 py-1 rounded-full tracking-wider">{level.tag}</span></div>
+                      <div className="absolute top-[-30px] right-[-30px] w-[120px] h-[120px] rounded-full opacity-10 bg-white" />
+                      <div className="absolute bottom-[-20px] left-[-20px] w-[80px] h-[80px] rounded-full opacity-10 bg-white" />
+                      <div className="absolute inset-0 flex flex-col items-center justify-center px-6">
+                        <div className="text-white/30 text-[80px] md:text-[100px] font-black leading-none mb-2" style={{ fontFamily: "'Magic English', 'Fredoka', cursive" }}>{idx + 1}</div>
+                        <h3 className="text-white text-[22px] md:text-[26px] font-bold tracking-wide" style={{ fontFamily: "'Magic English', 'Fredoka', cursive", textShadow: '0 2px 10px rgba(0,0,0,0.3)' }}>{level.name}</h3>
+                      </div>
+                      <div className="absolute bottom-0 left-0 right-0 h-[60px] bg-gradient-to-t from-black/20 to-transparent" />
+                    </>
+                  )}
                 </div>
-                <div className="w-full lg:w-1/2">
-                  <div
-                    className="inline-block px-4 py-1.5 rounded-full text-[13px] font-semibold text-white mb-5"
-                    style={{ backgroundColor: level.color }}
-                  >
-                    {level.tag}
-                  </div>
-                  <h3 className="text-[30px] md:text-[36px] lg:text-[40px] font-light text-black leading-tight mb-5">
-                    {level.name}
-                  </h3>
-                  <div className="w-16 h-[3px] mb-6" style={{ backgroundColor: level.color }} />
-                  <p className="text-[15px] md:text-[16px] text-gray-600 leading-[1.8]">
-                    {level.description}
-                  </p>
+                <div className="mt-4 text-center">
+                  <h4 className="text-[16px] md:text-[18px] font-semibold text-gray-800">{level.name}</h4>
+                  <p className="text-[13px] text-gray-500 mt-1">{level.description}</p>
                 </div>
               </div>
             ))}
@@ -144,44 +132,48 @@ const WorkshopPage = () => {
         </div>
       </section>
 
+      {/* Three Feature Boxes Section */}
+      <section className="w-full py-16 md:py-20 bg-gray-50">
+        <div className="max-w-[1200px] mx-auto px-6 md:px-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+            <div className="group cursor-pointer text-center" onClick={() => navigate('/level-finder')}>
+              <div className="rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                <img src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/onplu2u5_Seviye%20Bulucu%20sembolu%CC%88.png" alt={p.finder.title} className="w-full aspect-square object-cover" />
+              </div>
+              <h3 className="text-[20px] md:text-[24px] font-bold text-gray-900 mt-5 mb-3" style={{ fontFamily: "'Magic English', 'Fredoka', cursive" }}>{p.finder.title}</h3>
+              <p className="text-[14px] text-gray-600 leading-[1.7] px-2">{p.finder.desc}</p>
+            </div>
+            <div className="group cursor-pointer text-center" onClick={() => navigate('/library')}>
+              <div className="rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                <img src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/5dxwajw5_Ads%C4%B1z%20tasar%C4%B1m%20%2844%29.png" alt={p.library.title} className="w-full aspect-square object-cover" />
+              </div>
+              <h3 className="text-[20px] md:text-[24px] font-bold text-gray-900 mt-5 mb-3" style={{ fontFamily: "'Magic English', 'Fredoka', cursive" }}>{p.library.title}</h3>
+              <p className="text-[14px] text-gray-600 leading-[1.7] px-2">{p.library.desc}</p>
+            </div>
+            <div className="group cursor-pointer text-center">
+              <div className="rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                <img src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/myf0t3nv_Gemini_Generated_Image_ip9cg9ip9cg9ip9c.png" alt={p.store.title} className="w-full aspect-square object-cover" />
+              </div>
+              <h3 className="text-[20px] md:text-[24px] font-bold text-gray-900 mt-5 mb-3" style={{ fontFamily: "'Magic English', 'Fredoka', cursive" }}>{p.store.title}</h3>
+              <p className="text-[14px] text-gray-600 leading-[1.7] px-2">{p.store.desc}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Footer data={siteData.footer} />
+
       {/* Video Modal */}
       {showVideo && (
-        <div className="fixed inset-0 z-[9999] flex items-center justify-center" style={{ background: 'rgba(0, 0, 0, 0.9)' }}>
-          <button
-            onClick={() => setShowVideo(false)}
-            className="absolute top-6 right-6 z-[10001] w-12 h-12 flex items-center justify-center rounded-full bg-white/10 backdrop-blur-sm border border-white/30 hover:bg-white/20 transition-all cursor-pointer"
-          >
-            <X size={24} className="text-white" />
-          </button>
-          <div className="relative w-full max-w-5xl aspect-video mx-4">
-            <VideoPlayer videoType={activeVideo} />
+        <div className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center p-4">
+          <button onClick={() => { setShowVideo(false); setActiveVideo(null); }} className="absolute top-6 right-6 text-white/80 hover:text-white transition-colors z-[110] bg-transparent border-none cursor-pointer"><X size={36} /></button>
+          <div className="w-full max-w-[1000px] aspect-video">
+            <iframe src="https://player.vimeo.com/video/911713522?autoplay=1" width="100%" height="100%" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen title={activeVideo === 'student' ? p.studentSet : activeVideo === 'teacher' ? p.teacherSet : 'Preschool Series'} className="rounded-lg" />
           </div>
         </div>
       )}
-
-      <Footer data={siteData.footer} />
     </div>
   );
 };
 
-const VideoPlayer = ({ videoType }) => {
-  const videoRef = React.useRef(null);
-
-  React.useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.currentTime = 16;
-    }
-  }, []);
-
-  return (
-    <video
-      ref={videoRef}
-      className="w-full h-full"
-      controls
-      autoPlay
-      src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/ct6m2ted_woody%20and%20robo%20%283%29.mp4#t=16"
-    />
-  );
-};
-
-export default WorkshopPage;
+export default PreschoolPage;
