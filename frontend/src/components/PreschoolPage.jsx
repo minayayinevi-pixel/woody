@@ -158,20 +158,20 @@ const PreschoolPage = () => {
               backgroundRepeat: 'no-repeat'
             }}
           >
-            {/* Left-aligned translucent white box - positioned at BOTTOM, moved right to avoid cutting characters */}
-            <div className="absolute left-[20%] md:left-[15%] lg:left-[18%] bottom-6 md:bottom-8 lg:bottom-12 max-w-[480px]">
+            {/* Left-top aligned translucent white box - SMALL and positioned at TOP to avoid covering characters */}
+            <div className="absolute left-8 md:left-12 lg:left-16 top-8 md:top-12 lg:top-16 max-w-[380px] md:max-w-[420px]">
               <div 
-                className="bg-white/85 backdrop-blur-sm rounded-2xl px-8 md:px-10 py-8 md:py-10"
+                className="bg-white/90 backdrop-blur-sm rounded-xl px-6 md:px-7 py-5 md:py-6"
                 style={{ boxShadow: 'none', border: 'none' }}
               >
-                <h2 className="text-[28px] md:text-[36px] lg:text-[42px] font-semibold text-gray-900 mb-4 leading-tight">
+                <h2 className="text-[22px] md:text-[28px] font-semibold text-gray-900 mb-3 leading-tight">
                   Woody Dijital İçerikler
                 </h2>
-                <p className="text-[15px] md:text-[17px] text-gray-700 leading-relaxed mb-6">
+                <p className="text-[13px] md:text-[14px] text-gray-700 leading-relaxed mb-4">
                   Movieland, Storyland ve Musicland ile öğrenme süreci video, hikâye ve müzikle zenginleşir.
                 </p>
                 {/* CTA Button */}
-                <div className="inline-block bg-gray-900 text-white px-6 py-3 rounded-lg text-[14px] md:text-[15px] font-medium">
+                <div className="inline-block bg-gray-900 text-white px-5 py-2.5 rounded-lg text-[13px] md:text-[14px] font-medium">
                   Dijital dünyaya gitmek için tıklayın
                 </div>
               </div>
