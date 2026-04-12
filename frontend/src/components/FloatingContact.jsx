@@ -4,7 +4,7 @@ import { MessageCircle, X } from 'lucide-react';
 const FloatingContact = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const whatsappLink = "https://wa.me/905551234567?text=Merhaba%2C%20Woody%20and%20Friends%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum.";
+  const whatsappLink = "https://wa.me/905331570373?text=Merhaba%2C%20Woody%20and%20Friends%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum.";
 
   return (
     <div className="fixed bottom-6 left-6 z-[90] flex flex-col items-start gap-3">

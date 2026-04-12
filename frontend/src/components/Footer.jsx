@@ -22,14 +22,21 @@ const Footer = ({ data }) => {
             <h4 className="text-[16px] font-semibold mb-4 tracking-wide">İletişim</h4>
             <div className="space-y-3">
               <a
-                href="tel:+905551234567"
+                href="tel:+903243580373"
                 className="flex items-center gap-3 text-[14px] text-gray-400 hover:text-white no-underline transition-colors duration-300"
               >
                 <Phone size={16} className="flex-shrink-0" />
-                +90 555 123 45 67
+                0324 358 03 73 Dahili 1
               </a>
               <a
-                href="https://wa.me/905551234567"
+                href="tel:+905331570373"
+                className="flex items-center gap-3 text-[14px] text-gray-400 hover:text-white no-underline transition-colors duration-300"
+              >
+                <Phone size={16} className="flex-shrink-0" />
+                0533 157 03 73 (Cep)
+              </a>
+              <a
+                href="https://wa.me/905331570373"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 text-[14px] text-gray-400 hover:text-[#25D366] no-underline transition-colors duration-300"

@@ -2,10 +2,11 @@ export const siteData = {
   header: {
     logo: "PIXAR",
     navItems: [
-      { label: "FILMS", href: "#" },
-      { label: "TECHNOLOGY", href: "#", active: true },
-      { label: "CAREERS", href: "#" },
-      { label: "MORE", href: "#" }
+      { label: "HOME", href: "/" },
+      { label: "WOODY PRESCHOOL", href: "/preschool", active: true },
+      { label: "HOME WORKSHOP", href: "#" },
+      { label: "WOODY ACADEMY", href: "#" },
+      { label: "CAREER", href: "#" }
     ]
   },
   hero: {

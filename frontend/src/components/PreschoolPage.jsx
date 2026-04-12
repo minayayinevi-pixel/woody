@@ -115,56 +115,24 @@ const PreschoolPage = () => {
         </div>
       </section>
 
+      {/* Arrows from banner */}
+      <div className="hidden md:flex w-full justify-center gap-[360px] -mt-1">
+        <svg width="40" height="50" viewBox="0 0 40 50" className="text-gray-900">
+          <path d="M20 0 L20 35 L8 25" stroke="currentColor" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M20 35 L32 25" stroke="currentColor" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+        <svg width="40" height="50" viewBox="0 0 40 50" className="text-gray-900">
+          <path d="M20 0 L20 35 L8 25" stroke="currentColor" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M20 35 L32 25" stroke="currentColor" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      </div>
+
       {/* Two Video Boxes Section */}
-      <section className="w-full py-16 md:py-20 bg-gray-50">
+      <section className="w-full py-12 md:py-16 bg-gray-50">
         <div className="max-w-[1100px] mx-auto px-6 md:px-12">
-          <div className="flex flex-col md:flex-row items-center gap-6 md:gap-4 relative">
+          <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
 
-            {/* Left Video - Öğrenci Seti */}
-            <div className="flex-1 w-full">
-              <div
-                className="relative bg-black rounded-2xl overflow-hidden shadow-2xl cursor-pointer group aspect-video"
-                onClick={() => handlePlayVideo('student')}
-              >
-                <img
-                  src="https://images.squarespace-cdn.com/content/v1/60241cb68df65b530cd84d95/485b26c1-eb3a-48a7-bab6-437b3938f44c/RenderMan_OCIO_Aces_Header2.jpg"
-                  alt="Öğrenci Seti"
-                  className="w-full h-full object-cover opacity-70 group-hover:opacity-90 transition-opacity duration-500"
-                />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-[60px] h-[60px] md:w-[70px] md:h-[70px] rounded-full bg-white/20 backdrop-blur-sm border-2 border-white/60 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <Play size={24} className="text-white ml-1" fill="white" />
-                  </div>
-                </div>
-              </div>
-              <p className="text-center mt-4 text-[18px] md:text-[22px] font-bold text-gray-800 tracking-wide">
-                Öğrenci Seti
-              </p>
-            </div>
-
-            {/* Arrows in the middle */}
-            <div className="hidden md:flex flex-col items-center gap-3 px-4 min-w-[80px]">
-              <div className="flex items-center gap-1">
-                <ArrowLeft size={28} className="text-yellow-500" strokeWidth={2.5} />
-              </div>
-              <div className="w-[3px] h-8 bg-yellow-400 rounded-full" />
-              <div className="flex items-center gap-1">
-                <ArrowRight size={28} className="text-yellow-500" strokeWidth={2.5} />
-              </div>
-            </div>
-
-            {/* Mobile arrows */}
-            <div className="flex md:hidden items-center justify-center gap-4">
-              <div className="rotate-90">
-                <ArrowLeft size={24} className="text-yellow-500" strokeWidth={2.5} />
-              </div>
-              <div className="w-8 h-[3px] bg-yellow-400 rounded-full" />
-              <div className="rotate-90">
-                <ArrowRight size={24} className="text-yellow-500" strokeWidth={2.5} />
-              </div>
-            </div>
-
-            {/* Right Video - Öğretmen Seti */}
+            {/* Left Video - Öğretmen Seti */}
             <div className="flex-1 w-full">
               <div
                 className="relative bg-black rounded-2xl overflow-hidden shadow-2xl cursor-pointer group aspect-video"
@@ -185,21 +153,37 @@ const PreschoolPage = () => {
                 Öğretmen Seti
               </p>
             </div>
+
+            {/* Right Video - Öğrenci Seti */}
+            <div className="flex-1 w-full">
+              <div
+                className="relative bg-black rounded-2xl overflow-hidden shadow-2xl cursor-pointer group aspect-video"
+                onClick={() => handlePlayVideo('student')}
+              >
+                <img
+                  src="https://images.squarespace-cdn.com/content/v1/60241cb68df65b530cd84d95/485b26c1-eb3a-48a7-bab6-437b3938f44c/RenderMan_OCIO_Aces_Header2.jpg"
+                  alt="Öğrenci Seti"
+                  className="w-full h-full object-cover opacity-70 group-hover:opacity-90 transition-opacity duration-500"
+                />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-[60px] h-[60px] md:w-[70px] md:h-[70px] rounded-full bg-white/20 backdrop-blur-sm border-2 border-white/60 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <Play size={24} className="text-white ml-1" fill="white" />
+                  </div>
+                </div>
+              </div>
+              <p className="text-center mt-4 text-[18px] md:text-[22px] font-bold text-gray-800 tracking-wide">
+                Öğrenci Seti
+              </p>
+            </div>
           </div>
 
-          {/* Warning Notice */}
-          <div className="mt-12 bg-red-50 border border-red-200 rounded-2xl p-6 md:p-8">
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-red-500 flex items-center justify-center mt-0.5">
-                <span className="text-white text-[22px] font-bold leading-none">!</span>
-              </div>
-              <div>
-                <p className="text-[15px] md:text-[16px] text-gray-800 leading-[1.8]">
-                  Woody Preschool sisteminin uygulanabilmesi için kurum mevcudunun en az <strong>30 öğrenci</strong> olması gerekmektedir.<br />
-                  Öğretmen seti ayrıca ücretli olarak satılmaz. Anlaşma sağlanan kurumlara, öğrenci setleri ile birlikte <strong>ücretsiz</strong> olarak sunulur ve her sene yenilenir.
-                </p>
-              </div>
-            </div>
+          {/* Warning Notice - White background, smaller */}
+          <div className="mt-8 bg-white border border-gray-200 rounded-xl px-5 py-4">
+            <p className="text-[13px] md:text-[14px] text-gray-700 leading-[1.7]">
+              <span className="text-red-500 font-bold text-[18px] mr-1.5">!</span>
+              Woody Preschool sisteminin uygulanabilmesi için kurum mevcudunun en az <strong>30 öğrenci</strong> olması gerekmektedir.
+              Öğretmen seti ayrıca ücretli olarak satılmaz. Anlaşma sağlanan kurumlara, öğrenci setleri ile birlikte <strong>ücretsiz</strong> olarak sunulur ve her sene yenilenir.
+            </p>
           </div>
         </div>
       </section>
