@@ -37,9 +37,27 @@ const blockLabels = {
 };
 
 const levelResults = {
-  basic: { name: 'Basic Level', color: '#2196F3', desc: 'Öğrenci temel seviye İngilizce eğitimine başlamalıdır. Woody Basic Set bu seviye için en uygun settir.', image: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/3jgyyil9_1.png' },
-  junior: { name: 'Junior Level', color: '#F5C518', desc: 'Öğrenci orta-alt seviye İngilizce eğitimine hazırdır. Woody Junior Set bu seviye için idealdir.', image: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/h5x59v59_3.png' },
-  senior: { name: 'Senior Level', color: '#E91E90', desc: 'Öğrenci ileri seviye İngilizce eğitimine geçebilir. Woody Senior Set ile süreç daha da güçlenir.', image: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/m4z26p5k_2.png' },
+  basic: { 
+    name: 'Basic Level', 
+    color: '#2196F3', 
+    title: 'Bu ürünü almanız gerekir',
+    desc: 'Öğrenci temel seviye İngilizce eğitimine başlamalıdır. Woody Basic Set bu seviye için en uygun settir.', 
+    image: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/3jgyyil9_1.png' 
+  },
+  junior: { 
+    name: 'Junior Level', 
+    color: '#F5C518', 
+    title: 'Bu sizin için uygun',
+    desc: 'Öğrenci orta-alt seviye İngilizce eğitimine hazırdır. Woody Junior Set bu seviye için idealdir.', 
+    image: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/h5x59v59_3.png' 
+  },
+  senior: { 
+    name: 'Senior Level', 
+    color: '#E91E90', 
+    title: 'Bu sizin için uygun',
+    desc: 'Öğrenci ileri seviye İngilizce eğitimine geçebilir. Woody Senior Set ile süreç daha da güçlenir.', 
+    image: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/m4z26p5k_2.png' 
+  },
 };
 
 function calculateLevel(answers) {
@@ -66,6 +84,8 @@ const LevelFinderPage = () => {
   const [currentBlock, setCurrentBlock] = useState('A');
   const [showResult, setShowResult] = useState(false);
   const [result, setResult] = useState(null);
+  const [showTransition, setShowTransition] = useState(false);
+  const [transitionMessage, setTransitionMessage] = useState('');
 
   const currentQuestions = questions.filter(q => q.block === currentBlock);
   const blocks = ['A', 'B', 'C'];
@@ -78,11 +98,46 @@ const LevelFinderPage = () => {
   };
 
   const handleNext = () => {
-    if (blockIndex < 2) {
-      setCurrentBlock(blocks[blockIndex + 1]);
-    } else {
-      const level = calculateLevel(answers);
-      setResult(levelResults[level]);
+    // Count YES answers in current block
+    const currentBlockQuestions = questions.filter(q => q.block === currentBlock);
+    const yesCount = currentBlockQuestions.reduce((sum, q) => sum + (answers[q.id] === true ? 1 : 0), 0);
+
+    // A Block finished
+    if (currentBlock === 'A') {
+      if (yesCount >= 4) {
+        // Go to Junior level (B block)
+        setTransitionMessage('🎉 Junior seviyeye geçiyoruz!');
+        setShowTransition(true);
+        setTimeout(() => {
+          setShowTransition(false);
+          setCurrentBlock('B');
+        }, 2000);
+      } else {
+        // Stay at Basic level - show result
+        setResult(levelResults.basic);
+        setShowResult(true);
+      }
+    }
+    // B Block finished
+    else if (currentBlock === 'B') {
+      if (yesCount >= 4) {
+        // Go to Senior level (C block)
+        setTransitionMessage('🎉 Senior seviyeye geçiyoruz!');
+        setShowTransition(true);
+        setTimeout(() => {
+          setShowTransition(false);
+          setCurrentBlock('C');
+        }, 2000);
+      } else {
+        // Stay at Junior level - show result
+        setResult(levelResults.junior);
+        setShowResult(true);
+      }
+    }
+    // C Block finished
+    else if (currentBlock === 'C') {
+      // Always show Senior result
+      setResult(levelResults.senior);
       setShowResult(true);
     }
   };
@@ -112,27 +167,36 @@ const LevelFinderPage = () => {
               {/* Result Text */}
               <div className="w-full md:w-[60%] text-center md:text-left">
                 <div className="inline-block px-4 py-1.5 rounded-full text-[13px] font-bold text-white mb-5" style={{ backgroundColor: result.color }}>
-                  Önerilen Seviye
+                  {result.title}
                 </div>
                 <h1 className="text-[36px] md:text-[48px] font-bold text-gray-900 mb-4" style={{ fontFamily: "'Magic English', 'Fredoka', cursive" }}>
                   {result.name}
                 </h1>
-                <p className="text-[16px] md:text-[18px] text-gray-600 leading-[1.8] mb-4">
-                  Bu set size uygun!
-                </p>
                 <p className="text-[15px] text-gray-500 leading-[1.7] mb-8">
                   {result.desc}
                 </p>
 
-                {/* Store Button */}
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-3 px-8 py-4 text-white text-[15px] font-semibold rounded-xl transition-all duration-300 hover:scale-105 no-underline shadow-lg"
-                  style={{ backgroundColor: result.color }}
-                >
-                  <ShoppingCart size={20} />
-                  Woody Store'a Git
-                </a>
+                {/* Online Sales Box */}
+                <div className="bg-gradient-to-r from-yellow-50 to-orange-50 border-2 border-yellow-400 rounded-xl p-6 mb-6 shadow-md">
+                  <h3 className="text-[18px] font-bold text-gray-800 mb-3 flex items-center gap-2">
+                    <ShoppingCart size={22} className="text-yellow-600" />
+                    Online Satış
+                  </h3>
+                  <p className="text-[14px] text-gray-600 mb-4">
+                    Bu seti hemen online olarak sipariş edebilirsiniz!
+                  </p>
+                  <a
+                    href="https://wa.me/905331570373?text=Merhaba%2C%20Woody%20Level%20Finder%20testini%20tamamladım%20ve%20%2A{result.name}%2A%20önerildi.%20Ürün%20hakkında%20bilgi%20almak%20istiyorum."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-3 px-6 py-3 bg-green-500 text-white text-[15px] font-semibold rounded-xl transition-all duration-300 hover:bg-green-600 hover:scale-105 no-underline shadow-lg"
+                  >
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    </svg>
+                    WhatsApp ile Sipariş Ver
+                  </a>
+                </div>
 
                 <button
                   onClick={() => { setShowResult(false); setResult(null); setAnswers({}); setCurrentBlock('A'); }}
@@ -154,6 +218,19 @@ const LevelFinderPage = () => {
     <div className="min-h-screen bg-white">
       <Header data={siteData.header} />
       <div className="pt-[72px]" />
+
+      {/* Transition Message Overlay */}
+      {showTransition && (
+        <div className="fixed inset-0 z-[100] bg-black/60 flex items-center justify-center backdrop-blur-sm">
+          <div className="bg-white rounded-3xl px-12 py-10 shadow-2xl max-w-md mx-4 text-center animate-bounce">
+            <div className="text-[48px] mb-4">🎉</div>
+            <h2 className="text-[28px] md:text-[32px] font-bold text-gray-900 mb-3" style={{ fontFamily: "'Magic English', 'Fredoka', cursive" }}>
+              {transitionMessage}
+            </h2>
+            <p className="text-[15px] text-gray-500">Yükleniyor...</p>
+          </div>
+        </div>
+      )}
 
       {/* Progress Bar */}
       <div className="w-full bg-gray-100 h-[4px] sticky top-[72px] z-40">
@@ -261,7 +338,7 @@ const LevelFinderPage = () => {
               }`}
               style={allBlockAnswered ? { backgroundColor: blockLabels[currentBlock].color } : {}}
             >
-              {blockIndex < 2 ? 'Sonraki Blok' : 'Sonucu Gör'}
+              {currentBlock === 'A' ? 'Değerlendir' : currentBlock === 'B' ? 'Değerlendir' : 'Sonucu Gör'}
               <ChevronRight size={18} />
             </button>
           </div>
