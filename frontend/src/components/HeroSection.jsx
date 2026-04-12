@@ -96,4 +96,3 @@ const HeroSection = ({ data }) => {
 };
 
 export default HeroSection;
-on;
