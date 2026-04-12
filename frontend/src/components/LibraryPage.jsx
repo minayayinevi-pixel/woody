@@ -16,7 +16,7 @@ const LibraryPage = () => {
       name: 'Woody Digital Library – Basic Level',
       description: 'Basic Level Digital Library, başlangıç seviyesindeki öğretmen ve öğrenci kitaplarının incelenebileceği dijital kütüphane alanıdır. Kurumlar, içerik yapısını ve kazanımları önceden görerek sistemi net şekilde değerlendirebilir.',
       color: '#2196F3',
-      image: 'https://images.squarespace-cdn.com/content/v1/60241cb68df65b530cd84d95/42a4f404-b669-4acc-93c8-1d42e679e27f/brochure_foldout.jpg',
+      image: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/o3kuxzom_kling_20260412_%E4%BD%9C%E5%93%81_Ultra_deta_5746_2.png',
       imagePosition: 'left',
       teacherLink: '#',
       studentLink: '#'
@@ -26,7 +26,7 @@ const LibraryPage = () => {
       name: 'Woody Digital Library – Junior Level',
       description: 'Junior Level Digital Library, öğrencilerin cümle kurma ve temel iletişim becerilerini geliştirdiği içeriklerin incelenebileceği dijital kütüphane alanıdır. Kurumlar, bu seviyede yer alan öğretmen ve öğrenci kitaplarını inceleyerek sistemin ilerleyen yapısını net şekilde görebilir.',
       color: '#F5C518',
-      image: 'https://images.squarespace-cdn.com/content/v1/60241cb68df65b530cd84d95/485b26c1-eb3a-48a7-bab6-437b3938f44c/RenderMan_OCIO_Aces_Header2.jpg',
+      image: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/o3kuxzom_kling_20260412_%E4%BD%9C%E5%93%81_Ultra_deta_5746_2.png',
       imagePosition: 'right',
       teacherLink: '#',
       studentLink: '#'
@@ -36,7 +36,7 @@ const LibraryPage = () => {
       name: 'Woody Digital Library – Senior Level',
       description: 'Senior Level Digital Library, öğrencilerin akıcı iletişim kurduğu ve yapıları birleştirerek kullandığı ileri seviye içeriklerin incelenebileceği dijital kütüphane alanıdır. Kurumlar, öğretmen ve öğrenci kitaplarını inceleyerek programın üst düzey kazanımlarını ve iletişim odaklı yapısını değerlendirebilir.',
       color: '#E91E90',
-      image: 'https://images.squarespace-cdn.com/content/v1/60241cb68df65b530cd84d95/22305642-e101-4a60-a871-45a6a6d12d44/ember_stills_sdr_0154933.tiff-0.jpg',
+      image: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/o3kuxzom_kling_20260412_%E4%BD%9C%E5%93%81_Ultra_deta_5746_2.png',
       imagePosition: 'left',
       teacherLink: '#',
       studentLink: '#'
@@ -75,19 +75,19 @@ const LibraryPage = () => {
             return (
               <div key={level.id} className={`flex flex-col ${isLeft ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-10 lg:gap-16`}>
                 {/* Image */}
-                <div className="w-full lg:w-1/2">
+                <div className="w-full lg:w-1/2 flex items-center justify-center">
                   <div 
-                    className="rounded-2xl overflow-hidden shadow-xl relative"
+                    className="relative w-full max-w-[500px] transition-all duration-500 hover:scale-105"
                     style={{
-                      borderLeft: isLeft ? `6px solid ${level.color}` : 'none',
-                      borderRight: !isLeft ? `6px solid ${level.color}` : 'none',
-                      height: '350px'
+                      filter: 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.15))',
+                      height: '400px'
                     }}
                   >
                     <img 
                       src={level.image} 
                       alt={level.name} 
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain"
+                      style={{ filter: 'drop-shadow(0 10px 30px rgba(0, 0, 0, 0.2))' }}
                     />
                   </div>
                 </div>
