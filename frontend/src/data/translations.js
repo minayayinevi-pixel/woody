@@ -14,6 +14,11 @@ const translations = {
       subtitle: 'RenderMan Show Reel',
       watchText: 'İzle'
     },
+    grayBanner: {
+      leftText: "Oyun Tabanlı Öğrenme",
+      centerText: "Yapılandırılmış oyun, etkileşimli aktiviteler ve zengin dijital içerik ile dil becerileri geliştirir.",
+      rightText: "Her Yaş İçin Uygun Setler"
+    },
     sections: {
       heading: "Hangi Woody Set Sizin için?",
       preschool: {
@@ -99,6 +104,11 @@ const translations = {
       title: "R E N D E R M A N",
       subtitle: 'RenderMan Show Reel',
       watchText: 'Watch'
+    },
+    grayBanner: {
+      leftText: "Play-Based Learning",
+      centerText: "Builds language skills through structured play, engaging activities, and rich digital content.",
+      rightText: "Sets for All Ages"
     },
     sections: {
       heading: "Hangi Woody Set Sizin için?",
@@ -186,6 +196,11 @@ const translations = {
       subtitle: 'RenderMan Show Reel',
       watchText: 'Смотреть'
     },
+    grayBanner: {
+      leftText: "Обучение через игру",
+      centerText: "Развивает языковые навыки через структурированную игру, увлекательные занятия и богатый цифровой контент.",
+      rightText: "Наборы для всех возрастов"
+    },
     sections: {
       heading: "Какой набор Woody для вас?",
       preschool: {
@@ -237,6 +252,11 @@ const translations = {
       title: "R E N D E R M A N",
       subtitle: 'RenderMan Show Reel',
       watchText: 'Ansehen'
+    },
+    grayBanner: {
+      leftText: "Spielbasiertes Lernen",
+      centerText: "Entwickelt Sprachfähigkeiten durch strukturiertes Spiel, ansprechende Aktivitäten und reichhaltige digitale Inhalte.",
+      rightText: "Sets für alle Altersgruppen"
     },
     sections: {
       heading: "Welches Woody-Set ist für Sie?",
