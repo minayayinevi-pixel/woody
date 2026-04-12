@@ -60,22 +60,41 @@ const PreschoolPage = () => {
         </div>
       </section>
 
-      {/* Arrow images from banner - pointing at each other */}
-      <div className="flex w-full justify-center items-center gap-[200px] lg:gap-[300px] bg-gray-50 py-1">
-        {/* Left arrow - pointing RIGHT */}
-        <img 
-          src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/zkjztg73_Ads%C4%B1z%20tasar%C4%B1m%20%2846%29.png" 
-          alt="Arrow" 
-          className="w-[100px] h-[100px] md:w-[130px] md:h-[130px] object-contain transform rotate-90"
-          style={{ mixBlendMode: 'multiply' }}
-        />
-        {/* Right arrow - pointing LEFT */}
-        <img 
-          src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/zkjztg73_Ads%C4%B1z%20tasar%C4%B1m%20%2846%29.png" 
-          alt="Arrow" 
-          className="w-[100px] h-[100px] md:w-[130px] md:h-[130px] object-contain transform -rotate-90"
-          style={{ mixBlendMode: 'multiply' }}
-        />
+      {/* Curved Arrow SVGs - pointing to videos */}
+      <div className="flex w-full justify-center items-center gap-[200px] lg:gap-[300px] bg-white py-2">
+        {/* Left arrow - curved down to left video */}
+        <svg width="120" height="100" viewBox="0 0 120 100" fill="none" className="w-[100px] h-[80px] md:w-[120px] md:h-[100px]">
+          <path 
+            d="M60 10 Q50 30, 45 50 Q42 65, 35 75" 
+            stroke="#1a1a1a" 
+            strokeWidth="3.5" 
+            fill="none" 
+            strokeLinecap="round"
+          />
+          {/* Arrow head */}
+          <path d="M35 75 L28 68 M35 75 L42 69" stroke="#1a1a1a" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
+          {/* Decorative dots */}
+          <circle cx="58" cy="15" r="3" fill="#F5C518" />
+          <circle cx="48" cy="35" r="2.5" fill="#F5C518" />
+          <circle cx="40" cy="60" r="3" fill="#F5C518" />
+        </svg>
+
+        {/* Right arrow - curved down to right video */}
+        <svg width="120" height="100" viewBox="0 0 120 100" fill="none" className="w-[100px] h-[80px] md:w-[120px] md:h-[100px]">
+          <path 
+            d="M60 10 Q70 30, 75 50 Q78 65, 85 75" 
+            stroke="#1a1a1a" 
+            strokeWidth="3.5" 
+            fill="none" 
+            strokeLinecap="round"
+          />
+          {/* Arrow head */}
+          <path d="M85 75 L92 68 M85 75 L78 69" stroke="#1a1a1a" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
+          {/* Decorative dots */}
+          <circle cx="62" cy="15" r="3" fill="#F5C518" />
+          <circle cx="72" cy="35" r="2.5" fill="#F5C518" />
+          <circle cx="80" cy="60" r="3" fill="#F5C518" />
+        </svg>
       </div>
 
       {/* Two Video Boxes Section */}
