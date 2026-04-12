@@ -81,12 +81,12 @@ const LibraryPage = () => {
                 padding: 0
               }}
             >
-              {/* Image Side - Full Bleed */}
+              {/* Image Side - Clean, No Frame */}
               <div 
-                className={`w-full lg:w-1/2 flex items-center justify-center bg-gradient-to-br from-gray-50 to-white ${isLeft ? 'order-1' : 'order-2'}`}
+                className={`w-full lg:w-1/2 flex items-center justify-center bg-white ${isLeft ? 'order-1' : 'order-2'}`}
                 style={{ 
                   minHeight: '600px',
-                  padding: '60px 40px'
+                  padding: '40px 20px'
                 }}
               >
                 <img 
@@ -94,7 +94,7 @@ const LibraryPage = () => {
                   alt={level.name} 
                   className="w-full max-w-[500px] h-auto"
                   style={{ 
-                    filter: 'drop-shadow(0 30px 60px rgba(0, 0, 0, 0.35)) drop-shadow(0 15px 25px rgba(0, 0, 0, 0.2))',
+                    filter: 'drop-shadow(0 35px 65px rgba(0, 0, 0, 0.4)) drop-shadow(0 20px 30px rgba(0, 0, 0, 0.25))',
                     display: 'block'
                   }}
                 />
