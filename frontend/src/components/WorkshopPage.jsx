@@ -6,7 +6,7 @@ import Header from './Header';
 import { siteData } from '../data/mock';
 import { useLanguage } from '../context/LanguageContext';
 
-const PreschoolPage = () => {
+const WorkshopPage = () => {
   const navigate = useNavigate();
   const { t } = useLanguage();
   const [showVideo, setShowVideo] = useState(false);
@@ -38,7 +38,7 @@ const PreschoolPage = () => {
         </div>
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-white">
           <h1 className="text-[36px] md:text-[56px] lg:text-[72px] font-bold tracking-[0.3em] text-center mb-6" style={{ fontFamily: "'Magic English', 'Fredoka', cursive", textShadow: '0 3px 20px rgba(0,0,0,0.4)' }}>
-            {p.heroTitle}
+            WORKSHOP
           </h1>
           <button onClick={() => { setActiveVideo('hero'); setShowVideo(true); }} className="group w-[70px] h-[70px] rounded-full border-2 border-white/70 flex items-center justify-center transition-all duration-300 hover:border-white hover:scale-110 bg-transparent cursor-pointer">
             <Play size={26} className="text-white/80 group-hover:text-white ml-1" fill="white" fillOpacity={0.8} />
@@ -52,10 +52,10 @@ const PreschoolPage = () => {
       </section>
 
       {/* Banner Strip */}
-      <section className="w-full bg-gradient-to-r from-yellow-400 via-yellow-500 to-orange-400 py-4 shadow-md">
+      <section className="w-full bg-gradient-to-r from-green-400 via-green-500 to-teal-400 py-4 shadow-md">
         <div className="max-w-[1400px] mx-auto px-6">
           <h2 className="text-center text-white text-[24px] md:text-[32px] tracking-[0.15em] font-bold" style={{ fontFamily: "'Magic English', 'Fredoka', cursive", textShadow: '0 2px 8px rgba(0,0,0,0.2)' }}>
-            {p.banner}
+            WOODY WORKSHOP SERIES
           </h2>
         </div>
       </section>
@@ -176,4 +176,4 @@ const PreschoolPage = () => {
   );
 };
 
-export default PreschoolPage;
+export default WorkshopPage;
