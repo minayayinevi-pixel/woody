@@ -24,7 +24,7 @@ export const siteData = {
       title: "Preschool Series",
       description: "Büyük sınıflar, okullar ve kreşler için geliştirilmiştir. Kalabalık gruplara uygun olarak içerikler ve oyunlar sınıf yönetimine göre yapılandırılmıştır. Tüm sınıfın aynı anda aktif katılım gösterebildiği bir uygulama modeli sunar.",
       accentColor: "#F5C518",
-      image: "https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/bg6n4hl1_6.png",
+      image: "https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/n8vryl38_6.png",
       bgColor: "#ffffff",
       theme: "white"
     },
@@ -34,7 +34,7 @@ export const siteData = {
       title: "Workshop",
       description: "3–5 kişilik küçük gruplar için tasarlanmıştır. İçerikler ve oyunlar daha yoğun etkileşim ve bireysel katılım sağlayacak şekilde düzenlenmiştir. Daha odaklı ve hızlı ilerleyen bir uygulama yapısı sunar.",
       accentColor: "#2ECC71",
-      image: "https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/sbsm8cpy_7.png",
+      image: "https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/7q4grria_7.png",
       bgColor: "#ffffff",
       theme: "white"
     },
@@ -44,7 +44,7 @@ export const siteData = {
       title: "Home Tutor / Home Series",
       description: "1–2 kişilik bireysel kullanım için uygundur. İçerikler ve oyunlar tamamen birebir öğrenmeye göre uyarlanmıştır. Çocuğa özel ilerleme ve maksimum dikkat sağlar.",
       accentColor: "#9B59B6",
-      image: "https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/hky0x1vd_8.png",
+      image: "https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/exdjhy2v_8.png",
       bgColor: "#f7f7f5",
       theme: "light"
     }
