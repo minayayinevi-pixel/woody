@@ -37,7 +37,7 @@ const HomeTutorPage = () => {
           <div className="absolute inset-0 bg-black/50" />
         </div>
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-white">
-          <h1 className="text-[36px] md:text-[56px] lg:text-[72px] font-bold tracking-[0.3em] text-center mb-6" style={{ fontFamily: "'Magic English', 'Fredoka', cursive", textShadow: '0 3px 20px rgba(0,0,0,0.4)' }}>
+          <h1 className="text-[60px] md:text-[90px] lg:text-[120px] font-black tracking-[0.05em] text-center mb-6 leading-none" style={{ fontFamily: "'Magic English', 'Fredoka', cursive", textShadow: '0 4px 30px rgba(0,0,0,0.5)', letterSpacing: '0.1em' }}>
             HOME & TUTOR
           </h1>
           <button onClick={() => { setActiveVideo('hero'); setShowVideo(true); }} className="group w-[70px] h-[70px] rounded-full border-2 border-white/70 flex items-center justify-center transition-all duration-300 hover:border-white hover:scale-110 bg-transparent cursor-pointer">
