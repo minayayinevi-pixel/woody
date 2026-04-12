@@ -27,22 +27,22 @@ const WhyWoodyImageSection = () => {
               style={{ minHeight: '500px' }}
             />
             
-            {/* MOBILE ONLY: Overlay text box in UPPER area (NOT over characters) */}
-            <div className="absolute top-8 left-4 right-4 md:hidden">
+            {/* MOBILE ONLY: Overlay text box - VERY SMALL, premium, right above characters' heads */}
+            <div className="absolute bottom-[45%] left-4 right-4 md:hidden">
               <div 
-                className="bg-white/95 backdrop-blur-sm rounded-2xl px-6 py-6"
-                style={{ boxShadow: 'none', border: 'none' }}
+                className="bg-white/92 backdrop-blur-sm rounded-xl px-4 py-3"
+                style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.08)', border: 'none' }}
               >
-                <h2 className="text-[24px] font-bold text-gray-900 mb-4 leading-tight">
+                <h2 className="text-[16px] font-bold text-gray-900 mb-2 leading-tight">
                   Neden Woody?
                 </h2>
-                <ul className="space-y-2">
+                <ul className="space-y-1">
                   {features.map((feature, index) => (
                     <li 
                       key={index}
-                      className="text-[13px] text-gray-800 leading-relaxed flex items-start"
+                      className="text-[10px] text-gray-800 leading-tight flex items-start"
                     >
-                      <span className="mr-2 text-yellow-500">•</span>
+                      <span className="mr-1.5 text-yellow-500 text-[10px]">•</span>
                       <span>{feature}</span>
                     </li>
                   ))}
