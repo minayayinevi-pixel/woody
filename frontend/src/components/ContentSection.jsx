@@ -48,7 +48,7 @@ const ContentSection = ({ section, isFirst }) => {
                 borderRight: !isImageLeft ? `6px solid ${section.accentColor}` : 'none',
               }}
             >
-              <img src={section.image} alt={sectionT?.title || section.title} className="w-full h-auto object-cover object-top transition-transform duration-700 hover:scale-[1.03]" style={{ maxHeight: '420px', objectFit: 'cover' }} loading="lazy" />
+              <img src={section.image} alt={sectionT?.title || section.title} className="w-full h-auto object-cover object-center transition-transform duration-700 hover:scale-[1.03]" style={{ maxHeight: '450px', objectFit: 'cover', objectPosition: 'center 35%' }} loading="lazy" />
             </div>
           </div>
 
