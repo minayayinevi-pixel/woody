@@ -4,7 +4,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "./context/LanguageContext";
 import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
-import GrayBanner from "./components/GrayBanner";
 import ContentSection from "./components/ContentSection";
 import Footer from "./components/Footer";
 import PreschoolPage from "./components/PreschoolPage";
@@ -21,7 +20,6 @@ const HomePage = () => {
     <>
       <Header data={siteData.header} />
       <HeroSection data={siteData.hero} />
-      <GrayBanner />
       {siteData.sections.map((section, index) => (
         <ContentSection key={section.id} section={section} isFirst={index === 0} />
       ))}
