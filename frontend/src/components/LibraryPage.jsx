@@ -16,7 +16,7 @@ const LibraryPage = () => {
       name: 'Woody Digital Library – Basic Level',
       description: 'Basic Level Digital Library, başlangıç seviyesindeki öğretmen ve öğrenci kitaplarının incelenebileceği dijital kütüphane alanıdır. Kurumlar, içerik yapısını ve kazanımları önceden görerek sistemi net şekilde değerlendirebilir.',
       color: '#2196F3',
-      image: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/o3kuxzom_kling_20260412_%E4%BD%9C%E5%93%81_Ultra_deta_5746_2.png',
+      image: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/5k1ulsw4_Ads%C4%B1z%20tasar%C4%B1m%20%2845%29.png',
       imagePosition: 'left',
       teacherLink: '#',
       studentLink: '#'
@@ -26,7 +26,7 @@ const LibraryPage = () => {
       name: 'Woody Digital Library – Junior Level',
       description: 'Junior Level Digital Library, öğrencilerin cümle kurma ve temel iletişim becerilerini geliştirdiği içeriklerin incelenebileceği dijital kütüphane alanıdır. Kurumlar, bu seviyede yer alan öğretmen ve öğrenci kitaplarını inceleyerek sistemin ilerleyen yapısını net şekilde görebilir.',
       color: '#F5C518',
-      image: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/o3kuxzom_kling_20260412_%E4%BD%9C%E5%93%81_Ultra_deta_5746_2.png',
+      image: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/5k1ulsw4_Ads%C4%B1z%20tasar%C4%B1m%20%2845%29.png',
       imagePosition: 'right',
       teacherLink: '#',
       studentLink: '#'
@@ -36,7 +36,7 @@ const LibraryPage = () => {
       name: 'Woody Digital Library – Senior Level',
       description: 'Senior Level Digital Library, öğrencilerin akıcı iletişim kurduğu ve yapıları birleştirerek kullandığı ileri seviye içeriklerin incelenebileceği dijital kütüphane alanıdır. Kurumlar, öğretmen ve öğrenci kitaplarını inceleyerek programın üst düzey kazanımlarını ve iletişim odaklı yapısını değerlendirebilir.',
       color: '#E91E90',
-      image: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/o3kuxzom_kling_20260412_%E4%BD%9C%E5%93%81_Ultra_deta_5746_2.png',
+      image: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/5k1ulsw4_Ads%C4%B1z%20tasar%C4%B1m%20%2845%29.png',
       imagePosition: 'left',
       teacherLink: '#',
       studentLink: '#'
@@ -79,10 +79,9 @@ const LibraryPage = () => {
                   <img 
                     src={level.image} 
                     alt={level.name} 
-                    className="w-full max-w-[500px] h-auto transition-all duration-500 hover:scale-105"
+                    className="w-full max-w-[450px] h-auto"
                     style={{ 
-                      filter: 'drop-shadow(0 20px 40px rgba(0, 0, 0, 0.25))',
-                      background: 'transparent'
+                      filter: 'drop-shadow(0 30px 60px rgba(0, 0, 0, 0.35)) drop-shadow(0 15px 25px rgba(0, 0, 0, 0.2))'
                     }}
                   />
                 </div>
