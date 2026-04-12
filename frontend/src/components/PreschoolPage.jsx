@@ -138,6 +138,44 @@ const PreschoolPage = () => {
         </div>
       </section>
 
+      {/* Pixar-style Digital Content Banner */}
+      <section className="w-full py-16 md:py-20 bg-white">
+        <a 
+          href="/library"
+          onClick={(e) => {
+            e.preventDefault();
+            navigate('/library');
+          }}
+          className="block w-full cursor-pointer no-underline"
+          style={{ textDecoration: 'none' }}
+        >
+          <div 
+            className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden"
+            style={{
+              backgroundImage: 'url(https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/y0tliapf_freepik_ultra-high-detail-cinemat_2769441228.png)',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat'
+            }}
+          >
+            {/* Left-aligned translucent white box */}
+            <div className="absolute left-8 md:left-16 lg:left-24 top-1/2 transform -translate-y-1/2 max-w-[500px]">
+              <div 
+                className="bg-white/85 backdrop-blur-sm rounded-2xl px-8 md:px-10 py-8 md:py-10"
+                style={{ boxShadow: 'none', border: 'none' }}
+              >
+                <h2 className="text-[28px] md:text-[36px] lg:text-[42px] font-semibold text-gray-900 mb-4 leading-tight">
+                  Woody Dijital İçerikler
+                </h2>
+                <p className="text-[15px] md:text-[17px] text-gray-700 leading-relaxed">
+                  Movieland, Storyland ve Musicland ile öğrenme süreci video, hikâye ve müzikle zenginleşir.
+                </p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </section>
+
       {/* Level Cards Section */}
       <section className="w-full py-16 md:py-20 bg-white">
         <div className="max-w-[1200px] mx-auto px-6 md:px-12">
