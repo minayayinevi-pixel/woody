@@ -76,20 +76,15 @@ const LibraryPage = () => {
               <div key={level.id} className={`flex flex-col ${isLeft ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-10 lg:gap-16`}>
                 {/* Image */}
                 <div className="w-full lg:w-1/2 flex items-center justify-center">
-                  <div 
-                    className="relative w-full max-w-[500px] transition-all duration-500 hover:scale-105"
-                    style={{
-                      filter: 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.15))',
-                      height: '400px'
+                  <img 
+                    src={level.image} 
+                    alt={level.name} 
+                    className="w-full max-w-[500px] h-auto transition-all duration-500 hover:scale-105"
+                    style={{ 
+                      filter: 'drop-shadow(0 20px 40px rgba(0, 0, 0, 0.25))',
+                      background: 'transparent'
                     }}
-                  >
-                    <img 
-                      src={level.image} 
-                      alt={level.name} 
-                      className="w-full h-full object-contain"
-                      style={{ filter: 'drop-shadow(0 10px 30px rgba(0, 0, 0, 0.2))' }}
-                    />
-                  </div>
+                  />
                 </div>
 
                 {/* Content */}
