@@ -46,13 +46,13 @@ const ContentSection = ({ section, isFirst }) => {
               style={{
                 borderLeft: isImageLeft ? `6px solid ${section.accentColor}` : 'none',
                 borderRight: !isImageLeft ? `6px solid ${section.accentColor}` : 'none',
-                height: '380px',
+                height: '450px',
               }}
             >
               <img 
                 src={section.image} 
                 alt={sectionT?.title || section.title} 
-                className="max-w-full max-h-full object-contain transition-transform duration-700 hover:scale-[1.03]" 
+                className="w-full h-full object-contain transition-transform duration-700 hover:scale-[1.03]" 
                 loading="lazy" 
               />
             </div>
