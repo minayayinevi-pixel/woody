@@ -3,15 +3,36 @@ import { Play, X } from 'lucide-react';
 
 const HeroSection = ({ data }) => {
   const [showVideo, setShowVideo] = useState(false);
+  const [videoReady, setVideoReady] = useState(false);
   const bgVideoRef = useRef(null);
   const modalVideoRef = useRef(null);
 
-  // Set video start time when loaded
+  // Set video start time BEFORE playing
   useEffect(() => {
     if (bgVideoRef.current) {
-      bgVideoRef.current.addEventListener('loadedmetadata', () => {
-        bgVideoRef.current.currentTime = 16;
-      });
+      const video = bgVideoRef.current;
+      
+      const handleLoadedMetadata = () => {
+        video.currentTime = 16;
+        setVideoReady(true);
+      };
+
+      const handleLoadedData = () => {
+        if (video.currentTime < 16) {
+          video.currentTime = 16;
+        }
+      };
+
+      video.addEventListener('loadedmetadata', handleLoadedMetadata);
+      video.addEventListener('loadeddata', handleLoadedData);
+      
+      // Preload and set time immediately
+      video.load();
+
+      return () => {
+        video.removeEventListener('loadedmetadata', handleLoadedMetadata);
+        video.removeEventListener('loadeddata', handleLoadedData);
+      };
     }
   }, []);
 
@@ -31,10 +52,12 @@ const HeroSection = ({ data }) => {
           loop
           muted
           playsInline
+          preload="auto"
           className="w-full h-full object-cover"
+          style={{ opacity: videoReady ? 1 : 0, transition: 'opacity 0.3s ease-in' }}
           poster={data.backgroundImage}
         >
-          <source src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/ct6m2ted_woody%20and%20robo%20%283%29.mp4" type="video/mp4" />
+          <source src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/ct6m2ted_woody%20and%20robo%20%283%29.mp4#t=16" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-black/35" />
       </div>
