@@ -69,7 +69,7 @@ const ContentSection = ({ section, isFirst }) => {
             </div>
           </div>
 
-          {/* Image - smaller, with hover effect */}
+          {/* Image - much smaller, with hover effect */}
           <div className="w-full lg:w-1/2 relative overflow-hidden rounded-xl">
             <img
               src={section.image}
@@ -77,7 +77,7 @@ const ContentSection = ({ section, isFirst }) => {
               className="w-full h-auto transition-transform duration-500 ease-out group-hover:scale-105"
               style={{
                 display: 'block',
-                maxWidth: '85%',
+                maxWidth: '100%',
                 height: 'auto',
                 margin: '0 auto'
               }}
@@ -102,6 +102,13 @@ const ContentSection = ({ section, isFirst }) => {
             <p className="text-[15px] md:text-[16px] text-gray-600 leading-[1.8] mb-6 transition-colors duration-300 group-hover:text-gray-800">
               {sectionT?.desc || section.description}
             </p>
+            {/* Click CTA */}
+            <div className="inline-flex items-center gap-2 text-[14px] font-semibold transition-transform duration-300 group-hover:translate-x-2" style={{ color: section.accentColor }}>
+              <span>Detaylar için tıklayın</span>
+              <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
           </div>
         </a>
       </div>
