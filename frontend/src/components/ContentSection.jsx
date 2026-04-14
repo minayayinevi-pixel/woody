@@ -49,11 +49,11 @@ const ContentSection = ({ section, isFirst }) => {
           } items-center gap-10 lg:gap-16 cursor-pointer no-underline group`}
           style={{ textDecoration: 'none' }}
         >
-          {/* Image with ribbon BESIDE it (like in your reference image) */}
+          {/* Image with ribbon BEHIND it (in background, not in front) */}
           <div className="w-full lg:w-1/2 relative pl-8 lg:pl-0">
-            {/* Side Ribbon - positioned BESIDE the image */}
+            {/* Side Ribbon - positioned BEHIND the image (lower z-index) */}
             <div 
-              className={`absolute ${isImageLeft ? 'left-0 lg:-left-8' : 'right-0 lg:-right-8'} top-1/2 -translate-y-1/2 hidden lg:flex z-20`}
+              className={`absolute ${isImageLeft ? 'left-0 lg:-left-8' : 'right-0 lg:-right-8'} top-1/2 -translate-y-1/2 hidden lg:flex z-0`}
             >
               <div 
                 className="flex flex-col items-center justify-center px-4 py-12 font-bold text-white rounded-lg shadow-2xl"
@@ -75,7 +75,7 @@ const ContentSection = ({ section, isFirst }) => {
               </div>
             </div>
 
-            {/* Image */}
+            {/* Image - positioned in FRONT of ribbon */}
             <img
               src={section.image}
               alt={sectionT?.title || section.title}
