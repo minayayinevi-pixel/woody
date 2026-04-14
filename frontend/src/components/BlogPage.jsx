@@ -5,68 +5,111 @@ import Footer from './Footer';
 import { siteData } from '../data/mock';
 import { useLanguage } from '../context/LanguageContext';
 
-const blogEntries = [
+const blogCards = [
   {
     id: 1,
-    title: "Cambridge Okul Öncesi İngilizce Sistemi ile Başlayın",
-    text: "Woody Preschool sistemi, çocukları 4 seviyeden oluşan yapısıyla Cambridge sınavlarına hazırlayan bütüncül bir İngilizce eğitim modelidir. Bu yapı; okul, öğretmen ve öğrenci için birlikte kurgulanmış bir sertifika sistemi sunar. Kurumlar uluslararası standartta eğitim verirken, öğrenciler süreç sonunda Cambridge okul öncesi İngilizce değerlendirme sürecine dahil olur. Tüm süreç, akademik altyapı ve öğretmen desteğiyle birlikte British Side iş birliğiyle yürütülür.",
-    image: null
+    title: "Okul Öncesi İngilizce Eğitiminde Sistem Neden Önemlidir?",
+    desc: "Erken yaşta dil öğrenimi tekrar ve maruziyet üzerine kuruludur.",
+    list: [
+      "Öğrenilenler unutulur",
+      "Dersler kopuk ilerler",
+      "Çocuk dili kullanamaz"
+    ]
   },
   {
     id: 2,
-    title: "Okul Öncesi İngilizce Eğitiminde Öğretmen Süreci Nasıl Yönetir?",
-    text: "Okul öncesi İngilizce eğitiminde en büyük problem şudur: Öğretmen neyi, nasıl ve hangi sırayla öğreteceğini net göremez.\n\nPlansız ilerleyen bir sistemde:\n• Dersler kopuk olur\n• Tekrar yapılamaz\n• Öğrenme kalıcı olmaz\n\nBu nedenle güçlü bir okul öncesi İngilizce eğitim seti, aynı zamanda Cambridge okul öncesi İngilizce seti mantığında yapılandırılmalıdır. Öğretmeni yönlendirir.",
-    image: null
+    title: "Anaokulu İngilizce Programı Nasıl Yapılandırılmalı?",
+    desc: null,
+    list: [
+      "Günlük ders akışı",
+      "Haftalık kazanım planı",
+      "Aylık ilerleme sistemi"
+    ]
   },
   {
     id: 3,
-    title: "Tüm Süreç Önceden Planlanmıştır",
-    text: "Profesyonel bir kreş İngilizce programı, öğretmenin tüm süreci net şekilde görmesini sağlar.\n\n• Günlük ders akışı hazırdır\n• Haftalık plan net şekilde belirlenmiştir\n• Aylık süreç bütüncül olarak sunulur\n\nÖğretmen ne öğreteceğini, nasıl öğreteceğini, hangi materyali kullanacağını düşünmez. Doğrudan uygular.",
-    image: null
+    title: "Oyun Temelli İngilizce Eğitimi Neden Etkilidir?",
+    desc: null,
+    list: [
+      "Aktif katılım oluşur",
+      "Dikkat süresi artar",
+      "Öğrenme doğal hale gelir"
+    ]
   },
   {
     id: 4,
-    title: "Ders Akışı Sistemlidir",
-    text: "Etkili bir anaokulu İngilizce programı, her dersi aynı sistemle ilerletir:\n\n• Isınma (warm up)\n• Oyun temelli öğretim\n• Etkinlik ve tekrar\n• Pekiştirme\n\nBu yapı, Cambridge okul öncesi İngilizce yaklaşımı ile uyumlu şekilde ilerler ve öğrenme rastgele değil, kontrollü olur.",
-    image: null
+    title: "Hikâye, Şarkı ve Video ile İngilizce Öğrenme",
+    desc: null,
+    list: [
+      "İngilizce hikâyeler",
+      "İngilizce şarkılar",
+      "İngilizce videolar"
+    ]
   },
   {
     id: 5,
-    title: "Fiziksel Materyaller ile Öğrenme Somutlaşır",
-    text: "Güçlü bir anaokulu İngilizce materyalleri altyapısı, öğrenmeyi somutlaştırır.\n\n• 30 farklı fiziksel oyuncak\n• Worksheet çalışmaları\n• Stickerlar\n• Craft materyalleri\n\nÇocuk sadece dinlemez. Dokunur, hareket eder ve öğrenir. Bu yapı, Cambridge okul öncesi İngilizce seti yaklaşımına uygun olarak deneyim temelli öğrenmeyi destekler.",
-    image: null
+    title: "Fiziksel Materyallerin Öğrenmeye Etkisi",
+    desc: null,
+    list: [
+      "Oyun materyalleri",
+      "Etkinlik sayfaları",
+      "El becerisi çalışmaları"
+    ]
   },
   {
     id: 6,
-    title: "Dijital İçerikler ile Süreç Güçlenir",
-    text: "Modern bir preschool English program, öğrenmeyi dijital içeriklerle destekler:\n\n• Okul öncesi İngilizce videolar\n• Okul öncesi İngilizce şarkılar\n• Okul öncesi İngilizce hikâyeler\n\nBu içerikler sayesinde çocuklar İngilizceyi doğal süreçte duyar, tekrar eder ve kalıcı şekilde öğrenir.",
-    image: null
+    title: "Ders Akışı Nasıl Olmalı?",
+    desc: null,
+    list: [
+      "Isınma",
+      "Konu sunumu",
+      "Oyun",
+      "Etkinlik",
+      "Pekiştirme"
+    ]
   },
   {
     id: 7,
-    title: "Karakterler ve İnteraktif Oyunlar",
-    text: "Etkili bir okul öncesi İngilizce programı, karakter temelli ilerler.\n\n• 8 İngilizce konuşan karakter\n• İnteraktif oyunlar\n• İngilizce yönlendirmeler\n\nBu sayede çocuk, dili doğal süreçte edinir ve Cambridge okul öncesi İngilizce kazanımlarına uygun gelişim gösterir.",
-    image: null
+    title: "Dijital İçeriklerle İngilizce Öğrenme",
+    desc: null,
+    list: [
+      "Hikâyeler",
+      "Şarkılar",
+      "Videolar"
+    ]
   },
   {
     id: 8,
-    title: "Sonuç",
-    text: "Doğru yapılandırılmış bir okul öncesi İngilizce eğitim seti, aynı zamanda Cambridge okul öncesi İngilizce seti standartlarına uygun olduğunda:\n\n• Öğretmeni yormaz\n• Süreci netleştirir\n• Öğrenmeyi standartlaştırır\n\nVe en önemlisi: Çocukları Cambridge sınavlarına hazırlayan sürdürülebilir ve uluslararası bir eğitim sistemi sunar.",
-    image: null
+    title: "Sonuç: Etkili Bir İngilizce Eğitim Sistemi",
+    desc: null,
+    list: [
+      "Süreci netleştirir",
+      "Öğretmeni yönlendirir",
+      "Öğrenmeyi kalıcı hale getirir"
+    ]
+  }
+];
+
+const faqItems = [
+  {
+    q: "Okul öncesi İngilizce eğitimi gerekli mi?",
+    a: "Evet. Erken yaşta başlayan eğitim büyük avantaj sağlar."
   },
   {
-    id: 9,
-    title: "Yakında...",
-    text: "Bu bölümün içeriği yakında eklenecektir.",
-    image: null,
-    empty: true
+    q: "4 yaş çocuk İngilizce öğrenebilir mi?",
+    a: "Evet. Bu dönem dil öğrenimi için en uygun dönemdir."
   },
   {
-    id: 10,
-    title: "Yakında...",
-    text: "Bu bölümün içeriği yakında eklenecektir.",
-    image: null,
-    empty: true
+    q: "Çocuklar İngilizceyi nasıl daha kolay öğrenir?",
+    a: "Oyun, tekrar ve çoklu maruziyet ile."
+  },
+  {
+    q: "Oyunla İngilizce öğrenme işe yarar mı?",
+    a: "Evet. En etkili yöntemlerden biridir."
+  },
+  {
+    q: "İngilizce eğitim seti seçerken nelere dikkat edilmeli?",
+    a: "Sistemli yapı, tekrar ve çoklu içerik bulunmalıdır."
   }
 ];
 
@@ -108,93 +151,111 @@ const BlogPage = () => {
         </div>
       </section>
 
-      {/* Blog Entries */}
-      <section className="w-full py-12 md:py-16">
-        <div className="max-w-[1100px] mx-auto px-6 md:px-12">
-          {blogEntries.map((entry, idx) => {
-            const isImageLeft = idx % 2 === 0;
-            const textLines = entry.text.split('\n').filter(l => l.trim());
-
-            return (
-              <div
-                key={entry.id}
-                className={`mb-20 md:mb-28 ${entry.empty ? 'opacity-40' : ''}`}
-              >
-                {/* Thin separator */}
-                {idx > 0 && (
-                  <div className="w-full h-[1px] bg-gray-200 mb-16 md:mb-20" />
-                )}
-
-                <div className={`flex flex-col ${isImageLeft ? 'md:flex-row' : 'md:flex-row-reverse'} gap-10 md:gap-16 items-start`}>
-                  {/* Image Side */}
-                  <div className="w-full md:w-[45%] flex-shrink-0">
-                    {entry.image ? (
-                      <img
-                        src={entry.image}
-                        alt={entry.title}
-                        className="w-full rounded-2xl object-cover"
-                        style={{ maxHeight: '380px' }}
-                        loading="lazy"
-                      />
-                    ) : (
-                      <div className="w-full aspect-[4/3] rounded-2xl bg-[#F0EDE6] flex items-center justify-center">
-                        <div className="text-center text-gray-400">
-                          <ImageIcon size={48} strokeWidth={1} className="mx-auto mb-3 text-gray-300" />
-                          <p className="text-[13px]">Görsel eklenecek</p>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Text Side */}
-                  <div className="w-full md:w-[55%]">
-                    {/* Entry number */}
-                    <span className="text-[13px] font-semibold tracking-[0.2em] text-yellow-500 uppercase mb-3 block">
-                      {entry.empty ? '—' : `0${entry.id}`}
-                    </span>
-
-                    {/* Title */}
-                    <h2 className="text-[26px] md:text-[32px] lg:text-[36px] font-bold text-gray-900 leading-tight mb-6" style={{ fontFamily: "'Inter', sans-serif" }}>
-                      {entry.title}
-                    </h2>
-
-                    {/* Text content */}
-                    <div className="space-y-4">
-                      {textLines.map((line, i) => {
-                        if (line.startsWith('•')) {
-                          return (
-                            <div key={i} className="flex items-start gap-3 ml-1">
-                              <span className="w-1.5 h-1.5 rounded-full bg-yellow-400 mt-2.5 flex-shrink-0" />
-                              <span className="text-[15px] md:text-[16px] text-gray-600 leading-[1.7]">{line.replace('• ', '')}</span>
-                            </div>
-                          );
-                        }
-                        return (
-                          <p key={i} className="text-[15px] md:text-[16px] text-gray-600 leading-[1.8]">
-                            {line}
-                          </p>
-                        );
-                      })}
-                    </div>
-                  </div>
+      {/* Top Section - Image Left, Text Right */}
+      <section className="w-full py-12 md:py-16 bg-white">
+        <div className="max-w-[1200px] mx-auto px-6 md:px-12">
+          <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+            {/* Left: Image Placeholder */}
+            <div className="w-full md:w-1/2">
+              <div className="w-full aspect-[4/3] rounded-2xl bg-[#F0EDE6] flex items-center justify-center">
+                <div className="text-center text-gray-400">
+                  <ImageIcon size={48} strokeWidth={1} className="mx-auto mb-3 text-gray-300" />
+                  <p className="text-[13px]">Görsel eklenecek</p>
                 </div>
               </div>
-            );
-          })}
+            </div>
+
+            {/* Right: Title & Description */}
+            <div className="w-full md:w-1/2">
+              <h2 className="text-[28px] md:text-[36px] font-bold text-[#0B1F3A] leading-tight mb-6">
+                Okul Öncesi İngilizce Eğitimi Nasıl Olmalı?
+              </h2>
+              <p className="text-[15px] md:text-[16px] text-gray-600 leading-relaxed">
+                Okul öncesi İngilizce eğitimi, oyun, hikâye ve şarkı temelli bir sistemle daha etkili hale gelir. Plansız ilerleyen dersler kısa sürede etkisini kaybeder; bu nedenle süreç baştan sona yapılandırılmış olmalıdır.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
-      <Footer data={siteData.footer} />
+      {/* Grid Cards Section - 2 Columns */}
+      <section className="w-full py-12 md:py-16 bg-white">
+        <div className="max-w-[1200px] mx-auto px-6 md:px-12">
+          {/* 2-column grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            {blogCards.map((card) => (
+              <div 
+                key={card.id}
+                className="bg-[#F7F7F7] rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300"
+              >
+                {/* Card Title */}
+                <h3 className="text-[18px] md:text-[20px] font-bold text-[#0B1F3A] mb-4 leading-tight">
+                  {card.title}
+                </h3>
+
+                {/* Card Description (if exists) */}
+                {card.desc && (
+                  <p className="text-[14px] text-gray-600 mb-4 leading-relaxed">
+                    {card.desc}
+                  </p>
+                )}
+
+                {/* Bullet List */}
+                <ul className="space-y-2">
+                  {card.list.map((item, idx) => (
+                    <li key={idx} className="text-[14px] text-gray-700 flex items-start">
+                      <span className="text-yellow-500 mr-2 mt-1">•</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section - Full Width */}
+      <section className="w-full py-12 md:py-16 bg-white">
+        <div className="max-w-[1200px] mx-auto px-6 md:px-12">
+          <div className="bg-[#F7F7F7] rounded-xl p-8 shadow-sm">
+            <h3 className="text-[24px] md:text-[28px] font-bold text-[#0B1F3A] mb-8 text-center">
+              Sık Sorulan Sorular
+            </h3>
+
+            <div className="space-y-6">
+              {faqItems.map((faq, idx) => (
+                <div key={idx} className="border-b border-gray-300 last:border-0 pb-4 last:pb-0">
+                  <h4 className="text-[16px] md:text-[18px] font-semibold text-[#0B1F3A] mb-2">
+                    {faq.q}
+                  </h4>
+                  <p className="text-[14px] md:text-[15px] text-gray-600 leading-relaxed">
+                    {faq.a}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Video Modal */}
       {showVideo && (
-        <div className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center p-4">
-          <button onClick={() => setShowVideo(false)} className="absolute top-6 right-6 text-white/80 hover:text-white transition-colors z-[110] bg-transparent border-none cursor-pointer"><X size={36} /></button>
-          <div className="w-full max-w-[1000px] aspect-video">
-            <iframe src="https://player.vimeo.com/video/911713522?autoplay=1" width="100%" height="100%" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen title="Blog Video" className="rounded-lg" />
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80" onClick={() => setShowVideo(false)}>
+          <div className="relative w-[90%] max-w-[1000px] bg-black rounded-2xl overflow-hidden" onClick={(e) => e.stopPropagation()}>
+            <button onClick={() => setShowVideo(false)} className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 flex items-center justify-center transition-all duration-300">
+              <X size={20} className="text-white" />
+            </button>
+            <div className="relative pt-[56.25%]">
+              <video className="absolute top-0 left-0 w-full h-full" controls autoPlay>
+                <source src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/ct6m2ted_woody%20and%20robo%20%283%29.mp4#t=16" type="video/mp4" />
+              </video>
+            </div>
           </div>
         </div>
       )}
+
+      <Footer data={siteData.footer} />
     </div>
   );
 };
