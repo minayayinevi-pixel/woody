@@ -27,7 +27,7 @@ const ContentSection = ({ section, isFirst }) => {
       className="w-full py-4 md:py-6 lg:py-8"
       style={{ backgroundColor: section.bgColor || '#ffffff' }}
     >
-      <div className="max-w-[1100px] mx-auto px-6 md:px-12">
+      <div className="max-w-[1100px] mx-auto px-6 md:px-12 lg:px-20">
         {isFirst && (
           <div className="mb-6 text-center">
             <h2 className="text-[24px] md:text-[30px] lg:text-[36px] text-black leading-snug font-semibold" style={{ fontFamily: "'Fredoka', 'Inter', sans-serif" }}>
@@ -37,7 +37,7 @@ const ContentSection = ({ section, isFirst }) => {
           </div>
         )}
 
-        {/* Entire section with side tab/ribbon - fully clickable with hover effect */}
+        {/* Entire section with side ribbon behind/beside image - fully clickable with hover effect */}
         <a
           href="#"
           onClick={(e) => {
@@ -49,43 +49,41 @@ const ContentSection = ({ section, isFirst }) => {
           } items-center gap-10 lg:gap-16 cursor-pointer no-underline group`}
           style={{ textDecoration: 'none' }}
         >
-          {/* Side Ribbon/Tab with "TIKLAYΙN" text - like in the image */}
-          <div 
-            className={`absolute ${isImageLeft ? 'left-0' : 'right-0'} top-1/2 -translate-y-1/2 hidden lg:block z-10`}
-            style={{ 
-              writingMode: 'vertical-rl',
-              transform: isImageLeft ? 'translateY(-50%) rotate(180deg)' : 'translateY(-50%)',
-              transformOrigin: 'center'
-            }}
-          >
+          {/* Image with ribbon BESIDE it (like in your reference image) */}
+          <div className="w-full lg:w-1/2 relative pl-8 lg:pl-0">
+            {/* Side Ribbon - positioned BESIDE the image */}
             <div 
-              className="px-4 py-8 font-bold text-white text-[20px] tracking-[0.2em] rounded-t-lg flex flex-col items-center gap-3"
-              style={{ 
-                backgroundColor: section.accentColor,
-                boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
-              }}
+              className={`absolute ${isImageLeft ? 'left-0 lg:-left-8' : 'right-0 lg:-right-8'} top-1/2 -translate-y-1/2 hidden lg:flex z-20`}
             >
-              <span className="text-[14px] tracking-widest">TIKLAYΙN</span>
-              <div className="w-8 h-[2px] bg-white/50"></div>
-              <span className="text-[16px]">
-                {section.id === 'preschool-series' && 'OKUL SERİSİ'}
-                {section.id === 'workshop' && 'ATÖLYE SERİSİ'}
-                {section.id === 'home-tutor' && 'EV & ÖZEL DERS'}
-              </span>
+              <div 
+                className="flex flex-col items-center justify-center px-4 py-12 font-bold text-white rounded-lg shadow-2xl"
+                style={{ 
+                  backgroundColor: section.accentColor,
+                  writingMode: 'vertical-rl',
+                  transform: isImageLeft ? 'rotate(180deg)' : 'none',
+                  minHeight: '350px',
+                  minWidth: '60px'
+                }}
+              >
+                <span className="text-[12px] tracking-[0.3em] mb-3">TIKLAYΙN</span>
+                <div className="w-8 h-[2px] bg-white/60 my-2"></div>
+                <span className="text-[15px] tracking-[0.2em] font-black mt-3 whitespace-nowrap">
+                  {section.id === 'preschool-series' && 'OKUL SERİSİ'}
+                  {section.id === 'workshop' && 'ATÖLYE SERİSİ'}
+                  {section.id === 'home-tutor' && 'EV ÖZEL DERS'}
+                </span>
+              </div>
             </div>
-          </div>
 
-          {/* Image - much smaller, with hover effect */}
-          <div className="w-full lg:w-1/2 relative overflow-hidden rounded-xl">
+            {/* Image */}
             <img
               src={section.image}
               alt={sectionT?.title || section.title}
-              className="w-full h-auto transition-transform duration-500 ease-out group-hover:scale-105"
+              className="w-full h-auto transition-transform duration-500 ease-out group-hover:scale-105 relative z-10 rounded-xl shadow-lg"
               style={{
                 display: 'block',
                 maxWidth: '100%',
-                height: 'auto',
-                margin: '0 auto'
+                height: 'auto'
               }}
             />
           </div>

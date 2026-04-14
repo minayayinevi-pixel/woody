@@ -23,18 +23,18 @@ const translations = {
       heading: "Hangi Woody Set Sizin için?",
       preschool: {
         tag: "Sınıflar İçin",
-        title: "Preschool Series",
+        title: "Okul Serisi",
         desc: "Büyük sınıflar, okullar ve kreşler için geliştirilmiştir. Kalabalık gruplara uygun olarak içerikler ve oyunlar sınıf yönetimine göre yapılandırılmıştır. Tüm sınıfın aynı anda aktif katılım gösterebildiği bir uygulama modeli sunar.",
         btn: "İncele"
       },
       workshop: {
         tag: "Küçük Gruplar İçin",
-        title: "Workshop",
+        title: "Atölye Serisi",
         desc: "3–5 kişilik küçük gruplar için tasarlanmıştır. İçerikler ve oyunlar daha yoğun etkileşim ve bireysel katılım sağlayacak şekilde düzenlenmiştir. Daha odaklı ve hızlı ilerleyen bir uygulama yapısı sunar."
       },
       homeTutor: {
         tag: "Bireysel Kullanım",
-        title: "Home Tutor / Home Series",
+        title: "Ev & Özel Ders",
         desc: "1–2 kişilik bireysel kullanım için uygundur. İçerikler ve oyunlar tamamen birebir öğrenmeye göre uyarlanmıştır. Çocuğa özel ilerleme ve maksimum dikkat sağlar."
       }
     },
