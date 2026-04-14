@@ -43,9 +43,9 @@ const HeroSection = ({ data }) => {
   }, [showVideo]);
 
   return (
-    <section className="relative w-full h-[85vh] md:h-[90vh] flex items-center justify-center overflow-hidden">
+    <section className="relative w-full h-auto md:h-[85vh] lg:h-[90vh] flex items-center justify-center overflow-hidden">
       {/* Background Video with Global Class */}
-      <div className="absolute inset-0 hero-video">
+      <div className="hero-video">
         <video
           ref={bgVideoRef}
           autoPlay

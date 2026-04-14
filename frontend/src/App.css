@@ -129,7 +129,7 @@ button:focus-visible {
 /* ========================================
    GLOBAL HERO VIDEO RULES
    ======================================== */
-/* Desktop: video fills screen (cover) */
+/* Desktop: normal full screen (cover) */
 .hero-video {
   position: relative;
   width: 100%;
@@ -142,17 +142,20 @@ button:focus-visible {
   object-fit: cover;
 }
 
-/* Mobile: video shows full (16:9 aspect ratio, contain) */
+/* Mobile ONLY: video yatay tam görünsün (16:9, contain) */
 @media (max-width: 768px) {
   .hero-video {
-    aspect-ratio: 16 / 9;
+    position: relative;
+    width: 100%;
     height: auto;
+    aspect-ratio: 16 / 9;
   }
 
   .hero-video video {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    background-color: #000;
   }
 }
 
