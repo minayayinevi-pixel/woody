@@ -102,26 +102,42 @@ const WorkshopPage = () => {
       <section className="w-full py-10 md:py-14 bg-gray-50">
         <div className="max-w-[1100px] mx-auto px-6 md:px-12">
           <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
-            {/* Left Video - Öğretmen Seti */}
+            {/* Left Video - Öğretmen Seti with COMING SOON */}
             <div className="flex-1 w-full">
-              <div className="relative bg-black rounded-2xl overflow-hidden shadow-2xl cursor-pointer group aspect-video" onClick={() => handlePlayVideo('teacher')}>
-                <img src="https://images.squarespace-cdn.com/content/v1/60241cb68df65b530cd84d95/42a4f404-b669-4acc-93c8-1d42e679e27f/brochure_foldout.jpg" alt={p.teacherSet} className="w-full h-full object-cover opacity-70 group-hover:opacity-90 transition-opacity duration-500" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-[60px] h-[60px] md:w-[70px] md:h-[70px] rounded-full bg-white/20 backdrop-blur-sm border-2 border-white/60 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <Play size={24} className="text-white ml-1" fill="white" />
+              <div className="relative bg-black rounded-2xl overflow-hidden shadow-2xl group aspect-video">
+                <img src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/b5pl9rqg_Paragraf%20metniniz%20%284%29.png" alt="Coming Soon" className="w-full h-full object-cover opacity-90" />
+                {/* COMING SOON Badge */}
+                <div className="absolute top-4 left-4 z-20">
+                  <div className="bg-red-600 text-white px-6 py-3 rounded-lg shadow-2xl">
+                    <p className="text-[20px] md:text-[24px] font-black tracking-wider">COMING</p>
+                    <p className="text-[20px] md:text-[24px] font-black tracking-wider">SOON</p>
                   </div>
+                </div>
+                {/* Text Overlay */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <p className="text-white text-[24px] md:text-[32px] font-bold italic tracking-wide" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
+                    Çok yakında geliyoruz...
+                  </p>
                 </div>
               </div>
               <p className="text-center mt-4 text-[18px] md:text-[22px] font-bold text-gray-800 tracking-wide">{p.teacherSet}</p>
             </div>
-            {/* Right Video - Öğrenci Seti */}
+            {/* Right Video - Öğrenci Seti with COMING SOON */}
             <div className="flex-1 w-full">
-              <div className="relative bg-black rounded-2xl overflow-hidden shadow-2xl cursor-pointer group aspect-video" onClick={() => handlePlayVideo('student')}>
-                <img src="https://images.squarespace-cdn.com/content/v1/60241cb68df65b530cd84d95/485b26c1-eb3a-48a7-bab6-437b3938f44c/RenderMan_OCIO_Aces_Header2.jpg" alt={p.studentSet} className="w-full h-full object-cover opacity-70 group-hover:opacity-90 transition-opacity duration-500" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-[60px] h-[60px] md:w-[70px] md:h-[70px] rounded-full bg-white/20 backdrop-blur-sm border-2 border-white/60 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <Play size={24} className="text-white ml-1" fill="white" />
+              <div className="relative bg-black rounded-2xl overflow-hidden shadow-2xl group aspect-video">
+                <img src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/b5pl9rqg_Paragraf%20metniniz%20%284%29.png" alt="Coming Soon" className="w-full h-full object-cover opacity-90" />
+                {/* COMING SOON Badge */}
+                <div className="absolute top-4 left-4 z-20">
+                  <div className="bg-red-600 text-white px-6 py-3 rounded-lg shadow-2xl">
+                    <p className="text-[20px] md:text-[24px] font-black tracking-wider">COMING</p>
+                    <p className="text-[20px] md:text-[24px] font-black tracking-wider">SOON</p>
                   </div>
+                </div>
+                {/* Text Overlay */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <p className="text-white text-[24px] md:text-[32px] font-bold italic tracking-wide" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
+                    Çok yakında geliyoruz...
+                  </p>
                 </div>
               </div>
               <p className="text-center mt-4 text-[18px] md:text-[22px] font-bold text-gray-800 tracking-wide">{p.studentSet}</p>
@@ -136,22 +152,24 @@ const WorkshopPage = () => {
           <h2 className="text-center text-[28px] md:text-[36px] font-light text-gray-900 mb-12 tracking-wide">Serilerin İçeriklerini Video Anlatımlarıyla Keşfedin</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {levels.map((level, idx) => (
-              <div key={idx} className="group cursor-pointer">
-                <div className="relative rounded-2xl overflow-hidden shadow-lg aspect-[3/4] transition-all duration-500 group-hover:shadow-2xl group-hover:scale-[1.03]" style={{ background: level.image ? '#f5f5f5' : level.bgGradient }}>
-                  {level.image ? (
-                    <img src={level.image} alt={level.name} className="w-full h-full object-cover" />
-                  ) : (
-                    <>
-                      <div className="absolute top-4 left-4 z-10"><span className="bg-white/20 backdrop-blur-sm text-white text-[12px] font-semibold px-3 py-1 rounded-full tracking-wider">{level.tag}</span></div>
-                      <div className="absolute top-[-30px] right-[-30px] w-[120px] h-[120px] rounded-full opacity-10 bg-white" />
-                      <div className="absolute bottom-[-20px] left-[-20px] w-[80px] h-[80px] rounded-full opacity-10 bg-white" />
-                      <div className="absolute inset-0 flex flex-col items-center justify-center px-6">
-                        <div className="text-white/30 text-[80px] md:text-[100px] font-black leading-none mb-2" style={{ fontFamily: "'Magic English', 'Fredoka', cursive" }}>{idx + 1}</div>
-                        <h3 className="text-white text-[22px] md:text-[26px] font-bold tracking-wide" style={{ fontFamily: "'Magic English', 'Fredoka', cursive", textShadow: '0 2px 10px rgba(0,0,0,0.3)' }}>{level.name}</h3>
-                      </div>
-                      <div className="absolute bottom-0 left-0 right-0 h-[60px] bg-gradient-to-t from-black/20 to-transparent" />
-                    </>
-                  )}
+              <div key={idx} className="group">
+                <div className="relative rounded-2xl overflow-hidden shadow-lg aspect-[3/4] bg-gray-200">
+                  <img src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/b5pl9rqg_Paragraf%20metniniz%20%284%29.png" alt="Coming Soon" className="w-full h-full object-cover opacity-80" />
+                  
+                  {/* COMING SOON Badge */}
+                  <div className="absolute top-4 left-4 z-20">
+                    <div className="bg-red-600 text-white px-4 py-2 rounded-md shadow-xl">
+                      <p className="text-[16px] font-black tracking-wider">COMING</p>
+                      <p className="text-[16px] font-black tracking-wider">SOON</p>
+                    </div>
+                  </div>
+
+                  {/* Overlay Text */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <p className="text-white text-[18px] md:text-[22px] font-bold italic px-4 text-center" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
+                      Çok yakında<br/>geliyoruz...
+                    </p>
+                  </div>
                 </div>
                 <div className="mt-4 text-center">
                   <h4 className="text-[16px] md:text-[18px] font-semibold text-gray-800">{level.name}</h4>

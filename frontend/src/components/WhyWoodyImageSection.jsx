@@ -119,7 +119,7 @@ const WhyWoodyImageSection = () => {
         {/* Desktop: 2-column (image left, text right) */}
         {/* Mobile: stacked (image top, text bottom) */}
         
-        <div className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12">
+        <div className="flex flex-col md:flex-row items-center md:items-center gap-8 md:gap-12">
           
           {/* LEFT: Image */}
           <div className="w-full md:w-1/2">
@@ -130,30 +130,32 @@ const WhyWoodyImageSection = () => {
             />
           </div>
 
-          {/* RIGHT: Text Content */}
-          <div className="w-full md:w-1/2">
-            <h2 className="text-[28px] md:text-[36px] font-bold text-gray-900 mb-8 leading-tight">
+          {/* RIGHT: Text Content - vertically centered */}
+          <div className="w-full md:w-1/2 flex flex-col justify-center">
+            <h2 className="text-[24px] md:text-[28px] font-bold text-gray-900 mb-6 leading-tight text-center md:text-left">
               Neden Woody?
             </h2>
             
             {/* Features List with Icons */}
-            <div className="space-y-5">
+            <div className="space-y-4">
               {features.map((feature, index) => (
-                <div key={index} className="flex items-start gap-4">
-                  {/* Icon Circle - Dark Navy */}
+                <div key={index} className="flex items-start gap-3">
+                  {/* Icon Circle - Dark Navy - smaller */}
                   <div 
-                    className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-white mt-0.5"
+                    className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-white mt-0.5"
                     style={{ backgroundColor: '#0B1F3A' }}
                   >
-                    {feature.icon}
+                    <div className="w-5 h-5">
+                      {feature.icon}
+                    </div>
                   </div>
                   
-                  {/* Text */}
+                  {/* Text - smaller */}
                   <div className="flex-1">
-                    <h3 className="text-[15px] md:text-[16px] font-bold text-gray-900 mb-1 leading-snug">
+                    <h3 className="text-[13px] md:text-[14px] font-bold text-gray-900 mb-0.5 leading-snug">
                       {feature.title}
                     </h3>
-                    <p className="text-[13px] md:text-[14px] text-gray-600 leading-relaxed">
+                    <p className="text-[11px] md:text-[12px] text-gray-600 leading-relaxed">
                       {feature.desc}
                     </p>
                   </div>
