@@ -43,9 +43,9 @@ const HeroSection = ({ data }) => {
   }, [showVideo]);
 
   return (
-    <section className="relative w-full h-auto md:h-[85vh] lg:h-[90vh] flex items-center justify-center overflow-hidden">
-      {/* Background Video with Global Class */}
-      <div className="hero-video">
+    <section className="relative w-full h-[85vh] md:h-[90vh] flex items-center justify-center overflow-hidden">
+      {/* Background Video */}
+      <div className="absolute inset-0">
         <video
           ref={bgVideoRef}
           autoPlay
@@ -53,6 +53,7 @@ const HeroSection = ({ data }) => {
           muted
           playsInline
           preload="auto"
+          className="w-full h-full object-cover"
           style={{ opacity: videoReady ? 1 : 0, transition: 'opacity 0.3s ease-in' }}
           poster={data.backgroundImage}
         >

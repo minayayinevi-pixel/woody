@@ -139,7 +139,7 @@ const BlogPage = () => {
 
       {/* Hero Video Section */}
       <section className="relative w-full h-[45vh] min-h-[350px] overflow-hidden mt-[72px]">
-        <div className="absolute inset-0 hero-video">
+        <div className="absolute inset-0">
           <img src="https://images.squarespace-cdn.com/content/v1/60241cb68df65b530cd84d95/22305642-e101-4a60-a871-45a6a6d12d44/ember_stills_sdr_0154933.tiff-0.jpg" alt="Blog" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/50" />
         </div>
