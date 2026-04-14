@@ -49,9 +49,9 @@ const ContentSection = ({ section, isFirst }) => {
           } items-center gap-10 lg:gap-16 cursor-pointer no-underline group`}
           style={{ textDecoration: 'none' }}
         >
-          {/* Side Ribbon/Tab - like in the image */}
+          {/* Side Ribbon/Tab with "TIKLAYΙN" text - like in the image */}
           <div 
-            className={`absolute ${isImageLeft ? 'left-0' : 'right-0'} top-1/2 -translate-y-1/2 hidden lg:block`}
+            className={`absolute ${isImageLeft ? 'left-0' : 'right-0'} top-1/2 -translate-y-1/2 hidden lg:block z-10`}
             style={{ 
               writingMode: 'vertical-rl',
               transform: isImageLeft ? 'translateY(-50%) rotate(180deg)' : 'translateY(-50%)',
@@ -59,13 +59,19 @@ const ContentSection = ({ section, isFirst }) => {
             }}
           >
             <div 
-              className="px-3 py-6 font-bold text-white text-[18px] tracking-wider rounded-t-lg"
+              className="px-4 py-8 font-bold text-white text-[20px] tracking-[0.2em] rounded-t-lg flex flex-col items-center gap-3"
               style={{ 
                 backgroundColor: section.accentColor,
                 boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
               }}
             >
-              {sectionT?.tag || 'SERIES'}
+              <span className="text-[14px] tracking-widest">TIKLAYΙN</span>
+              <div className="w-8 h-[2px] bg-white/50"></div>
+              <span className="text-[16px]">
+                {section.id === 'preschool-series' && 'OKUL SERİSİ'}
+                {section.id === 'workshop' && 'ATÖLYE SERİSİ'}
+                {section.id === 'home-tutor' && 'EV & ÖZEL DERS'}
+              </span>
             </div>
           </div>
 
