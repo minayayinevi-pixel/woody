@@ -178,41 +178,51 @@ const BlogPage = () => {
           {blogBlocks.map((block, index) => (
             <div 
               key={block.id}
-              className="py-16 md:py-16"
+              className="py-10 md:py-16"
               style={{ 
-                marginBottom: index < blogBlocks.length - 1 ? '32px' : '0'
+                marginBottom: index < blogBlocks.length - 1 ? '40px' : '0'
               }}
             >
-              {/* 12 Column Grid Layout */}
-              <div className={`grid grid-cols-12 gap-6 items-start ${block.iconLeft ? '' : 'flex-row-reverse'}`}>
+              {/* DESKTOP: 12 Column Grid Zig-zag | MOBILE: Centered Single Column */}
+              <div className={`
+                flex flex-col items-center text-center
+                md:grid md:grid-cols-12 md:gap-6 md:items-start md:text-left
+                ${!block.iconLeft && 'md:flex-row-reverse'}
+              `}>
                 
-                {/* Icon Column - 2 cols */}
-                <div className={`col-span-12 md:col-span-2 flex ${block.iconLeft ? 'justify-start' : 'md:justify-end justify-center'} ${block.iconLeft ? '' : 'md:order-2'}`}>
-                  <div className="w-[56px] h-[56px] rounded-full bg-[#0B1F3A] flex items-center justify-center flex-shrink-0">
-                    <div className="text-white">
+                {/* Icon Column - Mobile: Always top center, Desktop: 2 cols left/right */}
+                <div className={`
+                  mb-5 md:mb-0
+                  md:col-span-2 
+                  flex 
+                  ${block.iconLeft ? 'md:justify-start' : 'md:justify-end'} 
+                  ${!block.iconLeft && 'md:order-2'}
+                `}>
+                  <div className="w-[48px] h-[48px] md:w-[56px] md:h-[56px] rounded-full bg-[#0B1F3A] flex items-center justify-center flex-shrink-0">
+                    <div className="text-white scale-90 md:scale-100">
                       {block.icon}
                     </div>
                   </div>
                 </div>
 
                 {/* Spacer - 1 col (hidden on mobile) */}
-                <div className={`hidden md:block md:col-span-1 ${block.iconLeft ? '' : 'md:order-1'}`}></div>
+                <div className={`hidden md:block md:col-span-1 ${!block.iconLeft && 'md:order-1'}`}></div>
 
-                {/* Text Content - 6 cols */}
-                <div className={`col-span-12 md:col-span-6 ${block.iconLeft ? '' : 'md:order-0'}`}>
-                  <h2 className="text-[22px] md:text-[26px] font-bold text-[#0B1F3A] leading-tight text-center md:text-left" style={{ marginBottom: '16px' }}>
+                {/* Text Content - Mobile: centered, Desktop: 6 cols */}
+                <div className={`w-full md:col-span-6 ${!block.iconLeft && 'md:order-0'}`}>
+                  <h2 className="text-[20px] md:text-[26px] font-bold text-[#0B1F3A] leading-tight mb-3 md:mb-4">
                     {block.title}
                   </h2>
                   
                   {block.desc && (
-                    <p className="text-[15px] md:text-[16px] text-gray-600 leading-relaxed text-center md:text-left" style={{ marginBottom: '20px' }}>
+                    <p className="text-[15px] md:text-[16px] text-gray-600 leading-relaxed mb-4 md:mb-5">
                       {block.desc}
                     </p>
                   )}
 
-                  <ul className="space-y-3">
+                  <ul className="space-y-2 md:space-y-3 inline-block text-left">
                     {block.list.map((item, idx) => (
-                      <li key={idx} className="text-[15px] md:text-[16px] text-gray-700 flex items-start justify-center md:justify-start">
+                      <li key={idx} className="text-[15px] md:text-[16px] text-gray-700 flex items-start">
                         <span className="text-[#FFB800] mr-2 mt-1 flex-shrink-0">•</span>
                         <span>{item}</span>
                       </li>
