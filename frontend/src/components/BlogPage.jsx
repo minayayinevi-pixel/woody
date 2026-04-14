@@ -5,9 +5,15 @@ import Footer from './Footer';
 import { siteData } from '../data/mock';
 import { useLanguage } from '../context/LanguageContext';
 
-const blogCards = [
+const blogBlocks = [
   {
     id: 1,
+    iconLeft: true,
+    icon: (
+      <svg className="w-7 h-7 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+      </svg>
+    ),
     title: "Okul Öncesi İngilizce Eğitiminde Sistem Neden Önemlidir?",
     desc: "Erken yaşta dil öğrenimi tekrar ve maruziyet üzerine kuruludur.",
     list: [
@@ -18,6 +24,12 @@ const blogCards = [
   },
   {
     id: 2,
+    iconLeft: false,
+    icon: (
+      <svg className="w-7 h-7 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+      </svg>
+    ),
     title: "Anaokulu İngilizce Programı Nasıl Yapılandırılmalı?",
     desc: null,
     list: [
@@ -28,6 +40,12 @@ const blogCards = [
   },
   {
     id: 3,
+    iconLeft: true,
+    icon: (
+      <svg className="w-7 h-7 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
+      </svg>
+    ),
     title: "Oyun Temelli İngilizce Eğitimi Neden Etkilidir?",
     desc: null,
     list: [
@@ -38,6 +56,13 @@ const blogCards = [
   },
   {
     id: 4,
+    iconLeft: false,
+    icon: (
+      <svg className="w-7 h-7 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    ),
     title: "Hikâye, Şarkı ve Video ile İngilizce Öğrenme",
     desc: null,
     list: [
@@ -48,6 +73,12 @@ const blogCards = [
   },
   {
     id: 5,
+    iconLeft: true,
+    icon: (
+      <svg className="w-7 h-7 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11" />
+      </svg>
+    ),
     title: "Fiziksel Materyallerin Öğrenmeye Etkisi",
     desc: null,
     list: [
@@ -58,6 +89,12 @@ const blogCards = [
   },
   {
     id: 6,
+    iconLeft: false,
+    icon: (
+      <svg className="w-7 h-7 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+      </svg>
+    ),
     title: "Ders Akışı Nasıl Olmalı?",
     desc: null,
     list: [
@@ -70,6 +107,12 @@ const blogCards = [
   },
   {
     id: 7,
+    iconLeft: true,
+    icon: (
+      <svg className="w-7 h-7 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+      </svg>
+    ),
     title: "Dijital İçeriklerle İngilizce Öğrenme",
     desc: null,
     list: [
@@ -80,6 +123,12 @@ const blogCards = [
   },
   {
     id: 8,
+    iconLeft: false,
+    icon: (
+      <svg className="w-7 h-7 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    ),
     title: "Sonuç: Etkili Bir İngilizce Eğitim Sistemi",
     desc: null,
     list: [
