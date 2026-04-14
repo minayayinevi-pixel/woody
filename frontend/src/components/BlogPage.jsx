@@ -1,5 +1,5 @@
 import React from 'react';
-import { Play, X, ImageIcon } from 'lucide-react';
+import { Play, X, BarChart3, Calendar, Blocks, PlayCircle, Hand, Zap, Monitor, CheckCircle } from 'lucide-react';
 import Header from './Header';
 import Footer from './Footer';
 import { siteData } from '../data/mock';
@@ -9,11 +9,7 @@ const blogBlocks = [
   {
     id: 1,
     iconLeft: true,
-    icon: (
-      <svg className="w-7 h-7 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-      </svg>
-    ),
+    icon: <BarChart3 size={28} strokeWidth={1.5} />,
     title: "Okul Öncesi İngilizce Eğitiminde Sistem Neden Önemlidir?",
     desc: "Erken yaşta dil öğrenimi tekrar ve maruziyet üzerine kuruludur.",
     list: [
@@ -25,11 +21,7 @@ const blogBlocks = [
   {
     id: 2,
     iconLeft: false,
-    icon: (
-      <svg className="w-7 h-7 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-      </svg>
-    ),
+    icon: <Calendar size={28} strokeWidth={1.5} />,
     title: "Anaokulu İngilizce Programı Nasıl Yapılandırılmalı?",
     desc: null,
     list: [
@@ -41,11 +33,7 @@ const blogBlocks = [
   {
     id: 3,
     iconLeft: true,
-    icon: (
-      <svg className="w-7 h-7 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
-      </svg>
-    ),
+    icon: <Blocks size={28} strokeWidth={1.5} />,
     title: "Oyun Temelli İngilizce Eğitimi Neden Etkilidir?",
     desc: null,
     list: [
@@ -57,12 +45,7 @@ const blogBlocks = [
   {
     id: 4,
     iconLeft: false,
-    icon: (
-      <svg className="w-7 h-7 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
+    icon: <PlayCircle size={28} strokeWidth={1.5} />,
     title: "Hikâye, Şarkı ve Video ile İngilizce Öğrenme",
     desc: null,
     list: [
@@ -74,11 +57,7 @@ const blogBlocks = [
   {
     id: 5,
     iconLeft: true,
-    icon: (
-      <svg className="w-7 h-7 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11" />
-      </svg>
-    ),
+    icon: <Hand size={28} strokeWidth={1.5} />,
     title: "Fiziksel Materyallerin Öğrenmeye Etkisi",
     desc: null,
     list: [
@@ -90,11 +69,7 @@ const blogBlocks = [
   {
     id: 6,
     iconLeft: false,
-    icon: (
-      <svg className="w-7 h-7 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
-      </svg>
-    ),
+    icon: <Zap size={28} strokeWidth={1.5} />,
     title: "Ders Akışı Nasıl Olmalı?",
     desc: null,
     list: [
@@ -108,11 +83,7 @@ const blogBlocks = [
   {
     id: 7,
     iconLeft: true,
-    icon: (
-      <svg className="w-7 h-7 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-      </svg>
-    ),
+    icon: <Monitor size={28} strokeWidth={1.5} />,
     title: "Dijital İçeriklerle İngilizce Öğrenme",
     desc: null,
     list: [
@@ -124,11 +95,7 @@ const blogBlocks = [
   {
     id: 8,
     iconLeft: false,
-    icon: (
-      <svg className="w-7 h-7 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
+    icon: <CheckCircle size={28} strokeWidth={1.5} />,
     title: "Sonuç: Etkili Bir İngilizce Eğitim Sistemi",
     desc: null,
     list: [
@@ -191,80 +158,62 @@ const BlogPage = () => {
         </div>
       </section>
 
-      {/* Main Blog Title - Centered */}
-      <section className="w-full py-8 md:py-12 bg-white">
-        <div className="max-w-[900px] mx-auto px-6 md:px-12">
-          <h2 className="text-[28px] md:text-[36px] lg:text-[42px] font-bold text-gray-900 leading-tight text-center">
-            Okul Öncesi İngilizce Eğitimi Nasıl Olmalı? (Etkili Bir Sistem Nasıl Kurulur?)
-          </h2>
-        </div>
-      </section>
-
-      {/* Top Section - Image Left, Text Right */}
-      <section className="w-full py-12 md:py-16 bg-white">
-        <div className="max-w-[1200px] mx-auto px-6 md:px-12">
-          <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
-            {/* Left: Image Placeholder */}
-            <div className="w-full md:w-1/2">
-              <div className="w-full aspect-[4/3] rounded-2xl bg-[#F0EDE6] flex items-center justify-center">
-                <div className="text-center text-gray-400">
-                  <ImageIcon size={48} strokeWidth={1} className="mx-auto mb-3 text-gray-300" />
-                  <p className="text-[13px]">Görsel eklenecek</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Right: Title & Description */}
-            <div className="w-full md:w-1/2">
-              <h2 className="text-[28px] md:text-[36px] font-bold text-[#0B1F3A] leading-tight mb-6">
-                Okul Öncesi İngilizce Eğitimi Nasıl Olmalı?
-              </h2>
-              <p className="text-[15px] md:text-[16px] text-gray-600 leading-relaxed">
-                Okul öncesi İngilizce eğitimi, oyun, hikâye ve şarkı temelli bir sistemle daha etkili hale gelir. Plansız ilerleyen dersler kısa sürede etkisini kaybeder; bu nedenle süreç baştan sona yapılandırılmış olmalıdır.
-              </p>
-            </div>
+      {/* Hero Content Section - Grid Based */}
+      <section className="w-full bg-white" style={{ paddingTop: '80px', paddingBottom: '80px' }}>
+        <div className="mx-auto px-6 md:px-20 lg:px-20" style={{ maxWidth: '1280px' }}>
+          <div className="text-center">
+            <h1 className="text-[32px] md:text-[42px] lg:text-[48px] font-bold text-[#0B1F3A] leading-tight mb-5">
+              Okul Öncesi İngilizce Eğitimi Nasıl Olmalı?
+            </h1>
+            <p className="text-[16px] md:text-[18px] text-gray-600 leading-relaxed max-w-[800px] mx-auto">
+              Okul öncesi İngilizce eğitimi, oyun, hikâye ve şarkı temelli bir sistemle daha etkili hale gelir. Plansız ilerleyen dersler kısa sürede etkisini kaybeder; bu nedenle süreç baştan sona yapılandırılmış olmalıdır.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Zig-zag Layout Section - Alternating Icon/Text Blocks */}
-      <section className="w-full bg-white py-8 md:py-0">
-        <div className="max-w-[1200px] mx-auto px-6 md:px-12">
+      {/* Zig-zag Content Blocks - 12 Column Grid */}
+      <section className="w-full bg-white">
+        <div className="mx-auto px-6 md:px-20 lg:px-20" style={{ maxWidth: '1280px' }}>
           {blogBlocks.map((block, index) => (
             <div 
               key={block.id}
-              className="py-12 md:py-20"
+              className="py-16 md:py-16"
               style={{ 
-                borderBottom: index < blogBlocks.length - 1 ? '1px solid #f0f0f0' : 'none' 
+                marginBottom: index < blogBlocks.length - 1 ? '32px' : '0'
               }}
             >
-              <div className={`flex flex-col ${block.iconLeft ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-6 md:gap-12`}>
+              {/* 12 Column Grid Layout */}
+              <div className={`grid grid-cols-12 gap-6 items-start ${block.iconLeft ? '' : 'flex-row-reverse'}`}>
                 
-                {/* Icon Circle */}
-                <div className="flex-shrink-0 order-1 md:order-none">
-                  <div className="w-[60px] h-[60px] rounded-full bg-[#0B1F3A] flex items-center justify-center">
-                    <div className="text-white scale-110">
+                {/* Icon Column - 2 cols */}
+                <div className={`col-span-12 md:col-span-2 flex ${block.iconLeft ? 'justify-start' : 'md:justify-end justify-center'} ${block.iconLeft ? '' : 'md:order-2'}`}>
+                  <div className="w-[56px] h-[56px] rounded-full bg-[#0B1F3A] flex items-center justify-center flex-shrink-0">
+                    <div className="text-white">
                       {block.icon}
                     </div>
                   </div>
                 </div>
 
-                {/* Text Content */}
-                <div className="flex-1 text-center md:text-left order-2 md:order-none">
-                  <h3 className="text-[20px] md:text-[24px] font-bold text-[#0B1F3A] mb-3 leading-tight">
+                {/* Spacer - 1 col (hidden on mobile) */}
+                <div className={`hidden md:block md:col-span-1 ${block.iconLeft ? '' : 'md:order-1'}`}></div>
+
+                {/* Text Content - 6 cols */}
+                <div className={`col-span-12 md:col-span-6 ${block.iconLeft ? '' : 'md:order-0'}`}>
+                  <h2 className="text-[22px] md:text-[26px] font-bold text-[#0B1F3A] leading-tight text-center md:text-left" style={{ marginBottom: '16px' }}>
                     {block.title}
-                  </h3>
+                  </h2>
                   
                   {block.desc && (
-                    <p className="text-[15px] text-gray-600 mb-3 leading-relaxed">
+                    <p className="text-[15px] md:text-[16px] text-gray-600 leading-relaxed text-center md:text-left" style={{ marginBottom: '20px' }}>
                       {block.desc}
                     </p>
                   )}
 
-                  <ul className="space-y-2">
+                  <ul className="space-y-3">
                     {block.list.map((item, idx) => (
-                      <li key={idx} className="text-[15px] text-gray-700 flex items-start justify-center md:justify-start">
-                        <span className="text-[#FFB800] mr-2 mt-1">•</span>
+                      <li key={idx} className="text-[15px] md:text-[16px] text-gray-700 flex items-start justify-center md:justify-start">
+                        <span className="text-[#FFB800] mr-2 mt-1 flex-shrink-0">•</span>
                         <span>{item}</span>
                       </li>
                     ))}
@@ -277,26 +226,24 @@ const BlogPage = () => {
         </div>
       </section>
 
-      {/* FAQ Section - Full Width */}
-      <section className="w-full py-12 md:py-16 bg-white">
-        <div className="max-w-[1200px] mx-auto px-6 md:px-12">
-          <div className="bg-[#F7F7F7] rounded-xl p-8 shadow-sm">
-            <h3 className="text-[24px] md:text-[28px] font-bold text-[#0B1F3A] mb-8 text-center">
-              Sık Sorulan Sorular
-            </h3>
+      {/* FAQ Section - Grid Based, No Cards */}
+      <section className="w-full bg-white" style={{ paddingTop: '80px', paddingBottom: '80px' }}>
+        <div className="mx-auto px-6 md:px-20 lg:px-20" style={{ maxWidth: '1280px' }}>
+          <h2 className="text-[28px] md:text-[34px] font-bold text-[#0B1F3A] mb-12 text-center">
+            Sık Sorulan Sorular
+          </h2>
 
-            <div className="space-y-6">
-              {faqItems.map((faq, idx) => (
-                <div key={idx} className="border-b border-gray-300 last:border-0 pb-4 last:pb-0">
-                  <h4 className="text-[16px] md:text-[18px] font-semibold text-[#0B1F3A] mb-2">
-                    {faq.q}
-                  </h4>
-                  <p className="text-[14px] md:text-[15px] text-gray-600 leading-relaxed">
-                    {faq.a}
-                  </p>
-                </div>
-              ))}
-            </div>
+          <div className="max-w-[900px] mx-auto space-y-8">
+            {faqItems.map((faq, idx) => (
+              <div key={idx} style={{ paddingBottom: '24px', borderBottom: idx < faqItems.length - 1 ? '1px solid #e5e5e5' : 'none' }}>
+                <h3 className="text-[17px] md:text-[19px] font-semibold text-[#0B1F3A] mb-3">
+                  {faq.q}
+                </h3>
+                <p className="text-[15px] md:text-[16px] text-gray-600 leading-relaxed">
+                  {faq.a}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
