@@ -84,40 +84,6 @@ const HeroSection = ({ data }) => {
         </p>
       </div>
 
-      {/* Curved Divider with Metallic/Glass Effect */}
-      <div className="absolute bottom-0 left-0 right-0 z-20">
-        <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full block" preserveAspectRatio="none">
-          {/* Metallic glass stroke with gradient and glow */}
-          <defs>
-            <linearGradient id="metalGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" style={{ stopColor: '#a8b3c1', stopOpacity: 0.9 }} />
-              <stop offset="25%" style={{ stopColor: '#e8eaed', stopOpacity: 1 }} />
-              <stop offset="50%" style={{ stopColor: '#ffffff', stopOpacity: 1 }} />
-              <stop offset="75%" style={{ stopColor: '#c5cdd6', stopOpacity: 1 }} />
-              <stop offset="100%" style={{ stopColor: '#9ba5b0', stopOpacity: 0.9 }} />
-            </linearGradient>
-            <filter id="glow">
-              <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
-              <feMerge>
-                <feMergeNode in="coloredBlur"/>
-                <feMergeNode in="SourceGraphic"/>
-              </feMerge>
-            </filter>
-          </defs>
-          {/* Thicker metallic stroke */}
-          <path 
-            d="M0 60L0 30C360 0 720 0 1080 30C1260 45 1350 52.5 1440 60" 
-            stroke="url(#metalGradient)" 
-            strokeWidth="12" 
-            fill="none" 
-            filter="url(#glow)"
-            style={{ opacity: 0.95 }}
-          />
-          {/* White fill */}
-          <path d="M0 60L0 30C360 0 720 0 1080 30C1260 45 1350 52.5 1440 60L1440 60L0 60Z" fill="#ffffff" />
-        </svg>
-      </div>
-
       {/* Video Modal */}
       {showVideo && (
         <div className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center p-4">
