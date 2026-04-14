@@ -70,7 +70,7 @@ const ContentSection = ({ section, isFirst }) => {
                 <span className="text-[15px] tracking-[0.2em] font-black mt-3 whitespace-nowrap">
                   {section.id === 'preschool-series' && 'OKUL SERİSİ'}
                   {section.id === 'workshop' && 'ATÖLYE SERİSİ'}
-                  {section.id === 'home-tutor' && 'EV ÖZEL DERS'}
+                  {section.id === 'home-tutor' && 'EV ÖZEL DERS SERİSİ'}
                 </span>
               </div>
             </div>
@@ -106,13 +106,6 @@ const ContentSection = ({ section, isFirst }) => {
             <p className="text-[15px] md:text-[16px] text-gray-600 leading-[1.8] mb-6 transition-colors duration-300 group-hover:text-gray-800">
               {sectionT?.desc || section.description}
             </p>
-            {/* Click CTA */}
-            <div className="inline-flex items-center gap-2 text-[14px] font-semibold transition-transform duration-300 group-hover:translate-x-2" style={{ color: section.accentColor }}>
-              <span>Detaylar için tıklayın</span>
-              <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </div>
           </div>
         </a>
       </div>
