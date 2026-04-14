@@ -239,28 +239,11 @@ const LevelFinderPage = () => {
 
       <section className="w-full py-10 md:py-16">
         <div className="max-w-[800px] mx-auto px-6 md:px-12">
-          
-          {/* Intro Section - Title + Description */}
-          <div className="text-center mb-16" style={{ paddingTop: '80px' }}>
-            {/* Main Title */}
-            <h1 className="text-[32px] md:text-[42px] lg:text-[48px] font-bold text-[#0B1F3A] leading-tight mb-5">
-              Hangi Woody Set Sizin İçin Uygun?
-            </h1>
-            
-            {/* Optional Yellow Underline */}
-            <div className="w-[80px] h-[3px] bg-[#FFB800] mx-auto mb-5"></div>
-            
-            {/* Description */}
-            <p className="text-[15px] md:text-[17px] text-gray-600 leading-relaxed max-w-[700px] mx-auto" style={{ marginBottom: '60px' }}>
-              Kurumunuza veya kullanım alanınıza en uygun Woody setini seçin. Her set, farklı ihtiyaçlara göre özel olarak yapılandırılmıştır.
-            </p>
-          </div>
-
           {/* Title */}
           <div className="text-center mb-10">
-            <h2 className="text-[28px] md:text-[36px] font-bold text-gray-900 mb-3" style={{ fontFamily: "'Magic English', 'Fredoka', cursive" }}>
+            <h1 className="text-[32px] md:text-[42px] font-bold text-gray-900 mb-3" style={{ fontFamily: "'Magic English', 'Fredoka', cursive" }}>
               Woody Level Finder
-            </h2>
+            </h1>
             <p className="text-[15px] text-gray-500">Öğrencinin seviyesini belirlemek için aşağıdaki soruları yanıtlayın.</p>
           </div>
 

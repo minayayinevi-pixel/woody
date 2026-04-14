@@ -29,12 +29,31 @@ const ContentSection = ({ section, isFirst }) => {
     >
       <div className="max-w-[1100px] mx-auto px-6 md:px-12 lg:px-20">
         {isFirst && (
-          <div className="mb-6 text-center">
-            <h2 className="text-[24px] md:text-[30px] lg:text-[36px] text-black leading-snug font-semibold" style={{ fontFamily: "'Fredoka', 'Inter', sans-serif" }}>
-              {t.sections.heading}
-            </h2>
-            <div className="w-20 h-[3px] mx-auto mt-4" style={{ backgroundColor: '#F5C518' }} />
-          </div>
+          <>
+            {/* Intro Section - Title + Description */}
+            <div className="text-center mb-12" style={{ paddingTop: '80px' }}>
+              {/* Main Title */}
+              <h1 className="text-[32px] md:text-[42px] lg:text-[48px] font-bold text-[#0B1F3A] leading-tight mb-5">
+                Hangi Woody Set Sizin İçin Uygun?
+              </h1>
+              
+              {/* Optional Yellow Underline */}
+              <div className="w-[80px] h-[3px] bg-[#FFB800] mx-auto mb-5"></div>
+              
+              {/* Description */}
+              <p className="text-[15px] md:text-[17px] text-gray-600 leading-relaxed max-w-[700px] mx-auto" style={{ marginBottom: '60px' }}>
+                Kurumunuza veya kullanım alanınıza en uygun Woody setini seçin. Her set, farklı ihtiyaçlara göre özel olarak yapılandırılmıştır.
+              </p>
+            </div>
+
+            {/* Original Section Heading */}
+            <div className="mb-6 text-center">
+              <h2 className="text-[24px] md:text-[30px] lg:text-[36px] text-black leading-snug font-semibold" style={{ fontFamily: "'Fredoka', 'Inter', sans-serif" }}>
+                {t.sections.heading}
+              </h2>
+              <div className="w-20 h-[3px] mx-auto mt-4" style={{ backgroundColor: '#F5C518' }} />
+            </div>
+          </>
         )}
 
         {/* Entire section with side ribbon behind/beside image - fully clickable with hover effect */}
