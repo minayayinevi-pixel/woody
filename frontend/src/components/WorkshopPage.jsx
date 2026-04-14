@@ -105,40 +105,14 @@ const WorkshopPage = () => {
             {/* Left Video - Öğretmen Seti with COMING SOON */}
             <div className="flex-1 w-full">
               <div className="relative bg-black rounded-2xl overflow-hidden shadow-2xl group aspect-video">
-                <img src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/b5pl9rqg_Paragraf%20metniniz%20%284%29.png" alt="Coming Soon" className="w-full h-full object-cover opacity-90" />
-                {/* COMING SOON Badge */}
-                <div className="absolute top-4 left-4 z-20">
-                  <div className="bg-red-600 text-white px-6 py-3 rounded-lg shadow-2xl">
-                    <p className="text-[20px] md:text-[24px] font-black tracking-wider">COMING</p>
-                    <p className="text-[20px] md:text-[24px] font-black tracking-wider">SOON</p>
-                  </div>
-                </div>
-                {/* Text Overlay */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <p className="text-white text-[24px] md:text-[32px] font-bold italic tracking-wide" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
-                    Çok yakında geliyoruz...
-                  </p>
-                </div>
+                <img src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/b5pl9rqg_Paragraf%20metniniz%20%284%29.png" alt="Coming Soon" className="w-full h-full object-cover" />
               </div>
               <p className="text-center mt-4 text-[18px] md:text-[22px] font-bold text-gray-800 tracking-wide">{p.teacherSet}</p>
             </div>
             {/* Right Video - Öğrenci Seti with COMING SOON */}
             <div className="flex-1 w-full">
               <div className="relative bg-black rounded-2xl overflow-hidden shadow-2xl group aspect-video">
-                <img src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/b5pl9rqg_Paragraf%20metniniz%20%284%29.png" alt="Coming Soon" className="w-full h-full object-cover opacity-90" />
-                {/* COMING SOON Badge */}
-                <div className="absolute top-4 left-4 z-20">
-                  <div className="bg-red-600 text-white px-6 py-3 rounded-lg shadow-2xl">
-                    <p className="text-[20px] md:text-[24px] font-black tracking-wider">COMING</p>
-                    <p className="text-[20px] md:text-[24px] font-black tracking-wider">SOON</p>
-                  </div>
-                </div>
-                {/* Text Overlay */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <p className="text-white text-[24px] md:text-[32px] font-bold italic tracking-wide" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
-                    Çok yakında geliyoruz...
-                  </p>
-                </div>
+                <img src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/b5pl9rqg_Paragraf%20metniniz%20%284%29.png" alt="Coming Soon" className="w-full h-full object-cover" />
               </div>
               <p className="text-center mt-4 text-[18px] md:text-[22px] font-bold text-gray-800 tracking-wide">{p.studentSet}</p>
             </div>
@@ -154,22 +128,7 @@ const WorkshopPage = () => {
             {levels.map((level, idx) => (
               <div key={idx} className="group">
                 <div className="relative rounded-2xl overflow-hidden shadow-lg aspect-[3/4] bg-gray-200">
-                  <img src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/b5pl9rqg_Paragraf%20metniniz%20%284%29.png" alt="Coming Soon" className="w-full h-full object-cover opacity-80" />
-                  
-                  {/* COMING SOON Badge */}
-                  <div className="absolute top-4 left-4 z-20">
-                    <div className="bg-red-600 text-white px-4 py-2 rounded-md shadow-xl">
-                      <p className="text-[16px] font-black tracking-wider">COMING</p>
-                      <p className="text-[16px] font-black tracking-wider">SOON</p>
-                    </div>
-                  </div>
-
-                  {/* Overlay Text */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <p className="text-white text-[18px] md:text-[22px] font-bold italic px-4 text-center" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
-                      Çok yakında<br/>geliyoruz...
-                    </p>
-                  </div>
+                  <img src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/b5pl9rqg_Paragraf%20metniniz%20%284%29.png" alt="Coming Soon" className="w-full h-full object-cover" />
                 </div>
                 <div className="mt-4 text-center">
                   <h4 className="text-[16px] md:text-[18px] font-semibold text-gray-800">{level.name}</h4>
