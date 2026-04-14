@@ -227,40 +227,53 @@ const BlogPage = () => {
         </div>
       </section>
 
-      {/* Grid Cards Section - 2 Columns */}
-      <section className="w-full py-12 md:py-16 bg-white">
+      {/* Zig-zag Layout Section - Alternating Icon/Text Blocks */}
+      <section className="w-full bg-white py-8 md:py-0">
         <div className="max-w-[1200px] mx-auto px-6 md:px-12">
-          {/* 2-column grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-            {blogCards.map((card) => (
-              <div 
-                key={card.id}
-                className="bg-[#F7F7F7] rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300"
-              >
-                {/* Card Title */}
-                <h3 className="text-[18px] md:text-[20px] font-bold text-[#0B1F3A] mb-4 leading-tight">
-                  {card.title}
-                </h3>
+          {blogBlocks.map((block, index) => (
+            <div 
+              key={block.id}
+              className="py-12 md:py-20"
+              style={{ 
+                borderBottom: index < blogBlocks.length - 1 ? '1px solid #f0f0f0' : 'none' 
+              }}
+            >
+              <div className={`flex flex-col ${block.iconLeft ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-6 md:gap-12`}>
+                
+                {/* Icon Circle */}
+                <div className="flex-shrink-0 order-1 md:order-none">
+                  <div className="w-[60px] h-[60px] rounded-full bg-[#0B1F3A] flex items-center justify-center">
+                    <div className="text-white scale-110">
+                      {block.icon}
+                    </div>
+                  </div>
+                </div>
 
-                {/* Card Description (if exists) */}
-                {card.desc && (
-                  <p className="text-[14px] text-gray-600 mb-4 leading-relaxed">
-                    {card.desc}
-                  </p>
-                )}
+                {/* Text Content */}
+                <div className="flex-1 text-center md:text-left order-2 md:order-none">
+                  <h3 className="text-[20px] md:text-[24px] font-bold text-[#0B1F3A] mb-3 leading-tight">
+                    {block.title}
+                  </h3>
+                  
+                  {block.desc && (
+                    <p className="text-[15px] text-gray-600 mb-3 leading-relaxed">
+                      {block.desc}
+                    </p>
+                  )}
 
-                {/* Bullet List */}
-                <ul className="space-y-2">
-                  {card.list.map((item, idx) => (
-                    <li key={idx} className="text-[14px] text-gray-700 flex items-start">
-                      <span className="text-yellow-500 mr-2 mt-1">•</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
+                  <ul className="space-y-2">
+                    {block.list.map((item, idx) => (
+                      <li key={idx} className="text-[15px] text-gray-700 flex items-start justify-center md:justify-start">
+                        <span className="text-[#FFB800] mr-2 mt-1">•</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </section>
 
