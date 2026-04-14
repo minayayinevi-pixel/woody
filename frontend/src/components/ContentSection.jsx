@@ -37,28 +37,49 @@ const ContentSection = ({ section, isFirst }) => {
           </div>
         )}
 
-        {/* Entire section wrapped in anchor tag - fully clickable */}
+        {/* Entire section with side tab/ribbon - fully clickable with hover effect */}
         <a
           href="#"
           onClick={(e) => {
             e.preventDefault();
             handleSectionClick();
           }}
-          className={`flex flex-col ${
+          className={`relative flex flex-col ${
             isImageLeft ? 'lg:flex-row' : 'lg:flex-row-reverse'
-          } items-center gap-10 lg:gap-16 cursor-pointer no-underline`}
+          } items-center gap-10 lg:gap-16 cursor-pointer no-underline group`}
           style={{ textDecoration: 'none' }}
         >
-          {/* Image - no border, no shadow, no frame */}
-          <div className="w-full lg:w-1/2">
+          {/* Side Ribbon/Tab - like in the image */}
+          <div 
+            className={`absolute ${isImageLeft ? 'left-0' : 'right-0'} top-1/2 -translate-y-1/2 hidden lg:block`}
+            style={{ 
+              writingMode: 'vertical-rl',
+              transform: isImageLeft ? 'translateY(-50%) rotate(180deg)' : 'translateY(-50%)',
+              transformOrigin: 'center'
+            }}
+          >
+            <div 
+              className="px-3 py-6 font-bold text-white text-[18px] tracking-wider rounded-t-lg"
+              style={{ 
+                backgroundColor: section.accentColor,
+                boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
+              }}
+            >
+              {sectionT?.tag || 'SERIES'}
+            </div>
+          </div>
+
+          {/* Image - smaller, with hover effect */}
+          <div className="w-full lg:w-1/2 relative overflow-hidden rounded-xl">
             <img
               src={section.image}
               alt={sectionT?.title || section.title}
-              className="w-full h-auto"
+              className="w-full h-auto transition-transform duration-500 ease-out group-hover:scale-105"
               style={{
                 display: 'block',
-                maxWidth: '100%',
-                height: 'auto'
+                maxWidth: '85%',
+                height: 'auto',
+                margin: '0 auto'
               }}
             />
           </div>
@@ -66,16 +87,19 @@ const ContentSection = ({ section, isFirst }) => {
           {/* Text Content */}
           <div className="w-full lg:w-1/2">
             <div
-              className="inline-block px-4 py-1.5 rounded-full text-[13px] font-semibold text-white mb-5"
+              className="inline-block px-4 py-1.5 rounded-full text-[13px] font-semibold text-white mb-5 transition-transform duration-300 group-hover:scale-105"
               style={{ backgroundColor: section.accentColor }}
             >
               {sectionT?.tag}
             </div>
-            <h3 className="text-[30px] md:text-[36px] lg:text-[40px] font-light text-black leading-tight mb-5">
+            <h3 className="text-[30px] md:text-[36px] lg:text-[40px] font-light text-black leading-tight mb-5 transition-colors duration-300 group-hover:text-gray-700">
               {sectionT?.title || section.title}
             </h3>
-            <div className="w-16 h-[3px] mb-6" style={{ backgroundColor: section.accentColor }} />
-            <p className="text-[15px] md:text-[16px] text-gray-600 leading-[1.8] mb-6">
+            <div 
+              className="w-16 h-[3px] mb-6 transition-all duration-300 group-hover:w-24" 
+              style={{ backgroundColor: section.accentColor }} 
+            />
+            <p className="text-[15px] md:text-[16px] text-gray-600 leading-[1.8] mb-6 transition-colors duration-300 group-hover:text-gray-800">
               {sectionT?.desc || section.description}
             </p>
           </div>
