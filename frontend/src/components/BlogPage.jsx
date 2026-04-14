@@ -99,6 +99,15 @@ const BlogPage = () => {
         </div>
       </section>
 
+      {/* Main Blog Title - Centered */}
+      <section className="w-full py-8 md:py-12 bg-white">
+        <div className="max-w-[900px] mx-auto px-6 md:px-12">
+          <h2 className="text-[28px] md:text-[36px] lg:text-[42px] font-bold text-gray-900 leading-tight text-center">
+            Okul Öncesi İngilizce Eğitimi Nasıl Olmalı? (Etkili Bir Sistem Nasıl Kurulur?)
+          </h2>
+        </div>
+      </section>
+
       {/* Blog Entries */}
       <section className="w-full py-12 md:py-16">
         <div className="max-w-[1100px] mx-auto px-6 md:px-12">
