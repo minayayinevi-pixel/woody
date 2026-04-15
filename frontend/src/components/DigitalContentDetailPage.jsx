@@ -35,7 +35,7 @@ const DigitalContentDetailPage = () => {
     senior: 'SENIOR Level'
   };
 
-  // İçerik sayıları
+  // İçerik sayıları ve gerçek müzik dosyaları
   const contentCounts = {
     storyland: 16, // 16 video
     movieland: 8,  // 8 video
@@ -43,18 +43,77 @@ const DigitalContentDetailPage = () => {
     library: 0     // Link eklenecek
   };
 
+  // BASIC Musicland için gerçek müzikler
+  const basicMusiclandTracks = [
+    {
+      id: 1,
+      title: 'Theme 1',
+      audioUrl: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/iccoy0mm_theme%201%20.mp3',
+      thumbnail: 'https://via.placeholder.com/300x200/6B21A8/FFFFFF?text=Theme+1'
+    },
+    {
+      id: 2,
+      title: 'Theme 2',
+      audioUrl: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/y3dz0w3v_theme%202.mp3',
+      thumbnail: 'https://via.placeholder.com/300x200/6B21A8/FFFFFF?text=Theme+2'
+    },
+    {
+      id: 3,
+      title: 'Theme 3',
+      audioUrl: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/lfgctcef_theme%203%20.mp3',
+      thumbnail: 'https://via.placeholder.com/300x200/6B21A8/FFFFFF?text=Theme+3'
+    },
+    {
+      id: 4,
+      title: 'Theme 4',
+      audioUrl: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/6pfdm5c0_theme%204%20.mp3',
+      thumbnail: 'https://via.placeholder.com/300x200/6B21A8/FFFFFF?text=Theme+4'
+    },
+    {
+      id: 5,
+      title: 'Theme 5',
+      audioUrl: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/w4djc170_Theme%205.mp3',
+      thumbnail: 'https://via.placeholder.com/300x200/6B21A8/FFFFFF?text=Theme+5'
+    },
+    {
+      id: 6,
+      title: 'Theme 6',
+      audioUrl: '', // Eklenecek
+      thumbnail: 'https://via.placeholder.com/300x200/6B21A8/FFFFFF?text=Theme+6'
+    },
+    {
+      id: 7,
+      title: 'Theme 7',
+      audioUrl: '', // Eklenecek
+      thumbnail: 'https://via.placeholder.com/300x200/6B21A8/FFFFFF?text=Theme+7'
+    },
+    {
+      id: 8,
+      title: 'Theme 8',
+      audioUrl: '', // Eklenecek
+      thumbnail: 'https://via.placeholder.com/300x200/6B21A8/FFFFFF?text=Theme+8'
+    }
+  ];
+
   const currentColor = sectionColors[sectionId] || '#000';
   const itemCount = contentCounts[sectionId] || 0;
 
   // Placeholder içerikler oluştur
   const generateItems = () => {
+    // BASIC Musicland için gerçek müzikler kullan
+    if (levelId === 'basic' && sectionId === 'musicland') {
+      return basicMusiclandTracks;
+    }
+    
+    // Diğer seviye ve bölümler için placeholder
     const items = [];
     for (let i = 1; i <= itemCount; i++) {
       items.push({
         id: i,
         title: `${sectionTitles[sectionId]} ${i}`,
         thumbnail: `https://via.placeholder.com/300x200/${currentColor.replace('#', '')}/FFFFFF?text=${sectionTitles[sectionId]}+${i}`,
-        videoUrl: '' // Video URL'leri sonra eklenecek
+        videoUrl: '', // Video URL'leri sonra eklenecek
+        audioUrl: ''  // Müzik URL'leri sonra eklenecek
       });
     }
     return items;
@@ -65,7 +124,15 @@ const DigitalContentDetailPage = () => {
   const handleItemClick = (item) => {
     if (sectionId === 'musicland') {
       // Müzik çal
-      alert(`🎵 ${item.title} çalıyor... (Müzik dosyası eklenecek)`);
+      if (item.audioUrl) {
+        // Gerçek müzik dosyası varsa çal
+        const audio = new Audio(item.audioUrl);
+        audio.play();
+        alert(`🎵 ${item.title} çalıyor...`);
+      } else {
+        // Henüz eklenmemiş
+        alert(`🎵 ${item.title} (Müzik dosyası eklenecek)`);
+      }
     } else {
       // Video aç
       setSelectedVideo(item);
