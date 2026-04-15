@@ -134,19 +134,19 @@ const DigitalContentDetailPage = () => {
     {
       id: 6,
       title: 'Theme 6',
-      audioUrl: '',
+      audioUrl: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/c2eihyip_theme%206.mp3',
       thumbnail: 'https://via.placeholder.com/300x200/6B21A8/FFFFFF?text=JUNIOR+Theme+6'
     },
     {
       id: 7,
       title: 'Theme 7',
-      audioUrl: '',
+      audioUrl: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/ttak76ty_theme%207.mp3',
       thumbnail: 'https://via.placeholder.com/300x200/6B21A8/FFFFFF?text=JUNIOR+Theme+7'
     },
     {
       id: 8,
       title: 'Theme 8',
-      audioUrl: '',
+      audioUrl: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/hj56hh9t_theme%208%20.mp3',
       thumbnail: 'https://via.placeholder.com/300x200/6B21A8/FFFFFF?text=JUNIOR+Theme+8'
     }
   ];
@@ -394,29 +394,13 @@ const DigitalContentDetailPage = () => {
 
             {/* Controls */}
             <div className="flex items-center gap-3">
-              {/* Play/Pause Button */}
-              <button
-                onClick={togglePlayPause}
-                className="w-12 h-12 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-colors"
-              >
-                {isPlaying ? (
-                  // Pause Icon
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
-                    <rect x="6" y="4" width="4" height="16" />
-                    <rect x="14" y="4" width="4" height="16" />
-                  </svg>
-                ) : (
-                  // Play Icon
-                  <Play size={20} fill="white" color="white" />
-                )}
-              </button>
-
-              {/* Stop Button */}
+              {/* Stop Button - Sadece çalarken göster */}
               <button
                 onClick={stopMusic}
-                className="w-10 h-10 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-colors"
+                className="w-12 h-12 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-colors"
+                title="Durdur"
               >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
                   <rect x="6" y="6" width="12" height="12" />
                 </svg>
               </button>
