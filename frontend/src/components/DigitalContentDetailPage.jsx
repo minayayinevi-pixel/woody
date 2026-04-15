@@ -83,19 +83,19 @@ const DigitalContentDetailPage = () => {
       id: 6,
       title: 'Theme 6',
       audioUrl: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/g2sj2m65_theme%206.mp3',
-      thumbnail: 'https://via.placeholder.com/300x200/6B21A8/FFFFFF?text=Theme+6'
+      thumbnail: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/9vonr43z_6.png'
     },
     {
       id: 7,
       title: 'Theme 7',
       audioUrl: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/2sncgdds_theme%207.mp3',
-      thumbnail: 'https://via.placeholder.com/300x200/6B21A8/FFFFFF?text=Theme+7'
+      thumbnail: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/73lilv7l_7.png'
     },
     {
       id: 8,
       title: 'Theme 8',
       audioUrl: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/726lj4d9_theme%208.mp3',
-      thumbnail: 'https://via.placeholder.com/300x200/6B21A8/FFFFFF?text=Theme+8'
+      thumbnail: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/8ontm0a3_8.png'
     }
   ];
 
