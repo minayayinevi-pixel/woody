@@ -39,11 +39,16 @@ const DigitalContentPage = () => {
   ];
 
   const sections = [
-    { id: 'storyland', name: 'Storyland', icon: BookOpen, color: '#9C27B0' },
-    { id: 'movieland', name: 'Movieland', icon: Film, color: '#2196F3' },
-    { id: 'musicland', name: 'Musicland', icon: Music, color: '#FF9800' },
-    { id: 'library', name: 'Library', icon: Library, color: '#4CAF50' }
+    { id: 'storyland', name: 'Storyland', icon: BookOpen, color: '#F5C518' }, // SARI
+    { id: 'movieland', name: 'Movieland', icon: Film, color: '#DC2626' }, // KIRMIZI
+    { id: 'musicland', name: 'Musicland', icon: Music, color: '#6B21A8' }, // KOYU MOR
+    { id: 'library', name: 'Library', icon: Library, color: '#92400E' } // KAHVERENGİ
   ];
+
+  const handleSectionClick = (levelId, sectionId) => {
+    // Navigate to content page
+    navigate(`/digital-content/${levelId}/${sectionId}`);
+  };
 
   const handleLevelClick = (levelId) => {
     setSelectedLevel(selectedLevel === levelId ? null : levelId);
@@ -113,10 +118,7 @@ const DigitalContentPage = () => {
                       return (
                         <button
                           key={section.id}
-                          onClick={() => {
-                            // İçerikleri sonra ekleyeceğiz
-                            alert(`${level.name} - ${section.name} (İçerik yakında eklenecek)`);
-                          }}
+                          onClick={() => handleSectionClick(level.id, section.id)}
                           className="flex flex-col items-center justify-center p-4 rounded-2xl transition-all duration-300 hover:scale-105"
                           style={{
                             background: `linear-gradient(135deg, ${section.color}20 0%, ${section.color}10 100%)`,
