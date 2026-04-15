@@ -29,8 +29,8 @@ const PreschoolPage = () => {
       teacher: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/icoq32rz_jun%C4%B1or%20ogretmen.mp4'
     },
     'Senior Level': {
-      student: null,
-      teacher: null
+      student: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/wmelrnc8_senior%20o%CC%88g%CC%86renci..mp4',
+      teacher: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/pcnm1irb_senior%20o%CC%88g%CC%86renci..mp4'
     }
   };
 
