@@ -84,6 +84,13 @@ const HeroSection = ({ data }) => {
         </p>
       </div>
 
+      {/* Parlak Cam Gibi Düz Çizgi - Video Altında */}
+      <div className="absolute bottom-0 left-0 right-0 z-20 h-[6px]" style={{
+        background: 'linear-gradient(90deg, rgba(168,179,193,0.7) 0%, rgba(232,234,237,0.9) 25%, rgba(255,255,255,1) 50%, rgba(197,205,214,0.9) 75%, rgba(155,165,176,0.7) 100%)',
+        boxShadow: '0 2px 8px rgba(0,0,0,0.15), inset 0 1px 2px rgba(255,255,255,0.5)',
+        backdropFilter: 'blur(4px)'
+      }} />
+
       {/* Video Modal */}
       {showVideo && (
         <div className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center p-4">
