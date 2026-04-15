@@ -30,7 +30,7 @@ const PreschoolPage = () => {
     },
     'Senior Level': {
       student: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/wmelrnc8_senior%20o%CC%88g%CC%86renci..mp4',
-      teacher: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/pcnm1irb_senior%20o%CC%88g%CC%86renci..mp4'
+      teacher: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/2om7n0iq_senior%20teacher.mp4'
     }
   };
 
