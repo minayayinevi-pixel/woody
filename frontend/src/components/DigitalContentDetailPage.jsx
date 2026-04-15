@@ -135,19 +135,19 @@ const DigitalContentDetailPage = () => {
       id: 6,
       title: 'Theme 6',
       audioUrl: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/c2eihyip_theme%206.mp3',
-      thumbnail: 'https://via.placeholder.com/300x200/6B21A8/FFFFFF?text=JUNIOR+Theme+6'
+      thumbnail: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/22qudlvp_11.png'
     },
     {
       id: 7,
       title: 'Theme 7',
       audioUrl: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/ttak76ty_theme%207.mp3',
-      thumbnail: 'https://via.placeholder.com/300x200/6B21A8/FFFFFF?text=JUNIOR+Theme+7'
+      thumbnail: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/xvg3m6sd_13.png'
     },
     {
       id: 8,
       title: 'Theme 8',
       audioUrl: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/hj56hh9t_theme%208%20.mp3',
-      thumbnail: 'https://via.placeholder.com/300x200/6B21A8/FFFFFF?text=JUNIOR+Theme+8'
+      thumbnail: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/cnuuucdz_15.png'
     }
   ];
 
@@ -184,6 +184,12 @@ const DigitalContentDetailPage = () => {
 
   const handleItemClick = (item) => {
     if (sectionId === 'musicland') {
+      // Eğer aynı müzik çalıyorsa, durdur
+      if (currentTrack && currentTrack.id === item.id && isPlaying) {
+        stopMusic();
+        return;
+      }
+      
       // Müzik çal
       if (item.audioUrl) {
         // Önceki müziği durdur
@@ -318,13 +324,20 @@ const DigitalContentDetailPage = () => {
                     <div className="absolute inset-0 bg-black/10" />
                   )}
                   
-                  {/* Play Icon Overlay */}
+                  {/* Play/Stop Icon Overlay */}
                   <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-colors">
                     <div 
                       className="w-16 h-16 rounded-full flex items-center justify-center"
                       style={{ backgroundColor: `${currentColor}90` }}
                     >
-                      <Play size={28} fill="white" color="white" />
+                      {/* Eğer bu müzik çalıyorsa STOP göster, değilse PLAY */}
+                      {currentTrack && currentTrack.id === item.id && isPlaying ? (
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                          <rect x="6" y="6" width="12" height="12" />
+                        </svg>
+                      ) : (
+                        <Play size={28} fill="white" color="white" />
+                      )}
                     </div>
                   </div>
 
