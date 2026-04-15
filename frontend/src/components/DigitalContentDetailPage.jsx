@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { ChevronLeft, Play } from 'lucide-react';
+import { ChevronLeft, Play, X, Lock } from 'lucide-react';
 import Header from './Header';
 import Footer from './Footer';
 import { siteData } from '../data/mock';
@@ -14,9 +14,68 @@ const DigitalContentDetailPage = () => {
   const [currentTrack, setCurrentTrack] = useState(null);
   const audioRef = React.useRef(null);
 
-  React.useEffect(() => {
+  // Şifre kontrolü için state'ler
+  const [isPasswordVerified, setIsPasswordVerified] = useState(false);
+  const [showPasswordModal, setShowPasswordModal] = useState(false);
+  const [enteredPassword, setEnteredPassword] = useState('');
+  const [passwordError, setPasswordError] = useState('');
+
+  // 100 geçerli şifre
+  const validPasswords = [
+    '1023', '8472', '5619', '3904', '7281', '6645', '2198', '7530', '4802', '9157',
+    '6384', '2741', '5096', '1837', '7429', '3568', '9210', '4673', '8052', '1149',
+    '6932', '2785', '5410', '8603', '7391', '4027', '1586', '9974', '6328', '2840',
+    '7159', '4362', '8207', '1593', '6701', '2489', '9015', '3746', '5820', '6631',
+    '4208', '7754', '2986', '5417', '8632', '3179', '6045', '1892', '7360', '9521',
+    '4178', '6309', '2851', '7946', '5283', '1497', '8601', '3725', '6480', '9134',
+    '2057', '4813', '7592', '1348', '6827', '9903', '2764', '5189', '7435', '8640',
+    '3908', '6214', '1572', '8046', '2935', '5681', '7420', '3197', '6502', '9871',
+    '2468', '1357', '8642', '5793', '4081', '7326', '1950', '6217', '7834', '4529',
+    '9182', '3407', '6759', '2048', '5863', '7294', '8106', '4671', '3528', '6930'
+  ];
+
+  // Şifre korumalı kategoriler
+  const protectedSections = ['storyland', 'library', 'movieland'];
+
+  // Sayfa yüklendiğinde şifre kontrolü
+  useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
+
+    // Eğer korumalı bir kategori ise
+    if (protectedSections.includes(sectionId)) {
+      // localStorage'dan şifreyi kontrol et
+      const savedPassword = localStorage.getItem('woody_digital_password');
+      
+      if (savedPassword && validPasswords.includes(savedPassword)) {
+        // Şifre kayıtlı ve geçerli
+        setIsPasswordVerified(true);
+      } else {
+        // Şifre yok veya geçersiz, modal göster
+        setShowPasswordModal(true);
+      }
+    } else {
+      // Korumasız kategori (Musicland)
+      setIsPasswordVerified(true);
+    }
+  }, [sectionId]);
+
+  // Şifre doğrulama
+  const handlePasswordSubmit = (e) => {
+    e.preventDefault();
+    
+    if (validPasswords.includes(enteredPassword)) {
+      // Şifre doğru
+      localStorage.setItem('woody_digital_password', enteredPassword);
+      setIsPasswordVerified(true);
+      setShowPasswordModal(false);
+      setPasswordError('');
+      setEnteredPassword('');
+    } else {
+      // Şifre yanlış
+      setPasswordError('Yanlış şifre! Lütfen tekrar deneyin.');
+      setEnteredPassword('');
+    }
+  };
 
   // Renk tanımlamaları
   const sectionColors = {
@@ -305,7 +364,73 @@ const DigitalContentDetailPage = () => {
       <Header data={siteData.header} />
       <div className="pt-[72px]" />
 
-      {/* Header with Back Button */}
+      {/* Şifre Modal */}
+      {showPasswordModal && (
+        <div className="fixed inset-0 z-[10000] bg-black/80 flex items-center justify-center p-4">
+          <div className="bg-white rounded-2xl max-w-[400px] w-full p-8 relative">
+            {/* Lock Icon */}
+            <div className="flex justify-center mb-6">
+              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+                <Lock size={40} className="text-white" />
+              </div>
+            </div>
+
+            {/* Title */}
+            <h2 className="text-[24px] md:text-[28px] font-bold text-gray-900 text-center mb-2">
+              İçerik Korumalı
+            </h2>
+            <p className="text-[14px] text-gray-600 text-center mb-6">
+              Bu içeriği görüntülemek için 4 haneli şifrenizi girin.
+            </p>
+
+            {/* Form */}
+            <form onSubmit={handlePasswordSubmit}>
+              {/* Password Input */}
+              <input
+                type="text"
+                maxLength="4"
+                value={enteredPassword}
+                onChange={(e) => {
+                  const value = e.target.value.replace(/\D/g, ''); // Sadece rakam
+                  setEnteredPassword(value);
+                  setPasswordError('');
+                }}
+                placeholder="****"
+                className="w-full text-center text-[32px] font-bold tracking-[12px] border-2 border-gray-300 rounded-xl px-4 py-4 mb-4 focus:outline-none focus:border-blue-500 transition-colors"
+                autoFocus
+              />
+
+              {/* Error Message */}
+              {passwordError && (
+                <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg">
+                  <p className="text-[13px] text-red-600 text-center font-medium">
+                    {passwordError}
+                  </p>
+                </div>
+              )}
+
+              {/* Submit Button */}
+              <button
+                type="submit"
+                disabled={enteredPassword.length !== 4}
+                className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 disabled:from-gray-300 disabled:to-gray-400 text-white font-semibold text-[16px] py-3.5 rounded-xl transition-all duration-300 disabled:cursor-not-allowed"
+              >
+                Giriş Yap
+              </button>
+            </form>
+
+            {/* Info */}
+            <p className="text-[12px] text-gray-500 text-center mt-4">
+              Şifrenizi bir kez girin, sonraki ziyaretlerde tekrar sorulmayacak.
+            </p>
+          </div>
+        </div>
+      )}
+
+      {/* İçerik - Sadece şifre doğrulandıysa göster */}
+      {isPasswordVerified && (
+        <>
+          {/* Header with Back Button */}
       <section className="w-full py-8 bg-gray-50 border-b border-gray-200">
         <div className="max-w-[1200px] mx-auto px-6 md:px-12 flex items-center gap-4">
           <button
@@ -480,6 +605,9 @@ const DigitalContentDetailPage = () => {
             </div>
           </div>
         </div>
+      )}
+
+        </>
       )}
 
       <Footer data={siteData.footer} />
