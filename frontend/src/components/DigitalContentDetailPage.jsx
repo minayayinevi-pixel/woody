@@ -105,31 +105,31 @@ const DigitalContentDetailPage = () => {
       id: 1,
       title: 'Theme 1',
       audioUrl: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/r6xwf4fx_Theme%201.mp3',
-      thumbnail: 'https://via.placeholder.com/300x200/6B21A8/FFFFFF?text=JUNIOR+Theme+1'
+      thumbnail: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/rn4hl66d_1.png'
     },
     {
       id: 2,
       title: 'Theme 2',
       audioUrl: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/ypzzvi5i_theme%202.mp3',
-      thumbnail: 'https://via.placeholder.com/300x200/6B21A8/FFFFFF?text=JUNIOR+Theme+2'
+      thumbnail: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/68recr7x_2.png'
     },
     {
       id: 3,
       title: 'Theme 3',
       audioUrl: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/07v23187_theme%203%20.mp3',
-      thumbnail: 'https://via.placeholder.com/300x200/6B21A8/FFFFFF?text=JUNIOR+Theme+3'
+      thumbnail: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/ex1xgfa1_3.png'
     },
     {
       id: 4,
       title: 'Theme 4',
       audioUrl: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/kbi01h0d_theme%204%20.mp3',
-      thumbnail: 'https://via.placeholder.com/300x200/6B21A8/FFFFFF?text=JUNIOR+Theme+4'
+      thumbnail: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/0skbimng_4.png'
     },
     {
       id: 5,
       title: 'Theme 5',
       audioUrl: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/fqeyspb4_theme%205.mp3',
-      thumbnail: 'https://via.placeholder.com/300x200/6B21A8/FFFFFF?text=JUNIOR+Theme+5'
+      thumbnail: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/uj8it9vz_5.png'
     },
     {
       id: 6,
