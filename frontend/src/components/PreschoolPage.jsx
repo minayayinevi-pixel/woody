@@ -377,7 +377,7 @@ const PreschoolPage = () => {
                 </p>
 
                 <div className="space-y-3">
-                  {/* Öğretmen Seti */}
+                  {/* Öğretmen Kitabı */}
                   <button
                     onClick={() => {
                       const videoUrl = levelVideos[selectedLevel.name]?.teacher;
@@ -387,7 +387,7 @@ const PreschoolPage = () => {
                         setShowLevelVideoModal(false);
                         setShowLevelVideo(true);
                       } else {
-                        alert('Öğretmen Seti videosu yakında eklenecek');
+                        alert('Öğretmen Kitabı videosu yakında eklenecek');
                       }
                     }}
                     className="w-full flex items-center justify-between p-4 bg-gradient-to-r from-blue-50 to-blue-100 hover:from-blue-100 hover:to-blue-200 rounded-xl transition-all duration-300 group border-2 border-blue-200 hover:border-blue-300"
@@ -397,14 +397,14 @@ const PreschoolPage = () => {
                         <Play size={20} fill="white" color="white" />
                       </div>
                       <div className="text-left">
-                        <p className="text-[15px] font-semibold text-gray-900">Öğretmen Seti</p>
-                        <p className="text-[12px] text-gray-600">Öğretmen seti içeriğini izle</p>
+                        <p className="text-[15px] font-semibold text-gray-900">Öğretmen Kitabı</p>
+                        <p className="text-[12px] text-gray-600">Öğretmen kitabı içeriğini izle</p>
                       </div>
                     </div>
                     <ChevronRight size={20} className="text-blue-600 group-hover:translate-x-1 transition-transform" />
                   </button>
 
-                  {/* Öğrenci Seti */}
+                  {/* Öğrenci Kitabı */}
                   <button
                     onClick={() => {
                       const videoUrl = levelVideos[selectedLevel.name]?.student;
@@ -414,7 +414,7 @@ const PreschoolPage = () => {
                         setShowLevelVideoModal(false);
                         setShowLevelVideo(true);
                       } else {
-                        alert('Öğrenci Seti videosu yakında eklenecek');
+                        alert('Öğrenci Kitabı videosu yakında eklenecek');
                       }
                     }}
                     className="w-full flex items-center justify-between p-4 bg-gradient-to-r from-green-50 to-green-100 hover:from-green-100 hover:to-green-200 rounded-xl transition-all duration-300 group border-2 border-green-200 hover:border-green-300"
@@ -424,8 +424,8 @@ const PreschoolPage = () => {
                         <Play size={20} fill="white" color="white" />
                       </div>
                       <div className="text-left">
-                        <p className="text-[15px] font-semibold text-gray-900">Öğrenci Seti</p>
-                        <p className="text-[12px] text-gray-600">Öğrenci seti içeriğini izle</p>
+                        <p className="text-[15px] font-semibold text-gray-900">Öğrenci Kitabı</p>
+                        <p className="text-[12px] text-gray-600">Öğrenci kitabı içeriğini izle</p>
                       </div>
                     </div>
                     <ChevronRight size={20} className="text-green-600 group-hover:translate-x-1 transition-transform" />
