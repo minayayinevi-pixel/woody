@@ -15,6 +15,7 @@ import BlogPage from "./components/BlogPage";
 import LevelFinderPage from "./components/LevelFinderPage";
 import LibraryPage from "./components/LibraryPage";
 import FloatingContact from "./components/FloatingContact";
+import StickyStoreButton from "./components/StickyStoreButton";
 import { siteData } from "./data/mock";
 
 const HomePage = () => {
@@ -38,6 +39,7 @@ function App() {
       <LanguageProvider>
         <BrowserRouter>
           <FloatingContact />
+          <StickyStoreButton />
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/preschool" element={<PreschoolPage />} />

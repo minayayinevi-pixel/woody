@@ -34,6 +34,11 @@ const Header = ({ data }) => {
     { label: "BLOG", href: "/blog" }
   ];
 
+  const handleStoreClick = (e) => {
+    e.preventDefault();
+    window.open('https://wa.me/905331570373?text=Merhaba%2C%20Woody%20Store%20hakkında%20bilgi%20almak%20istiyorum.', '_blank');
+  };
+
   const currentFlag = languages.find(l => l.code === lang);
 
   return (
@@ -54,7 +59,29 @@ const Header = ({ data }) => {
         {/* Desktop Nav + Language */}
         <div className="hidden md:flex items-center gap-8">
           <nav className="flex items-center gap-7">
-            {navItems.map((item, i) => (
+            {/* HOME Link */}
+            <a
+              href="/"
+              onClick={(e) => { e.preventDefault(); navigate('/'); }}
+              className={`text-[11px] lg:text-[12px] tracking-[0.15em] font-medium no-underline transition-colors duration-300 cursor-pointer whitespace-nowrap ${
+                window.location.pathname === '/' ? 'text-black border-b-2 border-black pb-1' : 'text-gray-600 hover:text-black'
+              }`}
+            >
+              {t.nav.home}
+            </a>
+
+            {/* WOODY STORE Button - RIGHT AFTER HOME */}
+            <a
+              href="#store"
+              onClick={handleStoreClick}
+              className="menu-store-btn inline-flex items-center justify-center bg-[#FF6A00] text-white px-4 py-2 rounded-lg font-semibold text-[11px] lg:text-[12px] tracking-[0.1em] no-underline transition-all duration-250 hover:bg-[#E85C00] hover:scale-105 active:translate-y-[1px] whitespace-nowrap"
+              style={{ boxShadow: '0 4px 12px rgba(0,0,0,0.14)' }}
+            >
+              🛍️ WOODY STORE
+            </a>
+
+            {/* Rest of nav items (excluding HOME) */}
+            {navItems.slice(1).map((item, i) => (
               <a
                 key={i}
                 href={item.href}
@@ -116,7 +143,34 @@ const Header = ({ data }) => {
       {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="md:hidden bg-white border-t border-gray-100 px-6 py-4">
-          {navItems.map((item, i) => (
+          {/* HOME Link */}
+          <a
+            href="/"
+            className="block py-3 text-[13px] tracking-[0.15em] font-medium no-underline text-gray-600"
+            onClick={(e) => {
+              e.preventDefault();
+              navigate('/');
+              setMobileMenuOpen(false);
+            }}
+          >
+            {t.nav.home}
+          </a>
+
+          {/* WOODY STORE Button in Mobile Menu */}
+          <a
+            href="#store"
+            onClick={(e) => {
+              handleStoreClick(e);
+              setMobileMenuOpen(false);
+            }}
+            className="block my-2 py-3 px-4 bg-[#FF6A00] text-white text-center rounded-lg font-semibold text-[13px] tracking-[0.1em] no-underline active:translate-y-[1px]"
+            style={{ boxShadow: '0 4px 12px rgba(0,0,0,0.14)' }}
+          >
+            🛍️ WOODY STORE
+          </a>
+
+          {/* Rest of nav items */}
+          {navItems.slice(1).map((item, i) => (
             <a
               key={i}
               href={item.href}
