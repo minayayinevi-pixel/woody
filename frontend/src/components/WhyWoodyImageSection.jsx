@@ -140,12 +140,12 @@ const WhyWoodyImageSection = () => {
             <div className="space-y-4">
               {features.map((feature, index) => (
                 <div key={index} className="flex items-start gap-3">
-                  {/* Icon Circle - Dark Navy - smaller */}
+                  {/* Icon Circle - Dark Navy - İKONLAR ORTALANMIŞ */}
                   <div 
                     className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-white mt-0.5"
                     style={{ backgroundColor: '#0B1F3A' }}
                   >
-                    <div className="w-5 h-5">
+                    <div className="w-5 h-5 flex items-center justify-center">
                       {feature.icon}
                     </div>
                   </div>

@@ -62,23 +62,23 @@ const ContentSection = ({ section, isFirst }) => {
         >
           {/* Image with ribbon BEHIND it (in background, not in front) */}
           <div className="w-full lg:w-1/2 relative pl-8 lg:pl-0">
-            {/* Side Ribbon - positioned BEHIND the image (lower z-index) */}
+            {/* Side Ribbon - MOBİLDE DE GÖRÜNÜR */}
             <div 
-              className={`absolute ${isImageLeft ? 'left-0 lg:-left-8' : 'right-0 lg:-right-8'} top-1/2 -translate-y-1/2 hidden lg:flex z-0`}
+              className={`absolute ${isImageLeft ? 'left-0 lg:-left-8' : 'right-0 lg:-right-8'} top-1/2 -translate-y-1/2 flex z-0`}
             >
               <div 
-                className="flex flex-col items-center justify-center px-4 py-12 font-bold text-white rounded-lg shadow-2xl"
+                className="flex flex-col items-center justify-center px-3 md:px-4 py-10 md:py-12 font-bold text-white rounded-lg shadow-2xl"
                 style={{ 
                   backgroundColor: section.accentColor,
                   writingMode: 'vertical-rl',
                   transform: isImageLeft ? 'rotate(180deg)' : 'none',
-                  minHeight: '350px',
-                  minWidth: '60px'
+                  minHeight: '280px',
+                  minWidth: '45px'
                 }}
               >
-                <span className="text-[12px] tracking-[0.3em] mb-3">TIKLAYΙN</span>
-                <div className="w-8 h-[2px] bg-white/60 my-2"></div>
-                <span className="text-[15px] tracking-[0.2em] font-black mt-3 whitespace-nowrap">
+                <span className="text-[10px] md:text-[12px] tracking-[0.3em] mb-2 md:mb-3">TIKLAYΙN</span>
+                <div className="w-6 md:w-8 h-[2px] bg-white/60 my-2"></div>
+                <span className="text-[12px] md:text-[15px] tracking-[0.2em] font-black mt-2 md:mt-3 whitespace-nowrap">
                   {section.id === 'preschool-series' && 'OKUL SERİSİ'}
                   {section.id === 'workshop' && 'ATÖLYE SERİSİ'}
                   {section.id === 'home-tutor' && 'EV ÖZEL DERS SERİSİ'}
