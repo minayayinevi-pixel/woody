@@ -13,7 +13,26 @@ const PreschoolPage = () => {
   const [activeVideo, setActiveVideo] = useState(null);
   const [showLevelVideoModal, setShowLevelVideoModal] = useState(false);
   const [selectedLevel, setSelectedLevel] = useState(null);
+  const [showLevelVideo, setShowLevelVideo] = useState(false);
+  const [currentVideoUrl, setCurrentVideoUrl] = useState(null);
+  const [currentVideoType, setCurrentVideoType] = useState(null); // 'teacher' veya 'student'
   const p = t.preschoolPage;
+
+  // Video URL'leri
+  const levelVideos = {
+    'Basic Level': {
+      student: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/3lhuchbm_Basic%20o%CC%88g%CC%86renci.mp4',
+      teacher: null // Henüz yüklenmedi
+    },
+    'Junior Level': {
+      student: null,
+      teacher: null
+    },
+    'Senior Level': {
+      student: null,
+      teacher: null
+    }
+  };
 
   const handlePlayVideo = (type) => {
     setActiveVideo(type);
@@ -361,8 +380,15 @@ const PreschoolPage = () => {
                   {/* Öğretmen Seti */}
                   <button
                     onClick={() => {
-                      // Buraya video URL'si eklenecek
-                      alert('Öğretmen Seti videosu yakında eklenecek');
+                      const videoUrl = levelVideos[selectedLevel.name]?.teacher;
+                      if (videoUrl) {
+                        setCurrentVideoUrl(videoUrl);
+                        setCurrentVideoType('teacher');
+                        setShowLevelVideoModal(false);
+                        setShowLevelVideo(true);
+                      } else {
+                        alert('Öğretmen Seti videosu yakında eklenecek');
+                      }
                     }}
                     className="w-full flex items-center justify-between p-4 bg-gradient-to-r from-blue-50 to-blue-100 hover:from-blue-100 hover:to-blue-200 rounded-xl transition-all duration-300 group border-2 border-blue-200 hover:border-blue-300"
                   >
@@ -381,8 +407,15 @@ const PreschoolPage = () => {
                   {/* Öğrenci Seti */}
                   <button
                     onClick={() => {
-                      // Buraya video URL'si eklenecek
-                      alert('Öğrenci Seti videosu yakında eklenecek');
+                      const videoUrl = levelVideos[selectedLevel.name]?.student;
+                      if (videoUrl) {
+                        setCurrentVideoUrl(videoUrl);
+                        setCurrentVideoType('student');
+                        setShowLevelVideoModal(false);
+                        setShowLevelVideo(true);
+                      } else {
+                        alert('Öğrenci Seti videosu yakında eklenecek');
+                      }
                     }}
                     className="w-full flex items-center justify-between p-4 bg-gradient-to-r from-green-50 to-green-100 hover:from-green-100 hover:to-green-200 rounded-xl transition-all duration-300 group border-2 border-green-200 hover:border-green-300"
                   >
@@ -400,6 +433,40 @@ const PreschoolPage = () => {
                 </div>
               </>
             )}
+          </div>
+        </div>
+      )}
+
+      {/* Dikey Video Player Modal */}
+      {showLevelVideo && currentVideoUrl && (
+        <div className="fixed inset-0 z-[10000] bg-black flex items-center justify-center p-0">
+          {/* Close Button */}
+          <button
+            onClick={() => {
+              setShowLevelVideo(false);
+              setCurrentVideoUrl(null);
+              setCurrentVideoType(null);
+            }}
+            className="absolute top-4 right-4 z-[10001] text-white/80 hover:text-white transition-colors bg-black/50 rounded-full p-2"
+          >
+            <X size={32} />
+          </button>
+
+          {/* Dikey Video - Mobil ve Desktop için optimize */}
+          <div className="w-full h-full flex items-center justify-center">
+            <video
+              src={currentVideoUrl}
+              controls
+              autoPlay
+              className="max-h-full max-w-full"
+              style={{
+                aspectRatio: '9/16', // Dikey video aspect ratio
+                width: 'auto',
+                height: '100%'
+              }}
+            >
+              Tarayıcınız video oynatmayı desteklemiyor.
+            </video>
           </div>
         </div>
       )}
