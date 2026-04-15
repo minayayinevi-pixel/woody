@@ -157,31 +157,31 @@ const DigitalContentDetailPage = () => {
       id: 1,
       title: 'Theme 1',
       audioUrl: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/9uqnvd3a_theme%201.mp3',
-      thumbnail: 'https://via.placeholder.com/300x200/6B21A8/FFFFFF?text=SENIOR+Theme+1'
+      thumbnail: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/ejpqg9mg_I%CC%87lk%20sayfa%20theme%201_Sayfa_1.jpg'
     },
     {
       id: 2,
       title: 'Theme 2',
       audioUrl: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/ymbcni8l_theme%202%20.mp3',
-      thumbnail: 'https://via.placeholder.com/300x200/6B21A8/FFFFFF?text=SENIOR+Theme+2'
+      thumbnail: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/pxbe6piu_I%CC%87lk%20sayfa%20theme%201_Sayfa_2.jpg'
     },
     {
       id: 3,
       title: 'Theme 3',
       audioUrl: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/k7dc3mmg_theme%203.mp3',
-      thumbnail: 'https://via.placeholder.com/300x200/6B21A8/FFFFFF?text=SENIOR+Theme+3'
+      thumbnail: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/uoftphsc_I%CC%87lk%20sayfa%20theme%201_Sayfa_3.jpg'
     },
     {
       id: 4,
       title: 'Theme 4',
       audioUrl: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/87azrhhk_theme%204.mp3',
-      thumbnail: 'https://via.placeholder.com/300x200/6B21A8/FFFFFF?text=SENIOR+Theme+4'
+      thumbnail: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/kbd06i5m_I%CC%87lk%20sayfa%20theme%201_Sayfa_4.jpg'
     },
     {
       id: 5,
       title: 'Theme 5',
       audioUrl: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/tuf69tq4_theme%205%20.mp3',
-      thumbnail: 'https://via.placeholder.com/300x200/6B21A8/FFFFFF?text=SENIOR+Theme+5'
+      thumbnail: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/bbn6tpbx_I%CC%87lk%20sayfa%20theme%201_Sayfa_5.jpg'
     },
     {
       id: 6,
