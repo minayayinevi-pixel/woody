@@ -54,26 +54,16 @@ const DigitalContentPage = () => {
       <Header data={siteData.header} />
       <div className="pt-[72px]" />
 
-      {/* Hero Section */}
-      <section className="w-full py-12 md:py-16 bg-gradient-to-b from-gray-50 to-white">
+      {/* Hero Section - Simple Title Only */}
+      <section className="w-full py-16 md:py-20 bg-white">
         <div className="max-w-[1000px] mx-auto px-6 md:px-12 text-center">
-          {/* Title */}
-          <h1 className="text-[32px] md:text-[42px] lg:text-[48px] font-bold text-gray-900 mb-8">
+          {/* Title with Ink Free Font */}
+          <h1 
+            className="text-[42px] md:text-[52px] lg:text-[60px] font-normal text-gray-900 mb-12"
+            style={{ fontFamily: "'Ink Free', cursive" }}
+          >
             Welcome to Woody Digital World
           </h1>
-
-          {/* Woody Characters Image */}
-          <div className="mb-8">
-            <img
-              src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/ccfac1vv_ANA.jpeg"
-              alt="Woody Characters"
-              className="mx-auto max-w-[600px] w-full"
-              style={{ 
-                clipPath: 'inset(15% 20% 45% 20%)',
-                objectFit: 'contain'
-              }}
-            />
-          </div>
         </div>
       </section>
 
@@ -83,22 +73,39 @@ const DigitalContentPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             {levels.map((level) => (
               <div key={level.id} className="flex flex-col items-center">
-                {/* Level Card */}
+                {/* Level Card - Glassmorphism */}
                 <button
                   onClick={() => handleLevelClick(level.id)}
-                  className={`w-full max-w-[280px] h-[240px] rounded-3xl bg-gradient-to-br ${level.gradient} shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-3xl cursor-pointer border-none`}
+                  className="w-full max-w-[280px] h-[240px] rounded-3xl transition-all duration-300 hover:scale-105 cursor-pointer border-none relative overflow-hidden"
+                  style={{
+                    background: `linear-gradient(135deg, ${level.color}40 0%, ${level.color}20 100%)`,
+                    backdropFilter: 'blur(10px)',
+                    WebkitBackdropFilter: 'blur(10px)',
+                    border: `2px solid ${level.color}60`,
+                    boxShadow: `0 8px 32px 0 ${level.color}30, inset 0 0 0 1px rgba(255, 255, 255, 0.1)`
+                  }}
                 >
-                  <div className="flex flex-col items-center justify-center h-full text-white">
-                    <h3 className="text-[48px] md:text-[56px] font-black tracking-wider mb-2">
+                  <div className="flex flex-col items-center justify-center h-full">
+                    <h3 
+                      className="text-[52px] md:text-[60px] font-normal tracking-wider mb-2"
+                      style={{ 
+                        fontFamily: "'Magic English', cursive",
+                        color: level.color,
+                        textShadow: '0 2px 10px rgba(255,255,255,0.3)'
+                      }}
+                    >
                       {level.name}
                     </h3>
-                    <p className="text-[20px] md:text-[24px] font-light">
+                    <p 
+                      className="text-[18px] md:text-[20px] font-light"
+                      style={{ color: level.color }}
+                    >
                       {level.subtitle}
                     </p>
                   </div>
                 </button>
 
-                {/* Sub-sections (appear when clicked) */}
+                {/* Sub-sections (appear when clicked) - Glassmorphism */}
                 {selectedLevel === level.id && (
                   <div className="mt-6 w-full max-w-[280px] grid grid-cols-2 gap-3 animate-fadeIn">
                     {sections.map((section) => {
@@ -110,11 +117,20 @@ const DigitalContentPage = () => {
                             // İçerikleri sonra ekleyeceğiz
                             alert(`${level.name} - ${section.name} (İçerik yakında eklenecek)`);
                           }}
-                          className="flex flex-col items-center justify-center p-4 rounded-2xl bg-white border-2 transition-all duration-300 hover:scale-105 hover:shadow-lg"
-                          style={{ borderColor: section.color }}
+                          className="flex flex-col items-center justify-center p-4 rounded-2xl transition-all duration-300 hover:scale-105"
+                          style={{
+                            background: `linear-gradient(135deg, ${section.color}20 0%, ${section.color}10 100%)`,
+                            backdropFilter: 'blur(10px)',
+                            WebkitBackdropFilter: 'blur(10px)',
+                            border: `2px solid ${section.color}60`,
+                            boxShadow: `0 4px 16px 0 ${section.color}20, inset 0 0 0 1px rgba(255, 255, 255, 0.1)`
+                          }}
                         >
                           <Icon size={32} style={{ color: section.color }} strokeWidth={2} />
-                          <span className="text-[13px] font-semibold text-gray-800 mt-2">
+                          <span 
+                            className="text-[13px] font-semibold mt-2"
+                            style={{ color: section.color }}
+                          >
                             {section.name}
                           </span>
                         </button>
