@@ -228,20 +228,38 @@ const DigitalContentDetailPage = () => {
                 <button
                   key={item.id}
                   onClick={() => handleItemClick(item)}
-                  className="group relative aspect-[3/2] rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105 cursor-pointer"
+                  className="group relative aspect-[3/2] rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105 cursor-pointer bg-cover bg-center"
                   style={{
                     background: `linear-gradient(135deg, ${currentColor}20 0%, ${currentColor}10 100%)`,
                     backdropFilter: 'blur(10px)',
                     border: `2px solid ${currentColor}60`,
-                    boxShadow: `0 4px 16px 0 ${currentColor}20`
+                    boxShadow: `0 4px 16px 0 ${currentColor}20`,
+                    backgroundImage: sectionId === 'musicland' ? `url(${item.thumbnail})` : 'none',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center'
                   }}
                 >
-                  {/* Thumbnail */}
-                  <img
-                    src={item.thumbnail}
-                    alt={item.title}
-                    className="w-full h-full object-cover opacity-60"
-                  />
+                  {/* Thumbnail - sadece Musicland dışında göster */}
+                  {sectionId !== 'musicland' && (
+                    <img
+                      src={item.thumbnail}
+                      alt={item.title}
+                      loading="lazy"
+                      decoding="async"
+                      width="400"
+                      height="267"
+                      className="w-full h-full object-cover opacity-60"
+                      style={{ 
+                        imageRendering: 'auto',
+                        willChange: 'transform'
+                      }}
+                    />
+                  )}
+                  
+                  {/* Musicland için overlay */}
+                  {sectionId === 'musicland' && (
+                    <div className="absolute inset-0 bg-black/10" />
+                  )}
                   
                   {/* Play Icon Overlay */}
                   <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-colors">
