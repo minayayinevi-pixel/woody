@@ -187,19 +187,19 @@ const DigitalContentDetailPage = () => {
       id: 6,
       title: 'Theme 6',
       audioUrl: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/u633wm8u_THEME%206.mp3',
-      thumbnail: 'https://via.placeholder.com/300x200/6B21A8/FFFFFF?text=SENIOR+Theme+6'
+      thumbnail: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/wh47lcep_I%CC%87lk%20sayfa%20theme%201_Sayfa_6.jpg'
     },
     {
       id: 7,
       title: 'Theme 7',
       audioUrl: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/8620pn8i_THEME%207.mp3',
-      thumbnail: 'https://via.placeholder.com/300x200/6B21A8/FFFFFF?text=SENIOR+Theme+7'
+      thumbnail: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/w6y5frsb_I%CC%87lk%20sayfa%20theme%201_Sayfa_7.jpg'
     },
     {
       id: 8,
       title: 'Theme 8',
       audioUrl: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/y64ptt3d_theme%208%20.mp3',
-      thumbnail: 'https://via.placeholder.com/300x200/6B21A8/FFFFFF?text=SENIOR+Theme+8'
+      thumbnail: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/ymtca4bt_I%CC%87lk%20sayfa%20theme%201_Sayfa_8.jpg'
     }
   ];
 
@@ -348,15 +348,12 @@ const DigitalContentDetailPage = () => {
                 <button
                   key={item.id}
                   onClick={() => handleItemClick(item)}
-                  className="group relative aspect-[3/2] rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105 cursor-pointer bg-cover bg-center"
+                  className="group relative aspect-[3/2] rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105 cursor-pointer"
                   style={{
                     background: `linear-gradient(135deg, ${currentColor}20 0%, ${currentColor}10 100%)`,
                     backdropFilter: 'blur(10px)',
                     border: `2px solid ${currentColor}60`,
-                    boxShadow: `0 4px 16px 0 ${currentColor}20`,
-                    backgroundImage: sectionId === 'musicland' ? `url(${item.thumbnail})` : 'none',
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center'
+                    boxShadow: `0 4px 16px 0 ${currentColor}20`
                   }}
                 >
                   {/* Thumbnail - sadece Musicland dışında göster */}
@@ -366,11 +363,12 @@ const DigitalContentDetailPage = () => {
                       alt={item.title}
                       loading="lazy"
                       decoding="async"
-                      width="400"
-                      height="267"
+                      width="300"
+                      height="200"
                       className="w-full h-full object-cover opacity-60"
                       style={{ 
                         imageRendering: 'auto',
+                        maxWidth: '300px',
                         willChange: 'transform'
                       }}
                     />
@@ -378,7 +376,12 @@ const DigitalContentDetailPage = () => {
                   
                   {/* Musicland için overlay */}
                   {sectionId === 'musicland' && (
-                    <div className="absolute inset-0 bg-black/10" />
+                    <div className="absolute inset-0 bg-black/10" style={{
+                      backgroundImage: `url(${item.thumbnail})`,
+                      backgroundSize: '100% 100%',
+                      backgroundPosition: 'center',
+                      imageRendering: 'crisp-edges'
+                    }} />
                   )}
                   
                   {/* Play/Stop Icon Overlay */}
