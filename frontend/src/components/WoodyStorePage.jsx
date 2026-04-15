@@ -191,27 +191,9 @@ const WoodyStorePage = () => {
                 {category.name}
               </h2>
               {category.description && (
-                <p className="text-[14px] text-gray-500 mb-3">
+                <p className="text-[14px] text-gray-500">
                   {category.description}
                 </p>
-              )}
-              
-              {/* OKUL SERİSİ ÖZEL: Fiyat + WhatsApp Buton */}
-              {category.id === 'okul-serisi' && (
-                <div className="mt-4">
-                  <p className="text-[15px] md:text-[16px] text-gray-700 font-medium mb-3">
-                    2250 TL'den başlayan fiyatlarla
-                  </p>
-                  <a
-                    href="https://wa.me/905331570373?text=Merhaba%2C%20okul%20serisi%20i%C3%A7in%20fiyat%20almak%20istiyorum.%20%C3%96%C4%9Frenci%20say%C4%B1m%C4%B1z%C4%B1%20ve%20okul%20ad%C4%B1m%C4%B1z%C4%B1%20iletiyoruz.%20Size%20%C3%B6zel%20fiyat%20listesini%20rica%20ederiz."
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block w-full md:w-auto bg-[#FF6A00] text-white text-center font-bold text-[15px] px-5 py-3.5 rounded-xl no-underline transition-all duration-300 hover:bg-[#E85C00] hover:scale-105 active:translate-y-[1px]"
-                    style={{ boxShadow: '0 4px 14px rgba(255,106,0,0.25)' }}
-                  >
-                    📞 Fiyat Teklifi Al
-                  </a>
-                </div>
               )}
             </div>
 
