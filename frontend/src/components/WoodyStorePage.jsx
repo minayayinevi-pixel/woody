@@ -13,48 +13,48 @@ const WoodyStorePage = () => {
     {
       id: 'okul-serisi',
       name: 'Okul Serisi',
-      description: 'Kurumlar için eksiksiz eğitim setleri',
+      description: '', // Silindi
       products: [
         {
           id: 1,
           name: 'Basic Level Set',
           description: 'Başlangıç seviyesi',
-          price: '₺2.499',
+          price: "2250 TL'den başlayan fiyatlarla",
           image: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/3jgyyil9_1.png'
         },
         {
           id: 2,
           name: 'Junior Level Set',
           description: 'Gelişim seviyesi',
-          price: '₺2.799',
+          price: "2250 TL'den başlayan fiyatlarla",
           image: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/h5x59v59_3.png'
         },
         {
           id: 3,
           name: 'Senior Level Set',
           description: 'İleri seviye',
-          price: '₺2.999',
+          price: "2250 TL'den başlayan fiyatlarla",
           image: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/m4z26p5k_2.png'
         },
         {
           id: 4,
           name: 'PRO Level Set',
           description: 'Uzmanlık seviyesi',
-          price: '₺3.299',
+          price: "2250 TL'den başlayan fiyatlarla",
           image: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/6qg348xf_Preschool%20Basic%20%28297%20x%20210%20mm%29%20%28Instagram%20Go%CC%88nderisi%20%2845%29%29.png'
         },
         {
           id: 5,
           name: 'Komple Paket',
           description: '4 seviye birlikte',
-          price: '₺9.999',
+          price: "2250 TL'den başlayan fiyatlarla",
           image: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/3jgyyil9_1.png'
         },
         {
           id: 6,
           name: 'Öğretmen Kılavuzu',
           description: 'Tüm seviyeler',
-          price: '₺599',
+          price: "2250 TL'den başlayan fiyatlarla",
           image: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/h5x59v59_3.png'
         }
       ]
@@ -270,15 +270,6 @@ const WoodyStorePage = () => {
                 </a>
               </div>
             )}
-
-            {/* View All Button */}
-            <button
-              onClick={() => handleProductClick({ name: category.name })}
-              className="flex items-center gap-1 mx-auto text-[13px] font-medium text-gray-600 hover:text-gray-900 transition-colors bg-transparent border-none cursor-pointer"
-            >
-              Tümünü Gör
-              <ChevronRight size={16} />
-            </button>
           </div>
         </section>
       ))}
