@@ -22,8 +22,8 @@ const CertificationSection = () => {
             Çocukları erken yaşta uluslararası standartta İngilizce eğitimle buluşturan, yapılandırılmış ve oyun temelli öğrenme modeli.
           </p>
 
-          {/* ŞİMDİKİNİN 3 KATI DAHA AŞAĞI - LOGOLAR */}
-          <div className="flex items-center justify-center flex-nowrap" style={{ gap: '20px', marginTop: '60px' }}>
+          {/* LOGOLAR - HEMEN ALTTA (24px margin) */}
+          <div className="flex items-center justify-center flex-nowrap" style={{ gap: '20px', marginTop: '0px' }}>
             <img 
               src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/0ljulhkj_8.png"
               alt="Cambridge English"
