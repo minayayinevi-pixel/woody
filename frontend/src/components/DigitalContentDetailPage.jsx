@@ -20,8 +20,9 @@ const DigitalContentDetailPage = () => {
   const [enteredPassword, setEnteredPassword] = useState('');
   const [passwordError, setPasswordError] = useState('');
 
-  // 100 geçerli şifre
+  // 100 geçerli şifre + Admin şifresi
   const validPasswords = [
+    '3333', // Admin şifresi
     '1023', '8472', '5619', '3904', '7281', '6645', '2198', '7530', '4802', '9157',
     '6384', '2741', '5096', '1837', '7429', '3568', '9210', '4673', '8052', '1149',
     '6932', '2785', '5410', '8603', '7391', '4027', '1586', '9974', '6328', '2840',
@@ -368,6 +369,17 @@ const DigitalContentDetailPage = () => {
       {showPasswordModal && (
         <div className="fixed inset-0 z-[10000] bg-black/80 flex items-center justify-center p-4">
           <div className="bg-white rounded-2xl max-w-[400px] w-full p-8 relative">
+            {/* X Kapatma Butonu */}
+            <button
+              onClick={() => {
+                setShowPasswordModal(false);
+                navigate('/digital-content');
+              }}
+              className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
+            >
+              <X size={24} />
+            </button>
+
             {/* Lock Icon */}
             <div className="flex justify-center mb-6">
               <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
