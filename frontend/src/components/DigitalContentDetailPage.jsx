@@ -9,6 +9,10 @@ const DigitalContentDetailPage = () => {
   const { levelId, sectionId } = useParams();
   const navigate = useNavigate();
   const [selectedVideo, setSelectedVideo] = useState(null);
+  const [currentAudio, setCurrentAudio] = useState(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [currentTrack, setCurrentTrack] = useState(null);
+  const audioRef = React.useRef(null);
 
   React.useEffect(() => {
     window.scrollTo(0, 0);
@@ -125,17 +129,50 @@ const DigitalContentDetailPage = () => {
     if (sectionId === 'musicland') {
       // Müzik çal
       if (item.audioUrl) {
-        // Gerçek müzik dosyası varsa çal
+        // Önceki müziği durdur
+        if (audioRef.current) {
+          audioRef.current.pause();
+          audioRef.current.currentTime = 0;
+        }
+
+        // Yeni müzik oluştur ve çal
         const audio = new Audio(item.audioUrl);
+        audioRef.current = audio;
+        setCurrentTrack(item);
+        setIsPlaying(true);
+
         audio.play();
-        alert(`🎵 ${item.title} çalıyor...`);
-      } else {
-        // Henüz eklenmemiş
-        alert(`🎵 ${item.title} (Müzik dosyası eklenecek)`);
+
+        // Müzik bittiğinde
+        audio.onended = () => {
+          setIsPlaying(false);
+          setCurrentTrack(null);
+        };
       }
     } else {
       // Video aç
       setSelectedVideo(item);
+    }
+  };
+
+  const togglePlayPause = () => {
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.pause();
+        setIsPlaying(false);
+      } else {
+        audioRef.current.play();
+        setIsPlaying(true);
+      }
+    }
+  };
+
+  const stopMusic = () => {
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+      setIsPlaying(false);
+      setCurrentTrack(null);
     }
   };
 
@@ -259,6 +296,55 @@ const DigitalContentDetailPage = () => {
             {/* Title */}
             <div className="p-4 bg-gray-900 text-white">
               <h3 className="text-[18px] font-semibold">{selectedVideo.title}</h3>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Music Player Bar - Fixed Bottom */}
+      {currentTrack && sectionId === 'musicland' && (
+        <div 
+          className="fixed bottom-0 left-0 right-0 bg-gradient-to-r from-purple-900 to-purple-700 text-white shadow-2xl z-[9998]"
+          style={{
+            backdropFilter: 'blur(10px)',
+            borderTop: '2px solid rgba(255,255,255,0.1)'
+          }}
+        >
+          <div className="max-w-[1400px] mx-auto px-6 py-4 flex items-center gap-4">
+            {/* Now Playing Info */}
+            <div className="flex-1 min-w-0">
+              <p className="text-[11px] text-purple-200 mb-1">Şu an çalıyor</p>
+              <p className="text-[15px] font-semibold truncate">{currentTrack.title}</p>
+            </div>
+
+            {/* Controls */}
+            <div className="flex items-center gap-3">
+              {/* Play/Pause Button */}
+              <button
+                onClick={togglePlayPause}
+                className="w-12 h-12 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-colors"
+              >
+                {isPlaying ? (
+                  // Pause Icon
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                    <rect x="6" y="4" width="4" height="16" />
+                    <rect x="14" y="4" width="4" height="16" />
+                  </svg>
+                ) : (
+                  // Play Icon
+                  <Play size={20} fill="white" color="white" />
+                )}
+              </button>
+
+              {/* Stop Button */}
+              <button
+                onClick={stopMusic}
+                className="w-10 h-10 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-colors"
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+                  <rect x="6" y="6" width="12" height="12" />
+                </svg>
+              </button>
             </div>
           </div>
         </div>
