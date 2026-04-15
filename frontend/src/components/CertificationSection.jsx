@@ -2,11 +2,11 @@ import React from 'react';
 
 const CertificationSection = () => {
   return (
-    <section className="w-full" style={{ paddingTop: '60px', paddingBottom: '0px', backgroundColor: '#FFFFFF' }}>
+    <section className="w-full" style={{ paddingTop: '24px', paddingBottom: '0px', backgroundColor: '#FFFFFF' }}>
       <div className="max-w-[1200px] mx-auto px-6">
         <div className="flex flex-col items-center justify-center text-center">
           
-          {/* BAŞLIK - Pixar Font */}
+          {/* BAŞLIK */}
           <h2 
             className="text-[24px] md:text-[32px] lg:text-[36px] font-bold text-[#0B1F3A] max-w-[800px]"
             style={{ marginBottom: '8px', lineHeight: '1.2', letterSpacing: '-0.01em', fontFamily: "'Inter', 'Helvetica Neue', sans-serif" }}
@@ -22,8 +22,8 @@ const CertificationSection = () => {
             Çocukları erken yaşta uluslararası standartta İngilizce eğitimle buluşturan, yapılandırılmış ve oyun temelli öğrenme modeli.
           </p>
 
-          {/* LOGOS - HEMEN ALTTA */}
-          <div className="flex items-center justify-center flex-nowrap" style={{ gap: '20px', marginBottom: '20px' }}>
+          {/* ŞİMDİKİNİN 3 KATI DAHA AŞAĞI - LOGOLAR */}
+          <div className="flex items-center justify-center flex-nowrap" style={{ gap: '20px', marginTop: '60px' }}>
             <img 
               src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/0ljulhkj_8.png"
               alt="Cambridge English"
@@ -49,14 +49,6 @@ const CertificationSection = () => {
               onMouseLeave={(e) => e.currentTarget.style.opacity = '0.9'}
             />
           </div>
-
-          {/* AKADEMİK İŞ BİRLİKLERİMİZ - LOGOLARIN HEMEN ALTINDA (20-24px) */}
-          <p 
-            className="text-[10px] md:text-[11px] text-gray-500 uppercase" 
-            style={{ letterSpacing: '0.15em', marginTop: '0px', marginBottom: '0px', fontWeight: 500, fontFamily: "'Inter', sans-serif" }}
-          >
-            Akademik İş Birliklerimiz
-          </p>
 
         </div>
       </div>
