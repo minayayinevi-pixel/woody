@@ -82,19 +82,19 @@ const DigitalContentDetailPage = () => {
     {
       id: 6,
       title: 'Theme 6',
-      audioUrl: '', // Eklenecek
+      audioUrl: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/g2sj2m65_theme%206.mp3',
       thumbnail: 'https://via.placeholder.com/300x200/6B21A8/FFFFFF?text=Theme+6'
     },
     {
       id: 7,
       title: 'Theme 7',
-      audioUrl: '', // Eklenecek
+      audioUrl: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/2sncgdds_theme%207.mp3',
       thumbnail: 'https://via.placeholder.com/300x200/6B21A8/FFFFFF?text=Theme+7'
     },
     {
       id: 8,
       title: 'Theme 8',
-      audioUrl: '', // Eklenecek
+      audioUrl: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/726lj4d9_theme%208.mp3',
       thumbnail: 'https://via.placeholder.com/300x200/6B21A8/FFFFFF?text=Theme+8'
     }
   ];
