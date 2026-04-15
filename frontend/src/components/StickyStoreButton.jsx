@@ -35,7 +35,7 @@ const StickyStoreButton = () => {
 
   const handleClick = (e) => {
     e.preventDefault();
-    window.open('https://wa.me/905331570373?text=Merhaba%2C%20Woody%20Store%20hakkında%20bilgi%20almak%20istiyorum.', '_blank');
+    window.location.href = '/store';
   };
 
   return (

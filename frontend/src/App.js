@@ -14,6 +14,7 @@ import HomeTutorPage from "./components/HomeTutorPage";
 import BlogPage from "./components/BlogPage";
 import LevelFinderPage from "./components/LevelFinderPage";
 import LibraryPage from "./components/LibraryPage";
+import WoodyStorePage from "./components/WoodyStorePage";
 import FloatingContact from "./components/FloatingContact";
 import StickyStoreButton from "./components/StickyStoreButton";
 import { siteData } from "./data/mock";
@@ -48,6 +49,7 @@ function App() {
             <Route path="/level-finder" element={<LevelFinderPage />} />
             <Route path="/library" element={<LibraryPage />} />
             <Route path="/blog" element={<BlogPage />} />
+            <Route path="/store" element={<WoodyStorePage />} />
           </Routes>
         </BrowserRouter>
       </LanguageProvider>
