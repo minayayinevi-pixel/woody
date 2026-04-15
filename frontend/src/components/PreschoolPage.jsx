@@ -22,7 +22,7 @@ const PreschoolPage = () => {
   const levelVideos = {
     'Basic Level': {
       student: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/3lhuchbm_Basic%20o%CC%88g%CC%86renci.mp4',
-      teacher: null // Henüz yüklenmedi
+      teacher: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/a8v04k8o_Basic%20teachet.mp4'
     },
     'Junior Level': {
       student: null,
