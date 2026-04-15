@@ -151,6 +151,58 @@ const DigitalContentDetailPage = () => {
     }
   ];
 
+  // SENIOR Musicland için gerçek müzikler
+  const seniorMusiclandTracks = [
+    {
+      id: 1,
+      title: 'Theme 1',
+      audioUrl: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/9uqnvd3a_theme%201.mp3',
+      thumbnail: 'https://via.placeholder.com/300x200/6B21A8/FFFFFF?text=SENIOR+Theme+1'
+    },
+    {
+      id: 2,
+      title: 'Theme 2',
+      audioUrl: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/ymbcni8l_theme%202%20.mp3',
+      thumbnail: 'https://via.placeholder.com/300x200/6B21A8/FFFFFF?text=SENIOR+Theme+2'
+    },
+    {
+      id: 3,
+      title: 'Theme 3',
+      audioUrl: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/k7dc3mmg_theme%203.mp3',
+      thumbnail: 'https://via.placeholder.com/300x200/6B21A8/FFFFFF?text=SENIOR+Theme+3'
+    },
+    {
+      id: 4,
+      title: 'Theme 4',
+      audioUrl: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/87azrhhk_theme%204.mp3',
+      thumbnail: 'https://via.placeholder.com/300x200/6B21A8/FFFFFF?text=SENIOR+Theme+4'
+    },
+    {
+      id: 5,
+      title: 'Theme 5',
+      audioUrl: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/tuf69tq4_theme%205%20.mp3',
+      thumbnail: 'https://via.placeholder.com/300x200/6B21A8/FFFFFF?text=SENIOR+Theme+5'
+    },
+    {
+      id: 6,
+      title: 'Theme 6',
+      audioUrl: '',
+      thumbnail: 'https://via.placeholder.com/300x200/6B21A8/FFFFFF?text=SENIOR+Theme+6'
+    },
+    {
+      id: 7,
+      title: 'Theme 7',
+      audioUrl: '',
+      thumbnail: 'https://via.placeholder.com/300x200/6B21A8/FFFFFF?text=SENIOR+Theme+7'
+    },
+    {
+      id: 8,
+      title: 'Theme 8',
+      audioUrl: '',
+      thumbnail: 'https://via.placeholder.com/300x200/6B21A8/FFFFFF?text=SENIOR+Theme+8'
+    }
+  ];
+
   const currentColor = sectionColors[sectionId] || '#000';
   const itemCount = contentCounts[sectionId] || 0;
 
@@ -164,6 +216,11 @@ const DigitalContentDetailPage = () => {
     // JUNIOR Musicland için gerçek müzikler kullan
     if (levelId === 'junior' && sectionId === 'musicland') {
       return juniorMusiclandTracks;
+    }
+    
+    // SENIOR Musicland için gerçek müzikler kullan
+    if (levelId === 'senior' && sectionId === 'musicland') {
+      return seniorMusiclandTracks;
     }
     
     // Diğer seviye ve bölümler için placeholder
