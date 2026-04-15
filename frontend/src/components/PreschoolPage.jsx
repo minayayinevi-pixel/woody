@@ -141,10 +141,10 @@ const PreschoolPage = () => {
       {/* Pixar-style Digital Content Banner */}
       <section className="w-full py-16 md:py-20 bg-white">
         <a 
-          href="/library"
+          href="/digital-content"
           onClick={(e) => {
             e.preventDefault();
-            navigate('/library');
+            navigate('/digital-content');
           }}
           className="block w-full cursor-pointer no-underline group"
           style={{ textDecoration: 'none' }}
