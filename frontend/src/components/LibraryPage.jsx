@@ -23,8 +23,8 @@ const LibraryPage = () => {
       color: '#2196F3',
       image: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/x7apff07_kling_20260412_%E4%BD%9C%E5%93%81_Ultra_deta_5707_2.png',
       imagePosition: 'left',
-      teacherLink: '#',
-      studentLink: '#'
+      teacherLink: 'https://bir-app-2.preview.emergentagent.com',
+      studentLink: 'https://bir-app-2.preview.emergentagent.com'
     },
     {
       id: 'junior',
@@ -33,8 +33,8 @@ const LibraryPage = () => {
       color: '#F5C518',
       image: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/x7apff07_kling_20260412_%E4%BD%9C%E5%93%81_Ultra_deta_5707_2.png',
       imagePosition: 'right',
-      teacherLink: '#',
-      studentLink: '#'
+      teacherLink: 'https://bir-app-2.preview.emergentagent.com',
+      studentLink: 'https://bir-app-2.preview.emergentagent.com'
     },
     {
       id: 'senior',
@@ -43,8 +43,8 @@ const LibraryPage = () => {
       color: '#E91E90',
       image: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/x7apff07_kling_20260412_%E4%BD%9C%E5%93%81_Ultra_deta_5707_2.png',
       imagePosition: 'left',
-      teacherLink: '#',
-      studentLink: '#'
+      teacherLink: 'https://bir-app-2.preview.emergentagent.com',
+      studentLink: 'https://bir-app-2.preview.emergentagent.com'
     }
   ];
 
