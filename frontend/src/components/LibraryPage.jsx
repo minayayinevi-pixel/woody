@@ -71,121 +71,48 @@ const LibraryPage = () => {
         </div>
       </section>
 
-      {/* Magazine Spread Layout - NO FRAMES */}
-      <section 
-        style={{ 
-          width: '100vw',
-          margin: 0,
-          padding: 0
-        }}
-      >
+      {/* Magazine Spread Layout - Responsive */}
+      <section className="w-full">
         {levels.map((level) => {
           const isLeft = level.imagePosition === 'left';
           
           return (
             <div 
               key={level.id}
-              style={{
-                width: '100vw',
-                display: 'flex',
-                flexDirection: isLeft ? 'row' : 'row-reverse',
-                minHeight: '100vh',
-                margin: 0,
-                padding: 0,
-                border: 'none',
-                borderRadius: 0,
-                boxShadow: 'none'
-              }}
+              className={`w-full flex flex-col ${isLeft ? 'md:flex-row' : 'md:flex-row-reverse'} min-h-screen`}
             >
-              {/* Image Side - RAW, NO CONTAINER */}
-              <div
-                style={{
-                  width: '50vw',
-                  height: '100vh',
-                  margin: 0,
-                  padding: 0,
-                  border: 'none',
-                  background: 'transparent'
-                }}
-              >
+              {/* Image Side */}
+              <div className="w-full md:w-1/2 h-[50vh] md:h-screen">
                 <img 
                   src={level.image}
                   alt={level.name}
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    display: 'block',
-                    margin: 0,
-                    padding: 0,
-                    border: 'none',
-                    borderRadius: 0,
-                    boxShadow: 'none'
-                  }}
+                  className="w-full h-full object-cover"
                 />
               </div>
 
-              {/* Text Side - RAW, NO CONTAINER */}
-              <div
-                style={{
-                  width: '50vw',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  padding: '80px',
-                  margin: 0,
-                  border: 'none',
-                  background: '#ffffff'
-                }}
-              >
-                <div style={{ maxWidth: '600px' }}>
-                  <div 
-                    style={{
-                      display: 'inline-block',
-                      padding: '10px 20px',
-                      borderRadius: '25px',
-                      fontSize: '14px',
-                      fontWeight: 'bold',
-                      color: '#ffffff',
-                      backgroundColor: level.color,
-                      marginBottom: '24px'
-                    }}
+              {/* Text Side */}
+              <div className="w-full md:w-1/2 flex items-center justify-center p-8 md:p-20 bg-white">
+                <div className="max-w-xl">
+                  <div className="inline-block px-5 py-2 rounded-full text-sm font-bold text-white mb-6"
+                    style={{ backgroundColor: level.color }}
                   >
                     {level.id.charAt(0).toUpperCase() + level.id.slice(1)} Level
                   </div>
                   
-                  <h4 
-                    style={{
-                      fontSize: '38px',
-                      fontWeight: '300',
-                      color: '#111827',
-                      marginBottom: '20px',
-                      lineHeight: '1.2'
-                    }}
-                  >
+                  <h4 className="text-3xl md:text-4xl font-light text-gray-900 mb-5 leading-tight">
                     {level.name}
                   </h4>
                   
-                  <p 
-                    style={{
-                      fontSize: '17px',
-                      color: '#4B5563',
-                      lineHeight: '1.9',
-                      marginBottom: '32px'
-                    }}
-                  >
+                  <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-8">
                     {level.description}
                   </p>
                   
                   {/* Links */}
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                  <div className="flex flex-col gap-4">
                     <a 
                       href={level.teacherLink}
-                      style={{
-                        fontSize: '16px',
-                        color: '#374151',
-                        fontWeight: '500',
-                        textDecoration: 'underline',
+                      className="text-base text-gray-700 font-medium underline hover:text-gray-900 transition-colors"
+                      style={{ 
                         textDecorationColor: level.color,
                         textDecorationThickness: '2px',
                         textUnderlineOffset: '4px'
@@ -195,11 +122,8 @@ const LibraryPage = () => {
                     </a>
                     <a 
                       href={level.studentLink}
+                      className="text-base text-gray-700 font-medium underline hover:text-gray-900 transition-colors"
                       style={{
-                        fontSize: '16px',
-                        color: '#374151',
-                        fontWeight: '500',
-                        textDecoration: 'underline',
                         textDecorationColor: level.color,
                         textDecorationThickness: '2px',
                         textUnderlineOffset: '4px'

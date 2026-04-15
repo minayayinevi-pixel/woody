@@ -22,7 +22,7 @@ const WorkshopPage = () => {
     { name: "Basic Level", subtitle: "Başlangıç", color: "#2196F3", image: "https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/3jgyyil9_1.png", description: "Temel kelimeler ve basit cümlelerle İngilizceye güçlü bir başlangıç sağlar.", tag: "BASIC" },
     { name: "Junior Level", subtitle: "Gelişim", color: "#F5C518", image: "https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/h5x59v59_3.png", description: "Çocukların cümle kurma ve kendini ifade etme becerilerini geliştirir.", tag: "JUNIOR" },
     { name: "Senior Level", subtitle: "İleri Seviye", color: "#E91E90", image: "https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/m4z26p5k_2.png", description: "İngilizceyi daha akıcı kullanma ve anlama becerisi kazandırır.", tag: "SENIOR" },
-    { name: "PRO Level", subtitle: "Uzmanlık", color: "#9C27B0", image: "https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/6qg348xf_Preschool%20Basic%20%28297%20x%20210%20mm%29%20%28Instagram%20Go%CC%88nderisi%20%2845%29%29.png", description: "Okuma, yazma ve akademik İngilizce altyapısı oluşturur.", tag: "PRO" },
+    { name: "PRO Level", subtitle: "Uzmanlık", color: "#D32F2F", image: "https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/6qg348xf_Preschool%20Basic%20%28297%20x%20210%20mm%29%20%28Instagram%20Go%CC%88nderisi%20%2845%29%29.png", description: "Okuma, yazma ve akademik İngilizce altyapısı oluşturur.", tag: "PRO" },
   ];
 
   return (
