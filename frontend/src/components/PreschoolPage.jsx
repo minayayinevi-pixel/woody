@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Play, X, ChevronLeft } from 'lucide-react';
+import { Play, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import Footer from './Footer';
 import Header from './Header';
 import { siteData } from '../data/mock';
@@ -11,6 +11,8 @@ const PreschoolPage = () => {
   const { t } = useLanguage();
   const [showVideo, setShowVideo] = useState(false);
   const [activeVideo, setActiveVideo] = useState(null);
+  const [showLevelVideoModal, setShowLevelVideoModal] = useState(false);
+  const [selectedLevel, setSelectedLevel] = useState(null);
   const p = t.preschoolPage;
 
   const handlePlayVideo = (type) => {
@@ -189,7 +191,24 @@ const PreschoolPage = () => {
               <div key={idx} className="group cursor-pointer">
                 <div className="relative rounded-2xl overflow-hidden shadow-lg aspect-[3/4] transition-all duration-500 group-hover:shadow-2xl group-hover:scale-[1.03]" style={{ background: level.image ? '#f5f5f5' : level.bgGradient }}>
                   {level.image ? (
-                    <img src={level.image} alt={level.name} className="w-full h-full object-cover" />
+                    <>
+                      <img src={level.image} alt={level.name} className="w-full h-full object-cover" />
+                      
+                      {/* Video İzle Butonu - Hover'da görünür */}
+                      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setSelectedLevel(level);
+                            setShowLevelVideoModal(true);
+                          }}
+                          className="flex items-center gap-2 px-4 py-2.5 bg-white text-gray-900 rounded-lg font-medium text-[13px] md:text-[14px] hover:bg-gray-100 transition-colors shadow-lg"
+                        >
+                          <Play size={18} fill="currentColor" />
+                          Video İzle
+                        </button>
+                      </div>
+                    </>
                   ) : (
                     <>
                       <div className="absolute top-4 left-4 z-10"><span className="bg-white/20 backdrop-blur-sm text-white text-[12px] font-semibold px-3 py-1 rounded-full tracking-wider">{level.tag}</span></div>
@@ -298,6 +317,92 @@ const PreschoolPage = () => {
       </section>
 
       <Footer data={siteData.footer} />
+
+      {/* Level Video Modal */}
+      {showLevelVideoModal && selectedLevel && (
+        <div className="fixed inset-0 z-[9999] bg-black/90 flex items-center justify-center p-4">
+          <div className="bg-white rounded-2xl max-w-[500px] w-full p-6 relative">
+            {/* Close Button */}
+            <button
+              onClick={() => {
+                setShowLevelVideoModal(false);
+                setSelectedLevel(null);
+              }}
+              className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
+            >
+              <X size={24} />
+            </button>
+
+            {/* Modal İçeriği */}
+            {selectedLevel.name === 'PRO Level' ? (
+              // PRO için özel mesaj
+              <div className="text-center py-6">
+                <div className="w-20 h-20 mx-auto mb-4 bg-red-100 rounded-full flex items-center justify-center">
+                  <Play size={32} className="text-red-600" />
+                </div>
+                <h3 className="text-[20px] md:text-[24px] font-bold text-gray-900 mb-3">
+                  PRO Level
+                </h3>
+                <p className="text-[15px] md:text-[16px] text-gray-600 leading-relaxed">
+                  PRO seviyesi için Woody Academy'de eğitim verilir.
+                </p>
+              </div>
+            ) : (
+              // Basic, Junior, Senior için seçim ekranı
+              <>
+                <h3 className="text-[20px] md:text-[24px] font-bold text-gray-900 mb-2 text-center">
+                  {selectedLevel.name}
+                </h3>
+                <p className="text-[14px] text-gray-500 text-center mb-6">
+                  Hangi seti izlemek istersiniz?
+                </p>
+
+                <div className="space-y-3">
+                  {/* Öğretmen Seti */}
+                  <button
+                    onClick={() => {
+                      // Buraya video URL'si eklenecek
+                      alert('Öğretmen Seti videosu yakında eklenecek');
+                    }}
+                    className="w-full flex items-center justify-between p-4 bg-gradient-to-r from-blue-50 to-blue-100 hover:from-blue-100 hover:to-blue-200 rounded-xl transition-all duration-300 group border-2 border-blue-200 hover:border-blue-300"
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
+                        <Play size={20} fill="white" color="white" />
+                      </div>
+                      <div className="text-left">
+                        <p className="text-[15px] font-semibold text-gray-900">Öğretmen Seti</p>
+                        <p className="text-[12px] text-gray-600">Öğretmen seti içeriğini izle</p>
+                      </div>
+                    </div>
+                    <ChevronRight size={20} className="text-blue-600 group-hover:translate-x-1 transition-transform" />
+                  </button>
+
+                  {/* Öğrenci Seti */}
+                  <button
+                    onClick={() => {
+                      // Buraya video URL'si eklenecek
+                      alert('Öğrenci Seti videosu yakında eklenecek');
+                    }}
+                    className="w-full flex items-center justify-between p-4 bg-gradient-to-r from-green-50 to-green-100 hover:from-green-100 hover:to-green-200 rounded-xl transition-all duration-300 group border-2 border-green-200 hover:border-green-300"
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
+                        <Play size={20} fill="white" color="white" />
+                      </div>
+                      <div className="text-left">
+                        <p className="text-[15px] font-semibold text-gray-900">Öğrenci Seti</p>
+                        <p className="text-[12px] text-gray-600">Öğrenci seti içeriğini izle</p>
+                      </div>
+                    </div>
+                    <ChevronRight size={20} className="text-green-600 group-hover:translate-x-1 transition-transform" />
+                  </button>
+                </div>
+              </>
+            )}
+          </div>
+        </div>
+      )}
 
       {/* Video Modal */}
       {showVideo && (
