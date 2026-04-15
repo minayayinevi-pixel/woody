@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, Play, X } from 'lucide-react';
 import Header from './Header';
 import Footer from './Footer';
 import { siteData } from '../data/mock';
 
 const WoodyStorePage = () => {
   const navigate = useNavigate();
+  const [showVideoModal, setShowVideoModal] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [videoType, setVideoType] = useState(null); // 'teacher' veya 'student'
 
   // Mock product data - her kategoride 6 ürün
   const categories = [
@@ -154,8 +157,9 @@ const WoodyStorePage = () => {
           <h1 className="text-[36px] md:text-[48px] font-bold text-gray-900 mb-4 leading-tight">
             Woody Store
           </h1>
-          <p className="text-[15px] md:text-[17px] text-gray-600 leading-relaxed max-w-[600px] mx-auto">
-            Tüm Woody eğitim setlerini online olarak sipariş edebilirsiniz. WhatsApp üzerinden hızlı teslimat.
+          <p className="text-[15px] md:text-[17px] text-gray-600 leading-relaxed max-w-[700px] mx-auto">
+            Türkiye'nin ilk oyun tabanlı ve Cambridge destekli okul öncesi İngilizce eğitim sistemi. 
+            Tüm setlere tek tıkla ulaşın, kurumunuza hemen entegre edin.
           </p>
         </div>
       </section>
@@ -207,21 +211,38 @@ const WoodyStorePage = () => {
                 {category.products.map((product) => (
                   <div
                     key={product.id}
-                    onClick={() => handleProductClick(product)}
-                    className="group cursor-pointer bg-white rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-lg"
+                    className="group cursor-pointer bg-white rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-lg relative"
                     style={{ border: '1px solid #f0f0f0' }}
                   >
                     {/* Product Image */}
-                    <div className="aspect-square bg-gray-50 overflow-hidden">
+                    <div className="aspect-square bg-gray-50 overflow-hidden relative">
                       <img
                         src={product.image}
                         alt={product.name}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
+                      
+                      {/* Video İzle Butonu - Hover'da görünür */}
+                      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setSelectedProduct(product);
+                            setShowVideoModal(true);
+                          }}
+                          className="flex items-center gap-2 px-4 py-2 bg-white text-gray-900 rounded-lg font-medium text-[13px] md:text-[14px] hover:bg-gray-100 transition-colors"
+                        >
+                          <Play size={16} fill="currentColor" />
+                          Video İzle
+                        </button>
+                      </div>
                     </div>
 
                     {/* Product Info */}
-                    <div className="p-3 md:p-4">
+                    <div 
+                      className="p-3 md:p-4"
+                      onClick={() => handleProductClick(product)}
+                    >
                       <h3 className="text-[13px] md:text-[15px] font-semibold text-gray-900 mb-1 line-clamp-2">
                         {product.name}
                       </h3>
@@ -267,6 +288,95 @@ const WoodyStorePage = () => {
           </div>
         </section>
       ))}
+
+      {/* Video Modal */}
+      {showVideoModal && selectedProduct && (
+        <div className="fixed inset-0 z-[9999] bg-black/90 flex items-center justify-center p-4">
+          <div className="bg-white rounded-2xl max-w-[500px] w-full p-6 relative">
+            {/* Close Button */}
+            <button
+              onClick={() => {
+                setShowVideoModal(false);
+                setSelectedProduct(null);
+                setVideoType(null);
+              }}
+              className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
+            >
+              <X size={24} />
+            </button>
+
+            {/* Modal İçeriği */}
+            {selectedProduct.name === 'PRO Level Set' ? (
+              // PRO için özel mesaj
+              <div className="text-center py-6">
+                <div className="w-20 h-20 mx-auto mb-4 bg-red-100 rounded-full flex items-center justify-center">
+                  <Play size={32} className="text-red-600" />
+                </div>
+                <h3 className="text-[20px] md:text-[24px] font-bold text-gray-900 mb-3">
+                  PRO Level Set
+                </h3>
+                <p className="text-[15px] md:text-[16px] text-gray-600 leading-relaxed">
+                  PRO seviyesi için Woody Academy'de eğitim verilir.
+                </p>
+              </div>
+            ) : (
+              // Basic, Junior, Senior için seçim ekranı
+              <>
+                <h3 className="text-[20px] md:text-[24px] font-bold text-gray-900 mb-2 text-center">
+                  {selectedProduct.name}
+                </h3>
+                <p className="text-[14px] text-gray-500 text-center mb-6">
+                  Hangi seti izlemek istersiniz?
+                </p>
+
+                <div className="space-y-3">
+                  {/* Öğretmen Seti */}
+                  <button
+                    onClick={() => {
+                      setVideoType('teacher');
+                      // Buraya video URL'si eklenecek
+                      alert('Öğretmen Seti videosu yakında eklenecek');
+                    }}
+                    className="w-full flex items-center justify-between p-4 bg-gradient-to-r from-blue-50 to-blue-100 hover:from-blue-100 hover:to-blue-200 rounded-xl transition-all duration-300 group border-2 border-blue-200 hover:border-blue-300"
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
+                        <Play size={20} fill="white" color="white" />
+                      </div>
+                      <div className="text-left">
+                        <p className="text-[15px] font-semibold text-gray-900">Öğretmen Seti</p>
+                        <p className="text-[12px] text-gray-600">Öğretmen seti içeriğini izle</p>
+                      </div>
+                    </div>
+                    <ChevronRight size={20} className="text-blue-600 group-hover:translate-x-1 transition-transform" />
+                  </button>
+
+                  {/* Öğrenci Seti */}
+                  <button
+                    onClick={() => {
+                      setVideoType('student');
+                      // Buraya video URL'si eklenecek
+                      alert('Öğrenci Seti videosu yakında eklenecek');
+                    }}
+                    className="w-full flex items-center justify-between p-4 bg-gradient-to-r from-green-50 to-green-100 hover:from-green-100 hover:to-green-200 rounded-xl transition-all duration-300 group border-2 border-green-200 hover:border-green-300"
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
+                        <Play size={20} fill="white" color="white" />
+                      </div>
+                      <div className="text-left">
+                        <p className="text-[15px] font-semibold text-gray-900">Öğrenci Seti</p>
+                        <p className="text-[12px] text-gray-600">Öğrenci seti içeriğini izle</p>
+                      </div>
+                    </div>
+                    <ChevronRight size={20} className="text-green-600 group-hover:translate-x-1 transition-transform" />
+                  </button>
+                </div>
+              </>
+            )}
+          </div>
+        </div>
+      )}
 
       <Footer data={siteData.footer} />
     </div>
