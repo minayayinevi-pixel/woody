@@ -61,7 +61,7 @@ const ContentSection = ({ section, isFirst }) => {
           style={{ textDecoration: 'none' }}
         >
           {/* Image with ribbon BEHIND it (in background, not in front) */}
-          <div className="w-full lg:w-1/2 relative pl-8 lg:pl-0">
+          <div className={`w-full lg:w-1/2 relative ${isImageLeft ? 'pl-8 lg:pl-0' : 'pr-8 lg:pr-0'}`}>
             {/* Side Ribbon - MOBİLDE DE GÖRÜNÜR */}
             <div 
               className={`absolute ${isImageLeft ? 'left-0 lg:-left-8' : 'right-0 lg:-right-8'} top-1/2 -translate-y-1/2 flex z-0`}
