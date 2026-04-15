@@ -209,43 +209,58 @@ const WoodyStorePage = () => {
               )}
             </div>
 
-            {/* Products Grid - 2 columns, 3 rows */}
-            <div className="grid grid-cols-2 gap-4 mb-6">
-              {category.products.map((product) => (
-                <div
-                  key={product.id}
-                  onClick={() => handleProductClick(product)}
-                  className="group cursor-pointer bg-white rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-lg"
-                  style={{ border: '1px solid #f0f0f0' }}
-                >
-                  {/* Product Image */}
-                  <div className="aspect-square bg-gray-50 overflow-hidden">
-                    <img
-                      src={product.image}
-                      alt={product.name}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  </div>
+            {/* Products Grid OR Coming Soon Image */}
+            {(category.id === 'atolye' || category.id === 'ozel-ders') ? (
+              /* Coming Soon Image for Atölye & Özel Ders */
+              <div className="flex flex-col items-center justify-center py-8">
+                <img
+                  src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/ga68xbh7_Paragraf%20metniniz%20%284%29.png"
+                  alt="Çok Yakında"
+                  className="w-full max-w-[500px] rounded-2xl mb-4"
+                />
+                <p className="text-[16px] md:text-[18px] font-semibold text-gray-700">
+                  Çok yakında buradayız
+                </p>
+              </div>
+            ) : (
+              /* Normal Product Grid for Okul Serisi */
+              <div className="grid grid-cols-2 gap-4 mb-6">
+                {category.products.map((product) => (
+                  <div
+                    key={product.id}
+                    onClick={() => handleProductClick(product)}
+                    className="group cursor-pointer bg-white rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-lg"
+                    style={{ border: '1px solid #f0f0f0' }}
+                  >
+                    {/* Product Image */}
+                    <div className="aspect-square bg-gray-50 overflow-hidden">
+                      <img
+                        src={product.image}
+                        alt={product.name}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </div>
 
-                  {/* Product Info */}
-                  <div className="p-3 md:p-4">
-                    <h3 className="text-[13px] md:text-[15px] font-semibold text-gray-900 mb-1 line-clamp-2">
-                      {product.name}
-                    </h3>
-                    {product.description && (
-                      <p className="text-[11px] md:text-[12px] text-gray-500 mb-2 line-clamp-1">
-                        {product.description}
-                      </p>
-                    )}
-                    {product.price && (
-                      <p className="text-[15px] md:text-[17px] font-bold text-gray-900">
-                        {product.price}
-                      </p>
-                    )}
+                    {/* Product Info */}
+                    <div className="p-3 md:p-4">
+                      <h3 className="text-[13px] md:text-[15px] font-semibold text-gray-900 mb-1 line-clamp-2">
+                        {product.name}
+                      </h3>
+                      {product.description && (
+                        <p className="text-[11px] md:text-[12px] text-gray-500 mb-2 line-clamp-1">
+                          {product.description}
+                        </p>
+                      )}
+                      {product.price && (
+                        <p className="text-[15px] md:text-[17px] font-bold text-gray-900">
+                          {product.price}
+                        </p>
+                      )}
+                    </div>
                   </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            )}
 
             {/* OKUL SERİSİ ÖZEL: Kartların ALTINDA Fiyat + WhatsApp Buton */}
             {category.id === 'okul-serisi' && (
