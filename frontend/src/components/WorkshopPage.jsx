@@ -14,18 +14,13 @@ const WorkshopPage = () => {
   const heroVideoRef = React.useRef(null);
   const p = t.preschoolPage;
 
-  // Hero video 2 saniye sonra başlat ve 2. saniyeden oynat
+  // Hero video hemen başlat
   React.useEffect(() => {
-    const timer = setTimeout(() => {
-      if (heroVideoRef.current) {
-        heroVideoRef.current.currentTime = 2; // Video 2. saniyeden başlasın
-        heroVideoRef.current.play().catch(err => {
-          console.log('Video autoplay prevented:', err);
-        });
-      }
-    }, 2000);
-
-    return () => clearTimeout(timer);
+    if (heroVideoRef.current) {
+      heroVideoRef.current.play().catch(err => {
+        console.log('Video autoplay prevented:', err);
+      });
+    }
   }, []);
 
   const handlePlayVideo = (type) => {
