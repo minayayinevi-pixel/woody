@@ -11,7 +11,22 @@ const WorkshopPage = () => {
   const { t } = useLanguage();
   const [showVideo, setShowVideo] = useState(false);
   const [activeVideo, setActiveVideo] = useState(null);
+  const heroVideoRef = React.useRef(null);
   const p = t.preschoolPage;
+
+  // Hero video 2 saniye sonra başlat ve 2. saniyeden oynat
+  React.useEffect(() => {
+    const timer = setTimeout(() => {
+      if (heroVideoRef.current) {
+        heroVideoRef.current.currentTime = 2; // Video 2. saniyeden başlasın
+        heroVideoRef.current.play().catch(err => {
+          console.log('Video autoplay prevented:', err);
+        });
+      }
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const handlePlayVideo = (type) => {
     setActiveVideo(type);
@@ -33,7 +48,17 @@ const WorkshopPage = () => {
       {/* Hero Video Section */}
       <section className="relative w-full h-[50vh] min-h-[400px] overflow-hidden mt-[72px]">
         <div className="absolute inset-0">
-          <img src="https://images.squarespace-cdn.com/content/v1/60241cb68df65b530cd84d95/22305642-e101-4a60-a871-45a6a6d12d44/ember_stills_sdr_0154933.tiff-0.jpg" alt="Woody Preschool" className="w-full h-full object-cover" />
+          {/* Hero Background Video */}
+          <video
+            ref={heroVideoRef}
+            muted
+            playsInline
+            loop
+            className="w-full h-full object-cover"
+          >
+            <source src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/dit1nm17_Molly%20sabah%20go%CC%88zlerini%20ac%CC%A7t%C4%B1g%CC%86%C4%B1nda%2C%20yuvarlak%20go%CC%88vdesi%20gu%CC%88nes%CC%A7%20%C4%B1s%CC%A7%C4%B1g%CC%86%C4%B1n%C4%B1%20ku%CC%88c%CC%A7u%CC%88k%20bir%20lamba%20gibi%20yayd%C4%B1.%20Bir%20an%20durdu%E2%80%A6%20sonra%20kendi%20kendine%20hafiften%20say%C4%B1%20sayd%C4%B1%20%E2%80%9COne%E2%80%A6%20two%E2%80%A6%20three%E2%80%A6%20kalk%C4%B1yorum%21%E2%80%9D%20Yatakta%20minik%20bir%20s%20%282%29.mp4" type="video/mp4" />
+            Tarayıcınız video oynatmayı desteklemiyor.
+          </video>
           <div className="absolute inset-0 bg-black/50" />
         </div>
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-white">
