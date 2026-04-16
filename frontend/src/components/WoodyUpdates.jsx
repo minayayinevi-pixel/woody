@@ -8,33 +8,33 @@ const WoodyUpdates = () => {
   const updates = [
     {
       id: 1,
-      image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=800&fit=crop',
-      title: 'Yeni Ürün Lansmanı',
-      description: 'Woody Preschool yeni serileri ile tanışın'
+      image: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/q3w780z7_1.png',
+      title: "Woody artık Almanya'daki anaokullarında",
+      description: "Woody İngilizce eğitim setleri Almanya'da kullanılmaya başlandı"
     },
     {
       id: 2,
-      image: 'https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=600&h=800&fit=crop',
-      title: 'Cambridge Sertifika Programı',
-      description: 'Uluslararası geçerliliğe sahip sertifika'
+      image: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/796xqghe_2.png',
+      title: "Woody artık Rusya'daki anaokullarında",
+      description: "Woody İngilizce eğitim setleri Rusya'da kullanılmaya başlandı"
     },
     {
       id: 3,
       image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=800&fit=crop',
-      title: 'Dijital İçerikler Güncellendi',
-      description: 'Yeni hikayeler ve aktiviteler eklendi'
+      title: 'Cambridge Sertifika Programı',
+      description: 'Uluslararası geçerliliğe sahip sertifika'
     },
     {
       id: 4,
       image: 'https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=600&h=800&fit=crop',
-      title: 'Woody Academy Açıldı',
-      description: 'Mezuniyet sonrası devam programı başladı'
+      title: 'Dijital İçerikler Güncellendi',
+      description: 'Yeni hikayeler ve aktiviteler eklendi'
     },
     {
       id: 5,
       image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=800&fit=crop',
-      title: 'Öğretmen Eğitim Programı',
-      description: 'TKT sertifikası ile desteklenen eğitim'
+      title: 'Woody Academy Açıldı',
+      description: 'Mezuniyet sonrası devam programı başladı'
     }
   ];
 
@@ -131,10 +131,10 @@ const WoodyUpdates = () => {
                   zIndex: isActive ? 10 : 1
                 }}
               >
-                {/* Card - Portrait Format */}
-                <div className="bg-white rounded-2xl overflow-hidden shadow-lg">
-                  {/* Image - 4:3 ratio (Instagram post) */}
-                  <div className="relative w-full" style={{ paddingBottom: '133%' }}>
+                {/* Card - Portrait Format (Vertical Rectangle) */}
+                <div className="bg-white rounded-2xl overflow-hidden shadow-lg h-full flex flex-col">
+                  {/* Image - Strict 4:3 ratio */}
+                  <div className="relative w-full" style={{ paddingBottom: '75%' }}>
                     <img
                       src={update.image}
                       alt={update.title}
@@ -143,8 +143,8 @@ const WoodyUpdates = () => {
                     />
                   </div>
                   
-                  {/* Content - Compact */}
-                  <div className="p-4">
+                  {/* Content - Below image */}
+                  <div className="p-4 flex-1 flex flex-col justify-center">
                     <h3 className="text-[14px] md:text-[15px] font-bold text-[#0B1F3A] mb-1.5 leading-tight line-clamp-2">
                       {update.title}
                     </h3>
