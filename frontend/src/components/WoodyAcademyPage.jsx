@@ -47,12 +47,12 @@ const WoodyAcademyPage = () => {
         <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-20">
           
           <div className="text-center mb-12 md:mb-16">
-            <h3 className="text-[24px] md:text-[28px] font-semibold text-[#0B1F3A] mb-2">
+            <h2 className="text-[32px] md:text-[42px] lg:text-[48px] font-bold text-[#0B1F3A] mb-2 leading-tight">
               Öğrenci
-            </h3>
-            <h2 className="text-[32px] md:text-[42px] lg:text-[48px] font-bold text-[#0B1F3A] mb-4 leading-tight">
-              Cambridge Sertifika Süreci
             </h2>
+            <h3 className="text-[32px] md:text-[42px] lg:text-[48px] font-bold text-[#0B1F3A] mb-4 leading-tight">
+              Cambridge Sertifika Süreci
+            </h3>
             <div className="w-24 h-1 bg-gradient-to-r from-[#3498DB] to-[#2ECC71] mx-auto"></div>
           </div>
 
@@ -176,13 +176,16 @@ const WoodyAcademyPage = () => {
       </section>
 
       {/* Section 2: Teacher Program */}
-      <section className="w-full bg-gradient-to-br from-[#F8F9FA] to-white py-16 md:py-24">
+      <section className="w-full bg-white py-16 md:py-24">
         <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-20">
           
           <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-[32px] md:text-[42px] lg:text-[48px] font-bold text-[#0B1F3A] mb-4 leading-tight">
-              Öğretmen – Gelişim Programı
+            <h2 className="text-[32px] md:text-[42px] lg:text-[48px] font-bold text-[#0B1F3A] mb-2 leading-tight">
+              Öğretmen
             </h2>
+            <h3 className="text-[32px] md:text-[42px] lg:text-[48px] font-bold text-[#0B1F3A] mb-4 leading-tight">
+              Gelişim Programı (TKT)
+            </h3>
             <div className="w-24 h-1 bg-gradient-to-r from-[#FFB800] to-[#E74C3C] mx-auto"></div>
           </div>
 
@@ -191,7 +194,7 @@ const WoodyAcademyPage = () => {
             <div className="w-full lg:w-1/2">
               <div className="w-full h-[450px] lg:h-[550px] rounded-2xl overflow-hidden shadow-lg">
                 <img 
-                  src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/voarnm0e_freepik_ultra-hyperrealistic-scene-of-a-25yearold-european-female-teacher-standing-in-front-of-a-historic-cambridgestyle-university-building-elegant-stone-architecture-clearly-visible.-camera-per_0001%20%281%29.png"
+                  src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/7wnfbfu1_ChatGPT%20Image%2016%20Nis%202026%2013_04_02.png"
                   alt="Cambridge TKT"
                   className="w-full h-full object-cover"
                 />

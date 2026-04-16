@@ -5,7 +5,7 @@ const translations = {
     nav: {
       home: "HOME",
       preschool: "OKUL",
-      workshop: "WORKSHOP",
+      workshop: "ATÖLYE",
       homeTutor: "EV & ÖZEL DERS",
       academy: "WOODY ACADEMY"
     },
@@ -96,7 +96,7 @@ const translations = {
     nav: {
       home: "HOME",
       preschool: "OKUL",
-      workshop: "WORKSHOP",
+      workshop: "ATÖLYE",
       homeTutor: "EV & ÖZEL DERS",
       academy: "WOODY ACADEMY"
     },
@@ -187,7 +187,7 @@ const translations = {
     nav: {
       home: "ГЛАВНАЯ",
       preschool: "OKUL",
-      workshop: "WORKSHOP",
+      workshop: "ATÖLYE",
       homeTutor: "EV & ÖZEL DERS",
       academy: "WOODY АКАДЕМИЯ"
     },
@@ -244,7 +244,7 @@ const translations = {
     nav: {
       home: "STARTSEITE",
       preschool: "OKUL",
-      workshop: "WORKSHOP",
+      workshop: "ATÖLYE",
       homeTutor: "EV & ÖZEL DERS",
       academy: "WOODY AKADEMIE"
     },
