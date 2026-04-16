@@ -61,7 +61,7 @@ const HeroSection = ({ data }) => {
 
         {/* Subtitle - TÜRKÇE */}
         <p className="text-[14px] md:text-[16px] text-white/90 tracking-wide max-w-[700px] mx-auto" style={{ animation: 'fadeInUp 1.4s ease-out' }}>
-          Woody Okul Öncesi sistemi, yapılandırılmış oyun, ilgi çekici etkinlikler ve zengin dijital içeriklerle dil becerilerini geliştirir.
+          Türkiye'de ilk kez oyun tabanlı, fiziksel ve dijital içerikleri bir araya getiren karakter temelli İngilizce eğitim sistemi.
         </p>
       </div>
 
