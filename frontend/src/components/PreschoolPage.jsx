@@ -77,7 +77,7 @@ const PreschoolPage = () => {
             loop
             className="w-full h-full object-cover"
           >
-            <source src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/km969fsu_Molly%20sabah%20go%CC%88zlerini%20ac%CC%A7t%C4%B1g%CC%86%C4%B1nda%2C%20yuvarlak%20go%CC%88vdesi%20gu%CC%88nes%CC%A7%20%C4%B1s%CC%A7%C4%B1g%CC%86%C4%B1n%C4%B1%20ku%CC%88c%CC%A7u%CC%88k%20bir%20lamba%20gibi%20yayd%C4%B1.%20Bir%20an%20durdu%E2%80%A6%20sonra%20kendi%20kendine%20hafiften%20say%C4%B1%20sayd%C4%B1%20%E2%80%9COne%E2%80%A6%20two%E2%80%A6%20three%E2%80%A6%20kalk%C4%B1yorum%21%E2%80%9D%20Yatakta%20minik%20bir%20s%20%282%29.mp4" type="video/mp4" />
+            <source src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/uplopykh_Molly%20sabah%20go%CC%88zlerini%20ac%CC%A7t%C4%B1g%CC%86%C4%B1nda%2C%20yuvarlak%20go%CC%88vdesi%20gu%CC%88nes%CC%A7%20%C4%B1s%CC%A7%C4%B1g%CC%86%C4%B1n%C4%B1%20ku%CC%88c%CC%A7u%CC%88k%20bir%20lamba%20gibi%20yayd%C4%B1.%20Bir%20an%20durdu%E2%80%A6%20sonra%20kendi%20kendine%20hafiften%20say%C4%B1%20sayd%C4%B1%20%E2%80%9COne%E2%80%A6%20two%E2%80%A6%20three%E2%80%A6%20kalk%C4%B1yorum%21%E2%80%9D%20Yatakta%20minik%20bir%20s%20%283%29.mp4" type="video/mp4" />
             Tarayıcınız video oynatmayı desteklemiyor.
           </video>
           <div className="absolute inset-0 bg-black/50" />
@@ -501,7 +501,20 @@ const PreschoolPage = () => {
         <div className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center p-4">
           <button onClick={() => { setShowVideo(false); setActiveVideo(null); }} className="absolute top-6 right-6 text-white/80 hover:text-white transition-colors z-[110] bg-transparent border-none cursor-pointer"><X size={36} /></button>
           <div className="w-full max-w-[1000px] aspect-video">
-            <iframe src="https://player.vimeo.com/video/911713522?autoplay=1" width="100%" height="100%" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen title={activeVideo === 'student' ? p.studentSet : activeVideo === 'teacher' ? p.teacherSet : 'Preschool Series'} className="rounded-lg" />
+            {activeVideo === 'hero' ? (
+              // Hero video için yüklenen MP4 video göster
+              <video
+                src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/uplopykh_Molly%20sabah%20go%CC%88zlerini%20ac%CC%A7t%C4%B1g%CC%86%C4%B1nda%2C%20yuvarlak%20go%CC%88vdesi%20gu%CC%88nes%CC%A7%20%C4%B1s%CC%A7%C4%B1g%CC%86%C4%B1n%C4%B1%20ku%CC%88c%CC%A7u%CC%88k%20bir%20lamba%20gibi%20yayd%C4%B1.%20Bir%20an%20durdu%E2%80%A6%20sonra%20kendi%20kendine%20hafiften%20say%C4%B1%20sayd%C4%B1%20%E2%80%9COne%E2%80%A6%20two%E2%80%A6%20three%E2%80%A6%20kalk%C4%B1yorum%21%E2%80%9D%20Yatakta%20minik%20bir%20s%20%283%29.mp4"
+                controls
+                autoPlay
+                className="w-full h-full rounded-lg"
+              >
+                Tarayıcınız video oynatmayı desteklemiyor.
+              </video>
+            ) : (
+              // Diğer videolar için iframe (Vimeo)
+              <iframe src="https://player.vimeo.com/video/911713522?autoplay=1" width="100%" height="100%" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen title={activeVideo === 'student' ? p.studentSet : activeVideo === 'teacher' ? p.teacherSet : 'Preschool Series'} className="rounded-lg" />
+            )}
           </div>
         </div>
       )}
