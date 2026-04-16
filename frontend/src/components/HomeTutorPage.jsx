@@ -11,7 +11,17 @@ const HomeTutorPage = () => {
   const { t } = useLanguage();
   const [showVideo, setShowVideo] = useState(false);
   const [activeVideo, setActiveVideo] = useState(null);
+  const heroVideoRef = React.useRef(null);
   const p = t.preschoolPage;
+
+  // Hero video hemen başlat
+  React.useEffect(() => {
+    if (heroVideoRef.current) {
+      heroVideoRef.current.play().catch(err => {
+        console.log('Video autoplay prevented:', err);
+      });
+    }
+  }, []);
 
   const handlePlayVideo = (type) => {
     setActiveVideo(type);
@@ -33,7 +43,18 @@ const HomeTutorPage = () => {
       {/* Hero Video Section */}
       <section className="relative w-full h-[50vh] min-h-[400px] overflow-hidden mt-[72px]">
         <div className="absolute inset-0">
-          <img src="https://images.squarespace-cdn.com/content/v1/60241cb68df65b530cd84d95/22305642-e101-4a60-a871-45a6a6d12d44/ember_stills_sdr_0154933.tiff-0.jpg" alt="Woody Preschool" className="w-full h-full object-cover" />
+          {/* Hero Background Video */}
+          <video
+            ref={heroVideoRef}
+            muted
+            playsInline
+            loop
+            autoPlay
+            className="w-full h-full object-cover"
+          >
+            <source src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/iztyqa5u_Rexy%20and%20egg%20%284%29.mp4" type="video/mp4" />
+            Tarayıcınız video oynatmayı desteklemiyor.
+          </video>
           <div className="absolute inset-0 bg-black/50" />
         </div>
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-white">
@@ -205,7 +226,12 @@ const HomeTutorPage = () => {
         <div className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center p-4">
           <button onClick={() => { setShowVideo(false); setActiveVideo(null); }} className="absolute top-6 right-6 text-white/80 hover:text-white transition-colors z-[110] bg-transparent border-none cursor-pointer"><X size={36} /></button>
           <div className="w-full max-w-[1000px] aspect-video">
-            <iframe src="https://player.vimeo.com/video/911713522?autoplay=1" width="100%" height="100%" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen title={activeVideo === 'student' ? p.studentSet : activeVideo === 'teacher' ? p.teacherSet : 'Preschool Series'} className="rounded-lg" />
+            <video 
+              src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/iztyqa5u_Rexy%20and%20egg%20%284%29.mp4" 
+              controls 
+              autoPlay 
+              className="w-full h-full rounded-lg"
+            />
           </div>
         </div>
       )}

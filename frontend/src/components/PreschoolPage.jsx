@@ -148,27 +148,25 @@ const PreschoolPage = () => {
       <section className="w-full py-10 md:py-14 bg-gray-50">
         <div className="max-w-[1100px] mx-auto px-6 md:px-12">
           <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
-            {/* Left Video - Öğretmen Seti */}
+            {/* Left Video - Öğretmen Seti - COMING SOON */}
             <div className="flex-1 w-full">
-              <div className="relative bg-black rounded-2xl overflow-hidden shadow-2xl cursor-pointer group aspect-video" onClick={() => handlePlayVideo('teacher')}>
-                <img src="https://images.squarespace-cdn.com/content/v1/60241cb68df65b530cd84d95/42a4f404-b669-4acc-93c8-1d42e679e27f/brochure_foldout.jpg" alt={p.teacherSet} className="w-full h-full object-cover opacity-70 group-hover:opacity-90 transition-opacity duration-500" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-[60px] h-[60px] md:w-[70px] md:h-[70px] rounded-full bg-white/20 backdrop-blur-sm border-2 border-white/60 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <Play size={24} className="text-white ml-1" fill="white" />
-                  </div>
-                </div>
+              <div className="relative bg-black rounded-2xl overflow-hidden shadow-2xl aspect-video">
+                <img 
+                  src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/kg4rjgb3_Paragraf%20metniniz%20%284%29.png" 
+                  alt="Coming Soon - Öğretmen Seti" 
+                  className="w-full h-full object-cover"
+                />
               </div>
               <p className="text-center mt-4 text-[18px] md:text-[22px] font-bold text-gray-800 tracking-wide">{p.teacherSet}</p>
             </div>
-            {/* Right Video - Öğrenci Seti */}
+            {/* Right Video - Öğrenci Seti - COMING SOON */}
             <div className="flex-1 w-full">
-              <div className="relative bg-black rounded-2xl overflow-hidden shadow-2xl cursor-pointer group aspect-video" onClick={() => handlePlayVideo('student')}>
-                <img src="https://images.squarespace-cdn.com/content/v1/60241cb68df65b530cd84d95/485b26c1-eb3a-48a7-bab6-437b3938f44c/RenderMan_OCIO_Aces_Header2.jpg" alt={p.studentSet} className="w-full h-full object-cover opacity-70 group-hover:opacity-90 transition-opacity duration-500" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-[60px] h-[60px] md:w-[70px] md:h-[70px] rounded-full bg-white/20 backdrop-blur-sm border-2 border-white/60 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <Play size={24} className="text-white ml-1" fill="white" />
-                  </div>
-                </div>
+              <div className="relative bg-black rounded-2xl overflow-hidden shadow-2xl aspect-video">
+                <img 
+                  src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/kg4rjgb3_Paragraf%20metniniz%20%284%29.png" 
+                  alt="Coming Soon - Öğrenci Seti" 
+                  className="w-full h-full object-cover"
+                />
               </div>
               <p className="text-center mt-4 text-[18px] md:text-[22px] font-bold text-gray-800 tracking-wide">{p.studentSet}</p>
             </div>
