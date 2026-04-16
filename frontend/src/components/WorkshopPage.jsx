@@ -51,7 +51,7 @@ const WorkshopPage = () => {
             loop
             className="w-full h-full object-cover"
           >
-            <source src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/dit1nm17_Molly%20sabah%20go%CC%88zlerini%20ac%CC%A7t%C4%B1g%CC%86%C4%B1nda%2C%20yuvarlak%20go%CC%88vdesi%20gu%CC%88nes%CC%A7%20%C4%B1s%CC%A7%C4%B1g%CC%86%C4%B1n%C4%B1%20ku%CC%88c%CC%A7u%CC%88k%20bir%20lamba%20gibi%20yayd%C4%B1.%20Bir%20an%20durdu%E2%80%A6%20sonra%20kendi%20kendine%20hafiften%20say%C4%B1%20sayd%C4%B1%20%E2%80%9COne%E2%80%A6%20two%E2%80%A6%20three%E2%80%A6%20kalk%C4%B1yorum%21%E2%80%9D%20Yatakta%20minik%20bir%20s%20%282%29.mp4" type="video/mp4" />
+            <source src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/g3olv4um_1%20kopyas%C4%B1%20kopyas%C4%B1%20%28Video%29.mp4" type="video/mp4" />
             Tarayıcınız video oynatmayı desteklemiyor.
           </video>
           <div className="absolute inset-0 bg-black/50" />
@@ -217,7 +217,7 @@ const WorkshopPage = () => {
           <button onClick={() => { setShowVideo(false); setActiveVideo(null); }} className="absolute top-6 right-6 text-white/80 hover:text-white transition-colors z-[110] bg-transparent border-none cursor-pointer"><X size={36} /></button>
           <div className="w-full max-w-[1000px] aspect-video">
             <video 
-              src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/k458a8f5_1%20kopyas%C4%B1%20kopyas%C4%B1%20%28Video%29.mp4" 
+              src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/g3olv4um_1%20kopyas%C4%B1%20kopyas%C4%B1%20%28Video%29.mp4" 
               controls 
               autoPlay 
               className="w-full h-full rounded-lg"
