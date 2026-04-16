@@ -42,7 +42,7 @@ const WoodyUpdates = () => {
     {
       id: 6,
       video: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/b69zuql4_Ads%C4%B1z%20%281080%20x%201350%20piksel%29%20kopyas%C4%B1%20kopyas%C4%B1%20%284%29.mp4',
-      title: "Artık Matbaa'dayız",
+      title: "Artık Matbaayız da!",
       description: 'Daha güçlü içerikler üretiyor, özgürce gelişiyoruz.'
     }
   ];
