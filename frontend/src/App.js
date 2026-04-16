@@ -7,6 +7,7 @@ import HeroSection from "./components/HeroSection";
 import CertificationSection from "./components/CertificationSection";
 import WhyWoodyImageSection from "./components/WhyWoodyImageSection";
 import ContentSection from "./components/ContentSection";
+import WoodyUpdates from "./components/WoodyUpdates";
 import Footer from "./components/Footer";
 import PreschoolPage from "./components/PreschoolPage";
 import WorkshopPage from "./components/WorkshopPage";
@@ -32,6 +33,7 @@ const HomePage = () => {
       {siteData.sections.map((section, index) => (
         <ContentSection key={section.id} section={section} isFirst={index === 0} />
       ))}
+      <WoodyUpdates />
       <Footer data={siteData.footer} />
     </>
   );
