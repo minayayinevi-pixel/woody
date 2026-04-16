@@ -17,21 +17,21 @@ const WoodyStorePage = () => {
       products: [
         {
           id: 1,
-          name: 'Basic Level Set',
+          name: 'Basic Level Set Öğrenci Seti',
           description: 'Başlangıç seviyesi',
           price: "2250 TL'den başlayan fiyatlarla",
           image: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/3jgyyil9_1.png'
         },
         {
           id: 2,
-          name: 'Junior Level Set',
+          name: 'Junior Level Set Öğrenci Seti',
           description: 'Gelişim seviyesi',
           price: "2250 TL'den başlayan fiyatlarla",
           image: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/h5x59v59_3.png'
         },
         {
           id: 3,
-          name: 'Senior Level Set',
+          name: 'Senior Level Set Öğrenci Seti',
           description: 'İleri seviye',
           price: "2250 TL'den başlayan fiyatlarla",
           image: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/m4z26p5k_2.png'
@@ -242,7 +242,7 @@ const WoodyStorePage = () => {
                         <button
                           onClick={(e) => {
                             e.stopPropagation();
-                            const message = `Merhaba, ${product.name} hakkında fiyat teklifi almak istiyorum.`;
+                            const message = `Merhaba fiyat teklifi almak istiyorum\n\nŞehir: \nöğrenci sayımız: \nokul adı: \n\nDijital katalog göndermisiniz lütfen`;
                             const whatsappUrl = `https://wa.me/905331570373?text=${encodeURIComponent(message)}`;
                             window.open(whatsappUrl, '_blank');
                           }}
