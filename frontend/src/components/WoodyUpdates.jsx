@@ -131,7 +131,13 @@ const WoodyUpdates = () => {
               <div
                 key={update.id}
                 className="flex-shrink-0 w-[240px] md:w-[260px] snap-center transition-all duration-400 ease-out cursor-pointer"
-                onClick={() => scrollToCard(index)}
+                onClick={() => {
+                  if (update.video) {
+                    setShowVideoModal(true);
+                  } else {
+                    scrollToCard(index);
+                  }
+                }}
                 style={{
                   transform: isActive ? 'scale(1)' : 'scale(0.88)',
                   opacity: isActive ? 1 : 0.65,
@@ -140,14 +146,31 @@ const WoodyUpdates = () => {
               >
                 {/* Card - Vertical Portrait Format (NOT SQUARE) */}
                 <div className="bg-white rounded-2xl overflow-hidden shadow-lg h-full flex flex-col">
-                  {/* Image - Portrait ratio (taller than square) */}
+                  {/* Image/Video - Portrait ratio */}
                   <div className="relative w-full" style={{ paddingBottom: '133%' }}>
-                    <img
-                      src={update.image}
-                      alt={update.title}
-                      className="absolute inset-0 w-full h-full object-cover"
-                      loading="lazy"
-                    />
+                    {update.video ? (
+                      // Video thumbnail with play button
+                      <>
+                        <video
+                          src={update.video}
+                          className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+                          muted
+                        />
+                        <div className="absolute inset-0 flex items-center justify-center bg-black/30">
+                          <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center">
+                            <Play size={28} className="text-gray-900 ml-1" fill="currentColor" />
+                          </div>
+                        </div>
+                      </>
+                    ) : (
+                      // Regular image
+                      <img
+                        src={update.image}
+                        alt={update.title}
+                        className="absolute inset-0 w-full h-full object-cover"
+                        loading="lazy"
+                      />
+                    )}
                   </div>
                   
                   {/* Content - Below image */}
