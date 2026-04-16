@@ -150,22 +150,24 @@ const PreschoolPage = () => {
           <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
             {/* Left Video - Öğretmen Seti - COMING SOON */}
             <div className="flex-1 w-full">
-              <div className="relative bg-black rounded-2xl overflow-hidden shadow-2xl aspect-video">
+              <div className="relative bg-white rounded-2xl overflow-hidden shadow-2xl aspect-video">
                 <img 
                   src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/kg4rjgb3_Paragraf%20metniniz%20%284%29.png" 
                   alt="Coming Soon - Öğretmen Seti" 
                   className="w-full h-full object-cover"
+                  style={{ objectPosition: 'center 60%' }}
                 />
               </div>
               <p className="text-center mt-4 text-[18px] md:text-[22px] font-bold text-gray-800 tracking-wide">{p.teacherSet}</p>
             </div>
             {/* Right Video - Öğrenci Seti - COMING SOON */}
             <div className="flex-1 w-full">
-              <div className="relative bg-black rounded-2xl overflow-hidden shadow-2xl aspect-video">
+              <div className="relative bg-white rounded-2xl overflow-hidden shadow-2xl aspect-video">
                 <img 
                   src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/kg4rjgb3_Paragraf%20metniniz%20%284%29.png" 
                   alt="Coming Soon - Öğrenci Seti" 
                   className="w-full h-full object-cover"
+                  style={{ objectPosition: 'center 60%' }}
                 />
               </div>
               <p className="text-center mt-4 text-[18px] md:text-[22px] font-bold text-gray-800 tracking-wide">{p.studentSet}</p>
