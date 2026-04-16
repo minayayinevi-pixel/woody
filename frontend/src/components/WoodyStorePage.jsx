@@ -175,8 +175,8 @@ const WoodyStorePage = () => {
       {/* Subtitle */}
       <section className="w-full bg-white py-4 md:py-5 border-b border-gray-200">
         <div className="max-w-[1000px] mx-auto px-5 md:px-12 text-center">
-          <p className="text-[15px] md:text-[17px] text-gray-700 font-medium leading-relaxed">
-            Türkiye'de ilk kez oyun tabanlı, fiziksel ve dijital içerikleri bir araya getiren karakter temelli İngilizce eğitim sistemi.
+          <p className="text-[15px] md:text-[17px] text-gray-700 font-medium">
+            Okul öncesi İngilizce eğitim setleri
           </p>
         </div>
       </section>

@@ -85,41 +85,51 @@ const DigitalContentPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             {levels.map((level) => (
               <div key={level.id} className="flex flex-col items-center">
-                {/* Level Card - Premium Button Style */}
+                {/* Level Card - Premium Gradient Border Style */}
                 <button
                   onClick={() => {
                     playClickSound();
                     handleLevelClick(level.id);
                   }}
-                  className="w-full max-w-[300px] h-[200px] rounded-3xl transition-all duration-300 hover:scale-105 hover:shadow-2xl active:scale-95 cursor-pointer relative overflow-hidden bg-white"
+                  className="relative w-full max-w-[320px] h-[220px] rounded-[28px] transition-all duration-300 hover:scale-105 hover:shadow-2xl active:scale-95 cursor-pointer bg-white overflow-visible group"
                   style={{
-                    border: `3px solid ${level.color}`,
-                    boxShadow: `0 8px 24px 0 ${level.color}40, 0 4px 12px 0 ${level.color}30`
+                    padding: '4px',
+                    background: `linear-gradient(135deg, ${level.color}00 0%, ${level.color}40 50%, ${level.color}00 100%)`,
+                    boxShadow: `0 8px 32px 0 ${level.color}40, 0 4px 16px 0 ${level.color}30`
                   }}
                 >
-                  <div className="flex flex-col items-center justify-center h-full">
+                  {/* Inner white card with gradient border */}
+                  <div 
+                    className="relative w-full h-full bg-white rounded-[24px] flex flex-col items-center justify-center overflow-hidden"
+                    style={{
+                      border: `3px solid transparent`,
+                      background: `linear-gradient(white, white) padding-box, linear-gradient(135deg, ${level.color}, ${level.color}99, ${level.color}) border-box`,
+                      boxShadow: `inset 0 0 20px ${level.color}15`
+                    }}
+                  >
                     <h3 
                       className="text-[52px] md:text-[60px] font-normal tracking-wider mb-2"
                       style={{ 
                         fontFamily: "'Magic English', cursive",
                         color: level.color,
-                        textShadow: `0 2px 8px ${level.color}40`
+                        textShadow: `0 2px 12px ${level.color}50`,
+                        filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.1))'
                       }}
                     >
                       {level.name}
                     </h3>
                     <p 
                       className="text-[18px] md:text-[20px] font-light"
-                      style={{ color: level.color }}
+                      style={{ color: `${level.color}CC` }}
                     >
                       {level.subtitle}
                     </p>
                   </div>
                 </button>
 
-                {/* Sub-sections (appear when clicked) - Premium Style */}
+                {/* Sub-sections (appear when clicked) - Premium Gradient Border */}
                 {selectedLevel === level.id && (
-                  <div className="mt-6 w-full max-w-[300px] grid grid-cols-2 gap-3 animate-fadeIn">
+                  <div className="mt-6 w-full max-w-[320px] grid grid-cols-2 gap-4 animate-fadeIn">
                     {sections.map((section) => {
                       const Icon = section.icon;
                       return (
@@ -129,19 +139,29 @@ const DigitalContentPage = () => {
                             playClickSound();
                             handleSectionClick(level.id, section.id);
                           }}
-                          className="flex flex-col items-center justify-center p-4 rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-xl active:scale-95 bg-white"
+                          className="relative flex flex-col items-center justify-center p-5 rounded-[20px] transition-all duration-300 hover:scale-105 hover:shadow-xl active:scale-95 bg-white group"
                           style={{
-                            border: `2px solid ${section.color}`,
-                            boxShadow: `0 4px 16px 0 ${section.color}30`
+                            padding: '3px',
+                            background: `linear-gradient(135deg, ${section.color}00 0%, ${section.color}30 50%, ${section.color}00 100%)`
                           }}
                         >
-                          <Icon size={32} style={{ color: section.color }} strokeWidth={2} />
-                          <span 
-                            className="text-[13px] font-semibold mt-2"
-                            style={{ color: section.color }}
+                          {/* Inner card with gradient border */}
+                          <div 
+                            className="w-full h-full bg-white rounded-[17px] flex flex-col items-center justify-center p-4"
+                            style={{
+                              border: `2px solid transparent`,
+                              background: `linear-gradient(white, white) padding-box, linear-gradient(135deg, ${section.color}, ${section.color}AA) border-box`,
+                              boxShadow: `inset 0 0 15px ${section.color}10`
+                            }}
                           >
-                            {section.name}
-                          </span>
+                            <Icon size={28} style={{ color: section.color }} strokeWidth={2.5} />
+                            <span 
+                              className="text-[12px] font-semibold mt-2"
+                              style={{ color: section.color }}
+                            >
+                              {section.name}
+                            </span>
+                          </div>
                         </button>
                       );
                     })}
