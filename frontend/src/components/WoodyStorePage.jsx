@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, ShoppingBag } from 'lucide-react';
 import Header from './Header';
 import Footer from './Footer';
 import { siteData } from '../data/mock';
@@ -9,6 +9,12 @@ const WoodyStorePage = () => {
   const navigate = useNavigate();
 
   // Mock product data - her kategoride 6 ürün
+  const categoryColors = {
+    'okul-serisi': '#FFB800',
+    'atolye': '#00C853',
+    'ozel-ders': '#9C27B0'
+  };
+
   const categories = [
     {
       id: 'okul-serisi',
@@ -148,15 +154,29 @@ const WoodyStorePage = () => {
       <Header data={siteData.header} />
       <div className="pt-[72px]" />
 
-      {/* Hero Section */}
-      <section className="w-full py-12 md:py-16 bg-gradient-to-b from-gray-50 to-white">
-        <div className="max-w-[1000px] mx-auto px-5 md:px-12 text-center">
-          <h1 className="text-[36px] md:text-[48px] font-bold text-gray-900 mb-4 leading-tight">
-            Woody Store
+      {/* Hero Section - Orange Banner */}
+      <section className="w-full bg-[#FF8C00] relative overflow-hidden py-8 md:py-10">
+        {/* Background Shopping Bag Icon */}
+        <div className="absolute inset-0 flex items-center justify-center opacity-[0.12] pointer-events-none">
+          <ShoppingBag size={280} strokeWidth={1.5} className="text-white" />
+        </div>
+        
+        {/* Content */}
+        <div className="relative z-10 text-center">
+          <h1 
+            className="text-[42px] md:text-[56px] lg:text-[64px] font-bold text-white mb-1 leading-tight"
+            style={{ fontFamily: "'Magic English', 'Comic Sans MS', cursive" }}
+          >
+            WOODY STORE
           </h1>
-          <p className="text-[15px] md:text-[17px] text-gray-600 leading-relaxed max-w-[700px] mx-auto">
-            Türkiye'nin ilk oyun tabanlı ve Cambridge destekli okul öncesi İngilizce eğitim sistemi. 
-            Tüm setlere tek tıkla ulaşın, kurumunuza hemen entegre edin.
+        </div>
+      </section>
+
+      {/* Subtitle */}
+      <section className="w-full bg-white py-4 md:py-5 border-b border-gray-200">
+        <div className="max-w-[1000px] mx-auto px-5 md:px-12 text-center">
+          <p className="text-[15px] md:text-[17px] text-gray-700 font-medium">
+            Okul öncesi İngilizce eğitim setleri
           </p>
         </div>
       </section>
@@ -165,25 +185,50 @@ const WoodyStorePage = () => {
       {categories.map((category, idx) => (
         <section key={category.id} className="w-full py-10 md:py-12">
           <div className="max-w-[900px] mx-auto px-4 md:px-8">
-            {/* Category Header */}
+            {/* Category Header with "Seriye Git" Button */}
             <div className="mb-6">
-              <h2 className="text-[24px] md:text-[28px] font-bold text-gray-900 mb-2">
-                {category.name}
-              </h2>
-              {category.description && (
-                <p className="text-[14px] text-gray-500 mb-2">
-                  {category.description}
-                </p>
-              )}
+              {/* Title + Button Row */}
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-3">
+                <h2 
+                  className="text-[24px] md:text-[28px] font-bold text-gray-900"
+                  style={{ lineHeight: '1.2' }}
+                >
+                  {category.name}
+                </h2>
+                
+                {/* "Seriye Git" Button - Same height as title */}
+                <button
+                  onClick={() => {
+                    const element = document.getElementById(category.id);
+                    element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }}
+                  className="flex items-center gap-2 px-4 py-2 bg-white rounded-[14px] transition-all duration-200 hover:shadow-md border border-gray-200"
+                  style={{
+                    height: 'fit-content',
+                    color: categoryColors[category.id],
+                    fontSize: '14px',
+                    fontWeight: '600'
+                  }}
+                >
+                  Seriye Git
+                  <ChevronRight size={16} />
+                </button>
+              </div>
+
+              {/* Colored Underline */}
+              <div 
+                className="w-24 h-[3px] mb-4"
+                style={{ backgroundColor: categoryColors[category.id] }}
+              />
               
               {/* OKUL SERİSİ ÖZEL: Başlık altı açıklama */}
               {category.id === 'okul-serisi' && (
                 <div className="mt-3 space-y-1">
-                  <p className="text-[13px] md:text-[14px] text-gray-600">
-                    Okul Serilerinde öğretmen seti fiyatlara dahildir.
+                  <p className="text-[13px] md:text-[14px] text-gray-700 font-medium">
+                    Sınıf kullanımı içindir.
                   </p>
-                  <p className="text-[13px] md:text-[14px] text-gray-600">
-                    İçeriği Okul Serisi videolarından inceleyebilirsiniz.
+                  <p className="text-[11px] md:text-[12px] text-gray-500">
+                    (Öğretmen seti, Mina Yayınevi anlaşması ile verilir. Sadece öğrenci seti almanız yeterlidir.)
                   </p>
                 </div>
               )}
