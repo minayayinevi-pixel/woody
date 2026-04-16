@@ -1,9 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Play, X } from 'lucide-react';
 
 const WoodyUpdates = () => {
   const scrollContainerRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [showVideoModal, setShowVideoModal] = useState(false);
 
   const updates = [
     {
@@ -32,9 +33,9 @@ const WoodyUpdates = () => {
     },
     {
       id: 5,
-      image: 'https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=600&h=800&fit=crop',
-      title: 'Dijital İçerikler Güncellendi',
-      description: 'Yeni hikayeler ve aktiviteler eklendi'
+      video: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/543xrrqf_cambr%C4%B1dgr%20tan%C4%B1%C4%B1m.mp4',
+      title: 'Cambridge Eğitim Sistemini Keşfedin',
+      description: 'Okul öncesi İngilizce eğitimde uluslararası yaklaşımı tanıyın.'
     },
     {
       id: 6,
@@ -177,6 +178,29 @@ const WoodyUpdates = () => {
           ))}
         </div>
       </div>
+
+      {/* Video Modal */}
+      {showVideoModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4" onClick={() => setShowVideoModal(false)}>
+          <div className="relative w-full max-w-5xl" onClick={(e) => e.stopPropagation()}>
+            {/* Close Button */}
+            <button
+              onClick={() => setShowVideoModal(false)}
+              className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors"
+            >
+              <X size={32} />
+            </button>
+
+            {/* Video Player */}
+            <video
+              src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/543xrrqf_cambr%C4%B1dgr%20tan%C4%B1%C4%B1m.mp4"
+              controls
+              autoPlay
+              className="w-full rounded-lg shadow-2xl"
+            />
+          </div>
+        </div>
+      )}
 
       <style jsx>{`
         /* Hide scrollbar */

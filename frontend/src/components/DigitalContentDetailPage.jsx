@@ -58,6 +58,17 @@ const DigitalContentDetailPage = () => {
       // Korumasız kategori (Musicland)
       setIsPasswordVerified(true);
     }
+
+    // Cleanup: Sayfadan çıkınca audio'yu durdur
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current.currentTime = 0;
+      }
+      setIsPlaying(false);
+      setCurrentAudio(null);
+      setCurrentTrack(null);
+    };
   }, [sectionId]);
 
   // Şifre doğrulama
