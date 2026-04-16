@@ -129,7 +129,7 @@ const WorkshopPage = () => {
                   src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/kg4rjgb3_Paragraf%20metniniz%20%284%29.png" 
                   alt="Coming Soon - Öğretmen Seti" 
                   className="w-full h-full object-cover"
-                  style={{ objectPosition: 'center 60%' }}
+                  style={{ objectPosition: 'center 15%' }}
                 />
               </div>
               <p className="text-center mt-4 text-[18px] md:text-[22px] font-bold text-gray-800 tracking-wide">{p.teacherSet}</p>
@@ -141,7 +141,7 @@ const WorkshopPage = () => {
                   src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/kg4rjgb3_Paragraf%20metniniz%20%284%29.png" 
                   alt="Coming Soon - Öğrenci Seti" 
                   className="w-full h-full object-cover"
-                  style={{ objectPosition: 'center 60%' }}
+                  style={{ objectPosition: 'center 15%' }}
                 />
               </div>
               <p className="text-center mt-4 text-[18px] md:text-[22px] font-bold text-gray-800 tracking-wide">{p.studentSet}</p>
