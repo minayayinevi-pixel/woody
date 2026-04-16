@@ -7,13 +7,19 @@ const HeroSection = ({ data }) => {
   const bgVideoRef = useRef(null);
   const modalVideoRef = useRef(null);
 
-  // Hero video 2 saniye sonra başlat ve 16. saniyeden oynat
+  // Video hemen başlasın, gri ekran olmasın
   useEffect(() => {
     if (bgVideoRef.current) {
-      bgVideoRef.current.currentTime = 16;
-      bgVideoRef.current.play().catch(err => {
-        console.log('Video autoplay:', err);
-      });
+      const video = bgVideoRef.current;
+      video.currentTime = 16;
+      
+      // Force play immediately
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(err => {
+          console.log('Video autoplay:', err);
+        });
+      }
       setVideoReady(true);
     }
   }, []);
@@ -21,14 +27,16 @@ const HeroSection = ({ data }) => {
   return (
     <section className="relative w-full h-[85vh] md:h-[90vh] flex items-center justify-center overflow-hidden">
       {/* Background Video */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 bg-black">
         <video
           ref={bgVideoRef}
           autoPlay
           loop
           muted
           playsInline
+          preload="auto"
           className="w-full h-full object-cover"
+          style={{ opacity: 1 }}
         >
           <source src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/gthig3ye_woody%20and%20robo%20%284%29.mp4#t=16" type="video/mp4" />
         </video>
@@ -39,7 +47,7 @@ const HeroSection = ({ data }) => {
       <div className="relative z-10 text-center px-6">
         {/* Title */}
         <h1 className="text-[48px] md:text-[64px] lg:text-[80px] text-white leading-[1.1] tracking-wide mb-6" style={{ textShadow: '2px 4px 12px rgba(0,0,0,0.4)', fontFamily: "'Fredoka', 'Inter', sans-serif", fontWeight: '700', animation: 'fadeInUp 1s ease-out' }}>
-          Play. Learn. Speak English.
+          Welcome to Woody World
         </h1>
 
         {/* Play Button */}

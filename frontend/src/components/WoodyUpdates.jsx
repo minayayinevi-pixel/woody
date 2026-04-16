@@ -34,11 +34,8 @@ const WoodyUpdates = () => {
     }
   ];
 
-  // Duplicate cards for seamless infinite loop
-  const duplicatedUpdates = [...updates, ...updates];
-
   return (
-    <section className="w-full bg-gradient-to-b from-white to-gray-50 py-16 md:py-20 overflow-hidden">
+    <section className="w-full bg-gradient-to-b from-white to-gray-50 py-16 md:py-20">
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 mb-10">
         <h2 className="text-[28px] md:text-[36px] lg:text-[42px] font-bold text-[#0B1F3A] text-center">
           Woody Yenilikler
@@ -46,18 +43,21 @@ const WoodyUpdates = () => {
         <div className="w-20 h-1 bg-gradient-to-r from-[#FFB800] to-[#FF6A00] mx-auto mt-4"></div>
       </div>
 
-      {/* Scrolling Container */}
-      <div className="relative">
-        {/* Gradient Overlays */}
-        <div className="absolute left-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-r from-gray-50 to-transparent z-10 pointer-events-none"></div>
-        <div className="absolute right-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-l from-gray-50 to-transparent z-10 pointer-events-none"></div>
-
-        {/* Auto-scrolling wrapper */}
-        <div className="flex animate-scroll hover:pause-animation">
-          {duplicatedUpdates.map((update, index) => (
+      {/* Scroll Snap Carousel Container */}
+      <div className="relative px-6 md:px-12">
+        {/* Scrollable wrapper with snap */}
+        <div 
+          className="flex gap-4 md:gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide"
+          style={{
+            scrollbarWidth: 'none',
+            msOverflowStyle: 'none',
+            WebkitOverflowScrolling: 'touch'
+          }}
+        >
+          {updates.map((update) => (
             <div
-              key={`${update.id}-${index}`}
-              className="flex-shrink-0 w-[280px] md:w-[320px] mx-3 md:mx-4"
+              key={update.id}
+              className="flex-shrink-0 w-[280px] md:w-[320px] snap-start"
             >
               {/* Card */}
               <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
@@ -67,6 +67,7 @@ const WoodyUpdates = () => {
                     src={update.image}
                     alt={update.title}
                     className="absolute inset-0 w-full h-full object-cover"
+                    loading="lazy"
                   />
                 </div>
                 
@@ -86,29 +87,9 @@ const WoodyUpdates = () => {
       </div>
 
       <style jsx>{`
-        @keyframes scroll {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-
-        .animate-scroll {
-          animation: scroll 40s linear infinite;
-          will-change: transform;
-        }
-
-        .animate-scroll:hover {
-          animation-play-state: paused;
-        }
-
-        /* Mobile: show 3 cards, slower speed */
-        @media (max-width: 768px) {
-          .animate-scroll {
-            animation: scroll 30s linear infinite;
-          }
+        /* Hide scrollbar but keep functionality */
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
         }
       `}</style>
     </section>
