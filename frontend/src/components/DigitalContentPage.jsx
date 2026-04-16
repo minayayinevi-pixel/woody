@@ -9,6 +9,13 @@ const DigitalContentPage = () => {
   const navigate = useNavigate();
   const [selectedLevel, setSelectedLevel] = useState(null);
 
+  // Click sound effect
+  const playClickSound = () => {
+    const audio = new Audio('data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBjGG0fPTgjMGHm7A7+OQRQ0PVq3o6qJUFAk+mtv0xG4iBjSJ0/LSfCsF');
+    audio.volume = 0.3;
+    audio.play().catch(err => console.log('Sound play failed:', err));
+  };
+
   // Scroll to top when component mounts
   React.useEffect(() => {
     window.scrollTo(0, 0);
@@ -78,16 +85,16 @@ const DigitalContentPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             {levels.map((level) => (
               <div key={level.id} className="flex flex-col items-center">
-                {/* Level Card - Glassmorphism */}
+                {/* Level Card - Premium Button Style */}
                 <button
-                  onClick={() => handleLevelClick(level.id)}
-                  className="w-full max-w-[280px] h-[240px] rounded-3xl transition-all duration-300 hover:scale-105 cursor-pointer border-none relative overflow-hidden"
+                  onClick={() => {
+                    playClickSound();
+                    handleLevelClick(level.id);
+                  }}
+                  className="w-full max-w-[300px] h-[200px] rounded-3xl transition-all duration-300 hover:scale-105 hover:shadow-2xl active:scale-95 cursor-pointer relative overflow-hidden bg-white"
                   style={{
-                    background: `linear-gradient(135deg, ${level.color}40 0%, ${level.color}20 100%)`,
-                    backdropFilter: 'blur(10px)',
-                    WebkitBackdropFilter: 'blur(10px)',
-                    border: `2px solid ${level.color}60`,
-                    boxShadow: `0 8px 32px 0 ${level.color}30, inset 0 0 0 1px rgba(255, 255, 255, 0.1)`
+                    border: `3px solid ${level.color}`,
+                    boxShadow: `0 8px 24px 0 ${level.color}40, 0 4px 12px 0 ${level.color}30`
                   }}
                 >
                   <div className="flex flex-col items-center justify-center h-full">
@@ -96,7 +103,7 @@ const DigitalContentPage = () => {
                       style={{ 
                         fontFamily: "'Magic English', cursive",
                         color: level.color,
-                        textShadow: '0 2px 10px rgba(255,255,255,0.3)'
+                        textShadow: `0 2px 8px ${level.color}40`
                       }}
                     >
                       {level.name}
@@ -110,22 +117,22 @@ const DigitalContentPage = () => {
                   </div>
                 </button>
 
-                {/* Sub-sections (appear when clicked) - Glassmorphism */}
+                {/* Sub-sections (appear when clicked) - Premium Style */}
                 {selectedLevel === level.id && (
-                  <div className="mt-6 w-full max-w-[280px] grid grid-cols-2 gap-3 animate-fadeIn">
+                  <div className="mt-6 w-full max-w-[300px] grid grid-cols-2 gap-3 animate-fadeIn">
                     {sections.map((section) => {
                       const Icon = section.icon;
                       return (
                         <button
                           key={section.id}
-                          onClick={() => handleSectionClick(level.id, section.id)}
-                          className="flex flex-col items-center justify-center p-4 rounded-2xl transition-all duration-300 hover:scale-105"
+                          onClick={() => {
+                            playClickSound();
+                            handleSectionClick(level.id, section.id);
+                          }}
+                          className="flex flex-col items-center justify-center p-4 rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-xl active:scale-95 bg-white"
                           style={{
-                            background: `linear-gradient(135deg, ${section.color}20 0%, ${section.color}10 100%)`,
-                            backdropFilter: 'blur(10px)',
-                            WebkitBackdropFilter: 'blur(10px)',
-                            border: `2px solid ${section.color}60`,
-                            boxShadow: `0 4px 16px 0 ${section.color}20, inset 0 0 0 1px rgba(255, 255, 255, 0.1)`
+                            border: `2px solid ${section.color}`,
+                            boxShadow: `0 4px 16px 0 ${section.color}30`
                           }}
                         >
                           <Icon size={32} style={{ color: section.color }} strokeWidth={2} />
