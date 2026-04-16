@@ -4,9 +4,9 @@ const translations = {
     lang: "Türkçe",
     nav: {
       home: "HOME",
-      preschool: "PRESCHOOL",
-      workshop: "WORKSHOP",
-      homeTutor: "HOME & TUTOR",
+      preschool: "OKUL",
+      workshop: "YEŞİL",
+      homeTutor: "EV & ÖZEL DERS",
       academy: "WOODY ACADEMY"
     },
     hero: {
@@ -95,9 +95,9 @@ const translations = {
     lang: "English",
     nav: {
       home: "HOME",
-      preschool: "PRESCHOOL",
-      workshop: "WORKSHOP",
-      homeTutor: "HOME & TUTOR",
+      preschool: "OKUL",
+      workshop: "YEŞİL",
+      homeTutor: "EV & ÖZEL DERS",
       academy: "WOODY ACADEMY"
     },
     hero: {
@@ -186,9 +186,9 @@ const translations = {
     lang: "Русский",
     nav: {
       home: "ГЛАВНАЯ",
-      preschool: "ДОШКОЛЬНАЯ",
-      workshop: "МАСТЕРСКАЯ",
-      homeTutor: "ДОМ И РЕПЕТИТОР",
+      preschool: "OKUL",
+      workshop: "YEŞİL",
+      homeTutor: "EV & ÖZEL DERS",
       academy: "WOODY АКАДЕМИЯ"
     },
     hero: {
@@ -243,9 +243,9 @@ const translations = {
     lang: "Deutsch",
     nav: {
       home: "STARTSEITE",
-      preschool: "VORSCHULE",
-      workshop: "WORKSHOP",
-      homeTutor: "HEIM & TUTOR",
+      preschool: "OKUL",
+      workshop: "YEŞİL",
+      homeTutor: "EV & ÖZEL DERS",
       academy: "WOODY AKADEMIE"
     },
     hero: {

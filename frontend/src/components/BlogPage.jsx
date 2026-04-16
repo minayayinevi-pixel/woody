@@ -109,23 +109,43 @@ const blogBlocks = [
 const faqItems = [
   {
     q: "Okul öncesi İngilizce eğitimi gerekli mi?",
-    a: "Evet. Erken yaşta başlayan eğitim büyük avantaj sağlar."
+    a: "Evet. Okul öncesi dönemde verilen İngilizce eğitimi, çocuğun dili doğal şekilde edinmesini sağlar ve ilerleyen yıllarda büyük avantaj oluşturur."
   },
   {
-    q: "4 yaş çocuk İngilizce öğrenebilir mi?",
-    a: "Evet. Bu dönem dil öğrenimi için en uygun dönemdir."
+    q: "3–6 yaş İngilizce öğrenmek için uygun mu?",
+    a: "Evet. 3–6 yaş arası dönem, dil öğrenimi için en kritik ve en hızlı gelişim dönemidir."
   },
   {
-    q: "Çocuklar İngilizceyi nasıl daha kolay öğrenir?",
-    a: "Oyun, tekrar ve çoklu maruziyet ile."
+    q: "Çocuklar İngilizceyi en hızlı nasıl öğrenir?",
+    a: "Çocuklar İngilizceyi oyun, tekrar ve sürekli maruziyet ile en hızlı şekilde öğrenir. Ezber değil, deneyim önemlidir."
   },
   {
-    q: "Oyunla İngilizce öğrenme işe yarar mı?",
-    a: "Evet. En etkili yöntemlerden biridir."
+    q: "Oyunla İngilizce öğrenme gerçekten etkili mi?",
+    a: "Evet. Oyun temelli İngilizce eğitimi, çocukların dili kalıcı ve doğal şekilde öğrenmesini sağlar."
   },
   {
-    q: "İngilizce eğitim seti seçerken nelere dikkat edilmeli?",
-    a: "Sistemli yapı, tekrar ve çoklu içerik bulunmalıdır."
+    q: "Okul öncesi İngilizce eğitim seti seçerken nelere dikkat edilmeli?",
+    a: "Sistemli ilerleyen içerik, tekrar eden yapı, oyun ve etkinlik desteği, görsel ve işitsel materyaller, öğretmen kullanımına uygunluk."
+  },
+  {
+    q: "En iyi okul öncesi İngilizce eğitim yöntemi nedir?",
+    a: "En etkili yöntem, oyun temelli, çoklu materyalli ve sistemli öğrenme modelidir."
+  },
+  {
+    q: "İngilizce eğitim setleri gerçekten işe yarar mı?",
+    a: "Evet, ancak sadece kitap yeterli değildir. Oyun, etkinlik ve sistem içeren setler gerçek sonuç verir."
+  },
+  {
+    q: "Anaokulu İngilizce programı nasıl olmalı?",
+    a: "Haftalık planlı, oyun tabanlı, tekrar odaklı, konuşma ve dinleme ağırlıklı olmalıdır."
+  },
+  {
+    q: "Evde İngilizce öğrenme mümkün mü?",
+    a: "Evet. Doğru eğitim seti ve düzenli tekrar ile çocuklar evde de İngilizce öğrenebilir."
+  },
+  {
+    q: "Çocuklar İngilizceyi neden unutur?",
+    a: "Ezber odaklı sistemlerde öğrenilen bilgiler kalıcı olmaz. Oyun ve tekrar yoksa unutma kaçınılmazdır."
   }
 ];
 
@@ -241,7 +261,7 @@ const BlogPage = () => {
       <section className="w-full bg-white" style={{ paddingTop: '80px', paddingBottom: '80px' }}>
         <div className="mx-auto px-6 md:px-20 lg:px-20" style={{ maxWidth: '1280px' }}>
           <h2 className="text-[28px] md:text-[34px] font-bold text-[#0B1F3A] mb-12 text-center">
-            Sık Sorulan Sorular
+            Sık Sorulan Sorular (Okul Öncesi İngilizce Eğitimi)
           </h2>
 
           <div className="max-w-[900px] mx-auto space-y-8">
@@ -255,6 +275,30 @@ const BlogPage = () => {
                 </p>
               </div>
             ))}
+          </div>
+
+          {/* Woody and Friends Sonuç Bölümü */}
+          <div className="max-w-[900px] mx-auto mt-12 pt-12 border-t border-gray-200">
+            <h3 className="text-[22px] md:text-[26px] font-bold text-[#0B1F3A] mb-4 text-center">
+              Woody and Friends
+            </h3>
+            <p className="text-[15px] md:text-[16px] text-gray-700 leading-relaxed mb-4 text-center">
+              Woody and Friends, okul öncesi İngilizce eğitiminde oyun temelli, sistemli ve sürdürülebilir öğrenme modeli sunar.
+            </p>
+            <ul className="space-y-2 max-w-[600px] mx-auto">
+              <li className="text-[15px] md:text-[16px] text-gray-700 flex items-start">
+                <span className="text-[#FFB800] mr-2 mt-1 flex-shrink-0">•</span>
+                <span>Oyun + kitap + etkinlik + tekrar sistemi</span>
+              </li>
+              <li className="text-[15px] md:text-[16px] text-gray-700 flex items-start">
+                <span className="text-[#FFB800] mr-2 mt-1 flex-shrink-0">•</span>
+                <span>Çocukların aktif katılımıyla öğrenme</span>
+              </li>
+              <li className="text-[15px] md:text-[16px] text-gray-700 flex items-start">
+                <span className="text-[#FFB800] mr-2 mt-1 flex-shrink-0">•</span>
+                <span>Kalıcı dil gelişimi</span>
+              </li>
+            </ul>
           </div>
         </div>
       </section>
