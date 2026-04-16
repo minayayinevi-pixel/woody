@@ -7,19 +7,15 @@ const HeroSection = ({ data }) => {
   const bgVideoRef = useRef(null);
   const modalVideoRef = useRef(null);
 
-  // Hero video 2 saniye sonra başlat ve 2. saniyeden oynat
+  // Hero video 2 saniye sonra başlat ve 16. saniyeden oynat
   useEffect(() => {
-    const timer = setTimeout(() => {
-      if (bgVideoRef.current) {
-        bgVideoRef.current.currentTime = 2; // Video 2. saniyeden başlasın
-        bgVideoRef.current.play().catch(err => {
-          console.log('Video autoplay prevented:', err);
-        });
-        setVideoReady(true);
-      }
-    }, 2000);
-
-    return () => clearTimeout(timer);
+    if (bgVideoRef.current) {
+      bgVideoRef.current.currentTime = 16;
+      bgVideoRef.current.play().catch(err => {
+        console.log('Video autoplay:', err);
+      });
+      setVideoReady(true);
+    }
   }, []);
 
   return (
@@ -28,12 +24,13 @@ const HeroSection = ({ data }) => {
       <div className="absolute inset-0">
         <video
           ref={bgVideoRef}
+          autoPlay
+          loop
           muted
           playsInline
-          loop
           className="w-full h-full object-cover"
         >
-          <source src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/dit1nm17_Molly%20sabah%20go%CC%88zlerini%20ac%CC%A7t%C4%B1g%CC%86%C4%B1nda%2C%20yuvarlak%20go%CC%88vdesi%20gu%CC%88nes%CC%A7%20%C4%B1s%CC%A7%C4%B1g%CC%86%C4%B1n%C4%B1%20ku%CC%88c%CC%A7u%CC%88k%20bir%20lamba%20gibi%20yayd%C4%B1.%20Bir%20an%20durdu%E2%80%A6%20sonra%20kendi%20kendine%20hafiften%20say%C4%B1%20sayd%C4%B1%20%E2%80%9COne%E2%80%A6%20two%E2%80%A6%20three%E2%80%A6%20kalk%C4%B1yorum%21%E2%80%9D%20Yatakta%20minik%20bir%20s%20%282%29.mp4" type="video/mp4" />
+          <source src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/gthig3ye_woody%20and%20robo%20%284%29.mp4#t=16" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-black/35" />
       </div>
@@ -103,7 +100,7 @@ const HeroSection = ({ data }) => {
               autoPlay
               controls
               className="w-full h-full rounded-lg"
-              src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/dit1nm17_Molly%20sabah%20go%CC%88zlerini%20ac%CC%A7t%C4%B1g%CC%86%C4%B1nda%2C%20yuvarlak%20go%CC%88vdesi%20gu%CC%88nes%CC%A7%20%C4%B1s%CC%A7%C4%B1g%CC%86%C4%B1n%C4%B1%20ku%CC%88c%CC%A7u%CC%88k%20bir%20lamba%20gibi%20yayd%C4%B1.%20Bir%20an%20durdu%E2%80%A6%20sonra%20kendi%20kendine%20hafiften%20say%C4%B1%20sayd%C4%B1%20%E2%80%9COne%E2%80%A6%20two%E2%80%A6%20three%E2%80%A6%20kalk%C4%B1yorum%21%E2%80%9D%20Yatakta%20minik%20bir%20s%20%282%29.mp4"
+              src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/gthig3ye_woody%20and%20robo%20%284%29.mp4#t=16"
             />
           </div>
         </div>

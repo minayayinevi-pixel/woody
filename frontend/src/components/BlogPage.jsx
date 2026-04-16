@@ -157,30 +157,19 @@ const BlogPage = () => {
     <div className="min-h-screen bg-white">
       <Header data={siteData.header} />
 
-      {/* Hero Video Section */}
-      <section className="relative w-full h-[45vh] min-h-[350px] overflow-hidden mt-[72px]">
-        <div className="absolute inset-0">
-          <img src="https://images.squarespace-cdn.com/content/v1/60241cb68df65b530cd84d95/22305642-e101-4a60-a871-45a6a6d12d44/ember_stills_sdr_0154933.tiff-0.jpg" alt="Blog" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-black/50" />
-        </div>
-        <div className="relative z-10 flex flex-col items-center justify-center h-full text-white">
-          <h1 className="text-[40px] md:text-[60px] lg:text-[76px] font-bold tracking-[0.35em] text-center mb-6" style={{ fontFamily: "'Magic English', 'Fredoka', cursive", textShadow: '0 3px 20px rgba(0,0,0,0.4)' }}>
-            BLOG
-          </h1>
-          <button onClick={() => setShowVideo(true)} className="group w-[65px] h-[65px] rounded-full border-2 border-white/70 flex items-center justify-center transition-all duration-300 hover:border-white hover:scale-110 bg-transparent cursor-pointer">
-            <Play size={24} className="text-white/80 group-hover:text-white ml-1" fill="white" fillOpacity={0.8} />
-          </button>
-        </div>
-        <div className="absolute bottom-0 left-0 right-0 z-20">
-          <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full block" preserveAspectRatio="none">
-            {/* Pixar-Style: Yukarı doğru hafif oval */}
-            <path d="M0 60L0 40C360 10 720 10 1080 40C1260 52 1350 57 1440 60L1440 60L0 60Z" fill="#ffffff" />
-          </svg>
+      {/* Woody Blog Logo Section */}
+      <section className="relative w-full bg-white mt-[72px] py-12 md:py-16">
+        <div className="max-w-[600px] mx-auto px-6 flex items-center justify-center">
+          <img 
+            src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/tj4edcjq_ChatGPT%20Image%2016%20Nis%202026%2013_38_05.png" 
+            alt="Woody Blog" 
+            className="w-full max-w-[450px] object-contain"
+          />
         </div>
       </section>
 
       {/* Hero Content Section - Grid Based */}
-      <section className="w-full bg-white" style={{ paddingTop: '80px', paddingBottom: '80px' }}>
+      <section className="w-full bg-white" style={{ paddingTop: '40px', paddingBottom: '80px' }}>
         <div className="mx-auto px-6 md:px-20 lg:px-20" style={{ maxWidth: '1280px' }}>
           <div className="text-center">
             <h1 className="text-[32px] md:text-[42px] lg:text-[48px] font-bold text-[#0B1F3A] leading-tight mb-5">

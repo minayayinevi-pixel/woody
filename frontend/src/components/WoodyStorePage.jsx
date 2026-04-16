@@ -242,7 +242,7 @@ const WoodyStorePage = () => {
                         <button
                           onClick={(e) => {
                             e.stopPropagation();
-                            const message = `Merhaba fiyat teklifi almak istiyorum\n\nŞehir: \nöğrenci sayımız: \nokul adı: \n\nDijital katalog göndermisiniz lütfen`;
+                            const message = `Merhaba, okul setlerinizin fiyat bilgisi hakkında bilgi almak istiyorum.\n\nŞehir:\nOkul Adı:\nÖğrenci Sayısı:\nLütfen dijital kataloğunuzla birlikte fiyat teklifinizi iletebilir misiniz?`;
                             const whatsappUrl = `https://wa.me/905331570373?text=${encodeURIComponent(message)}`;
                             window.open(whatsappUrl, '_blank');
                           }}
