@@ -5,6 +5,7 @@ const WoodyUpdates = () => {
   const scrollContainerRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [showVideoModal, setShowVideoModal] = useState(false);
+  const [selectedVideoUrl, setSelectedVideoUrl] = useState('');
 
   const updates = [
     {
@@ -29,7 +30,8 @@ const WoodyUpdates = () => {
       id: 4,
       image: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/881wsvif_rekant.png',
       title: 'Okullar Mini Cambridge Kampüslerine Dönüşüyor',
-      description: "British Side iş ortaklığı ile okulları mini Cambridge kampüslerine dönüştürüyoruz."
+      description: "British Side iş ortaklığı ile okulları mini Cambridge kampüslerine dönüştürüyoruz.",
+      fitImage: true
     },
     {
       id: 5,
@@ -39,9 +41,9 @@ const WoodyUpdates = () => {
     },
     {
       id: 6,
-      image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=800&fit=crop',
-      title: 'Woody Academy Açıldı',
-      description: 'Mezuniyet sonrası devam programı başladı'
+      video: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/b69zuql4_Ads%C4%B1z%20%281080%20x%201350%20piksel%29%20kopyas%C4%B1%20kopyas%C4%B1%20%284%29.mp4',
+      title: "Artık Matbaby'deyiz",
+      description: 'Daha güçlü içerikler üretiyor, özgürce gelişiyoruz.'
     }
   ];
 
@@ -133,6 +135,7 @@ const WoodyUpdates = () => {
                 className="flex-shrink-0 w-[240px] md:w-[260px] snap-center transition-all duration-400 ease-out cursor-pointer"
                 onClick={() => {
                   if (update.video) {
+                    setSelectedVideoUrl(update.video);
                     setShowVideoModal(true);
                   } else {
                     scrollToCard(index);
@@ -164,11 +167,11 @@ const WoodyUpdates = () => {
                         </div>
                       </>
                     ) : (
-                      // Regular image
+                      // Regular image (object-cover or object-contain)
                       <img
                         src={update.image}
                         alt={update.title}
-                        className="absolute inset-0 w-full h-full object-cover"
+                        className={`absolute inset-0 w-full h-full ${update.fitImage ? 'object-contain bg-white' : 'object-cover'}`}
                         loading="lazy"
                       />
                     )}
@@ -218,7 +221,7 @@ const WoodyUpdates = () => {
             {/* Vertical Video Player */}
             <div className="relative w-full bg-black rounded-lg overflow-hidden" style={{ aspectRatio: '9/16' }}>
               <video
-                src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/543xrrqf_cambr%C4%B1dgr%20tan%C4%B1%C4%B1m.mp4"
+                src={selectedVideoUrl}
                 controls
                 autoPlay
                 className="w-full h-full object-contain"
