@@ -200,9 +200,9 @@ const WoodyStorePage = () => {
                 <button
                   onClick={() => {
                     const routes = {
-                      'okul-serisi': '/okul',
-                      'atolye': '/atolye',
-                      'ozel-ders': '/ev-ozel-ders'
+                      'okul-serisi': '/preschool',
+                      'atolye': '/workshop',
+                      'ozel-ders': '/home-tutor'
                     };
                     navigate(routes[category.id]);
                   }}
