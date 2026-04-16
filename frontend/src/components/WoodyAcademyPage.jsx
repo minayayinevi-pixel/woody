@@ -15,12 +15,12 @@ const WoodyAcademyPage = () => {
       <Header data={siteData.header} />
 
       {/* Hero Section - Woody Academy Logo */}
-      <section className="relative w-full h-[70vh] min-h-[550px] overflow-hidden mt-[72px] bg-white">
-        <div className="absolute inset-0 flex items-center justify-center">
+      <section className="relative w-full bg-white mt-[72px] py-12 md:py-16">
+        <div className="max-w-[600px] mx-auto px-6 flex items-center justify-center">
           <img 
             src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/uqaprkim_6.png" 
             alt="Woody Academy" 
-            className="w-[500px] md:w-[600px] lg:w-[700px] object-contain"
+            className="w-full max-w-[450px] object-contain"
           />
         </div>
         
