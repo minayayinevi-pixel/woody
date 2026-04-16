@@ -9,29 +9,35 @@ const WoodyUpdates = () => {
     {
       id: 1,
       image: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/q3w780z7_1.png',
-      title: "Woody artık Almanya'daki anaokullarında",
-      description: "Woody İngilizce eğitim setleri Almanya'da kullanılmaya başlandı"
+      title: "Almanya Genelinde Anlaşma İmzalandı",
+      description: "Don Bosco Medien, kitap dağıtım ve pazarlama ağı ile Almanya genelinde Woody ve Arkadaşları'na ait tüm içeriklerin kullanım ve satış haklarını kapsayan anlaşma imzalandı."
     },
     {
       id: 2,
       image: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/796xqghe_2.png',
-      title: "Woody artık Rusya'daki anaokullarında",
-      description: "Woody İngilizce eğitim setleri Rusya'da kullanılmaya başlandı"
+      title: "Rusya Genelinde Anlaşma İmzalandı",
+      description: "Prosveshcheniye Publishers ile Rusya genelinde Woody ve Arkadaşları'na ait tüm içeriklerin kullanım ve satış haklarını kapsayan anlaşma imzalandı."
     },
     {
       id: 3,
-      image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=800&fit=crop',
-      title: 'Cambridge Sertifika Programı',
-      description: 'Uluslararası geçerliliğe sahip sertifika'
+      image: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/xmex01in_Woody%20%287%29.png',
+      title: 'Cambridge Sertifikasyon Süreci Başlatıldı',
+      description: "British Side iş ortaklığıyla Cambridge sertifikasyon süreci resmi olarak başlatılmıştır."
     },
     {
       id: 4,
+      image: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/881wsvif_rekant.png',
+      title: 'Okullar Mini Cambridge Kampüslerine Dönüşüyor',
+      description: "British Side iş ortaklığı ile okulları mini Cambridge kampüslerine dönüştürüyoruz."
+    },
+    {
+      id: 5,
       image: 'https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=600&h=800&fit=crop',
       title: 'Dijital İçerikler Güncellendi',
       description: 'Yeni hikayeler ve aktiviteler eklendi'
     },
     {
-      id: 5,
+      id: 6,
       image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=800&fit=crop',
       title: 'Woody Academy Açıldı',
       description: 'Mezuniyet sonrası devam programı başladı'
@@ -131,10 +137,10 @@ const WoodyUpdates = () => {
                   zIndex: isActive ? 10 : 1
                 }}
               >
-                {/* Card - Portrait Format (Vertical Rectangle) */}
+                {/* Card - Vertical Portrait Format (NOT SQUARE) */}
                 <div className="bg-white rounded-2xl overflow-hidden shadow-lg h-full flex flex-col">
-                  {/* Image - Strict 4:3 ratio */}
-                  <div className="relative w-full" style={{ paddingBottom: '75%' }}>
+                  {/* Image - Portrait ratio (taller than square) */}
+                  <div className="relative w-full" style={{ paddingBottom: '133%' }}>
                     <img
                       src={update.image}
                       alt={update.title}
@@ -144,11 +150,11 @@ const WoodyUpdates = () => {
                   </div>
                   
                   {/* Content - Below image */}
-                  <div className="p-4 flex-1 flex flex-col justify-center">
-                    <h3 className="text-[14px] md:text-[15px] font-bold text-[#0B1F3A] mb-1.5 leading-tight line-clamp-2">
+                  <div className="p-4 flex-1 flex flex-col justify-start">
+                    <h3 className="text-[13px] md:text-[14px] font-bold text-[#0B1F3A] mb-1.5 leading-tight line-clamp-2">
                       {update.title}
                     </h3>
-                    <p className="text-[12px] md:text-[13px] text-gray-600 leading-relaxed line-clamp-2">
+                    <p className="text-[11px] md:text-[12px] text-gray-600 leading-relaxed line-clamp-3">
                       {update.description}
                     </p>
                   </div>
