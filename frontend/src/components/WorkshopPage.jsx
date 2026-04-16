@@ -216,7 +216,12 @@ const WorkshopPage = () => {
         <div className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center p-4">
           <button onClick={() => { setShowVideo(false); setActiveVideo(null); }} className="absolute top-6 right-6 text-white/80 hover:text-white transition-colors z-[110] bg-transparent border-none cursor-pointer"><X size={36} /></button>
           <div className="w-full max-w-[1000px] aspect-video">
-            <iframe src="https://player.vimeo.com/video/911713522?autoplay=1" width="100%" height="100%" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen title={activeVideo === 'student' ? p.studentSet : activeVideo === 'teacher' ? p.teacherSet : 'Preschool Series'} className="rounded-lg" />
+            <video 
+              src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/k458a8f5_1%20kopyas%C4%B1%20kopyas%C4%B1%20%28Video%29.mp4" 
+              controls 
+              autoPlay 
+              className="w-full h-full rounded-lg"
+            />
           </div>
         </div>
       )}
