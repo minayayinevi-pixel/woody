@@ -19,10 +19,11 @@ const PreschoolPage = () => {
   const heroVideoRef = React.useRef(null);
   const p = t.preschoolPage;
 
-  // Hero video 2 saniye sonra başlat
+  // Hero video 2 saniye sonra başlat ve 2. saniyeden oynat
   React.useEffect(() => {
     const timer = setTimeout(() => {
       if (heroVideoRef.current) {
+        heroVideoRef.current.currentTime = 2; // Video 2. saniyeden başlasın
         heroVideoRef.current.play().catch(err => {
           console.log('Video autoplay prevented:', err);
         });
@@ -76,7 +77,7 @@ const PreschoolPage = () => {
             loop
             className="w-full h-full object-cover"
           >
-            <source src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/4qardhdd_Molly%20sabah%20go%CC%88zlerini%20ac%CC%A7t%C4%B1g%CC%86%C4%B1nda%2C%20yuvarlak%20go%CC%88vdesi%20gu%CC%88nes%CC%A7%20%C4%B1s%CC%A7%C4%B1g%CC%86%C4%B1n%C4%B1%20ku%CC%88c%CC%A7u%CC%88k%20bir%20lamba%20gibi%20yayd%C4%B1.%20Bir%20an%20durdu%E2%80%A6%20sonra%20kendi%20kendine%20hafiften%20say%C4%B1%20sayd%C4%B1%20%E2%80%9COne%E2%80%A6%20two%E2%80%A6%20three%E2%80%A6%20kalk%C4%B1yorum%21%E2%80%9D%20Yatakta%20minik%20bir%20s%20%283%29.mp4" type="video/mp4" />
+            <source src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/km969fsu_Molly%20sabah%20go%CC%88zlerini%20ac%CC%A7t%C4%B1g%CC%86%C4%B1nda%2C%20yuvarlak%20go%CC%88vdesi%20gu%CC%88nes%CC%A7%20%C4%B1s%CC%A7%C4%B1g%CC%86%C4%B1n%C4%B1%20ku%CC%88c%CC%A7u%CC%88k%20bir%20lamba%20gibi%20yayd%C4%B1.%20Bir%20an%20durdu%E2%80%A6%20sonra%20kendi%20kendine%20hafiften%20say%C4%B1%20sayd%C4%B1%20%E2%80%9COne%E2%80%A6%20two%E2%80%A6%20three%E2%80%A6%20kalk%C4%B1yorum%21%E2%80%9D%20Yatakta%20minik%20bir%20s%20%282%29.mp4" type="video/mp4" />
             Tarayıcınız video oynatmayı desteklemiyor.
           </video>
           <div className="absolute inset-0 bg-black/50" />
