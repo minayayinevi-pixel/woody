@@ -15,7 +15,7 @@ const WoodyAcademyPage = () => {
       <Header data={siteData.header} />
 
       {/* Hero Section - Woody Academy Logo */}
-      <section className="relative w-full h-[70vh] min-h-[550px] overflow-hidden mt-[72px] bg-gradient-to-br from-[#F8F9FA] to-white">
+      <section className="relative w-full h-[70vh] min-h-[550px] overflow-hidden mt-[72px] bg-white">
         <div className="absolute inset-0 flex items-center justify-center">
           <img 
             src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/uqaprkim_6.png" 
@@ -47,8 +47,11 @@ const WoodyAcademyPage = () => {
         <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-20">
           
           <div className="text-center mb-12 md:mb-16">
+            <h3 className="text-[24px] md:text-[28px] font-semibold text-[#0B1F3A] mb-2">
+              Öğrenci
+            </h3>
             <h2 className="text-[32px] md:text-[42px] lg:text-[48px] font-bold text-[#0B1F3A] mb-4 leading-tight">
-              Öğrenci – Cambridge Sertifika Süreci
+              Cambridge Sertifika Süreci
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-[#3498DB] to-[#2ECC71] mx-auto"></div>
           </div>
@@ -120,26 +123,26 @@ const WoodyAcademyPage = () => {
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-8">
-                <div className="bg-gradient-to-br from-[#F0F9FF] to-white p-6 rounded-xl border border-[#3498DB]/20">
+                <div className="bg-white p-6 rounded-xl border border-[#3498DB]/20">
                   <span className="text-[#3498DB] text-2xl mb-3 block">✓</span>
                   <p className="text-[15px] text-gray-700 font-medium">Öğrenciye özel ilerleme sağlanır</p>
                 </div>
-                <div className="bg-gradient-to-br from-[#FFF9E6] to-white p-6 rounded-xl border border-[#FFB800]/20">
+                <div className="bg-white p-6 rounded-xl border border-[#FFB800]/20">
                   <span className="text-[#FFB800] text-2xl mb-3 block">✓</span>
                   <p className="text-[15px] text-gray-700 font-medium">Eksik alanlar hızlı şekilde tamamlanır</p>
                 </div>
-                <div className="bg-gradient-to-br from-[#F0FFF4] to-white p-6 rounded-xl border border-[#2ECC71]/20">
+                <div className="bg-white p-6 rounded-xl border border-[#2ECC71]/20">
                   <span className="text-[#2ECC71] text-2xl mb-3 block">✓</span>
                   <p className="text-[15px] text-gray-700 font-medium">Aktif katılım ve konuşma pratiği artar</p>
                 </div>
-                <div className="bg-gradient-to-br from-[#FFF5F5] to-white p-6 rounded-xl border border-[#E74C3C]/20">
+                <div className="bg-white p-6 rounded-xl border border-[#E74C3C]/20">
                   <span className="text-[#E74C3C] text-2xl mb-3 block">✓</span>
                   <p className="text-[15px] text-gray-700 font-medium">Öğrenme süreci bireyselleştirilir</p>
                 </div>
               </div>
             </div>
 
-            <div className="max-w-[1000px] mx-auto bg-gradient-to-br from-[#F8F9FA] to-white p-8 md:p-12 rounded-2xl border border-gray-100 shadow-sm">
+            <div className="max-w-[1000px] mx-auto bg-white p-8 md:p-12 rounded-2xl border border-gray-100 shadow-sm">
               <h3 className="text-[24px] md:text-[28px] font-bold text-[#0B1F3A] mb-5 text-center">
                 Sertifika Süreci
               </h3>
@@ -283,7 +286,7 @@ const WoodyAcademyPage = () => {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-[#FFF9E6] to-white p-8 md:p-10 rounded-2xl border border-[#FFB800]/30 shadow-sm">
+            <div className="bg-white p-8 md:p-10 rounded-2xl border border-[#FFB800]/30 shadow-sm">
               <p className="text-[16px] md:text-[17px] text-gray-800 leading-relaxed text-center">
                 <strong className="text-[#0B1F3A]">Sonuç:</strong> Woody Academy öğretmen programı, kurum içindeki tüm öğretmenleri sistemli bir gelişim sürecine dahil eder ve bu süreci uluslararası geçerliliğe sahip Cambridge TKT sertifikası ile destekler.
               </p>
