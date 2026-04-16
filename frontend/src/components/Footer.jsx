@@ -75,6 +75,48 @@ const Footer = ({ data }) => {
 
         </div>
 
+        {/* WOODY ACADEMY CAREER CTA - Premium, Minimal */}
+        <div className="mb-12 mt-8">
+          <div className="bg-white rounded-xl p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            {/* Left: Text Content */}
+            <div className="flex-1">
+              <h3 className="text-[20px] md:text-[24px] font-bold text-[#0B1F3A] mb-2">
+                Woody Academy Kariyer
+              </h3>
+              <p className="text-[14px] md:text-[15px] text-[#0B1F3A] font-medium mb-1">
+                Öğretmen Başvurusu
+              </p>
+              <p className="text-[13px] md:text-[14px] text-gray-600">
+                Woody Academy ailesine katıl.
+              </p>
+            </div>
+
+            {/* Right: Subtle CTA Link */}
+            <a
+              href="https://wa.me/905331570373?text=Merhaba%2C%20Woody%20Academy%20%C3%B6%C4%9Fretmen%20ba%C5%9Fvurusu%20yapmak%20istiyorum."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-2 text-[14px] md:text-[15px] font-medium text-[#0B1F3A] px-6 py-3 rounded-lg transition-all duration-300 hover:bg-gray-50 hover:border-gray-200 border border-transparent no-underline"
+            >
+              <span>Başvur</span>
+              <svg 
+                width="16" 
+                height="16" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                stroke="currentColor" 
+                strokeWidth="2" 
+                strokeLinecap="round" 
+                strokeLinejoin="round"
+                className="transition-transform duration-300 group-hover:translate-x-1"
+              >
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+
         {/* ALT ÇİZGİ - OPACITY %40 */}
         <div className="w-full h-[1px] mb-6" style={{ backgroundColor: 'rgba(255, 255, 255, 0.4)' }} />
 
