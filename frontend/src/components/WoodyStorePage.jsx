@@ -187,8 +187,8 @@ const WoodyStorePage = () => {
           <div className="max-w-[900px] mx-auto px-4 md:px-8">
             {/* Category Header with "Seriye Git" Button */}
             <div className="mb-6">
-              {/* Title + Button Row */}
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-3">
+              {/* Title + Button Row - Always on same line */}
+              <div className="flex items-center gap-3 mb-3">
                 <h2 
                   className="text-[24px] md:text-[28px] font-bold text-gray-900"
                   style={{ lineHeight: '1.2' }}
@@ -196,22 +196,26 @@ const WoodyStorePage = () => {
                   {category.name}
                 </h2>
                 
-                {/* "Seriye Git" Button - Same height as title */}
+                {/* "Seriye Git" Button - Navigate to pages */}
                 <button
                   onClick={() => {
-                    const element = document.getElementById(category.id);
-                    element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    const routes = {
+                      'okul-serisi': '/okul',
+                      'atolye': '/atolye',
+                      'ozel-ders': '/ev-ozel-ders'
+                    };
+                    navigate(routes[category.id]);
                   }}
-                  className="flex items-center gap-2 px-4 py-2 bg-white rounded-[14px] transition-all duration-200 hover:shadow-md border border-gray-200"
+                  className="flex items-center gap-1.5 px-3 py-1.5 bg-white rounded-[12px] transition-all duration-200 hover:shadow-md border border-gray-200 whitespace-nowrap"
                   style={{
                     height: 'fit-content',
                     color: categoryColors[category.id],
-                    fontSize: '14px',
+                    fontSize: '13px',
                     fontWeight: '600'
                   }}
                 >
                   Seriye Git
-                  <ChevronRight size={16} />
+                  <ChevronRight size={14} />
                 </button>
               </div>
 

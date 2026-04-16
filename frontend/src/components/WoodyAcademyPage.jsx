@@ -15,7 +15,7 @@ const WoodyAcademyPage = () => {
       <Header data={siteData.header} />
 
       {/* Hero Section - Woody Academy Logo */}
-      <section className="relative w-full bg-white mt-[72px] py-12 md:py-16">
+      <section className="relative w-full bg-white mt-[72px] py-8 md:py-10">
         <div className="max-w-[600px] mx-auto px-6 flex items-center justify-center">
           <img 
             src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/uqaprkim_6.png" 
@@ -23,16 +23,10 @@ const WoodyAcademyPage = () => {
             className="w-full max-w-[450px] object-contain"
           />
         </div>
-        
-        <div className="absolute bottom-0 left-0 right-0 z-20">
-          <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full block" preserveAspectRatio="none">
-            <path d="M0 60L0 40C360 10 720 10 1080 40C1260 52 1350 57 1440 60L1440 60L0 60Z" fill="#ffffff" />
-          </svg>
-        </div>
       </section>
 
       {/* Back Button */}
-      <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-20 pt-8">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-20 pt-4">
         <button
           onClick={() => navigate('/')}
           className="flex items-center gap-2 text-gray-600 hover:text-black transition-colors duration-300 text-[13px] tracking-wide font-medium"
@@ -43,7 +37,7 @@ const WoodyAcademyPage = () => {
       </div>
 
       {/* Section 1: Student Cambridge Program */}
-      <section className="w-full bg-white py-16 md:py-24">
+      <section className="w-full bg-white py-10 md:py-14">
         <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-20">
           
           <div className="text-center mb-12 md:mb-16">
