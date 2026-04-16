@@ -149,12 +149,13 @@ const WoodyUpdates = () => {
                   {/* Image/Video - Portrait ratio */}
                   <div className="relative w-full" style={{ paddingBottom: '133%' }}>
                     {update.video ? (
-                      // Video thumbnail with play button
+                      // Vertical video thumbnail with play button
                       <>
                         <video
                           src={update.video}
-                          className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+                          className="absolute inset-0 w-full h-full object-contain bg-gray-100"
                           muted
+                          playsInline
                         />
                         <div className="absolute inset-0 flex items-center justify-center bg-black/30">
                           <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center">
@@ -205,7 +206,7 @@ const WoodyUpdates = () => {
       {/* Video Modal */}
       {showVideoModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4" onClick={() => setShowVideoModal(false)}>
-          <div className="relative w-full max-w-5xl" onClick={(e) => e.stopPropagation()}>
+          <div className="relative w-full max-w-xl" onClick={(e) => e.stopPropagation()}>
             {/* Close Button */}
             <button
               onClick={() => setShowVideoModal(false)}
@@ -214,13 +215,15 @@ const WoodyUpdates = () => {
               <X size={32} />
             </button>
 
-            {/* Video Player */}
-            <video
-              src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/543xrrqf_cambr%C4%B1dgr%20tan%C4%B1%C4%B1m.mp4"
-              controls
-              autoPlay
-              className="w-full rounded-lg shadow-2xl"
-            />
+            {/* Vertical Video Player */}
+            <div className="relative w-full bg-black rounded-lg overflow-hidden" style={{ aspectRatio: '9/16' }}>
+              <video
+                src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/543xrrqf_cambr%C4%B1dgr%20tan%C4%B1%C4%B1m.mp4"
+                controls
+                autoPlay
+                className="w-full h-full object-contain"
+              />
+            </div>
           </div>
         </div>
       )}
