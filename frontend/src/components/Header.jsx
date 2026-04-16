@@ -89,11 +89,15 @@ const Header = ({ data }) => {
                   if (item.href.startsWith('/')) {
                     e.preventDefault();
                     navigate(item.href);
+                  } else if (item.href === '#' && item.label === t.nav.academy) {
+                    e.preventDefault();
+                    navigate('/woody-academy');
                   }
                 }}
                 className={`text-[11px] lg:text-[12px] tracking-[0.15em] font-medium no-underline transition-colors duration-300 cursor-pointer whitespace-nowrap ${
                   (item.href === '/preschool' && window.location.pathname === '/preschool') ||
-                  (item.href === '/' && window.location.pathname === '/')
+                  (item.href === '/' && window.location.pathname === '/') ||
+                  (item.label === t.nav.academy && window.location.pathname === '/woody-academy')
                     ? 'text-black border-b-2 border-black pb-1'
                     : 'text-gray-600 hover:text-black'
                 }`}
@@ -179,6 +183,9 @@ const Header = ({ data }) => {
                 if (item.href.startsWith('/')) {
                   e.preventDefault();
                   navigate(item.href);
+                } else if (item.href === '#' && item.label === t.nav.academy) {
+                  e.preventDefault();
+                  navigate('/woody-academy');
                 }
                 setMobileMenuOpen(false);
               }}
