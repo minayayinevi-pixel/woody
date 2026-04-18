@@ -46,23 +46,9 @@ const HeroSection = ({ data }) => {
       {/* Hero Content */}
       <div className="relative z-10 text-center px-6">
         {/* Title */}
-        <h1 className="text-[48px] md:text-[64px] lg:text-[80px] text-white leading-[1.1] tracking-wide mb-6" style={{ textShadow: '2px 4px 12px rgba(0,0,0,0.4)', fontFamily: "'Fredoka', 'Inter', sans-serif", fontWeight: '700', animation: 'fadeInUp 1s ease-out' }}>
-          Welcome to Woody World
+        <h1 className="text-[48px] md:text-[64px] lg:text-[80px] text-white leading-[1.1] tracking-wide" style={{ textShadow: '2px 4px 12px rgba(0,0,0,0.4)', fontFamily: "'Fredoka', 'Inter', sans-serif", fontWeight: '700', animation: 'fadeInUp 1s ease-out' }}>
+          hello
         </h1>
-
-        {/* Play Button */}
-        <button
-          onClick={() => setShowVideo(true)}
-          className="group relative w-[70px] h-[70px] md:w-[90px] md:h-[90px] rounded-full border-2 border-white/70 flex items-center justify-center mb-4 transition-all duration-300 hover:border-white hover:scale-110 bg-transparent cursor-pointer"
-          style={{ animation: 'fadeInUp 1.2s ease-out', margin: '0 auto' }}
-        >
-          <Play size={28} className="text-white/80 group-hover:text-white ml-1 transition-colors duration-300" fill="white" fillOpacity={0.8} />
-        </button>
-
-        {/* Subtitle - TÜRKÇE */}
-        <p className="text-[14px] md:text-[16px] text-white/90 tracking-wide max-w-[700px] mx-auto" style={{ animation: 'fadeInUp 1.4s ease-out' }}>
-          Türkiye'de ilk kez oyun tabanlı, fiziksel ve dijital içerikleri bir araya getiren karakter temelli İngilizce eğitim sistemi.
-        </p>
       </div>
 
       {/* Curved Divider with Metallic/Glass Effect - ESKİ HAL */}
