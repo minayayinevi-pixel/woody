@@ -38,17 +38,30 @@ const HeroSection = ({ data }) => {
           className="w-full h-full object-cover"
           style={{ opacity: 1 }}
         >
-          <source src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/gthig3ye_woody%20and%20robo%20%284%29.mp4#t=16" type="video/mp4" />
+          <source src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/fra6h6h1_1%20kopyas%C4%B1%20kopyas%C4%B1%20%28Video%29%20%281%29.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-black/35" />
       </div>
 
       {/* Hero Content */}
-      <div className="relative z-10 text-center px-6">
+      <div className="relative z-10 text-center px-6 flex flex-col items-center justify-center">
         {/* Title */}
-        <h1 className="text-[48px] md:text-[64px] lg:text-[80px] text-white leading-[1.1] tracking-wide" style={{ textShadow: '2px 4px 12px rgba(0,0,0,0.4)', fontFamily: "'Fredoka', 'Inter', sans-serif", fontWeight: '700', animation: 'fadeInUp 1s ease-out' }}>
+        <h1 className="text-[48px] md:text-[64px] lg:text-[80px] text-white leading-[1.1] tracking-wide mb-6" style={{ textShadow: '2px 4px 12px rgba(0,0,0,0.4)', fontFamily: "'Fredoka', 'Inter', sans-serif", fontWeight: '700', animation: 'fadeInUp 1s ease-out' }}>
           Welcome To Woody World
         </h1>
+        
+        {/* Play Button */}
+        <button 
+          onClick={() => setShowVideo(true)}
+          className="group w-[70px] h-[70px] rounded-full border-2 border-white/70 flex items-center justify-center transition-all duration-300 hover:border-white hover:scale-110 bg-transparent cursor-pointer mb-6"
+        >
+          <Play size={26} className="text-white/80 group-hover:text-white ml-1" fill="white" fillOpacity={0.8} />
+        </button>
+
+        {/* Description */}
+        <p className="text-base md:text-lg text-white/95 max-w-3xl leading-relaxed px-4" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.7)' }}>
+          Woody, fiziksel materyalleri, İngilizce konuşan karakterleri, dijital içerikleri ve Cambridge yaklaşımını tek sistemde bir araya getiren okul öncesi İngilizce eğitim modelidir.
+        </p>
       </div>
 
       {/* Curved Divider with Metallic/Glass Effect - ESKİ HAL */}
@@ -94,7 +107,7 @@ const HeroSection = ({ data }) => {
               autoPlay
               controls
               className="w-full h-full rounded-lg"
-              src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/gthig3ye_woody%20and%20robo%20%284%29.mp4#t=16"
+              src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/fra6h6h1_1%20kopyas%C4%B1%20kopyas%C4%B1%20%28Video%29%20%281%29.mp4"
             />
           </div>
         </div>

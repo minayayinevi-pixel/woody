@@ -119,7 +119,7 @@ const BlogDetailPage = () => {
               Seviye Testi Yap
             </button>
             <button
-              onClick={() => navigate('/okul')}
+              onClick={() => navigate('/preschool')}
               className="bg-white hover:bg-gray-50 text-gray-900 font-bold px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-orange-500"
             >
               Eğitim Setlerini İncele
