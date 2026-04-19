@@ -38,7 +38,7 @@ const HeroSection = ({ data }) => {
           className="w-full h-full object-cover"
           style={{ opacity: 1 }}
         >
-          <source src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/fra6h6h1_1%20kopyas%C4%B1%20kopyas%C4%B1%20%28Video%29%20%281%29.mp4" type="video/mp4" />
+          <source src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/gthig3ye_woody%20and%20robo%20%284%29.mp4#t=16" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-black/35" />
       </div>
@@ -107,7 +107,7 @@ const HeroSection = ({ data }) => {
               autoPlay
               controls
               className="w-full h-full rounded-lg"
-              src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/fra6h6h1_1%20kopyas%C4%B1%20kopyas%C4%B1%20%28Video%29%20%281%29.mp4"
+              src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/gthig3ye_woody%20and%20robo%20%284%29.mp4#t=16"
             />
           </div>
         </div>
