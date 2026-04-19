@@ -47,7 +47,7 @@ const HeroSection = ({ data }) => {
       <div className="relative z-10 text-center px-6">
         {/* Title */}
         <h1 className="text-[48px] md:text-[64px] lg:text-[80px] text-white leading-[1.1] tracking-wide" style={{ textShadow: '2px 4px 12px rgba(0,0,0,0.4)', fontFamily: "'Fredoka', 'Inter', sans-serif", fontWeight: '700', animation: 'fadeInUp 1s ease-out' }}>
-          hello
+          Welcome To Woody World
         </h1>
       </div>
 
