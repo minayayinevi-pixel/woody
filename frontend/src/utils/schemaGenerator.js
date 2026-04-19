@@ -55,7 +55,7 @@ export const generateWebSiteSchema = (customData = {}) => {
     '@type': 'WebSite',
     name: customData.name || SITE_CONFIG.name,
     url: customData.url || SITE_CONFIG.url,
-    description: customData.description || SITE_CONFIG.description,
+    description: customData.description || 'Anaokulu İngilizce eğitim seti, preschool English curriculum, oyunlar, şarkılar ve aktiviteler ile eğitim sistemi.',
     publisher: {
       '@type': 'Organization',
       name: SITE_CONFIG.name,
