@@ -6,14 +6,14 @@ import SEO from './SEO';
 import { generateWebPageSchema, generateBreadcrumbSchema } from '../utils/schemaGenerator';
 import { useLanguage } from '../context/LanguageContext';
 
-// 16 Blog Posts Data
+// 16 Blog Posts Data - GÜNCEL GÖRSELLER
 const blogPosts = [
   {
     id: 1,
     title: 'Anaokulu İngilizce Ders Planı Nasıl Hazırlanır?',
     subtitle: '(2026 Güncel Rehber)',
     excerpt: 'Etkili bir anaokulu İngilizce ders planı hazırlamak için adım adım rehber. Oyun temelli aktiviteler ve Cambridge sistemine uyumlu plan örnekleri.',
-    image: 'https://images.unsplash.com/photo-1653276055789-26fdc328680f?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1560785496-321917f24016?w=800&q=80',
     slug: 'anaokulu-ingilizce-ders-plani-nasil-hazirlanir',
     category: 'Ders Planı'
   },
@@ -22,7 +22,7 @@ const blogPosts = [
     title: 'Hazır İngilizce Eğitim Seti Nedir?',
     subtitle: 'Anaokulları İçin En Doğru Seçim',
     excerpt: 'Hazır İngilizce eğitim setlerinin avantajları, içeriği ve okul öncesi eğitimde nasıl kullanıldığı hakkında kapsamlı bilgiler.',
-    image: 'https://images.pexels.com/photos/8499635/pexels-photo-8499635.jpeg?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1632479826567-2ba50e9abb66?w=800&q=80',
     slug: 'hazir-ingilizce-egitim-seti-nedir',
     category: 'Eğitim Setleri'
   },
@@ -31,7 +31,7 @@ const blogPosts = [
     title: 'En İyi Anaokulu İngilizce Eğitim Sistemi Nasıl Olmalı?',
     subtitle: '(Karşılaştırmalı Rehber)',
     excerpt: 'Farklı anaokulu İngilizce sistemlerinin karşılaştırması, oyun temelli öğrenme ve Cambridge hazırlık programlarının detaylı analizi.',
-    image: 'https://images.pexels.com/photos/8422126/pexels-photo-8422126.jpeg?w=800&q=80',
+    image: 'https://images.pexels.com/photos/8087867/pexels-photo-8087867.jpeg?w=800&q=80',
     slug: 'en-iyi-anaokulu-ingilizce-egitim-sistemi',
     category: 'Eğitim Sistemleri'
   },
@@ -40,7 +40,7 @@ const blogPosts = [
     title: 'Anaokulu İçin İngilizce Programı Nasıl Olmalı?',
     subtitle: '(Adım Adım Plan)',
     excerpt: '3-6 yaş grubu için ideal İngilizce programı hazırlama kılavuzu. Haftalık planlama, aktivite önerileri ve değerlendirme yöntemleri.',
-    image: 'https://images.unsplash.com/photo-1676276374882-d4bcf1c06c1a?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1761604478724-13fe879468cf?w=800&q=80',
     slug: 'anaokulu-icin-ingilizce-programi-nasil-olmali',
     category: 'Program Planlama'
   },
@@ -49,7 +49,7 @@ const blogPosts = [
     title: 'Cambridge Hazırlık Anaokulu Nedir?',
     subtitle: 'Okullar İçin Büyük Avantaj',
     excerpt: 'Cambridge hazırlık sistemi ile anaokulu eğitimi, uluslararası standartlar ve çocukların dil gelişimindeki olumlu etkileri.',
-    image: 'https://images.pexels.com/photos/8087867/pexels-photo-8087867.jpeg?w=800&q=80',
+    image: 'https://images.pexels.com/photos/30450314/pexels-photo-30450314.jpeg?w=800&q=80',
     slug: 'cambridge-hazirlik-anaokulu-nedir',
     category: 'Cambridge Sistemi'
   },
@@ -58,7 +58,7 @@ const blogPosts = [
     title: 'Preschool English Program Turkey',
     subtitle: 'En Etkili Sistem Hangisi?',
     excerpt: 'Türkiye\'de okul öncesi İngilizce programları, uluslararası standartlar ve en etkili öğretim yöntemlerinin karşılaştırmalı analizi.',
-    image: 'https://images.unsplash.com/photo-1675114230983-490bd89a610b?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1633219664515-2441564d0cc4?w=800&q=80',
     slug: 'preschool-english-program-turkey',
     category: 'Programlar'
   },
@@ -67,7 +67,7 @@ const blogPosts = [
     title: 'Anaokulu İngilizce Eğitim Seti Nasıl Seçilir?',
     subtitle: '(Detaylı Rehber)',
     excerpt: 'Anaokulu için doğru İngilizce eğitim setini seçerken dikkat edilmesi gerekenler, kalite kriterleri ve maliyet analizi.',
-    image: 'https://images.pexels.com/photos/6503002/pexels-photo-6503002.jpeg?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1550376026-33cbee34f79e?w=800&q=80',
     slug: 'anaokulu-ingilizce-egitim-seti-nasil-secilir',
     category: 'Eğitim Setleri'
   },
@@ -76,7 +76,7 @@ const blogPosts = [
     title: 'İngilizce Şarkılarla Eğitim',
     subtitle: 'Çocuklar İçin En Etkili Öğrenme Yolu',
     excerpt: 'Müzik ve şarkılar ile İngilizce öğretimi, hafıza geliştirme ve eğlenceli öğrenme yöntemlerinin bilimsel temelleri.',
-    image: 'https://images.unsplash.com/photo-1544772711-57da9c7368fa?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1564429238817-393bd4286b2d?w=800&q=80',
     slug: 'ingilizce-sarkilarla-egitim',
     category: 'Öğrenme Yöntemleri'
   },
@@ -85,7 +85,7 @@ const blogPosts = [
     title: 'Oyun Temelli İngilizce Eğitimi Neden Bu Kadar Etkili?',
     subtitle: '',
     excerpt: 'Oyun tabanlı öğrenmenin bilimsel araştırmalarla kanıtlanmış faydaları, pratik uygulama örnekleri ve başarı hikayeleri.',
-    image: 'https://images.pexels.com/photos/8535570/pexels-photo-8535570.jpeg?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1770096679916-2cd9c720d400?w=800&q=80',
     slug: 'oyun-temelli-ingilizce-egitimi-neden-etkili',
     category: 'Öğrenme Yöntemleri'
   },
@@ -94,7 +94,7 @@ const blogPosts = [
     title: 'Okul Öncesi İngilizce Öğrenme Yöntemleri',
     subtitle: '(Bilimsel ve Pratik Rehber)',
     excerpt: 'Bilimsel araştırmalara dayalı okul öncesi İngilizce öğretim teknikleri, yaş grubuna özel stratejiler ve uygulama örnekleri.',
-    image: 'https://images.unsplash.com/photo-1722962495841-15e26a09a787?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1587323655395-b1c77a12c89a?w=800&q=80',
     slug: 'okul-oncesi-ingilizce-ogrenme-yontemleri',
     category: 'Öğrenme Yöntemleri'
   },
@@ -112,7 +112,7 @@ const blogPosts = [
     title: 'Okul Öncesi İngilizce Eğitimi',
     subtitle: 'Doğru Sistem Nasıl Kurulur?',
     excerpt: 'Okulunuzda sıfırdan okul öncesi İngilizce eğitim sistemi kurma rehberi, adım adım planlama ve uygulama stratejileri.',
-    image: 'https://images.pexels.com/photos/7296382/pexels-photo-7296382.jpeg?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1567746455504-cb3213f8f5b8?w=800&q=80',
     slug: 'okul-oncesi-ingilizce-egitimi-dogru-sistem',
     category: 'Sistem Kurulumu'
   },
@@ -121,7 +121,7 @@ const blogPosts = [
     title: 'Anaokulu İngilizce Müfredatı Nasıl Hazırlanır?',
     subtitle: '(Eksiksiz Plan)',
     excerpt: 'Yıllık İngilizce müfredatı hazırlama, tema belirleme, kazanım oluşturma ve değerlendirme sistemi kurma rehberi.',
-    image: 'https://images.unsplash.com/photo-1725398927256-6a76c79226ae?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1722962495841-15e26a09a787?w=800&q=80',
     slug: 'anaokulu-ingilizce-mufredati-nasil-hazirlanir',
     category: 'Müfredat'
   },
@@ -130,7 +130,7 @@ const blogPosts = [
     title: 'Anaokulunda İngilizce Nasıl Öğretilir?',
     subtitle: '(En Etkili Yöntemler)',
     excerpt: 'Anaokullarında İngilizce öğretimi için en etkili yöntemler, sınıf yönetimi teknikleri ve motivasyon stratejileri.',
-    image: 'https://images.unsplash.com/photo-1725398925351-cd9b95c6e852?w=800&q=80',
+    image: 'https://images.pexels.com/photos/8923080/pexels-photo-8923080.jpeg?w=800&q=80',
     slug: 'anaokulunda-ingilizce-nasil-ogretilir',
     category: 'Öğretim Teknikleri'
   },
@@ -139,7 +139,7 @@ const blogPosts = [
     title: 'Anaokulu İngilizce Eğitim Sistemi Nedir?',
     subtitle: '(Tüm Detaylarıyla)',
     excerpt: 'Anaokulu İngilizce eğitim sisteminin bileşenleri, uygulama süreçleri, öğretmen eğitimi ve kalite standartları.',
-    image: 'https://images.pexels.com/photos/8499635/pexels-photo-8499635.jpeg?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1761208663763-c4d30657c910?w=800&q=80',
     slug: 'anaokulu-ingilizce-egitim-sistemi-nedir',
     category: 'Eğitim Sistemleri'
   },
@@ -154,47 +154,10 @@ const blogPosts = [
   }
 ];
 
-// FAQ Data
-const faqData = [
-  {
-    question: 'Anaokulu için en uygun İngilizce eğitim sistemi hangisidir?',
-    answer: 'Oyun temelli öğrenme yaklaşımını benimseyen, Cambridge hazırlık sistemi ile uyumlu, çocukların gelişim dönemine uygun aktiviteler sunan ve öğretmen-veli iş birliğini destekleyen sistemler en etkilidir. Woody Preschool gibi kapsamlı eğitim setleri bu kriterleri karşılar.'
-  },
-  {
-    question: '3-6 yaş arası çocuklara İngilizce öğretmek için hangi yöntemler kullanılmalı?',
-    answer: 'Bu yaş grubunda şarkılar, oyunlar, hikaye anlatımı, drama, sanat etkinlikleri ve hareket aktiviteleri en etkili yöntemlerdir. Çocukların dikkat süresi kısa olduğu için aktiviteler 10-15 dakika arasında tutulmalı ve sık sık değiştirilmelidir.'
-  },
-  {
-    question: 'Anaokulu İngilizce ders planı nasıl hazırlanır?',
-    answer: 'İyi bir ders planı hedef kazanımlar, yaş grubuna uygun aktiviteler, kullanılacak materyaller, süre planlaması ve değerlendirme kriterlerini içermelidir. Tema bazlı planlama ve haftalık/aylık program oluşturma önerilir.'
-  },
-  {
-    question: 'Cambridge hazırlık sistemi anaokulu için gerekli mi?',
-    answer: 'Zorunlu olmamakla birlikte, Cambridge sistemi uluslararası standartlara uygun eğitim, ölçülebilir kazanımlar ve dünya çapında tanınan sertifikalar sunar. Özellikle kaliteli eğitim hedefleyen kurumlar için büyük avantaj sağlar.'
-  },
-  {
-    question: 'Okul öncesi İngilizce eğitiminde velilerin rolü nedir?',
-    answer: 'Veliler evde İngilizce şarkı-video izletme, basit kelimelerle iletişim kurma ve okul tarafından verilen ödevleri destekleyerek sürecin önemli bir parçasıdır. Ancak baskı yapmadan, oyun ve eğlence odaklı yaklaşım önemlidir.'
-  },
-  {
-    question: 'Hazır İngilizce eğitim seti mi yoksa öğretmenin kendi materyalleri mi daha iyi?',
-    answer: 'Hazır eğitim setleri tutarlılık, kapsamlı içerik ve zaman tasarrufu sağlar. Ancak en iyisi hazır setleri temel alıp öğretmenin sınıfına özel uyarlamalar yapmasıdır. Hybrid yaklaşım en etkili sonucu verir.'
-  },
-  {
-    question: 'Anaokulu İngilizce müfredatında hangi temalar işlenmeli?',
-    answer: 'Renkler, sayılar, hayvanlar, aile, duygular, mevsimler, besinler, vücut, ulaşım araçları ve günlük rutinler gibi çocukların yaşamında sık karşılaştığı konular tercih edilmelidir.'
-  },
-  {
-    question: 'Oyun temelli İngilizce eğitiminin faydaları nelerdir?',
-    answer: 'Motivasyonu artırır, stresi azaltır, kalıcı öğrenme sağlar, sosyal becerileri geliştirir ve çocukların doğal öğrenme eğilimlerine uygun olarak eğlenceli bir ortamda dil edinimini destekler.'
-  }
-];
-
 const BlogPage = () => {
   const { language } = useLanguage();
   const [openFaq, setOpenFaq] = React.useState(null);
 
-  // Blog list schemas
   const schemas = [
     generateWebPageSchema({
       title: 'Blog | Okul Öncesi İngilizce Eğitimi ve Anaokulu İngilizce Ders Planı',
@@ -241,7 +204,7 @@ const BlogPage = () => {
         </div>
       </section>
 
-      {/* Blog Grid - 16 Posts */}
+      {/* Blog Grid */}
       <section className="py-12 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -251,7 +214,6 @@ const BlogPage = () => {
                 href={`/blog/${post.slug}`}
                 className="group block bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100"
               >
-                {/* Image */}
                 <div className="relative w-full h-48 overflow-hidden bg-gray-100">
                   <img
                     src={post.image}
@@ -264,8 +226,6 @@ const BlogPage = () => {
                     </div>
                   )}
                 </div>
-
-                {/* Content */}
                 <div className="p-5">
                   <h2 className="text-lg font-bold text-gray-900 mb-1 group-hover:text-orange-600 transition-colors duration-300 line-clamp-2">
                     {post.title}
@@ -278,8 +238,6 @@ const BlogPage = () => {
                   <p className="text-sm text-gray-600 leading-relaxed line-clamp-3 mb-4">
                     {post.excerpt}
                   </p>
-                  
-                  {/* Read More Link */}
                   <div className="flex items-center gap-2 text-orange-600 font-semibold text-sm group-hover:gap-3 transition-all duration-300">
                     <span>Devamını Oku</span>
                     <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
@@ -291,49 +249,16 @@ const BlogPage = () => {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-16 px-6 bg-gray-50">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12"style={{ fontFamily: "'Fredoka', 'Inter', sans-serif" }}>
-            Sık Sorulan Sorular
-          </h2>
-          
-          <div className="space-y-4">
-            {faqData.map((faq, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden"
-              >
-                <button
-                  onClick={() => toggleFaq(index)}
-                  className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors duration-200"
-                >
-                  <h3 className="text-lg font-semibold text-gray-900 pr-8">
-                    {faq.question}
-                  </h3>
-                  {openFaq === index ? (
-                    <ChevronUp className="flex-shrink-0 text-orange-600" size={24} />
-                  ) : (
-                    <ChevronDown className="flex-shrink-0 text-gray-400" size={24} />
-                  )}
-                </button>
-                
-                {openFaq === index && (
-                  <div className="px-6 pb-6">
-                    <p className="text-gray-600 leading-relaxed">
-                      {faq.answer}
-                    </p>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Woody-Specific FAQ */}
+      <WoodyFAQSection openFaq={openFaq} toggleFaq={toggleFaq} />
 
       <Footer />
     </div>
   );
 };
 
-export default BlogPage;
+const WoodyFAQSection = ({ openFaq, toggleFaq }) => {
+  const woodyFaqData = [
+    {
+      question: 'Anaokulu İngilizce eğitim seti neden gereklidir?',
+      problem: 'Anaokullarında en büyük sorun, İngilizce derslerinin öğretmene göre değişmesi ve standart bir sistemle ilerlememe
