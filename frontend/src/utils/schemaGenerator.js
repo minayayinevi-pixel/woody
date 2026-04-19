@@ -6,8 +6,8 @@
 const SITE_CONFIG = {
   name: 'Woody ve Arkadaşları',
   url: 'https://woodyvearkadaslari.com',
-  logo: 'https://woodyvearkadaslari.com/static/logo.png',
-  description: 'Anaokulu ve okul öncesi dönem için oyun temelli İngilizce eğitim sistemi',
+  logo: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/nkf2o7ln_Ads%C4%B1z%20%28Facebook%20Kapak%20Fotog%CC%86raf%C4%B1%29%20%286%29.png',
+  description: 'Anaokulu İngilizce eğitim seti, oyun temelli okul öncesi İngilizce eğitim seti ve 3-6 yaş çocuklara yönelik İngilizce içerikler sunan platform.',
   founder: 'Minaya Yayınevi',
   foundingDate: '2020',
   sameAs: [
