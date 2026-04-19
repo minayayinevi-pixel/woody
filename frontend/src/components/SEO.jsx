@@ -1,6 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { combineSchemas } from '../utils/schemaGenerator';
+import { combineSchemas, generateBreadcrumbSchema } from '../utils/schemaGenerator';
+import { getAutoBreadcrumb } from '../utils/breadcrumbGenerator';
 
 // Default SEO values
 const DEFAULT_SEO = {
@@ -45,7 +46,7 @@ const getCanonicalUrl = (path, baseUrl = DEFAULT_SEO.baseUrl) => {
 };
 
 /**
- * SEO Component - Global SEO Engine with JSON-LD Schema Support
+ * SEO Component - Global SEO Engine with JSON-LD Schema Support + Auto Breadcrumb
  * 
  * @param {string} title - Page title
  * @param {string} description - Meta description
@@ -55,7 +56,9 @@ const getCanonicalUrl = (path, baseUrl = DEFAULT_SEO.baseUrl) => {
  * @param {object|array} schema - JSON-LD structured data (single object or array)
  * @param {boolean} noindex - If true, adds noindex meta tag
  * @param {boolean} removeQueryParams - Auto-remove query params from canonical (default: true)
- * @param {array} breadcrumbs - Breadcrumb data for schema
+ * @param {array} breadcrumbs - Manual breadcrumb data for schema (optional, auto-generated if not provided)
+ * @param {boolean} autoBreadcrumb - Auto-generate breadcrumb from URL (default: true)
+ * @param {object} breadcrumbOptions - Options for auto breadcrumb generation
  */
 const SEO = ({
   title,
@@ -67,7 +70,9 @@ const SEO = ({
   noindex = false,
   keywords,
   removeQueryParams = true,
-  breadcrumbs
+  breadcrumbs,
+  autoBreadcrumb = true,
+  breadcrumbOptions = {}
 }) => {
   // Use defaults if not provided
   const finalTitle = title || DEFAULT_SEO.title;
@@ -93,8 +98,22 @@ const SEO = ({
     ? finalImage 
     : `${DEFAULT_SEO.baseUrl}${finalImage}`;
 
-  // Combine and deduplicate schemas
-  const allSchemas = schema ? combineSchemas(schema) : [];
+  // Auto-generate breadcrumb if enabled and not manually provided
+  let breadcrumbSchema = null;
+  if (breadcrumbs) {
+    // Use manual breadcrumbs
+    breadcrumbSchema = generateBreadcrumbSchema(breadcrumbs);
+  } else if (autoBreadcrumb) {
+    // Auto-generate breadcrumbs from URL
+    const autoBreadcrumbs = getAutoBreadcrumb(breadcrumbOptions);
+    breadcrumbSchema = generateBreadcrumbSchema(autoBreadcrumbs);
+  }
+
+  // Combine all schemas (including breadcrumb)
+  const allSchemas = combineSchemas(
+    schema,
+    breadcrumbSchema
+  );
 
   return (
     <Helmet>
