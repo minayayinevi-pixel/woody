@@ -52,7 +52,7 @@ const HomeTutorPage = () => {
             autoPlay
             className="w-full h-full object-cover"
           >
-            <source src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/fra6h6h1_1%20kopyas%C4%B1%20kopyas%C4%B1%20%28Video%29%20%281%29.mp4" type="video/mp4" />
+            <source src="https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/iztyqa5u_Rexy%20and%20egg%20%284%29.mp4" type="video/mp4" />
             Tarayıcınız video oynatmayı desteklemiyor.
           </video>
           <div className="absolute inset-0 bg-black/50" />
