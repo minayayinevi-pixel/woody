@@ -57,13 +57,16 @@ const HomeTutorPage = () => {
           </video>
           <div className="absolute inset-0 bg-black/50" />
         </div>
-        <div className="relative z-10 flex flex-col items-center justify-center h-full text-white">
+        <div className="relative z-10 flex flex-col items-center justify-center h-full text-white px-4">
           <h1 className="text-[60px] md:text-[90px] lg:text-[120px] font-black tracking-[0.05em] text-center mb-6 leading-none" style={{ fontFamily: "'Magic English', 'Fredoka', cursive", textShadow: '0 4px 30px rgba(0,0,0,0.5)', letterSpacing: '0.1em' }}>
             HOME & TUTOR
           </h1>
-          <button onClick={() => { setActiveVideo('hero'); setShowVideo(true); }} className="group w-[70px] h-[70px] rounded-full border-2 border-white/70 flex items-center justify-center transition-all duration-300 hover:border-white hover:scale-110 bg-transparent cursor-pointer">
+          <button onClick={() => { setActiveVideo('hero'); setShowVideo(true); }} className="group w-[70px] h-[70px] rounded-full border-2 border-white/70 flex items-center justify-center transition-all duration-300 hover:border-white hover:scale-110 bg-transparent cursor-pointer mb-6">
             <Play size={26} className="text-white/80 group-hover:text-white ml-1" fill="white" fillOpacity={0.8} />
           </button>
+          <p className="text-base md:text-lg text-white/90 text-center max-w-2xl leading-relaxed" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.7)' }}>
+            {p.hero?.subtitle || "Evde veya okulda, çocuğunuzun İngilizce yolculuğuna güvenle başlayın. Woody ve arkadaşları ile eğlenceli ve etkili bir öğrenme deneyimi yaşayın."}
+          </p>
         </div>
         <div className="absolute bottom-0 left-0 right-0 z-20">
           <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full block" preserveAspectRatio="none">

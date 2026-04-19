@@ -16,6 +16,7 @@ import PreschoolPage from "./components/PreschoolPage";
 import WorkshopPage from "./components/WorkshopPage";
 import HomeTutorPage from "./components/HomeTutorPage";
 import BlogPage from "./components/BlogPage";
+import BlogDetailPage from "./components/BlogDetailPage";
 import LevelFinderPage from "./components/LevelFinderPage";
 import LibraryPage from "./components/LibraryPage";
 import WoodyStorePage from "./components/WoodyStorePage";
@@ -75,6 +76,7 @@ function App() {
               <Route path="/level-finder" element={<LevelFinderPage />} />
               <Route path="/library" element={<LibraryPage />} />
               <Route path="/blog" element={<BlogPage />} />
+              <Route path="/blog/:slug" element={<BlogDetailPage />} />
               <Route path="/store" element={<WoodyStorePage />} />
               <Route path="/digital-content" element={<DigitalContentPage />} />
               <Route path="/digital-content/:levelId/:sectionId" element={<DigitalContentDetailPage />} />
