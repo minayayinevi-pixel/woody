@@ -298,3 +298,30 @@ export const combineSchemas = (...schemas) => {
   
   return uniqueSchemas;
 };
+
+/**
+ * ARTICLE SCHEMA TEMPLATES
+ * Pre-configured article schemas for common blog posts
+ */
+
+// Template 1: Anaokulu İngilizce Nasıl Öğretilir
+export const ARTICLE_TEMPLATE_PRESCHOOL = {
+  title: 'Anaokulunda İngilizce Nasıl Öğretilir | Oyun Temelli Sistem',
+  description: 'Anaokulunda İngilizce öğretimi için oyunlar, şarkılar ve aktiviteler ile etkili eğitim modeli.',
+  url: 'https://woodyvearkadaslari.com/blog/anaokulunda-ingilizce-nasil-ogretilir',
+  image: 'https://woodyvearkadaslari.com/static/blog/preschool-english.jpg',
+  datePublished: new Date().toISOString(),
+  dateModified: new Date().toISOString(),
+  author: 'Woody ve Arkadaşları',
+  keywords: ['anaokulu ingilizce', 'okul öncesi eğitim', 'oyun temelli öğrenme', 'çocuklar için ingilizce']
+};
+
+/**
+ * Generate pre-configured article schema from template
+ */
+export const generateArticleFromTemplate = (template = ARTICLE_TEMPLATE_PRESCHOOL, customData = {}) => {
+  return generateArticleSchema({
+    ...template,
+    ...customData
+  });
+};
