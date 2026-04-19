@@ -7,7 +7,7 @@ const SITE_CONFIG = {
   name: 'Woody ve Arkadaşları',
   url: 'https://woodyvearkadaslari.com',
   logo: 'https://customer-assets.emergentagent.com/job_render-studio-49/artifacts/nkf2o7ln_Ads%C4%B1z%20%28Facebook%20Kapak%20Fotog%CC%86raf%C4%B1%29%20%286%29.png',
-  description: 'Anaokulu İngilizce eğitim seti, oyun temelli okul öncesi İngilizce eğitim seti ve 3-6 yaş çocuklara yönelik İngilizce içerikler sunan platform.',
+  description: 'Anaokulu İngilizce eğitim sistemi, oyun temelli okul öncesi İngilizce eğitim seti ve 3-6 yaş çocuklara yönelik preschool English curriculum. Cambridge hazırlık anaokulu programı ile çocuklar için İngilizce eğitimi.',
   founder: 'Minaya Yayınevi',
   foundingDate: '2020',
   sameAs: [
@@ -16,7 +16,7 @@ const SITE_CONFIG = {
     'https://www.youtube.com/@woodyvearkadslari',
   ],
   contactPoint: {
-    telephone: '+90-XXX-XXX-XXXX', // Gerçek telefonu ekleyin
+    telephone: '+90-XXX-XXX-XXXX',
     contactType: 'customer service',
     areaServed: 'TR',
     availableLanguage: ['Turkish', 'English']
@@ -55,7 +55,7 @@ export const generateWebSiteSchema = (customData = {}) => {
     '@type': 'WebSite',
     name: customData.name || SITE_CONFIG.name,
     url: customData.url || SITE_CONFIG.url,
-    description: customData.description || 'Anaokulu İngilizce eğitim seti, preschool English curriculum, oyunlar, şarkılar ve aktiviteler ile eğitim sistemi.',
+    description: customData.description || 'Anaokulu İngilizce eğitim seti, preschool English curriculum, İngilizce şarkılar ve oyunlarla eğitim sistemi. 4-5-6 yaş İngilizce eğitimi, anaokulu İngilizce müfredatı ve Cambridge hazırlık sistemi.',
     publisher: {
       '@type': 'Organization',
       name: SITE_CONFIG.name,
@@ -306,14 +306,14 @@ export const combineSchemas = (...schemas) => {
 
 // Template 1: Anaokulu İngilizce Nasıl Öğretilir
 export const ARTICLE_TEMPLATE_PRESCHOOL = {
-  title: 'Anaokulunda İngilizce Nasıl Öğretilir | Oyun Temelli Sistem',
-  description: 'Anaokulunda İngilizce öğretimi için oyunlar, şarkılar ve aktiviteler ile etkili eğitim modeli.',
+  title: 'Anaokulunda İngilizce Nasıl Öğretilir | Oyun Temelli Okul Öncesi İngilizce Eğitim Sistemi',
+  description: 'Okul öncesi İngilizce eğitimi için anaokulu İngilizce ders planı, 3-6 yaş İngilizce programı ve etkili eğitim modeli. Cambridge hazırlık sistemi ile çocuklar için İngilizce öğrenme yöntemleri.',
   url: 'https://woodyvearkadaslari.com/blog/anaokulunda-ingilizce-nasil-ogretilir',
   image: 'https://woodyvearkadaslari.com/static/blog/preschool-english.jpg',
   datePublished: new Date().toISOString(),
   dateModified: new Date().toISOString(),
   author: 'Woody ve Arkadaşları',
-  keywords: ['anaokulu ingilizce', 'okul öncesi eğitim', 'oyun temelli öğrenme', 'çocuklar için ingilizce']
+  keywords: ['anaokulu İngilizce eğitim sistemi', 'okul öncesi İngilizce eğitimi', 'oyun temelli okul öncesi İngilizce', 'çocuklar için İngilizce eğitimi', 'anaokulu İngilizce müfredatı', 'Cambridge hazırlık anaokulu', '3-6 yaş İngilizce programı', 'anaokulu İngilizce ders planı']
 };
 
 /**

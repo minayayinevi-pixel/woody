@@ -44,8 +44,8 @@ const BlogPage = () => {
   // Blog list schemas
   const schemas = [
     generateWebPageSchema({
-      title: 'Blog | Okul Öncesi İngilizce Eğitimi İpuçları - Woody ve Arkadaşları',
-      description: 'Anaokulu ve okul öncesi İngilizce eğitimi hakkında uzman tavsiyeleri',
+      title: 'Blog | Okul Öncesi İngilizce Eğitimi ve Anaokulu İngilizce Ders Planı',
+      description: 'Anaokulunda İngilizce nasıl öğretilir? Okul öncesi İngilizce öğrenme yöntemleri, anaokulu İngilizce müfredatı ve etkili eğitim modeli hakkında uzman tavsiyeleri.',
       url: 'https://woodyvearkadaslari.com/blog',
       image: 'https://woodyvearkadaslari.com/static/blog-cover.jpg'
     }),
@@ -58,10 +58,10 @@ const BlogPage = () => {
   return (
     <div className="min-h-screen bg-white">
       <SEO 
-        title="Blog | Okul Öncesi İngilizce Eğitimi İpuçları - Woody ve Arkadaşları"
-        description="Anaokulu ve okul öncesi İngilizce eğitimi hakkında uzman tavsiyeleri, öğretim teknikleri, oyun tabanlı öğrenme stratejileri ve daha fazlası."
+        title="Blog | Okul Öncesi İngilizce Eğitimi - Anaokulu İngilizce Ders Planı"
+        description="Anaokulu İngilizce eğitim sistemi, okul öncesi İngilizce öğrenme yöntemleri, 3-6 yaş İngilizce programı ve anaokulu İngilizce müfredatı hakkında uzman tavsiyeleri. Cambridge hazırlık sistemi ile etkili eğitim modeli."
         canonical="/blog"
-        keywords="okul öncesi ingilizce, anaokulu eğitimi, çocuk gelişimi, dil öğrenimi"
+        keywords="anaokulunda İngilizce nasıl öğretilir, okul öncesi İngilizce eğitimi, anaokulu İngilizce ders planı, 4-5-6 yaş İngilizce eğitimi, anaokulu İngilizce müfredatı, okul öncesi İngilizce öğrenme yöntemleri"
         schema={schemas}
       />
       <Header />

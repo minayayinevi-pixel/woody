@@ -65,10 +65,10 @@ const PreschoolPage = () => {
   return (
     <div className="min-h-screen bg-white">
       <SEO 
-        title="Woody Preschool | Okul Öncesi İngilizce Eğitim Seti"
-        description="Woody Preschool, 3-6 yaş arası çocuklar için oyun tabanlı İngilizce eğitim seti. Öğretmen ve öğrenci setleri, aktivite kitapları, şarkılar ve dijital içerikler."
+        title="Woody Preschool | Anaokulu İngilizce Eğitim Seti - Preschool English Program Turkey"
+        description="Woody Preschool anaokulu İngilizce eğitim seti, 3-6 yaş çocuklar için oyun temelli okul öncesi İngilizce programı. Cambridge hazırlık sistemi ile preschool English curriculum. Öğretmen ve öğrenci setleri, anaokulu İngilizce müfredatı ve ders planı."
         canonical="/preschool"
-        keywords="okul öncesi ingilizce, preschool ingilizce seti, anaokulu ingilizce, woody preschool"
+        keywords="anaokulu İngilizce eğitim seti, preschool English program Turkey, okul öncesi İngilizce seti, anaokulu için İngilizce programı, Cambridge hazırlık anaokulu, 3-6 yaş İngilizce programı, İngilizce eğitim serisi anaokulu"
       />
       {/* Header */}
       <Header data={siteData.header} />
