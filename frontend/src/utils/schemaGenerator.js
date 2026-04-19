@@ -317,10 +317,36 @@ export const ARTICLE_TEMPLATE_PRESCHOOL = {
 };
 
 /**
+ * VIDEO SCHEMA TEMPLATES
+ * Pre-configured video schemas for common video content
+ */
+
+// Template 1: İngilizce Şarkılar ve Oyunlarla Eğitim
+export const VIDEO_TEMPLATE_SONGS_GAMES = {
+  name: 'İngilizce Şarkılar ve Oyunlarla Eğitim',
+  description: 'Çocuklar için İngilizce eğitimi oyunlar ve şarkılar ile desteklenir.',
+  thumbnailUrl: 'https://woodyvearkadaslari.com/static/videos/songs-games-thumbnail.jpg',
+  uploadDate: new Date().toISOString(),
+  duration: 'PT5M30S', // 5 minutes 30 seconds
+  contentUrl: 'https://woodyvearkadaslari.com/static/videos/songs-games.mp4',
+  embedUrl: 'https://player.vimeo.com/video/123456789'
+};
+
+/**
  * Generate pre-configured article schema from template
  */
 export const generateArticleFromTemplate = (template = ARTICLE_TEMPLATE_PRESCHOOL, customData = {}) => {
   return generateArticleSchema({
+    ...template,
+    ...customData
+  });
+};
+
+/**
+ * Generate pre-configured video schema from template
+ */
+export const generateVideoFromTemplate = (template = VIDEO_TEMPLATE_SONGS_GAMES, customData = {}) => {
+  return generateVideoSchema({
     ...template,
     ...customData
   });
