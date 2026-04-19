@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import Header from './Header';
 import Footer from './Footer';
+import SEO from './SEO';
 import { useLanguage } from '../context/LanguageContext';
 
 // PLACEHOLDER DATA - İçerik sonra eklenecek
@@ -41,6 +42,12 @@ const BlogPage = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO 
+        title="Blog | Okul Öncesi İngilizce Eğitimi İpuçları - Woody ve Arkadaşları"
+        description="Anaokulu ve okul öncesi İngilizce eğitimi hakkında uzman tavsiyeleri, öğretim teknikleri, oyun tabanlı öğrenme stratejileri ve daha fazlası."
+        canonical="/blog"
+        keywords="okul öncesi ingilizce, anaokulu eğitimi, çocuk gelişimi, dil öğrenimi"
+      />
       <Header />
       
       {/* Hero Section */}
