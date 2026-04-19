@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Play, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import Footer from './Footer';
 import Header from './Header';
+import SEO from './SEO';
 import { siteData } from '../data/mock';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -63,6 +64,12 @@ const PreschoolPage = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO 
+        title="Woody Preschool | Okul Öncesi İngilizce Eğitim Seti"
+        description="Woody Preschool, 3-6 yaş arası çocuklar için oyun tabanlı İngilizce eğitim seti. Öğretmen ve öğrenci setleri, aktivite kitapları, şarkılar ve dijital içerikler."
+        canonical="/preschool"
+        keywords="okul öncesi ingilizce, preschool ingilizce seti, anaokulu ingilizce, woody preschool"
+      />
       {/* Header */}
       <Header data={siteData.header} />
 

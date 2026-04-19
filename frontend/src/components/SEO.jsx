@@ -14,7 +14,37 @@ const DEFAULT_SEO = {
 };
 
 /**
- * SEO Component - Global SEO Engine
+ * Generate clean canonical URL
+ * - Removes query parameters
+ * - Removes hash fragments
+ * - Normalizes trailing slashes
+ * - Ensures HTTPS
+ */
+const getCanonicalUrl = (path, baseUrl = DEFAULT_SEO.baseUrl) => {
+  // Remove query parameters and hash
+  let cleanPath = path.split('?')[0].split('#')[0];
+  
+  // Remove trailing slash (except for homepage)
+  if (cleanPath !== '/' && cleanPath.endsWith('/')) {
+    cleanPath = cleanPath.slice(0, -1);
+  }
+  
+  // Ensure path starts with /
+  if (!cleanPath.startsWith('/')) {
+    cleanPath = '/' + cleanPath;
+  }
+  
+  // Build full URL
+  const fullUrl = cleanPath.startsWith('http') 
+    ? cleanPath 
+    : `${baseUrl}${cleanPath}`;
+  
+  // Ensure HTTPS
+  return fullUrl.replace(/^http:/, 'https:');
+};
+
+/**
+ * SEO Component - Global SEO Engine with Canonical URL Support
  * 
  * @param {string} title - Page title (will be appended with site name if not full)
  * @param {string} description - Meta description
@@ -23,6 +53,7 @@ const DEFAULT_SEO = {
  * @param {string} type - OG type (website, article, etc.)
  * @param {object} schema - JSON-LD structured data (optional)
  * @param {boolean} noindex - If true, adds noindex meta tag
+ * @param {boolean} removeQueryParams - Auto-remove query params from canonical (default: true)
  */
 const SEO = ({
   title,
@@ -32,7 +63,8 @@ const SEO = ({
   type,
   schema,
   noindex = false,
-  keywords
+  keywords,
+  removeQueryParams = true
 }) => {
   // Use defaults if not provided
   const finalTitle = title || DEFAULT_SEO.title;
@@ -40,15 +72,17 @@ const SEO = ({
   const finalImage = image || DEFAULT_SEO.image;
   const finalType = type || DEFAULT_SEO.type;
   
-  // Build canonical URL
-  let finalCanonical = DEFAULT_SEO.baseUrl;
+  // Build clean canonical URL
+  let finalCanonical;
   if (canonical) {
-    finalCanonical = canonical.startsWith('http') 
-      ? canonical 
-      : `${DEFAULT_SEO.baseUrl}${canonical}`;
+    // User provided canonical
+    finalCanonical = getCanonicalUrl(canonical, DEFAULT_SEO.baseUrl);
   } else {
-    // Use current path
-    finalCanonical = `${DEFAULT_SEO.baseUrl}${window.location.pathname}`;
+    // Auto-generate from current path
+    const currentPath = removeQueryParams 
+      ? window.location.pathname 
+      : window.location.pathname + window.location.search;
+    finalCanonical = getCanonicalUrl(currentPath, DEFAULT_SEO.baseUrl);
   }
 
   // Ensure image is absolute URL
@@ -65,7 +99,7 @@ const SEO = ({
       <meta name="description" content={finalDescription} />
       {keywords && <meta name="keywords" content={keywords} />}
       
-      {/* Canonical */}
+      {/* Canonical - Self-referencing clean URL */}
       <link rel="canonical" href={finalCanonical} />
       
       {/* Robots */}
@@ -100,4 +134,4 @@ const SEO = ({
 };
 
 export default SEO;
-export { DEFAULT_SEO };
+export { DEFAULT_SEO, getCanonicalUrl };
