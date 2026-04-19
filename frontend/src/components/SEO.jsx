@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { combineSchemas } from '../utils/schemaGenerator';
 
 // Default SEO values
 const DEFAULT_SEO = {
@@ -44,16 +45,17 @@ const getCanonicalUrl = (path, baseUrl = DEFAULT_SEO.baseUrl) => {
 };
 
 /**
- * SEO Component - Global SEO Engine with Canonical URL Support
+ * SEO Component - Global SEO Engine with JSON-LD Schema Support
  * 
- * @param {string} title - Page title (will be appended with site name if not full)
+ * @param {string} title - Page title
  * @param {string} description - Meta description
  * @param {string} canonical - Canonical URL (relative or absolute)
  * @param {string} image - OG image URL
  * @param {string} type - OG type (website, article, etc.)
- * @param {object} schema - JSON-LD structured data (optional)
+ * @param {object|array} schema - JSON-LD structured data (single object or array)
  * @param {boolean} noindex - If true, adds noindex meta tag
  * @param {boolean} removeQueryParams - Auto-remove query params from canonical (default: true)
+ * @param {array} breadcrumbs - Breadcrumb data for schema
  */
 const SEO = ({
   title,
@@ -64,7 +66,8 @@ const SEO = ({
   schema,
   noindex = false,
   keywords,
-  removeQueryParams = true
+  removeQueryParams = true,
+  breadcrumbs
 }) => {
   // Use defaults if not provided
   const finalTitle = title || DEFAULT_SEO.title;
@@ -89,6 +92,9 @@ const SEO = ({
   const finalImageUrl = finalImage.startsWith('http') 
     ? finalImage 
     : `${DEFAULT_SEO.baseUrl}${finalImage}`;
+
+  // Combine and deduplicate schemas
+  const allSchemas = schema ? combineSchemas(schema) : [];
 
   return (
     <Helmet>
@@ -124,11 +130,11 @@ const SEO = ({
       )}
       
       {/* JSON-LD Structured Data */}
-      {schema && (
-        <script type="application/ld+json">
-          {JSON.stringify(schema)}
+      {allSchemas.map((schemaItem, index) => (
+        <script key={`schema-${index}`} type="application/ld+json">
+          {JSON.stringify(schemaItem)}
         </script>
-      )}
+      ))}
     </Helmet>
   );
 };

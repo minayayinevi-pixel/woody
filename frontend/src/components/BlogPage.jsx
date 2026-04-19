@@ -3,6 +3,7 @@ import { ArrowRight } from 'lucide-react';
 import Header from './Header';
 import Footer from './Footer';
 import SEO from './SEO';
+import { generateWebPageSchema, generateBreadcrumbSchema } from '../utils/schemaGenerator';
 import { useLanguage } from '../context/LanguageContext';
 
 // PLACEHOLDER DATA - İçerik sonra eklenecek
@@ -40,6 +41,20 @@ const blogCards = [
 const BlogPage = () => {
   const { language } = useLanguage();
 
+  // Blog list schemas
+  const schemas = [
+    generateWebPageSchema({
+      title: 'Blog | Okul Öncesi İngilizce Eğitimi İpuçları - Woody ve Arkadaşları',
+      description: 'Anaokulu ve okul öncesi İngilizce eğitimi hakkında uzman tavsiyeleri',
+      url: 'https://woodyvearkadaslari.com/blog',
+      image: 'https://woodyvearkadaslari.com/static/blog-cover.jpg'
+    }),
+    generateBreadcrumbSchema([
+      { name: 'Ana Sayfa', url: '/' },
+      { name: 'Blog', url: '/blog' }
+    ])
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       <SEO 
@@ -47,6 +62,7 @@ const BlogPage = () => {
         description="Anaokulu ve okul öncesi İngilizce eğitimi hakkında uzman tavsiyeleri, öğretim teknikleri, oyun tabanlı öğrenme stratejileri ve daha fazlası."
         canonical="/blog"
         keywords="okul öncesi ingilizce, anaokulu eğitimi, çocuk gelişimi, dil öğrenimi"
+        schema={schemas}
       />
       <Header />
       

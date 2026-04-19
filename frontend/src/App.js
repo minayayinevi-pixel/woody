@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from 'react-helmet-async';
 import { LanguageProvider } from "./context/LanguageContext";
 import SEO from "./components/SEO";
+import { generateOrganizationSchema, generateWebSiteSchema, generateBreadcrumbSchema } from "./utils/schemaGenerator";
 import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
 import CertificationSection from "./components/CertificationSection";
@@ -26,6 +27,15 @@ import StickyStoreButton from "./components/StickyStoreButton";
 import { siteData } from "./data/mock";
 
 const HomePage = () => {
+  // Homepage schemas: Organization + WebSite
+  const schemas = [
+    generateOrganizationSchema(),
+    generateWebSiteSchema(),
+    generateBreadcrumbSchema([
+      { name: 'Ana Sayfa', url: '/' }
+    ])
+  ];
+
   return (
     <>
       <SEO 
@@ -33,6 +43,7 @@ const HomePage = () => {
         description="Woody ve Arkadaşları, anaokulu ve okul öncesi dönem için oyun temelli İngilizce eğitim sistemi, öğretmen setleri, öğrenci setleri, şarkılar ve aktiviteler sunar."
         canonical="/"
         keywords="okul öncesi ingilizce, anaokulu ingilizce, çocuklar için ingilizce, woody preschool, oyun temelli eğitim"
+        schema={schemas}
       />
       <Header data={siteData.header} />
       <HeroSection data={siteData.hero} />
