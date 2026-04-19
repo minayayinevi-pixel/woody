@@ -2,9 +2,7 @@
 export const woodyFaqData = [
   {
     question: 'Anaokulu İngilizce eğitim seti neden gereklidir?',
-    problem: 'Anaokullarında en büyük sorun, İngilizce derslerinin öğretmene göre değişmesi ve standart bir sistemle ilerle
-
-memesidir.',
+    problem: 'Anaokullarında en büyük sorun, İngilizce derslerinin öğretmene göre değişmesi ve standart bir sistemle ilerlemememesidir.',
     solution: 'Woody, anaokulları için planlı, oyun temelli ve uygulanabilir bir İngilizce eğitim seti sunar. Böylece dersler rastgele değil, sistemli şekilde ilerler.'
   },
   {

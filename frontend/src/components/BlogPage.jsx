@@ -5,6 +5,7 @@ import Footer from './Footer';
 import SEO from './SEO';
 import { generateWebPageSchema, generateBreadcrumbSchema } from '../utils/schemaGenerator';
 import { useLanguage } from '../context/LanguageContext';
+import { woodyFaqData } from '../data/woodyFaq';
 
 // 16 Blog Posts Data - GÜNCEL GÖRSELLER
 const blogPosts = [
@@ -258,7 +259,85 @@ const BlogPage = () => {
 };
 
 const WoodyFAQSection = ({ openFaq, toggleFaq }) => {
-  const woodyFaqData = [
-    {
-      question: 'Anaokulu İngilizce eğitim seti neden gereklidir?',
-      problem: 'Anaokullarında en büyük sorun, İngilizce derslerinin öğretmene göre değişmesi ve standart bir sistemle ilerlememe
+  return (
+    <section className="py-16 px-6 bg-gradient-to-b from-white to-orange-50">
+      <div className="max-w-5xl mx-auto">
+        {/* Section Header */}
+        <div className="text-center mb-12">
+          <h2 
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4"
+            style={{ fontFamily: "'Fredoka', 'Inter', sans-serif" }}
+          >
+            Sık Sorulan Sorular ve Woody'nin Sunduğu Çözümler
+          </h2>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            Anaokullarında İngilizce eğitimi ile ilgili en sık karşılaşılan sorunlar ve Woody'nin sunduğu profesyonel çözümler
+          </p>
+        </div>
+
+        {/* FAQ Accordion */}
+        <div className="space-y-3">
+          {woodyFaqData.map((faq, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-md"
+            >
+              {/* Question Header */}
+              <button
+                onClick={() => toggleFaq(index)}
+                className="w-full px-6 py-5 flex items-start justify-between gap-4 text-left transition-colors duration-200 hover:bg-orange-50"
+              >
+                <div className="flex-1">
+                  <h3 className="text-lg font-bold text-gray-900 leading-relaxed">
+                    {faq.question}
+                  </h3>
+                </div>
+                <div className="flex-shrink-0 mt-1">
+                  {openFaq === index ? (
+                    <ChevronUp className="w-5 h-5 text-orange-600 transition-transform duration-300" />
+                  ) : (
+                    <ChevronDown className="w-5 h-5 text-gray-400 transition-transform duration-300" />
+                  )}
+                </div>
+              </button>
+
+              {/* Answer Content */}
+              <div
+                className={`transition-all duration-300 ease-in-out overflow-hidden ${
+                  openFaq === index ? 'max-h-[800px] opacity-100' : 'max-h-0 opacity-0'
+                }`}
+              >
+                <div className="px-6 pb-6 pt-2 space-y-4">
+                  {/* Problem */}
+                  <div className="bg-red-50 border-l-4 border-red-400 p-4 rounded-r-lg">
+                    <p className="text-sm font-semibold text-red-800 mb-1">❌ Sorun:</p>
+                    <p className="text-sm text-red-700 leading-relaxed">{faq.problem}</p>
+                  </div>
+
+                  {/* Solution */}
+                  <div className="bg-green-50 border-l-4 border-green-500 p-4 rounded-r-lg">
+                    <p className="text-sm font-semibold text-green-800 mb-1">✅ Woody Çözümü:</p>
+                    <p className="text-sm text-green-700 leading-relaxed">{faq.solution}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* CTA at Bottom */}
+        <div className="mt-12 text-center">
+          <a
+            href="/level-finder"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold px-8 py-4 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+          >
+            <span>Kurumunuz İçin Doğru Seviyeyi Bulun</span>
+            <ArrowRight className="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default BlogPage;
