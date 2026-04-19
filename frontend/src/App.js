@@ -29,7 +29,7 @@ const HomePage = () => {
   return (
     <>
       <SEO 
-        title="Anaokulu İngilizce Eğitim Sistemi | Oyun Temelli Okul Öncesi İngilizce"
+        title="Anaokulu İngilizce Eğitim seti | Oyun Temelli Okul Öncesi İngilizce seti"
         description="Woody ve Arkadaşları, anaokulu ve okul öncesi dönem için oyun temelli İngilizce eğitim sistemi, öğretmen setleri, öğrenci setleri, şarkılar ve aktiviteler sunar."
         canonical="/"
         keywords="okul öncesi ingilizce, anaokulu ingilizce, çocuklar için ingilizce, woody preschool, oyun temelli eğitim"

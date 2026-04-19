@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 
 // Default SEO values
 const DEFAULT_SEO = {
-  title: 'Anaokulu İngilizce Eğitim Sistemi | Oyun Temelli Okul Öncesi İngilizce',
+  title: 'Anaokulu İngilizce Eğitim seti | Oyun Temelli Okul Öncesi İngilizce seti',
   description: 'Woody ve Arkadaşları, anaokulu ve okul öncesi dönem için oyun temelli İngilizce eğitim sistemi, öğretmen setleri, öğrenci setleri, şarkılar ve aktiviteler sunar.',
   siteName: 'Woody ve Arkadaşları',
   baseUrl: 'https://woodyvearkadaslari.com',
