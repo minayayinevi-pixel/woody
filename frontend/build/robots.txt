@@ -1,0 +1,10 @@
+# robots.txt for Woody ve Arkadaşları
+
+User-agent: *
+Allow: /
+
+# Disallow protected/private pages
+Disallow: /digital-content/
+
+# Sitemap
+Sitemap: https://woodyvearkadaslari.com/sitemap.xml
