@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from 'react-helmet-async';
 import { LanguageProvider } from "./context/LanguageContext";
 import SEO from "./components/SEO";
@@ -64,7 +64,7 @@ function App() {
     <HelmetProvider>
       <div className="App">
         <LanguageProvider>
-          <HashRouter>
+          <BrowserRouter>
             <FloatingContact />
             <StickyStoreButton />
             <Routes>
@@ -81,7 +81,7 @@ function App() {
               <Route path="/digital-content" element={<DigitalContentPage />} />
               <Route path="/digital-content/:levelId/:sectionId" element={<DigitalContentDetailPage />} />
             </Routes>
-          </HashRouter>
+          </BrowserRouter>
         </LanguageProvider>
       </div>
     </HelmetProvider>
